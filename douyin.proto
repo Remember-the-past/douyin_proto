@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package douyin;
+
+message Response {
+    repeated Message messagesList = 1;
+    string cursor = 2;
+    uint64 fetchInterval = 3;
+    uint64 now = 4;
+    string internalExt = 5;
+    uint32 fetchType = 6;
+    map<string, string> routeParams = 7;
+    uint64 heartbeatDuration = 8;
+    bool needAck = 9;
+    string pushServer = 10;
+    string liveCursor = 11;
+    bool historyNoMore = 12;
+}
+
+message Message {
+    string method = 1;
+    bytes payload = 2;
+    int64 msgId = 3;
+    int32 msgType = 4;
+    int64 offset = 5;
+    bool needWrdsStore = 6;
+    int64 wrdsVersion = 7;
+    string wrdsSubKey = 8;
+}
