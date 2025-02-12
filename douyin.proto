@@ -172,6 +172,443 @@ message webcast {
             uint64 height = 1;
             uint64 width = 2;
         }
+
+        message StatsParam {
+            uint64 ep_id = 1;
+            uint64 sec_id = 2;
+            uint64 r_id = 3;
+        }
+
+        message VideoCardPushModule {
+            uint64 module_id = 1;
+            uint64 module_version = 2;
+            repeated VideoBigCard update_list = 3;
+            repeated string delete_list = 4;
+        }
+
+        message MedalRankListModule {
+            uint64 module_id = 1;
+            uint64 module_version = 2;
+            repeated VideoBigCard update_list = 3;
+            repeated string delete_list = 4;
+        }
+
+        message CollectModule {
+            uint64 module_id = 1;
+            uint64 module_version = 2;
+            repeated VideoBigCard update_list = 3;
+            repeated string delete_list = 4;
+        }
+
+        message ScheduleModule {
+            uint64 module_id = 1;
+            uint64 module_version = 2;
+            repeated VideoBigCard update_list = 3;
+            repeated string delete_list = 4;
+        }
+
+        message LatestNewsModule {
+            uint64 module_id = 1;
+            uint64 module_version = 2;
+            repeated VideoBigCard update_list = 3;
+            repeated string delete_list = 4;
+        }
+
+        message VideoBigCard {
+            int32 card_type = 1;
+            string cover_url = 2;
+            string title = 3;
+            string sub_title = 4;
+            VideoBigCard.CornerMark corner_mark = 5;
+            VideoCardSize video_size = 6;
+            string background_url = 7;
+            string unique_id = 8;
+            string StatsParam = 9;
+            string video_source = 10;
+            bool is_match = 11;
+            LinkInfo link_info = 12;
+            string extra = 255;
+
+            message CornerMark {
+                int32 type = 1;
+                bool show = 2;
+            }
+        }
+
+        message RankItem {
+            uint64 rank = 1;
+            string country = 2;
+            string country_img_url = 3;
+            uint64 gold_medal = 4;
+            uint64 silver_medal = 5;
+            uint64 copper_medal = 6;
+            uint64 total_medal = 7;
+            string unique_id = 8;
+            string extra = 255;
+        }
+
+        message Highlight {
+            int32 highlight_type = 1;
+            string item_id = 2;
+            string replay_id = 3;
+            string video_source = 4;
+            string unique_id = 5;
+            string cover_img_url = 6;
+            uint64 play_time_ms = 7;
+            string title = 8;
+            string group_name = 9;
+        }
+
+        message AGMatchInfo {
+            string l_country = 1;
+            string r_country = 2;
+            uint64 l_score = 3;
+            uint64 r_score = 4;
+            string l_country_img_url = 5;
+            string r_country_img_url = 6;
+        }
+
+        message MatchLive {
+            int32 ag_live_status = 1;
+            string appointment_id = 2;
+            string room_id = 3;
+            bool has_subscribe = 4;
+            string camera_id = 5;
+        }
+
+        message Match {
+            string title = 1;
+            uint64 start_time_ms = 2;
+            string focus = 3;
+            int32 tag_type = 4;
+            AGMatchInfo ag_match_info = 5;
+            MatchLive match_live = 6;
+            string unique_id = 7;
+        }
+
+        message News {
+            string title = 1;
+            uint64 update_time_ms = 2;
+            LinkInfo link_info = 3;
+            string unique_id = 4;
+        }
+
+        message MagicGestureActivityMessage {
+            Common common = 1;
+            int32 status = 2;
+            string effect_id = 3;
+            int32 action_type = 4;
+            string action_schema = 5;
+            string biz_id = 6;
+        }
+
+        message ActivityMagicMessage {
+            Common common = 1;
+            string push_id = 2;
+            string push_content = 3;
+        }
+
+        message PixActivityMessage {
+            Common common = 1;
+            int32 current_level = 2;
+            bool can_change_prop = 3;
+        }
+
+        message PrizeNoticeMessage {
+            Common common = 1;
+            uint64 asset_id = 2;
+            ImageInfo image_info = 3;
+            Data.Image landscape_bg_img = 4;
+            string landscape_content = 5;
+            uint64 scene_context_id = 6;
+            int32 landscape_height = 7;
+            int32 play_priority = 8;
+            map<string, string> extra = 9;
+            bool use_separate_player = 10;
+        }
+
+        message ImageInfo {
+            Data.Image img = 1;
+            int32 start = 2;
+            int32 duration = 3;
+            int32 x = 4;
+            int32 y = 5;
+            int32 width = 6;
+            int32 height = 7;
+            bool need_circle = 8;
+        }
+
+        message ActivityEffectRefreshMessage {
+            Common common = 1;
+        }
+
+        message AdminPrivilegeMessage {
+            Common common = 1;
+            AdminPrivilegeStruct data = 2;
+        }
+
+        message AdminPrivilegeStruct {
+            int32 privilege = 1;
+            uint64 op = 2;
+            repeated int32 current_privileges = 3;
+        }
+
+        message AdminRecordHandleMessage {
+            Common common = 1;
+            int32 handle_type = 2;
+        }
+
+        message AdminData {
+            uint64 uid = 1;
+            string name = 2;
+        }
+
+        message TextExtraItem {
+            int32 start = 1;
+            int32 stop = 2;
+            int32 type = 3;
+            string user_id = 4;
+            string hashtag_name = 5;
+            string hashtag_id = 6;
+            bool is_commerce = 7;
+            string aweme_id = 8;
+            int32 sub_type = 9;
+        }
+
+        message AdminRecordMessage {
+            Common common = 1;
+            AdminData admin = 2;
+            uint64 item_id = 3;
+            uint64 draft_id = 4;
+            string video_text = 5;
+            repeated TextExtraItem video_text_extra = 6;
+        }
+
+        message AnchorBoostMessage {
+            Common common = 1;
+            AnchorBoost data = 2;
+            PublicAreaCommon public_area_common = 3;
+        }
+
+        message AnchorBoost {
+            uint64 event_name = 1;
+            uint64 anchor_id = 2;
+            int32 live_id = 3;
+            int32 event_type = 4;
+            string content = 5;
+        }
+
+        message AnchorCommonPopupMessage {
+            Common common = 1;
+            string DialogInfo = 2;
+            string Schema = 3;
+        }
+
+        message iAnchorRoomDataChangeMessage {
+            Common common = 1;
+            Data.Text top_text = 2;
+            Data.Text bottom_text = 3;
+            uint64 message_type = 4;
+            string extra = 5;
+        }
+
+        message PCAnchorRoomDataChangeMessage {
+            Common common = 1;
+            Data.Text top_text = 2;
+            Data.Text bottom_text = 3;
+            uint64 message_type = 4;
+            string extra = 5;
+        }
+
+        message AnswerReviewMessage {
+            Common common = 1;
+            int32 answerReviewMsgTypeEnum = 2;
+            uint64 answer_id = 3;
+            uint64 chat_id = 4;
+            int32 answerReviewResTypeEnum = 5;
+            uint64 video_pin_id = 6;
+            uint64 original_msg_id = 7;
+            uint64 pin_id = 8;
+        }
+
+        message AssetEffectUtilMessage {
+            Common common = 1;
+            uint64 asset_id = 2;
+            uint64 priority = 3;
+            uint64 price = 4;
+            Data.Text text = 5;
+            uint64 text_width = 6;
+            uint64 text_heitht = 7;
+            string tracking = 8;
+            string dress_id = 9;
+            repeated EffectUtilImageInfo images = 10;
+            repeated EffectUtilTextInfo texts = 20;
+            string finish_self_schema = 21;
+            map<string, Data.TextPiece> piece_values = 22;
+        }
+
+        message EffectUtilImageInfo {
+            string placeholder_key = 1;
+            Data.Image mix_image = 2;
+        }
+
+        message EffectUtilTextInfo {
+            string placeholder_key = 1;
+            string content = 2;
+            uint64 font_size = 3;
+            string font_color = 4;
+        }
+
+        message AssetMessage {
+            Common common = 1;
+            uint64 asset_id = 2;
+            Data.Text panel_display_text = 3;
+            bool show_message = 4;
+            bool show_panel = 5;
+            Data.User user = 6;
+            data.User to_user = 7;
+            Data.GiftIMPriority priority = 8;
+            string log_id = 9;
+            int32 play_priority = 10;
+        }
+
+        message AudioBGImgMessage {
+            Common common = 1;
+            Data.AudioBGData bg_list = 2;
+            int32 ReviewPass = 3;
+            int32 bg_type = 4;
+            string show_text = 5;
+        }
+
+        message AudioChatMessage {
+            Common common = 1;
+            Data.User user = 2;
+            string content = 3;
+            string audio_url = 4;
+            uint64 audio_duration = 5;
+            PublicAreaCommon public_area_common = 6;
+            Data.Text rtf_content = 7;
+        }
+
+        message AuthorizationNotifyMessage {
+            Common common = 1;
+            string from = 2;
+            string content = 3;
+            string style = 4;
+            ContentBlock user_content = 6;
+            RelationBlock user_relation = 7;
+
+            message ContentBlock {
+                bool show = 1;
+                bool is_authorized = 2;
+                string title = 3;
+                string content = 4;
+                string detail = 5;
+            }
+
+            message RelationBlock {
+                bool show = 1;
+                bool is_authorized = 2;
+                string title = 3;
+                string content = 4;
+                string detail = 5;
+            }
+        }
+
+        message AutoCoverMessage {
+            Common common = 1;
+            Data.Image image = 2;
+        }
+
+        message AvatarRoomLeaveMessage {
+            Common common = 1;
+            int32 leave_reason = 2;
+            uint64 format_id = 3;
+            string rtc_room_id = 4;
+            uint64 last_ping_time = 5;
+        }
+
+        message AwemeShopExplainMessage {
+            Common common = 1;
+            Extra extra = 2;
+
+            message Extra {
+                uint64 promotion_id = 1;
+                bool active = 2;
+            }
+        }
+
+        message BackRecordVideoMessage {
+            Common  common = 1;
+            string  m3u8_url = 2;
+            repeated string  ts_urls = 3;
+            string  execution_id = 4;
+            bool  succeed = 5;
+            uint64  start_time = 6;
+            uint64  end_time = 7;
+        }
+
+        message BattleAutoMatchMessage {
+            Common  common = 1;
+            ResponseData  data = 2;
+
+            message RivalInfo {
+                uint64  user_id = 1;
+                Data.Room  room = 2;
+            }
+
+            message PreviewUser {
+                string  nickname = 1;
+                Data.Image  avatar = 2;
+            }
+
+            message ResponseData {
+                string  default_content = 1;
+                Data.Image  default_avatar = 2;
+                uint64  rival_user_id = 3;
+                Data.Room  rival_room = 4;
+                repeated PreviewUser  preview_user_list = 5;
+                uint64  expect_time = 6;
+                string  rival_user_id_str = 7;
+                bool  can_high_way = 8;
+                uint64  max_wait_time = 9;
+                string  sign_extra = 10;
+                repeated RivalInfo  rivals = 11;
+                string  battle_attached_info = 19;
+                string  channel_id_str = 20;
+                uint64  match_type = 21;
+            }
+        }
+
+        message BattleCancelMessage {
+            Common  common = 1;
+            uint64  channel_id = 2;
+        }
+
+        message BattleDrawPropMessage {
+            Common  common = 1;
+            int32  status = 2;
+            int32  reason = 3;
+            Data.Image  animation = 4;
+            uint64  prop_id = 5;
+            uint64  battle_id = 6;
+        }
+
+        message BattleEffectContainerMessage {
+            Common  common = 1;
+            uint64  channel_id = 2;
+            uint64  battle_id = 3;
+            string  battle_effect_info = 4;
+        }
+
+        message BattleFeedBackCardMessage {
+            Common  common = 1;
+            uint64  rival_uid = 2;
+            int32  feedback_card_type = 3;
+            Data.FeedbackCard  feedback_card = 4;
+            uint64  battle_id = 5;
+            uint64  channel_id = 6;
+        }
     }
 }
 
