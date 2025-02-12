@@ -27,3 +27,168 @@ message Message {
     int64 wrdsVersion = 7;
     string wrdsSubKey = 8;
 }
+
+message webcast {
+    message Data {
+        message Text {
+            string key = 1;
+            string default_pattern = 2;
+            TextFormat default_format = 3;
+            repeated TextPiece pieces = 4;
+            map<string, SchemaInfo> schema_infos = 20;
+        }
+    }
+
+    message Im {
+        message RoomBorderMessage {
+            Common common = 1;
+            Data.BorderInfo border_info = 2;
+        }
+
+        message Common {
+            string method = 1;
+            uint64 msg_id = 2;
+            uint64 room_id = 3;
+            uint64 create_time = 4;
+            int32 monitor = 5;
+            bool is_show_msg = 6;
+            string describe = 7;
+            Data.Text display_text = 8;
+            uint64 fold_type = 9;
+            uint64 anchor_fold_type = 10;
+            uint64 priority_score = 11;
+            string log_id = 12;
+            string msg_process_filter_k = 13;
+            string msg_process_filter_v = 14;
+            Data.User user = 15;
+            Data.Room room = 16;
+            uint64 anchor_fold_type_v2 = 17;
+            uint64 process_at_sei_time_ms = 18;
+            uint64 random_dispatch_ms = 19;
+            bool is_dispatch = 20;
+            uint64 channel_id = 21;
+            uint64 diff_sei2abs_second = 22;
+            uint64 anchor_fold_duration = 23;
+            uint64 app_id = 24;
+        }
+
+        message PublicAreaCommon {
+            Data.Image user_label = 1;
+            uint64 user_consume_in_room = 2;
+            uint64 user_send_gift_cnt_in_room = 3;
+            uint64 individual_priority = 4;
+            map<string, string> individual_strategy_result = 5;
+            uint64 support_pin = 6;
+            SuffixText suffix_text = 7;
+            int32 im_action = 8;
+            bool forbidden_profile = 9;
+            Data.ChatReplyRespInfo reply_resp = 10;
+            map<string, string> tracking_params = 11;
+            uint64 is_featured = 12;
+            bool need_filter_display = 13;
+        }
+
+        message SuffixText {
+            uint64 biz_type = 1;
+            Data.Text text = 2;
+        }
+
+        message LandscapeAreaCommon {
+            bool show_head = 1;
+            bool show_nickname = 2;
+            bool show_font_color = 3;
+            repeated string color_value = 4;
+            repeated int32 comment_type_tags = 5;
+        }
+
+        message FlexImageStruct {
+            repeated string url_list = 1;
+            string uri = 2;
+            repeated uint64 flex_setting = 3;
+            repeated uint64 text_setting = 4;
+            uint64 top_border_height = 5;
+        }
+
+        message CommonBubbleConfig {
+            string content = 1;
+            uint64 duration = 2;
+            Data.Text rich_text = 3;
+            string scheme_url = 4;
+            FlexImageStruct background_image = 5;
+            Data.Image arrow_image = 6;
+            int32 message_type = 7;
+            int32 arrow_position = 8;
+        }
+
+        message EffectiveActivityEmojiGroup {
+            Data.ActivityEmojiGroup emoji_group = 1;
+            uint64 start_time = 2;
+            uint64 end_time = 3;
+        }
+
+        message ActivityEmojiGroupsMessage {
+            Common common = 1;
+            repeated EffectiveActivityEmojiGroup activity_emoji_groups = 2;
+        }
+
+        message ActivityInteractiveMessage {
+            Common common = 1;
+            string extra = 2;
+        }
+
+        message InteractEffectMessage {
+            Common common = 1;
+            uint64 effect_id = 2;
+            string extra = 3;
+            string tea_log = 4;
+            uint64 message_type = 5;
+            uint64 arg1 = 6;
+            uint64 arg2 = 7;
+            string arg3 = 8;
+        }
+
+        message ActivityMagicAsianGamesMessage {
+            Common common = 1;
+            string push_id = 2;
+            string push_content = 3;
+            int32 platform = 4;
+            VideoCardPushModule video_card = 5;
+            MedalRankListModule medal_list = 6;
+            CollectModule collect = 7;
+            ScheduleModule popular_star = 8;
+            LatestNewsModule hot_live = 9;
+        }
+
+        message LinkInfo {
+            int32 link_type = 1;
+            string link_url = 2;
+        }
+
+        message PageFilter {
+            string highlight_group_name = 1;
+        }
+
+        message VideoCardSize {
+            uint64 height = 1;
+            uint64 width = 2;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
