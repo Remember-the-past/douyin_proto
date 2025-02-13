@@ -530,75 +530,75 @@ message webcast {
         }
 
         message BackRecordVideoMessage {
-            Common  common = 1;
-            string  m3u8_url = 2;
-            repeated string  ts_urls = 3;
-            string  execution_id = 4;
-            bool  succeed = 5;
-            uint64  start_time = 6;
-            uint64  end_time = 7;
+            Common common = 1;
+            string m3u8_url = 2;
+            repeated string ts_urls = 3;
+            string execution_id = 4;
+            bool succeed = 5;
+            uint64 start_time = 6;
+            uint64 end_time = 7;
         }
 
         message BattleAutoMatchMessage {
-            Common  common = 1;
-            ResponseData  data = 2;
+            Common common = 1;
+            ResponseData data = 2;
 
             message RivalInfo {
-                uint64  user_id = 1;
-                Data.Room  room = 2;
+                uint64 user_id = 1;
+                Data.Room room = 2;
             }
 
             message PreviewUser {
-                string  nickname = 1;
-                Data.Image  avatar = 2;
+                string nickname = 1;
+                Data.Image avatar = 2;
             }
 
             message ResponseData {
-                string  default_content = 1;
-                Data.Image  default_avatar = 2;
-                uint64  rival_user_id = 3;
-                Data.Room  rival_room = 4;
-                repeated PreviewUser  preview_user_list = 5;
-                uint64  expect_time = 6;
-                string  rival_user_id_str = 7;
-                bool  can_high_way = 8;
-                uint64  max_wait_time = 9;
-                string  sign_extra = 10;
-                repeated RivalInfo  rivals = 11;
-                string  battle_attached_info = 19;
-                string  channel_id_str = 20;
-                uint64  match_type = 21;
+                string default_content = 1;
+                Data.Image default_avatar = 2;
+                uint64 rival_user_id = 3;
+                Data.Room rival_room = 4;
+                repeated PreviewUser preview_user_list = 5;
+                uint64 expect_time = 6;
+                string rival_user_id_str = 7;
+                bool can_high_way = 8;
+                uint64 max_wait_time = 9;
+                string sign_extra = 10;
+                repeated RivalInfo rivals = 11;
+                string battle_attached_info = 19;
+                string channel_id_str = 20;
+                uint64 match_type = 21;
             }
         }
 
         message BattleCancelMessage {
-            Common  common = 1;
-            uint64  channel_id = 2;
+            Common common = 1;
+            uint64 channel_id = 2;
         }
 
         message BattleDrawPropMessage {
-            Common  common = 1;
-            int32  status = 2;
-            int32  reason = 3;
-            Data.Image  animation = 4;
-            uint64  prop_id = 5;
-            uint64  battle_id = 6;
+            Common common = 1;
+            int32 status = 2;
+            int32 reason = 3;
+            Data.Image animation = 4;
+            uint64 prop_id = 5;
+            uint64 battle_id = 6;
         }
 
         message BattleEffectContainerMessage {
-            Common  common = 1;
-            uint64  channel_id = 2;
-            uint64  battle_id = 3;
-            string  battle_effect_info = 4;
+            Common common = 1;
+            uint64 channel_id = 2;
+            uint64 battle_id = 3;
+            string battle_effect_info = 4;
         }
 
         message BattleFeedBackCardMessage {
-            Common  common = 1;
-            uint64  rival_uid = 2;
-            int32  feedback_card_type = 3;
-            Data.FeedbackCard  feedback_card = 4;
-            uint64  battle_id = 5;
-            uint64  channel_id = 6;
+            Common common = 1;
+            uint64 rival_uid = 2;
+            int32 feedback_card_type = 3;
+            Data.FeedbackCard feedback_card = 4;
+            uint64 battle_id = 5;
+            uint64 channel_id = 6;
         }
 
         message BattleFrontRankMessage {
@@ -606,171 +606,171 @@ message webcast {
         }
 
         message BattleGuidanceMessage {
-            Common  common = 1;
-            uint64  channel_id = 2;
-            uint64  battle_id = 3;
-            UIInfo  ui_info = 4;
-            ExtraInfo  extra_info = 5;
+            Common common = 1;
+            uint64 channel_id = 2;
+            uint64 battle_id = 3;
+            UIInfo ui_info = 4;
+            ExtraInfo extra_info = 5;
 
             message TextElement {
-                string  text = 1;
-                string  value = 2;
+                string text = 1;
+                string value = 2;
             }
 
             message UIInfo {
-                repeated Data.User  users = 1;
-                repeated TextElement  text_elements = 2;
+                repeated Data.User users = 1;
+                repeated TextElement text_elements = 2;
             }
 
             message ExtraInfo {
-                uint64  battle_duration = 1;
-                uint64  actual_duration = 2;
+                uint64 battle_duration = 1;
+                uint64 actual_duration = 2;
             }
         }
 
         message BattleInviteMessage {
-            Common  common = 1;
-            int32  invite_type = 2;
-            uint64  channel_id = 3;
-            string  sign_extra = 4;
-            uint64  invite_uid = 5;
-            uint64  battle_id = 6;
-            string  multiple_again_prompts = 7;
-            Data.PanelTitle  panel_title = 8;
-            int32  scene = 9;
-            string  invite_title = 10;
-            string  invite_sub_title = 11;
-            uint64  wait_sec = 12;
-            Data.BattleConfigSetting  battle_config_setting = 14;
-            uint64  duration_time = 15;
-            int32  multi_pk_mode = 16;
-            string  client_attached_info = 17;
-            string  lynx_data = 18;
-            string  event_tracking_info = 19;
+            Common common = 1;
+            int32 invite_type = 2;
+            uint64 channel_id = 3;
+            string sign_extra = 4;
+            uint64 invite_uid = 5;
+            uint64 battle_id = 6;
+            string multiple_again_prompts = 7;
+            Data.PanelTitle panel_title = 8;
+            int32 scene = 9;
+            string invite_title = 10;
+            string invite_sub_title = 11;
+            uint64 wait_sec = 12;
+            Data.BattleConfigSetting battle_config_setting = 14;
+            uint64 duration_time = 15;
+            int32 multi_pk_mode = 16;
+            string client_attached_info = 17;
+            string lynx_data = 18;
+            string event_tracking_info = 19;
         }
 
         message BattleModeMessage {
-            Common  common = 1;
-            uint64  mode = 2;
-            StealTowerData  steal_tower_data = 3;
-            uint64  now = 4;
+            Common common = 1;
+            uint64 mode = 2;
+            StealTowerData steal_tower_data = 3;
+            uint64 now = 4;
 
             message StealTowerData {
-                uint64  start_time = 1;
-                uint64  finish_time = 2;
-                uint64  duration = 3;
-                uint64  target_score = 4;
-                uint64  attacker_id = 5;
-                bool  finish = 6;
-                uint64  win = 7;
-                uint64  open_score = 8;
-                uint64  count = 9;
+                uint64 start_time = 1;
+                uint64 finish_time = 2;
+                uint64 duration = 3;
+                uint64 target_score = 4;
+                uint64 attacker_id = 5;
+                bool finish = 6;
+                uint64 win = 7;
+                uint64 open_score = 8;
+                uint64 count = 9;
             }
         }
 
         message BattleMultiMatchMessage {
-            Common  common = 1;
-            int32  match_status = 2;
-            uint64  expect_time = 3;
-            repeated PreviewUser  preview_user_list = 4;
-            uint64  default_wait_limit = 5;
-            uint64  invite_limit_sec = 6;
-            uint64  match_type = 7;
+            Common common = 1;
+            int32 match_status = 2;
+            uint64 expect_time = 3;
+            repeated PreviewUser preview_user_list = 4;
+            uint64 default_wait_limit = 5;
+            uint64 invite_limit_sec = 6;
+            uint64 match_type = 7;
 
             message PreviewUser {
-                string  nickname = 1;
-                Data.Image  avatar = 2;
+                string nickname = 1;
+                Data.Image avatar = 2;
             }
         }
 
         message BattleNotifyMessage {
-            Common  common = 1;
-            string  content = 2;
-            int32  notify_type = 3;
-            uint64  continue_seconds = 4;
+            Common common = 1;
+            string content = 2;
+            int32 notify_type = 3;
+            uint64 continue_seconds = 4;
         }
 
         message BattlePowerContainer {
             ContainerInfo info = 1;
 
             message ContainerInfo {
-                int32  type = 1;
-                repeated Data.User  users = 2;
-                string  text = 3;
-                Data.Image  icon = 4;
-                string  client_point_info = 10;
+                int32 type = 1;
+                repeated Data.User users = 2;
+                string text = 3;
+                Data.Image icon = 4;
+                string client_point_info = 10;
             }
 
             message ClientPointInfo {
-                uint64  count = 1;
-                string  effect_type = 2;
+                uint64 count = 1;
+                string effect_type = 2;
             }
         }
 
         message BattlePowerContainerMessage {
-            Common  common = 1;
-            uint64  channel_id = 2;
-            uint64  battle_id = 3;
-            string  reverse_info = 4;
-            string  container = 5;
+            Common common = 1;
+            uint64 channel_id = 2;
+            uint64 battle_id = 3;
+            string reverse_info = 4;
+            string container = 5;
 
             message ReverseInfo {
-                Data.User  user = 1;
-                uint64  reverse_count = 2;
-                string  des = 3;
-                repeated Data.User  users = 4;
-                int32  scene = 5;
-                string  effect_type = 6;
+                Data.User user = 1;
+                uint64 reverse_count = 2;
+                string des = 3;
+                repeated Data.User users = 4;
+                int32 scene = 5;
+                string effect_type = 6;
             }
         }
 
         message PrecisionMatch {
-            uint64  sponsor_id = 1;
-            repeated Matcher  matchers = 2;
-            string  match_reason = 3;
-            uint64  wait_seconds = 4;
-            uint64  precision_match_id = 5;
-            string  activity_name = 6;
-            string  recommend_reason = 7;
-            string  sign_extra = 8;
-            int32  source = 9;
-            string  not_disturb_text = 10;
-            uint64  flex_activity_id = 11;
-            uint64  duration = 12;
-            string  battle_attached_info = 13;
+            uint64 sponsor_id = 1;
+            repeated Matcher matchers = 2;
+            string match_reason = 3;
+            uint64 wait_seconds = 4;
+            uint64 precision_match_id = 5;
+            string activity_name = 6;
+            string recommend_reason = 7;
+            string sign_extra = 8;
+            int32 source = 9;
+            string not_disturb_text = 10;
+            uint64 flex_activity_id = 11;
+            uint64 duration = 12;
+            string battle_attached_info = 13;
 
             message Matcher {
-                uint64  user_id = 1;
-                Data.Room  room = 2;
-                int32  status = 3;
-                repeated Data.BattleRivalTag  tags = 4;
-                string  desc_text = 5;
+                uint64 user_id = 1;
+                Data.Room room = 2;
+                int32 status = 3;
+                repeated Data.BattleRivalTag tags = 4;
+                string desc_text = 5;
             }
         }
 
         message BattlePrecisionMatchMessage {
-            Common  common = 1;
-            PrecisionMatch  precision_match = 2;
+            Common common = 1;
+            PrecisionMatch precision_match = 2;
         }
 
         message BattleRejectMessage {
-            Common  common = 1;
-            uint64  channel_id = 2;
-            uint64  battle_id = 3;
-            uint64  reject_uid = 4;
-            string  multiple_again_prompts = 5;
-            int32  invite_type = 6;
+            Common common = 1;
+            uint64 channel_id = 2;
+            uint64 battle_id = 3;
+            uint64 reject_uid = 4;
+            string multiple_again_prompts = 5;
+            int32 invite_type = 6;
         }
 
         message BattleRewardMessage {
-            Common  common = 1;
-            BattleRewardMessage.PKReward  pk_result = 2;
-            BattleRewardMessage.PKChangeBackground  upgrade_result = 3;
-            BattleRewardMessage.LinkmicBackground  linkmic_background_result = 4;
+            Common common = 1;
+            BattleRewardMessage.PKReward pk_result = 2;
+            BattleRewardMessage.PKChangeBackground upgrade_result = 3;
+            BattleRewardMessage.LinkmicBackground linkmic_background_result = 4;
 
             message PKReward {
-                Data.BattleSkinConfig  skin_config = 1;
-                string  Extra = 2;
+                Data.BattleSkinConfig skin_config = 1;
+                string Extra = 2;
             }
 
             message PKChangeBackground {
@@ -783,51 +783,51 @@ message webcast {
         }
 
         message BattleSeasonPKResultMessage {
-            Common  common = 1;
-            PKResult  pk_result = 2;
-            UpgradeResult  upgrade_result = 3;
-            GetGradeInfo  get_grade_info = 4;
+            Common common = 1;
+            PKResult pk_result = 2;
+            UpgradeResult upgrade_result = 3;
+            GetGradeInfo get_grade_info = 4;
 
             message PKResultPointsDescription {
-                string  point_desc = 1;
-                uint64  point = 2;
-                string  point_str = 3;
+                string point_desc = 1;
+                uint64 point = 2;
+                string point_str = 3;
             }
 
             message PKResult {
-                Data.Image  result_img = 1;
-                Data.Image  bg_img = 2;
-                string  result_str = 3;
-                repeated PKResultPointsDescription  descriptions = 4;
+                Data.Image result_img = 1;
+                Data.Image bg_img = 2;
+                string result_str = 3;
+                repeated PKResultPointsDescription descriptions = 4;
             }
 
             message UpgradeResult {
-                Data.Image  grade_img = 1;
-                Data.Image  upgrade_img = 2;
-                string  upgrade_desc = 3;
-                Data.Image  desc_bg_img = 4;
-                string  pre_grade_desc = 5;
-                string  after_grade_desc = 6;
-                Data.Image  before_upgrade_img = 7;
+                Data.Image grade_img = 1;
+                Data.Image upgrade_img = 2;
+                string upgrade_desc = 3;
+                Data.Image desc_bg_img = 4;
+                string pre_grade_desc = 5;
+                string after_grade_desc = 6;
+                Data.Image before_upgrade_img = 7;
             }
 
             message GetGradeInfo {
-                string  get_grade_desc = 1;
-                Data.Image  grade_img = 2;
-                Data.Image  start_img = 3;
+                string get_grade_desc = 1;
+                Data.Image grade_img = 2;
+                Data.Image start_img = 3;
             }
         }
 
         message BattleStateSyncMessage {
-            Common  common = 1;
-            BattleSettings  battle_settings = 2;
-            Data.SurvivalInfo  survival_info = 3;
-            Data.BreakthroughInfo  breakthrough_info = 4;
+            Common common = 1;
+            BattleSettings battle_settings = 2;
+            Data.SurvivalInfo survival_info = 3;
+            Data.BreakthroughInfo breakthrough_info = 4;
         }
 
         message BattleMode {
-            int32  mode = 1;
-            StealTowerData  steal_tower_data = 2;
+            int32 mode = 1;
+            StealTowerData steal_tower_data = 2;
 
             message StealTowerData {
                 uint64 trigger_time = 1;
@@ -835,43 +835,43 @@ message webcast {
         }
 
         message BattleSettings {
-            uint64  battle_id = 2;
-            uint64  start_time_ms = 3;
-            uint64  duration = 4;
-            string  theme = 5;
-            uint64  channel_id = 6;
-            uint64  match_type = 7;
-            string  banner_url = 8;
-            uint64  sub_type = 9;
-            int32  mode = 10;
-            string  config = 11;
-            string  notify_scheme_url = 12;
-            string  hotsoon_notify_scheme_url = 13;
-            Data.Image  unknwon_field1 = 14;
-            string  unknwon_field2 = 15;
-            string  unknwon_field3 = 16;
-            Data.BattleTitleConfig  title_config = 17;
-            Data.BattleTitleConfig  punish_config = 18;
-            uint64  punish_duration = 19;
-            uint64  punish_start_time_ms = 20;
-            int32  optimize_version = 21;
-            bool  punish_optimize_on = 22;
-            uint64  blood_display_duration = 23;
-            uint64  status_display_duration = 24;
-            string  toast = 25;
-            bool  need_close_linkmic = 26;
-            bool  display_last_result = 27;
-            string  normal_activity_name = 28;
-            int32  invite_type = 29;
-            Data.BattleConfigSetting  battle_config_setting = 31;
-            Data.BattleBarConfig  bar_config = 32;
-            Data.BattleBarConfig  hotsoon_bar_config = 33;
-            uint64  initiator_id = 34;
-            int32  battle_type = 35;
-            uint64  finished = 36;
-            repeated int32  play_tags = 37;
-            uint64  steal_tower_duration = 38;
-            string  lynx_data = 39;
+            uint64 battle_id = 2;
+            uint64 start_time_ms = 3;
+            uint64 duration = 4;
+            string theme = 5;
+            uint64 channel_id = 6;
+            uint64 match_type = 7;
+            string banner_url = 8;
+            uint64 sub_type = 9;
+            int32 mode = 10;
+            string config = 11;
+            string notify_scheme_url = 12;
+            string hotsoon_notify_scheme_url = 13;
+            Data.Image unknwon_field1 = 14;
+            string unknwon_field2 = 15;
+            string unknwon_field3 = 16;
+            Data.BattleTitleConfig title_config = 17;
+            Data.BattleTitleConfig punish_config = 18;
+            uint64 punish_duration = 19;
+            uint64 punish_start_time_ms = 20;
+            int32 optimize_version = 21;
+            bool punish_optimize_on = 22;
+            uint64 blood_display_duration = 23;
+            uint64 status_display_duration = 24;
+            string toast = 25;
+            bool need_close_linkmic = 26;
+            bool display_last_result = 27;
+            string normal_activity_name = 28;
+            int32 invite_type = 29;
+            Data.BattleConfigSetting battle_config_setting = 31;
+            Data.BattleBarConfig bar_config = 32;
+            Data.BattleBarConfig hotsoon_bar_config = 33;
+            uint64 initiator_id = 34;
+            int32 battle_type = 35;
+            uint64 finished = 36;
+            repeated int32 play_tags = 37;
+            uint64 steal_tower_duration = 38;
+            string lynx_data = 39;
         }
 
         message BattleTask {
@@ -879,76 +879,76 @@ message webcast {
         }
 
         message LinkMicBattle {
-            Common  common = 1;
-            BattleSettings  battle_settings = 2;
-            BattleMode  battle_mode = 3;
-            BattleTask  battle_task = 4;
-            int32  skin_type = 5;
-            map<int64,Data.BattleUserInfo> user_infos = 6;
-            Data.OperationalPlay  operational_play = 7;
-            int32  battle_type = 8;
-            bool  relative_score = 9;
-            bool  normal_to_multiple = 10;
-            Data.BattleSkinConfig  skin_config = 11;
-            Data.LinkIconConfig  link_icon_config = 12;
-            string  request_source = 13;
-            string  event_tracking_info = 14;
+            Common common = 1;
+            BattleSettings battle_settings = 2;
+            BattleMode battle_mode = 3;
+            BattleTask battle_task = 4;
+            int32 skin_type = 5;
+            map<int64, Data.BattleUserInfo> user_infos = 6;
+            Data.OperationalPlay operational_play = 7;
+            int32 battle_type = 8;
+            bool relative_score = 9;
+            bool normal_to_multiple = 10;
+            Data.BattleSkinConfig skin_config = 11;
+            Data.LinkIconConfig link_icon_config = 12;
+            string request_source = 13;
+            string event_tracking_info = 14;
         }
 
         message BattleTeamTaskAskMessage {
-            Common  common = 1;
-            string  team_task_json = 2;
+            Common common = 1;
+            string team_task_json = 2;
         }
 
         message BattleTeamTaskMessage {
-            Common  common = 1;
-            Data.TeamTask  team_task = 2;
-            string  team_task_json = 3;
+            Common common = 1;
+            Data.TeamTask team_task = 2;
+            string team_task_json = 3;
         }
 
         message BattleToastMessage {
-            Common  common = 1;
-            string  content = 2;
-            int32  notify_type = 3;
-            uint64  duration = 4;
-            uint64  battle_id = 5;
-            UIConfig  ui_config = 6;
+            Common common = 1;
+            string content = 2;
+            int32 notify_type = 3;
+            uint64 duration = 4;
+            uint64 battle_id = 5;
+            UIConfig ui_config = 6;
 
             message Text {
-                string  content = 1;
-                string  color = 2;
+                string content = 1;
+                string color = 2;
             }
 
             message UIConfig {
-                Text  content = 1;
-                string  schema = 2;
-                Data.Image  icon = 3;
-                Text  icon_text = 4;
+                Text content = 1;
+                string schema = 2;
+                Data.Image icon = 3;
+                Text icon_text = 4;
             }
         }
 
         message BattleUseCardMessage {
-            Common  common = 1;
-            Data.ItemCardInfo  info = 2;
-            string  extra = 4;
+            Common common = 1;
+            Data.ItemCardInfo info = 2;
+            string extra = 4;
         }
 
         message BeginnerGuideMessage {
-            Common  common = 1;
-            int32  message_type = 2;
-            string  prompts = 3;
+            Common common = 1;
+            int32 message_type = 2;
+            string prompts = 3;
         }
 
         message LinkmicBigEventMessage {//TODO 没看懂怎么解 content
-            Common  common = 1;
-            int32  msg_type = 2;
-            InitLinkmicContent  init_linkmic_content = 3;
-            SwitchSceneContent  switch_scene_content = 4;
-            SwitchEarphoneMonitorContent  switch_earphone_monitor_content = 5;
-            SwitchKtvModeContent  switch_ktv_mode_content = 6;
-            SwitchLyricStatusContent  switch_lyric_status_content = 7;
-            SwitchFullSongStatusContent  switch_full_song_status_content = 8;
-            SwitchTuningEffectContent  switch_tuning_effect_content = 9;
+            Common common = 1;
+            int32 msg_type = 2;
+            InitLinkmicContent init_linkmic_content = 3;
+            SwitchSceneContent switch_scene_content = 4;
+            SwitchEarphoneMonitorContent switch_earphone_monitor_content = 5;
+            SwitchKtvModeContent switch_ktv_mode_content = 6;
+            SwitchLyricStatusContent switch_lyric_status_content = 7;
+            SwitchFullSongStatusContent switch_full_song_status_content = 8;
+            SwitchTuningEffectContent switch_tuning_effect_content = 9;
         }
 
         message InitLinkmicContent {
@@ -971,7 +971,7 @@ message webcast {
             int32 to_status = 1;
         }
 
-        message SwitchFullSongStatusContent{
+        message SwitchFullSongStatusContent {
             int32 to_status = 1;
         }
 
@@ -980,162 +980,162 @@ message webcast {
         }
 
         message BridgeData {
-            Common  common = 1;
-            string  bridge_message_json = 2;
+            Common common = 1;
+            string bridge_message_json = 2;
         }
 
         message BridgeMessage {
-            Common  common = 1;
-            BridgeData  bridge = 2;
+            Common common = 1;
+            BridgeData bridge = 2;
         }
 
         message BrotherhoodMessage {
-            Common  common = 1;
-            string  content = 2;
+            Common common = 1;
+            string content = 2;
         }
 
         message CarBallShowMessage {
-            Common  common = 1;
-            bool  is_show = 2;
+            Common common = 1;
+            bool is_show = 2;
         }
 
         message CarSeriesInfoMessage {
-            Common  common = 1;
-            uint64  action_type = 2;
-            uint64  series_id = 3;
-            string  series_name = 4;
-            string  official_price = 5;
-            string  image_url = 6;
-            string  open_url = 7;
+            Common common = 1;
+            uint64 action_type = 2;
+            uint64 series_id = 3;
+            string series_name = 4;
+            string official_price = 5;
+            string image_url = 6;
+            string open_url = 7;
         }
 
         message CarnivalMessage {
-            Common  common = 1;
-            Data.CombinedText  text = 2;
-            uint64  carnival_seq_id = 3;
-            uint64  danmaku_style_type = 4;
-            int32  special_mark = 5;
-            uint64  priority = 6;
+            Common common = 1;
+            Data.CombinedText text = 2;
+            uint64 carnival_seq_id = 3;
+            uint64 danmaku_style_type = 4;
+            int32 special_mark = 5;
+            uint64 priority = 6;
         }
 
         message CategoryChangeMessage {
-            Common  common = 1;
-            string  category_id = 2;
-            string  category_name = 3;
-            string  challenge_id = 4;
-            string  challenge_name = 5;
+            Common common = 1;
+            string category_id = 2;
+            string category_name = 3;
+            string challenge_id = 4;
+            string challenge_name = 5;
         }
 
         message ChatCarnivalMessage {
-            Common  common = 1;
-            uint64  notify_type = 2;
-            uint64  anchor_start_timestamp = 3;
-            uint64  anchor_start_second = 4;
-            uint64  user_start_timestamp = 5;
-            uint64  user_start_second = 6;
-            uint64  duration = 7;
-            string  background_color = 8;
-            Data.Image  title_image = 9;
-            string  pre_content = 10;
-            string  content = 11;
-            uint64  orientations = 12;
-            uint64  move_speed = 13;
-            repeated ChatItem  chat_style = 14;
-            repeated EggItem  egg_style = 15;
-            uint64  word_orientation = 16;
-            uint64  move_direction = 17;
-            repeated uint64  egg_show_range = 18;
-            repeated uint64  size_and_alpha = 19;
-            repeated uint64  vertical_offset = 20;
-            uint64  path = 21;
-            string  word_color = 22;
-            uint64  show_webp = 23;
-            uint64  use_privilege_region = 24;
-            uint64  can_open_contour = 25;
-            uint64  support_show_type = 26;
+            Common common = 1;
+            uint64 notify_type = 2;
+            uint64 anchor_start_timestamp = 3;
+            uint64 anchor_start_second = 4;
+            uint64 user_start_timestamp = 5;
+            uint64 user_start_second = 6;
+            uint64 duration = 7;
+            string background_color = 8;
+            Data.Image title_image = 9;
+            string pre_content = 10;
+            string content = 11;
+            uint64 orientations = 12;
+            uint64 move_speed = 13;
+            repeated ChatItem chat_style = 14;
+            repeated EggItem egg_style = 15;
+            uint64 word_orientation = 16;
+            uint64 move_direction = 17;
+            repeated uint64 egg_show_range = 18;
+            repeated uint64 size_and_alpha = 19;
+            repeated uint64 vertical_offset = 20;
+            uint64 path = 21;
+            string word_color = 22;
+            uint64 show_webp = 23;
+            uint64 use_privilege_region = 24;
+            uint64 can_open_contour = 25;
+            uint64 support_show_type = 26;
         }
 
         message EggItem {
-            Data.Image  background = 1;
-            uint64  background_hight = 2;
-            uint64  background_width = 3;
-            uint64  use_rate = 4;
-            uint64  is_dynamic_egg = 5;
+            Data.Image background = 1;
+            uint64 background_hight = 2;
+            uint64 background_width = 3;
+            uint64 use_rate = 4;
+            uint64 is_dynamic_egg = 5;
         }
 
         message ChatItem {
-            uint64  head_size = 1;
-            uint64  content_size = 2;
-            string  content_color = 3;
-            FlexImageStruct  background = 4;
-            uint64  background_hight = 5;
-            uint64  background_width = 6;
-            uint64  use_rate = 7;
+            uint64 head_size = 1;
+            uint64 content_size = 2;
+            string content_color = 3;
+            FlexImageStruct background = 4;
+            uint64 background_hight = 5;
+            uint64 background_width = 6;
+            uint64 use_rate = 7;
         }
 
         message ChatMessage {
-            Common  common = 1;
-            Data.User  user = 2;
-            string  content = 3;
-            bool  visible_to_sender = 4;
-            Data.Image  background_image = 5;
-            string  full_screen_text_color = 6;
-            Data.Image  background_image_v2 = 7;
-            PublicAreaCommon  public_area_common = 9;
-            Data.Image  gift_image = 10;
-            uint64  agree_msg_id = 11;
-            int32  priority_level = 12;
-            LandscapeAreaCommon  landscape_area_common = 13;
-            uint64  event_time = 15;
-            bool  send_review = 16;
-            bool  from_intercom = 17;
-            bool  intercom_hide_user_card = 18;
-            repeated int32  chat_tags = 19;
-            uint64  chat_by = 20;
-            int32  individual_chat_priority = 21;
-            Data.Text  rtf_content = 40;
-            Data.Text  rtf_content_v2 = 41;
+            Common common = 1;
+            Data.User user = 2;
+            string content = 3;
+            bool visible_to_sender = 4;
+            Data.Image background_image = 5;
+            string full_screen_text_color = 6;
+            Data.Image background_image_v2 = 7;
+            PublicAreaCommon public_area_common = 9;
+            Data.Image gift_image = 10;
+            uint64 agree_msg_id = 11;
+            int32 priority_level = 12;
+            LandscapeAreaCommon landscape_area_common = 13;
+            uint64 event_time = 15;
+            bool send_review = 16;
+            bool from_intercom = 17;
+            bool intercom_hide_user_card = 18;
+            repeated int32 chat_tags = 19;
+            uint64 chat_by = 20;
+            int32 individual_chat_priority = 21;
+            Data.Text rtf_content = 40;
+            Data.Text rtf_content_v2 = 41;
         }
 
         message EmojiChatMessage {
-            Common  common = 1;
-            Data.User  user = 2;
-            uint64  emoji_id = 3;
-            Data.Text  emoji_content = 4;
-            string  default_content = 5;
-            Data.Image  background_image = 6;
-            bool  from_intercom = 7;
-            bool  intercom_hide_user_card = 8;
-            PublicAreaCommon  public_area_common = 9;
+            Common common = 1;
+            Data.User user = 2;
+            uint64 emoji_id = 3;
+            Data.Text emoji_content = 4;
+            string default_content = 5;
+            Data.Image background_image = 6;
+            bool from_intercom = 7;
+            bool intercom_hide_user_card = 8;
+            PublicAreaCommon public_area_common = 9;
         }
 
         message FriendChatMessage {
-            Common  common = 1;
-            Data.User  user = 2;
-            string  content = 3;
+            Common common = 1;
+            Data.User user = 2;
+            string content = 3;
         }
 
         message ChorusMessage {
-            Common  common = 1;
-            int32  msg_type = 2;
-            OpenChorusContent  open_chorus_content = 100;
-            CloseChorusContent  close_chorus_content = 101;
-            ChorusOrderedSongListChangeContent  chorus_ordered_song_list_change_content = 102;
+            Common common = 1;
+            int32 msg_type = 2;
+            OpenChorusContent open_chorus_content = 100;
+            CloseChorusContent close_chorus_content = 101;
+            ChorusOrderedSongListChangeContent chorus_ordered_song_list_change_content = 102;
         }
 
         message OpenChorusContent {
-            Data.ChorusInfo  chorus_info = 1;
-            string  sub_singer_toast = 2;
+            Data.ChorusInfo chorus_info = 1;
+            string sub_singer_toast = 2;
         }
 
         message CloseChorusContent {
-            Data.ChorusInfo  chorus_info = 1;
-            uint64  close_user_id = 2;
-            string  close_toast = 3;
-            int32  close_reason = 4;
+            Data.ChorusInfo chorus_info = 1;
+            uint64 close_user_id = 2;
+            string close_toast = 3;
+            int32 close_reason = 4;
         }
 
-        message ChorusOrderedSongListChangeContent{
+        message ChorusOrderedSongListChangeContent {
             Data.ChorusSongInfo list_info = 1;
         }
 
@@ -1144,929 +1144,929 @@ message webcast {
         }
 
         message CNYReward {
-            Common  common = 1;
-            string  award_content = 2;
-            string  banner_content = 3;
+            Common common = 1;
+            string award_content = 2;
+            string banner_content = 3;
         }
 
         message CNYATaskMessage {
-            Common  common = 1;
-            uint64  watch_duration = 2;
-            uint64  watch_total = 3;
-            int32  current_round = 7;
-            int32  pct = 8;
-            repeated uint64  round_target = 9;
-            map<string,string> all_desc = 10;
-            map<string,Data.Image> all_image = 11;
+            Common common = 1;
+            uint64 watch_duration = 2;
+            uint64 watch_total = 3;
+            int32 current_round = 7;
+            int32 pct = 8;
+            repeated uint64 round_target = 9;
+            map<string, string> all_desc = 10;
+            map<string, Data.Image> all_image = 11;
         }
 
         message CommentaryChangeMessage {
-            Common  common = 1;
-            Data.CommentaryRoomInfo  commentary_room_info = 2;
-            int32  operation = 3;
+            Common common = 1;
+            Data.CommentaryRoomInfo commentary_room_info = 2;
+            int32 operation = 3;
         }
 
         message CommentsMessage {
-            Common  common = 1;
-            Data.User  user = 2;
-            string  content = 3;
-            string  color = 4;
-            Data.Image  back_ground = 5;
-            uint64  action_type = 6;
-            string  action_content = 7;
+            Common common = 1;
+            Data.User user = 2;
+            string content = 3;
+            string color = 4;
+            Data.Image back_ground = 5;
+            uint64 action_type = 6;
+            string action_content = 7;
         }
 
         message CommerceSaleMessage {
-            Common  common = 1;
-            bool  has_commerce_sale = 2;
+            Common common = 1;
+            bool has_commerce_sale = 2;
         }
 
         message CommerceMessage {
-            Common  common = 1;
-            uint64  message_type = 2;
-            string  content = 3;
+            Common common = 1;
+            uint64 message_type = 2;
+            string content = 3;
         }
 
         message CommonCardAreaMessage {
-            Common  common = 1;
-            int32  message_type = 2;
-            Data.BottomRightCardArea  bottom_right_card_data = 3;
-            Data.BizPinArea  biz_pin_area = 4;
-            Data.CommonCardArea  common_card_area = 5;
+            Common common = 1;
+            int32 message_type = 2;
+            Data.BottomRightCardArea bottom_right_card_data = 3;
+            Data.BizPinArea biz_pin_area = 4;
+            Data.CommonCardArea common_card_area = 5;
         }
 
         message ComplexContent {
-            string  type = 1;
-            string  text = 2;
-            string  font_color = 3;
-            uint64  font_size = 4;
-            uint64  weight = 5;
-            Data.Image  img = 6;
+            string type = 1;
+            string text = 2;
+            string font_color = 3;
+            uint64 font_size = 4;
+            uint64 weight = 5;
+            Data.Image img = 6;
         }
 
         message CommonGuideMessage {
-            Common  common = 1;
-            uint64  message_type = 2;
-            Data.Text  main_content = 3;
-            ComplexContent  secondary_content = 4;
-            Data.Image  icon = 5;
-            Data.Text  button_content = 6;
-            string  button_action_schema = 7;
-            Data.Image  button_icon = 8;
-            uint64  duration = 9;
-            bool  is_rounded_icon = 10;
+            Common common = 1;
+            uint64 message_type = 2;
+            Data.Text main_content = 3;
+            ComplexContent secondary_content = 4;
+            Data.Image icon = 5;
+            Data.Text button_content = 6;
+            string button_action_schema = 7;
+            Data.Image button_icon = 8;
+            uint64 duration = 9;
+            bool is_rounded_icon = 10;
         }
 
         message CommonLuckyMoneyMessage {
-            Common  common = 1;
-            uint64  diamond_count = 2;
-            uint64  luckymoney_id = 3;
-            uint64  send_time = 4;
-            uint64  delay_time = 5;
-            Data.User  user = 6;
-            uint64  style = 7;
-            LuckyIcon  lucky_icon = 8;
-            Data.Image  background = 9;
-            bool  is_official = 10;
+            Common common = 1;
+            uint64 diamond_count = 2;
+            uint64 luckymoney_id = 3;
+            uint64 send_time = 4;
+            uint64 delay_time = 5;
+            Data.User user = 6;
+            uint64 style = 7;
+            LuckyIcon lucky_icon = 8;
+            Data.Image background = 9;
+            bool is_official = 10;
 
             message LuckyIcon {
-                string  url_list = 1;
-                string  uri = 2;
+                string url_list = 1;
+                string uri = 2;
             }
         }
 
         message TaskPanelMessage {
-            Common  common = 1;
-            TaskPanel  data = 2;
+            Common common = 1;
+            TaskPanel data = 2;
         }
 
         message TaskPanel {
-            int32  task_id = 1;
-            int32  task_type = 2;
-            int32  watch_time = 3;
-            string  title = 4;
-            string  sub_title = 5;
-            string  tag_icon_url = 6;
-            string  tag_text = 7;
-            string  tag_text_color = 8;
-            string  button_name = 9;
-            string  schema = 10;
-            uint64  expire_at = 11;
-            int32  status = 12;
-            int32  expire_after = 13;
-            int32  reward_type = 14;
-            string  panel_title = 15;
-            string  sub_title_color = 16;
+            int32 task_id = 1;
+            int32 task_type = 2;
+            int32 watch_time = 3;
+            string title = 4;
+            string sub_title = 5;
+            string tag_icon_url = 6;
+            string tag_text = 7;
+            string tag_text_color = 8;
+            string button_name = 9;
+            string schema = 10;
+            uint64 expire_at = 11;
+            int32 status = 12;
+            int32 expire_after = 13;
+            int32 reward_type = 14;
+            string panel_title = 15;
+            string sub_title_color = 16;
         }
 
         message TaskRewardToastMessage {
-            Common  common = 1;
-            TaskRewardToast  data = 2;
+            Common common = 1;
+            TaskRewardToast data = 2;
         }
 
         message TaskRewardToast {
-            int32  task_id = 1;
-            int32  task_type = 2;
-            int32  reward_type = 3;
-            string  title = 4;
-            string  sub_title = 5;
-            string  icon_url = 6;
-            string  bg_pic_url = 7;
+            int32 task_id = 1;
+            int32 task_type = 2;
+            int32 reward_type = 3;
+            string title = 4;
+            string sub_title = 5;
+            string icon_url = 6;
+            string bg_pic_url = 7;
         }
 
         message CommonPopupMessage {
-            Common  common = 1;
-            string  schema_url = 2;
-            bool  anchor_pop_up = 3;
+            Common common = 1;
+            string schema_url = 2;
+            bool anchor_pop_up = 3;
         }
 
         message CommonPushMessage {
-            Common  common = 1;
-            Data.Image  icon = 2;
-            string  title = 3;
-            string  text = 4;
-            string  button = 5;
-            string  schema = 6;
-            uint64  duration = 7;
-            string  scene = 8;
+            Common common = 1;
+            Data.Image icon = 2;
+            string title = 3;
+            string text = 4;
+            string button = 5;
+            string schema = 6;
+            uint64 duration = 7;
+            string scene = 8;
         }
 
         message CommonTextMessage {
-            Common  common = 1;
-            Data.User  user = 2;
-            string  scene = 3;
-            PublicAreaCommon  public_area_common = 4;
+            Common common = 1;
+            Data.User user = 2;
+            string scene = 3;
+            PublicAreaCommon public_area_common = 4;
         }
 
         message CommonToastMessage {
-            Common  common = 1;
-            bool  discardable = 2;
-            bool  immediate = 3;
-            uint64  duration = 4;
-            string  text_color = 5;
-            string  background_color_start = 6;
-            string  background_color_end = 7;
-            uint64  position = 8;
-            Data.Image  top_img = 9;
-            uint64  top_img_width = 10;
-            uint64  top_img_height = 11;
-            bool  show_mongolia_layer = 12;
+            Common common = 1;
+            bool discardable = 2;
+            bool immediate = 3;
+            uint64 duration = 4;
+            string text_color = 5;
+            string background_color_start = 6;
+            string background_color_end = 7;
+            uint64 position = 8;
+            Data.Image top_img = 9;
+            uint64 top_img_width = 10;
+            uint64 top_img_height = 11;
+            bool show_mongolia_layer = 12;
         }
 
         message ControlMessage {
-            Common  common = 1;
-            uint64  action = 2;
-            string  tips = 3;
-            Extra  extra = 4;
-            PublicAreaCommon  public_area_common = 5;
+            Common common = 1;
+            uint64 action = 2;
+            string tips = 3;
+            Extra extra = 4;
+            PublicAreaCommon public_area_common = 5;
 
             message Extra {
-                string  ban_info_url = 1;
-                uint64  reason_no = 2;
-                Data.Text  title = 3;
-                Data.Text  violation_reason = 4;
-                Data.Text  content = 5;
-                Data.Text  got_it_button = 6;
-                Data.Text  ban_detail_button = 7;
-                string  source = 8;
+                string ban_info_url = 1;
+                uint64 reason_no = 2;
+                Data.Text title = 3;
+                Data.Text violation_reason = 4;
+                Data.Text content = 5;
+                Data.Text got_it_button = 6;
+                Data.Text ban_detail_button = 7;
+                string source = 8;
             }
         }
 
         message WebcastLifeLotteryDrawResultEventMessage {
-            Common  common = 1;
-            uint64  lottery_id = 2;
-            repeated uint64  user_ids = 3;
-            string  extra = 4;
+            Common common = 1;
+            uint64 lottery_id = 2;
+            repeated uint64 user_ids = 3;
+            string extra = 4;
         }
 
         message DataLifeLiveMessage {
-            Common  common = 1;
-            int32  type = 2;
-            string  body = 3;
+            Common common = 1;
+            int32 type = 2;
+            string body = 3;
         }
 
         message DecorationModifyMessage {
-            Common  common = 1;
-            string  extra = 2;
+            Common common = 1;
+            string extra = 2;
         }
 
         message DecorationUpdateMessage {
-            Common  common = 1;
-            Data.DecotationDetail  detai = 2;
+            Common common = 1;
+            Data.DecotationDetail detai = 2;
         }
 
         message DiggMessage {
-            Common  common = 1;
-            uint64  digg_count = 2;
-            uint64  duration = 3;
-            uint64  color = 4;
-            Data.User  user = 5;
-            string  icon = 6;
+            Common common = 1;
+            uint64 digg_count = 2;
+            uint64 duration = 3;
+            uint64 color = 4;
+            Data.User user = 5;
+            string icon = 6;
         }
 
         message DLiveMessage {
-            Common  common = 1;
-            repeated string  rooms = 2;
-            uint64  max_push_delay_time = 3;
+            Common common = 1;
+            repeated string rooms = 2;
+            uint64 max_push_delay_time = 3;
         }
 
         message OfficialRoomMessage {
-            Common  common = 1;
-            Data.OfficialRoomInfo  official_room_info = 2;
+            Common common = 1;
+            Data.OfficialRoomInfo official_room_info = 2;
         }
 
         message CeremonyMessage {
-            Common  common = 1;
-            repeated UserRoom  items = 2;
-            uint64  max_push_delay_time = 3;
+            Common common = 1;
+            repeated UserRoom items = 2;
+            uint64 max_push_delay_time = 3;
         }
 
         message UserRoom {
-            uint64  type = 1;
-            string  room = 2;
-            string  user = 3;
+            uint64 type = 1;
+            string room = 2;
+            string user = 3;
         }
 
         message RcmdUser {
-            string  user = 1;
-            string  text_before_action = 2;
-            string  text_after_action = 3;
-            string  authentication_info = 4;
-            string  edit_script = 5;
+            string user = 1;
+            string text_before_action = 2;
+            string text_after_action = 3;
+            string authentication_info = 4;
+            string edit_script = 5;
         }
 
         message RecommendUsersMessage {
-            Common  common = 1;
-            string  list_title = 2;
-            repeated RcmdUser  users = 3;
-            Data.Image  img_vertical = 4;
-            Data.Image  img_horizontal = 5;
-            uint64  display_time = 6;
-            uint64  max_push_delay_time = 7;
-            bool  check_alive = 8;
+            Common common = 1;
+            string list_title = 2;
+            repeated RcmdUser users = 3;
+            Data.Image img_vertical = 4;
+            Data.Image img_horizontal = 5;
+            uint64 display_time = 6;
+            uint64 max_push_delay_time = 7;
+            bool check_alive = 8;
         }
 
         message DolphinSettingUpdateMessage {
-            Common  common = 1;
-            uint64  settingVersion = 2;
+            Common common = 1;
+            uint64 settingVersion = 2;
         }
 
         message DonationMessage {
-            Common  common = 1;
-            uint64  total = 2;
-            string  currency = 3;
-            repeated Data.User  sponsor = 4;
-            repeated Data.User  user = 5;
+            Common common = 1;
+            uint64 total = 2;
+            string currency = 3;
+            repeated Data.User sponsor = 4;
+            repeated Data.User user = 5;
         }
 
         message DoodleGiftMessage {
-            Common  common = 1;
-            uint64  gift_id = 2;
-            uint64  fan_ticket_count = 3;
-            Data.User  user = 4;
-            Data.User  to_user = 5;
-            string  compose = 6;
-            uint64  room_fan_ticket_count = 7;
-            Data.GiftIMPriority  priority = 8;
-            string  log_id = 9;
-            PublicAreaCommon  public_area_common = 10;
-            Data.Text  tray_display_text = 11;
-            Data.GiftTrayInfo  tray_info = 12;
+            Common common = 1;
+            uint64 gift_id = 2;
+            uint64 fan_ticket_count = 3;
+            Data.User user = 4;
+            Data.User to_user = 5;
+            string compose = 6;
+            uint64 room_fan_ticket_count = 7;
+            Data.GiftIMPriority priority = 8;
+            string log_id = 9;
+            PublicAreaCommon public_area_common = 10;
+            Data.Text tray_display_text = 11;
+            Data.GiftTrayInfo tray_info = 12;
         }
 
         message LikeUserDetail {
-            Data.User  user = 1;
-            uint64  count = 2;
+            Data.User user = 1;
+            uint64 count = 2;
         }
 
         message DoubleLikeHeartMessage {
-            Common  common = 1;
-            DoubleLikeDetail  double_like_detail = 2;
-            Data.Text  self_display_text = 3;
-            Data.Text  normal_display_text = 4;
-            repeated LikeUserDetail  like_user_list = 5;
+            Common common = 1;
+            DoubleLikeDetail double_like_detail = 2;
+            Data.Text self_display_text = 3;
+            Data.Text normal_display_text = 4;
+            repeated LikeUserDetail like_user_list = 5;
         }
 
         message DoubleLikeTopUserMessage {
-            Common  common = 1;
-            LikeUserDetail  like_user_list = 2;
+            Common common = 1;
+            LikeUserDetail like_user_list = 2;
         }
 
         message PicoDisplayInfo {
-            uint64  combo_sum_count = 1;
-            string  emoji = 2;
-            Data.Image  emoji_icon = 3;
-            string  emoji_text = 4;
+            uint64 combo_sum_count = 1;
+            string emoji = 2;
+            Data.Image emoji_icon = 3;
+            string emoji_text = 4;
         }
 
         message DoubleLikeDetail {
-            bool  double_flag = 1;
-            int32  seq_id = 2;
-            int32  renewals_num = 3;
-            int32  triggers_num = 4;
+            bool double_flag = 1;
+            int32 seq_id = 2;
+            int32 renewals_num = 3;
+            int32 triggers_num = 4;
         }
 
         message DisplayControlInfo {
-            bool  show_text = 1;
-            bool  show_icons = 2;
+            bool show_text = 1;
+            bool show_icons = 2;
         }
 
         message LikeMessage {
-            Common  common = 1;
-            uint64  count = 2;
-            uint64  total = 3;
-            uint64  color = 4;
-            Data.User  user = 5;
-            string  icon = 6;
-            DoubleLikeDetail  double_like_detail = 7;
-            DisplayControlInfo  display_control_info = 8;
-            uint64  linkmic_guest_uid = 9;
-            string  scene = 10;
-            PicoDisplayInfo  pico_display_info = 11;
-            PublicAreaCommon  public_area_common = 12;
+            Common common = 1;
+            uint64 count = 2;
+            uint64 total = 3;
+            uint64 color = 4;
+            Data.User user = 5;
+            string icon = 6;
+            DoubleLikeDetail double_like_detail = 7;
+            DisplayControlInfo display_control_info = 8;
+            uint64 linkmic_guest_uid = 9;
+            string scene = 10;
+            PicoDisplayInfo pico_display_info = 11;
+            PublicAreaCommon public_area_common = 12;
         }
 
         message DouplusIndicatorMessage {
-            Common  common = 1;
-            uint64  number = 2;
-            uint64  status = 3;
-            string  toast = 4;
-            string  buyer_nickname = 5;
+            Common common = 1;
+            uint64 number = 2;
+            uint64 status = 3;
+            string toast = 4;
+            string buyer_nickname = 5;
         }
 
         message DouplusMessage {
-            Common  common = 1;
-            uint64  promotion = 2;
+            Common common = 1;
+            uint64 promotion = 2;
         }
 
         message DragonFruitQuizMessage {
-            Common  common = 1;
-            bytes  biz_msg = 2;
+            Common common = 1;
+            bytes biz_msg = 2;
         }
 
         message DressAssetMessage {
-            Common  common = 1;
-            string  dress_id = 2;
+            Common common = 1;
+            string dress_id = 2;
         }
 
         message DriveGiftMessage {
-            Common  common = 1;
-            uint64  new_count = 2;
-            string  popup_url = 3;
+            Common common = 1;
+            uint64 new_count = 2;
+            string popup_url = 3;
         }
 
-        message DrumMsgType{
+        message DrumMsgType {
 
         }
 
-        message DrumResult{
+        message DrumResult {
 
         }
 
         message DrumMessage {
-            Common  common = 1;
-            int32  drum_result = 2;
-            int32  dump_msg_type = 3;
-            uint64  drum_count = 4;
-            uint64  report_time_gap = 5;
-            uint64  push_id = 6;
-            string  push_id_str = 7;
-            repeated User  users = 8;
+            Common common = 1;
+            int32 drum_result = 2;
+            int32 dump_msg_type = 3;
+            uint64 drum_count = 4;
+            uint64 report_time_gap = 5;
+            uint64 push_id = 6;
+            string push_id_str = 7;
+            repeated User users = 8;
 
             message User {
-                uint64  user_id = 1;
-                string  nick_name = 2;
-                string  avatar = 3;
-                string  user_id_str = 4;
+                uint64 user_id = 1;
+                string nick_name = 2;
+                string avatar = 3;
+                string user_id_str = 4;
             }
         }
 
         message ProjectDModifyH5 {
-            Common  common = 1;
-            string  top_left = 2;
-            string  buttom_right = 3;
+            Common common = 1;
+            string top_left = 2;
+            string buttom_right = 3;
         }
 
         message ProjectDTaskInfo {
-            Common  common = 1;
-            int32  atype = 2;
-            Data.Image  icon = 3;
-            string  count = 4;
-            string  fallback_context = 5;
-            string  award_url = 6;
-            uint64  left_task_count = 7;
-            uint64  sub_task_id = 8;
+            Common common = 1;
+            int32 atype = 2;
+            Data.Image icon = 3;
+            string count = 4;
+            string fallback_context = 5;
+            string award_url = 6;
+            uint64 left_task_count = 7;
+            uint64 sub_task_id = 8;
         }
 
         message DutyGiftMessage {
-            Common  common = 1;
-            int32  speedy_gift_id = 5;
-            int32  target_score = 6;
-            int32  stage_count = 7;
-            int32  status = 8;
-            int32  score = 9;
-            Data.User  contribute_most = 10;
-            int32  contribute_most_score = 11;
-            uint64  duty_id = 12;
+            Common common = 1;
+            int32 speedy_gift_id = 5;
+            int32 target_score = 6;
+            int32 stage_count = 7;
+            int32 status = 8;
+            int32 score = 9;
+            Data.User contribute_most = 10;
+            int32 contribute_most_score = 11;
+            uint64 duty_id = 12;
         }
 
         message EasterEggMessage {
-            Common  common = 1;
-            EasterEggMessageData  data = 2;
+            Common common = 1;
+            EasterEggMessageData data = 2;
         }
 
         message EasterEggMessageData {
-            bool  has_easter_egg = 1;
-            uint64  stage = 2;
-            uint64  total_stage = 3;
-            uint64  effects_num = 4;
-            uint64  start_count = 5;
-            uint64  end_count = 6;
-            uint64  count = 7;
+            bool has_easter_egg = 1;
+            uint64 stage = 2;
+            uint64 total_stage = 3;
+            uint64 effects_num = 4;
+            uint64 start_count = 5;
+            uint64 end_count = 6;
+            uint64 count = 7;
         }
 
         message EcomFansClubMessage {
-            Common  common = 1;
-            int32  action = 2;
-            UserInfo  user = 3;
+            Common common = 1;
+            int32 action = 2;
+            UserInfo user = 3;
         }
 
         message UserInfo {
-            uint64  user_id = 1;
-            int32  level = 2;
+            uint64 user_id = 1;
+            int32 level = 2;
         }
 
         message CornerReachMessage {
-            Common  common = 1;
-            uint64  duration = 2;
-            uint64  elem_type = 3;
+            Common common = 1;
+            uint64 duration = 2;
+            uint64 elem_type = 3;
         }
 
         message TempStateAreaReachMessage {
-            Common  common = 1;
-            uint64  elem_type = 2;
-            uint64  elem_id = 3;
-            uint64  item_id = 4;
-            uint64  status = 5;
-            Resource  resource = 6;
+            Common common = 1;
+            uint64 elem_type = 2;
+            uint64 elem_id = 3;
+            uint64 item_id = 4;
+            uint64 status = 5;
+            Resource resource = 6;
 
             message Resource {
-                string  name = 1;
-                string  icon = 2;
-                string  description = 3;
-                string  extra = 4;
+                string name = 1;
+                string icon = 2;
+                string description = 3;
+                string extra = 4;
             }
         }
 
         message EpisodeChatMessage {
-            Common  common = 1;
-            Data.User  user = 2;
-            string  content = 3;
-            bool  visible_to_sender = 4;
-            Data.Image  background_image = 5;
-            PublicAreaCommon  public_area_common = 6;
-            Data.Image  gift_image = 7;
-            uint64  agree_msg_id = 8;
-            repeated string  color_value = 9;
+            Common common = 1;
+            Data.User user = 2;
+            string content = 3;
+            bool visible_to_sender = 4;
+            Data.Image background_image = 5;
+            PublicAreaCommon public_area_common = 6;
+            Data.Image gift_image = 7;
+            uint64 agree_msg_id = 8;
+            repeated string color_value = 9;
         }
 
         message FansGroupGuideMessage {
-            Common  common = 1;
-            int32  type = 2;
-            string  title = 3;
-            string  content = 4;
-            uint64  auto_record_duration_ms = 5;
-            Data.Text  rich_text = 6;
-            string  scheme_url = 7;
+            Common common = 1;
+            int32 type = 2;
+            string title = 3;
+            string content = 4;
+            uint64 auto_record_duration_ms = 5;
+            Data.Text rich_text = 6;
+            string scheme_url = 7;
         }
 
         message FansclubStatisticsMessage {
-            Common  common = 1;
-            string  name = 2;
-            uint64  fans_count = 3;
+            Common common = 1;
+            string name = 2;
+            uint64 fans_count = 3;
         }
 
         message FansclubMessage {
-            Common  common = 1;
-            int32  action = 2;
-            string  content = 3;
-            Data.User  user = 4;
-            UpgradePrivilege  upgrade_privilege = 5;
-            PublicAreaCommon  public_area_common = 6;
+            Common common = 1;
+            int32 action = 2;
+            string content = 3;
+            Data.User user = 4;
+            UpgradePrivilege upgrade_privilege = 5;
+            PublicAreaCommon public_area_common = 6;
 
             message UpgradePrivilege {
-                string  content = 1;
-                string  description = 2;
-                int32  button_type = 3;
+                string content = 1;
+                string description = 2;
+                int32 button_type = 3;
             }
         }
 
         message FansclubReviewMessage {
-            Common  common = 1;
-            int32  action = 2;
-            string  content = 3;
+            Common common = 1;
+            int32 action = 2;
+            string content = 3;
         }
 
         message FansclubGuideMessage {
-            Common  common = 1;
-            Data.Text  title = 2;
-            Data.Text  sub_title = 3;
+            Common common = 1;
+            Data.Text title = 2;
+            Data.Text sub_title = 3;
         }
 
         message FeaturedPublicScreenSettingMessage {
-            Common  common = 1;
-            uint64  status = 2;
-            string  toast = 3;
+            Common common = 1;
+            uint64 status = 2;
+            string toast = 3;
         }
 
         message FeedbackActionMessage {
-            Common  common = 1;
-            uint64  action_id = 2;
+            Common common = 1;
+            uint64 action_id = 2;
         }
 
         message FeedbackCardMessage {
-            Common  common = 1;
-            uint64  questionnaire_id = 2;
-            uint64  scatterMills = 3;
+            Common common = 1;
+            uint64 questionnaire_id = 2;
+            uint64 scatterMills = 3;
         }
 
         message FireworkMessage {
-            Common  common = 1;
-            uint64  count = 2;
-            uint64  report_time_gap = 3;
-            uint64  push_id = 4;
-            string  push_id_str = 5;
-            repeated User  users = 6;
+            Common common = 1;
+            uint64 count = 2;
+            uint64 report_time_gap = 3;
+            uint64 push_id = 4;
+            string push_id_str = 5;
+            repeated User users = 6;
 
             message User {
-                uint64  user_id = 1;
-                string  nick_name = 2;
-                string  avatar = 3;
-                string  user_id_str = 4;
+                uint64 user_id = 1;
+                string nick_name = 2;
+                string avatar = 3;
+                string user_id_str = 4;
             }
         }
 
         message FireworkMultiMessage {
-            Common  common = 1;
-            bytes  biz_msg = 2;
+            Common common = 1;
+            bytes biz_msg = 2;
         }
 
         message FollowGuideMessage {
-            Common  common = 1;
-            Data.Image  avatarUrl = 2;
-            string  content = 3;
-            string  hourRankInfo = 4;
-            uint64  giftId = 5;
-            uint64  duration = 6;
-            string  popupReason = 7;
+            Common common = 1;
+            Data.Image avatarUrl = 2;
+            string content = 3;
+            string hourRankInfo = 4;
+            uint64 giftId = 5;
+            uint64 duration = 6;
+            string popupReason = 7;
         }
 
         message BrokerNotifyMessage {
-            Common  common = 1;
-            uint64  msg_type = 2;
-            string  content = 3;
-            uint64  timestamp = 4;
-            uint64  msg_sub_type = 5;
-            uint64  msg_id = 6;
+            Common common = 1;
+            uint64 msg_type = 2;
+            string content = 3;
+            uint64 timestamp = 4;
+            uint64 msg_sub_type = 5;
+            uint64 msg_id = 6;
         }
 
         message FreeCellGiftMessage {
-            Common  common = 1;
-            uint64  gift_id = 2;
-            uint64  fan_ticket_count = 3;
-            uint64  group_count = 4;
-            uint64  repeat_count = 5;
-            uint64  combo_count = 6;
-            Data.User  user = 7;
-            Data.User  to_user = 8;
-            FreeCellData  free_cell = 9;
-            uint64  room_fan_ticket_count = 10;
-            string  log_id = 11;
-            PublicAreaCommon  public_area_common = 12;
+            Common common = 1;
+            uint64 gift_id = 2;
+            uint64 fan_ticket_count = 3;
+            uint64 group_count = 4;
+            uint64 repeat_count = 5;
+            uint64 combo_count = 6;
+            Data.User user = 7;
+            Data.User to_user = 8;
+            FreeCellData free_cell = 9;
+            uint64 room_fan_ticket_count = 10;
+            string log_id = 11;
+            PublicAreaCommon public_area_common = 12;
 
             message FreeCellData {
-                uint64  time_now_ms = 1;
-                uint64  time_start_ms = 2;
-                uint64  time_freeze_end_ms = 3;
-                uint64  time_double_end_ms = 4;
-                uint64  time_end_ms = 5;
-                uint64  free_cell_length = 6;
-                bool  is_freeze = 7;
-                bool  is_double = 8;
-                Data.User  contribute_most_user = 9;
-                uint64  contribute_most_coins = 10;
-                uint64  distance_from_previous_one = 11;
-                uint64  index_in_day_ranklist = 12;
+                uint64 time_now_ms = 1;
+                uint64 time_start_ms = 2;
+                uint64 time_freeze_end_ms = 3;
+                uint64 time_double_end_ms = 4;
+                uint64 time_end_ms = 5;
+                uint64 free_cell_length = 6;
+                bool is_freeze = 7;
+                bool is_double = 8;
+                Data.User contribute_most_user = 9;
+                uint64 contribute_most_coins = 10;
+                uint64 distance_from_previous_one = 11;
+                uint64 index_in_day_ranklist = 12;
             }
         }
 
         message FreeGiftMessage {
-            Common  common = 1;
-            Data.User  user = 2;
-            Data.FreeGift  free_gift = 3;
+            Common common = 1;
+            Data.User user = 2;
+            Data.FreeGift free_gift = 3;
         }
 
         message GamblingStatusChangedMessage {
-            Common  common = 1;
-            uint64  prev_status = 2;
-            GameQuizInfo  game_quiz_info = 3;
+            Common common = 1;
+            uint64 prev_status = 2;
+            GameQuizInfo game_quiz_info = 3;
 
             message GameQuizInfo {
-                uint64  id = 1;
-                uint64  room_id = 2;
-                uint64  status = 3;
+                uint64 id = 1;
+                uint64 room_id = 2;
+                uint64 status = 3;
             }
         }
 
         message GameChannelMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            uint64  message_type = 3;
-            string  extra = 4;
-            Data.User  user = 5;
+            Common common = 1;
+            uint64 game_id = 2;
+            uint64 message_type = 3;
+            string extra = 4;
+            Data.User user = 5;
         }
 
         message HostVersion {
-            uint64  host_id = 1;
-            string  min_version = 2;
-            string  max_version = 3;
+            uint64 host_id = 1;
+            string min_version = 2;
+            string max_version = 3;
         }
 
         message GameAncAudEntranceMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            uint64  game_kind = 3;
-            string  extra = 4;
-            bool  show_audience_float_entrance = 5;
-            repeated HostVersion  version_range = 6;
-            string  app_id = 7;
-            string  meta_version = 8;
-            string  name = 9;
-            string  icon_url = 10;
-            uint64  start_id = 11;
+            Common common = 1;
+            uint64 game_id = 2;
+            uint64 game_kind = 3;
+            string extra = 4;
+            bool show_audience_float_entrance = 5;
+            repeated HostVersion version_range = 6;
+            string app_id = 7;
+            string meta_version = 8;
+            string name = 9;
+            string icon_url = 10;
+            uint64 start_id = 11;
         }
 
         message GameAncAudStatusMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            uint64  send_type = 3;
-            uint64  game_status = 4;
-            string  extra = 5;
+            Common common = 1;
+            uint64 game_id = 2;
+            uint64 send_type = 3;
+            uint64 game_status = 4;
+            string extra = 5;
         }
 
         message GameAncAudPanelCtrlMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            uint64  send_type = 3;
-            uint64  panel_type = 4;
-            string  extra = 5;
+            Common common = 1;
+            uint64 game_id = 2;
+            uint64 send_type = 3;
+            uint64 panel_type = 4;
+            string extra = 5;
         }
 
         message GameAncAudDataFromAncMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            uint64  send_type = 3;
-            string  data = 4;
-            string  extra = 5;
+            Common common = 1;
+            uint64 game_id = 2;
+            uint64 send_type = 3;
+            string data = 4;
+            string extra = 5;
         }
 
         message GameAncAudDataFromAudMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            string  data = 3;
-            string  extra = 4;
+            Common common = 1;
+            uint64 game_id = 2;
+            string data = 3;
+            string extra = 4;
         }
 
         message GameDevelopMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            int32  develop = 3;
-            string  app_id = 4;
-            string  sign = 5;
+            Common common = 1;
+            uint64 game_id = 2;
+            int32 develop = 3;
+            string app_id = 4;
+            string sign = 5;
         }
 
         message GameGiftMessage {
-            Common  common = 1;
-            uint64  gift_id = 2;
-            uint64  fan_ticket_count = 3;
-            Data.User  user = 4;
-            Data.User  to_user = 5;
-            string  normalContent = 6;
-            MonkeyData  monkey_data = 8;
-            string  log_id = 9;
-            PublicAreaCommon  public_area_common = 10;
+            Common common = 1;
+            uint64 gift_id = 2;
+            uint64 fan_ticket_count = 3;
+            Data.User user = 4;
+            Data.User to_user = 5;
+            string normalContent = 6;
+            MonkeyData monkey_data = 8;
+            string log_id = 9;
+            PublicAreaCommon public_area_common = 10;
 
             message MonkeyData {
-                int32  score = 1;
-                bool  break_record = 2;
-                bool  need_popup = 3;
-                string  popup_content = 4;
+                int32 score = 1;
+                bool break_record = 2;
+                bool need_popup = 3;
+                string popup_content = 4;
             }
         }
 
         message GameGiftStatusMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            int32  status = 3;
-            string  extra = 4;
+            Common common = 1;
+            uint64 game_id = 2;
+            int32 status = 3;
+            string extra = 4;
         }
 
         message GameStatusMessage {
-            Common  common = 1;
-            uint64  gameID = 2;
-            int32  status = 3;
-            string  config_extra = 4;
+            Common common = 1;
+            uint64 gameID = 2;
+            int32 status = 3;
+            string config_extra = 4;
         }
 
         message GameIntroduceMessage {
-            Common  common = 1;
-            GameIntroduceShowMessage  game_introduce = 2;
+            Common common = 1;
+            GameIntroduceShowMessage game_introduce = 2;
         }
 
         message GameIntroduceShowMessage {
-            int32  type = 1;
-            int32  msg_type = 2;
-            IntroduceDispatchStrategy  dispatch_strategy = 3;
-            string  updated_data = 4;
-            uint64  introduce_type = 5;
-            AtmosphereContent  atmosphere_content = 11;
+            int32 type = 1;
+            int32 msg_type = 2;
+            IntroduceDispatchStrategy dispatch_strategy = 3;
+            string updated_data = 4;
+            uint64 introduce_type = 5;
+            AtmosphereContent atmosphere_content = 11;
         }
 
         message IntroduceDispatchStrategy {
-            int32  strategy_type = 1;
-            int32  max_retry_times = 2;
-            int32  min_random_ms = 3;
-            int32  max_random_ms = 4;
+            int32 strategy_type = 1;
+            int32 max_retry_times = 2;
+            int32 min_random_ms = 3;
+            int32 max_random_ms = 4;
         }
 
         message AtmosphereContent {
-            uint64  show_duration = 1;
-            string  count = 2;
+            uint64 show_duration = 1;
+            string count = 2;
         }
 
         message RemindIntroduce {
-            string  game_id = 1;
-            Data.GameImageBundler  game_icon = 2;
-            string  content = 3;
+            string game_id = 1;
+            Data.GameImageBundler game_icon = 2;
+            string content = 3;
         }
 
         message GameInviteMessage {
-            Common  common = 1;
-            Data.GameInvite  invite_item = 2;
-            Data.InvitationSwitch  invitation_switch = 3;
-            string  config_extra = 4;
+            Common common = 1;
+            Data.GameInvite invite_item = 2;
+            Data.InvitationSwitch invitation_switch = 3;
+            string config_extra = 4;
         }
 
         message GameInviteReplyMessage {
-            Common  common = 1;
-            int32  reply = 2;
-            string  extra = 3;
+            Common common = 1;
+            int32 reply = 2;
+            string extra = 3;
         }
 
         message GameOnLivePromoteMessage {
-            Common  common = 1;
-            OnLivePromoteMessage  on_live_promote = 2;
+            Common common = 1;
+            OnLivePromoteMessage on_live_promote = 2;
         }
 
         message OnLivePromoteMessage {
-            string  bubble_text = 1;
-            string  promote_text = 2;
-            string  introduce_text = 3;
-            bool  is_support_introduce = 4;
-            string  game_icon = 5;
-            string  game_name = 6;
-            uint64  biz_mode = 7;
-            string  game_id = 8;
+            string bubble_text = 1;
+            string promote_text = 2;
+            string introduce_text = 3;
+            bool is_support_introduce = 4;
+            string game_icon = 5;
+            string game_name = 6;
+            uint64 biz_mode = 7;
+            string game_id = 8;
         }
 
         message GamePVPMessage {
-            Common  common = 1;
-            uint64  game_id = 2;
-            string  extra = 3;
+            Common common = 1;
+            uint64 game_id = 2;
+            string extra = 3;
         }
 
         message GameStatusUpdateMessage {
-            Common  common = 1;
-            uint64  anchor_id = 2;
-            uint64  room_id = 3;
-            int32  game_kind = 4;
-            uint64  game_id = 5;
-            uint64  round_id = 6;
-            int32  event_time = 7;
-            int32  present_msg_type = 8;
-            string  config_extra = 9;
-            uint64  play_kind = 10;
-            uint64  switch_id = 11;
+            Common common = 1;
+            uint64 anchor_id = 2;
+            uint64 room_id = 3;
+            int32 game_kind = 4;
+            uint64 game_id = 5;
+            uint64 round_id = 6;
+            int32 event_time = 7;
+            int32 present_msg_type = 8;
+            string config_extra = 9;
+            uint64 play_kind = 10;
+            uint64 switch_id = 11;
         }
 
         message GameCPAnchorPromoteInfoMessage {
-            Common  common = 1;
-            SimpleGameInfo  game_info = 2;
+            Common common = 1;
+            SimpleGameInfo game_info = 2;
         }
 
         message SimpleGameInfo {
-            string  game_id = 1;
-            int32  stage = 2;
-            int32  biz_type = 3;
-            string  biz_id = 4;
-            string  biz_mode = 5;
-            string  biz_extra = 6;
-            string  game_attr = 7;
-            string  component_extra = 8;
-            bool  is_introduce = 9;
-            string  promote_instance_id = 10;
-            string  game_name = 11;
-            string  tags = 12;
-            string  game_icon = 13;
-            string  android_package_size = 14;
-            string  android_package_name = 15;
-            uint64  game_category_id = 16;
-            uint64  game_tag_id = 17;
-            uint64  game_union_type = 18;
-            bool  support_introduce = 19;
+            string game_id = 1;
+            int32 stage = 2;
+            int32 biz_type = 3;
+            string biz_id = 4;
+            string biz_mode = 5;
+            string biz_extra = 6;
+            string game_attr = 7;
+            string component_extra = 8;
+            bool is_introduce = 9;
+            string promote_instance_id = 10;
+            string game_name = 11;
+            string tags = 12;
+            string game_icon = 13;
+            string android_package_size = 14;
+            string android_package_name = 15;
+            uint64 game_category_id = 16;
+            uint64 game_tag_id = 17;
+            uint64 game_union_type = 18;
+            bool support_introduce = 19;
         }
 
         message GameCPBaseMessage {
-            Common  common = 1;
-            GameCPShowMessage  show_info = 2;
+            Common common = 1;
+            GameCPShowMessage show_info = 2;
         }
 
         message GameCPShowMessage {
-            int32  type = 1;
-            Data.Text  introduce_download_info = 2;
-            string  game_image = 3;
-            string  game_name = 4;
-            string  game_download_url = 5;
-            string  game_trace_info = 6;
-            repeated string  game_tag_names = 7;
-            string  game_background_color = 8;
-            int32  introduce_time_limit = 9;
-            uint64  introduce_start_time = 10;
-            int32  introduce_stop_type = 11;
-            Data.Text  introduce_stop_message = 12;
-            string  game_id = 13;
-            bool  audit_result = 14;
-            string  ios_app_id = 15;
-            string  company_name = 16;
-            string  download_extra = 17;
-            string  android_privacy_url = 18;
-            string  android_authorization_url = 19;
-            string  ios_privacy_url = 20;
-            string  ios_authorization_url = 21;
-            string  android_version = 22;
-            string  ios_version = 23;
-            string  active_link = 24;
-            uint64  download_count = 25;
-            bool  is_show_animate = 26;
-            uint64  animate_start_time = 27;
-            uint64  animate_duration = 28;
-            string  anti_hijack_content = 29;
-            string  anti_hijack_image = 30;
-            string  ios_sale_point = 31;
-            bool  is_forbid_jump_ios_app = 32;
-            bool  has_platform_gift = 33;
-            string  open_game_url = 44;
-            string  prop_icon = 45;
-            string  prop_name = 46;
-            string  prop_id = 47;
-            uint64  market_price = 48;
-            uint64  selling_price = 49;
-            uint64  prop_sku_id = 50;
-            ReserveItem  reserve_item = 51;
-            uint64  prop_type = 52;
-            uint64  game_access_type = 53;
-            bool  is_prop_exp_game = 54;
-            repeated string  component_ids = 55;
-            int32  biz_type = 56;
-            uint64  install_user_count = 57;
-            string  android_sale_point = 58;
-            MiniGameMeta  mini_game_meta = 59;
-            uint64  support_platforms = 60;
-            MiniPlayMeta  mini_play_meta = 61;
-            string  play_introduce = 62;
-            string  small_icon = 63;
-            string  game_introduction_url = 64;
-            Data.GameImageBundler  game_icon = 65;
-            CloudGameMeta  cloud_game_meta = 66;
-            AtmosphereContent  atmosphere_content = 67;
-            FeaturedContent  featured_content = 68;
-            string  promote_instance_id = 70;
-            uint64  prop_stock_num = 71;
-            IntroduceCardTag  tag = 72;
-            IntroduceCardDisplayInfo  card_display_info = 73;
-            bool  is_in_pre_download_period = 74;
+            int32 type = 1;
+            Data.Text introduce_download_info = 2;
+            string game_image = 3;
+            string game_name = 4;
+            string game_download_url = 5;
+            string game_trace_info = 6;
+            repeated string game_tag_names = 7;
+            string game_background_color = 8;
+            int32 introduce_time_limit = 9;
+            uint64 introduce_start_time = 10;
+            int32 introduce_stop_type = 11;
+            Data.Text introduce_stop_message = 12;
+            string game_id = 13;
+            bool audit_result = 14;
+            string ios_app_id = 15;
+            string company_name = 16;
+            string download_extra = 17;
+            string android_privacy_url = 18;
+            string android_authorization_url = 19;
+            string ios_privacy_url = 20;
+            string ios_authorization_url = 21;
+            string android_version = 22;
+            string ios_version = 23;
+            string active_link = 24;
+            uint64 download_count = 25;
+            bool is_show_animate = 26;
+            uint64 animate_start_time = 27;
+            uint64 animate_duration = 28;
+            string anti_hijack_content = 29;
+            string anti_hijack_image = 30;
+            string ios_sale_point = 31;
+            bool is_forbid_jump_ios_app = 32;
+            bool has_platform_gift = 33;
+            string open_game_url = 44;
+            string prop_icon = 45;
+            string prop_name = 46;
+            string prop_id = 47;
+            uint64 market_price = 48;
+            uint64 selling_price = 49;
+            uint64 prop_sku_id = 50;
+            ReserveItem reserve_item = 51;
+            uint64 prop_type = 52;
+            uint64 game_access_type = 53;
+            bool is_prop_exp_game = 54;
+            repeated string component_ids = 55;
+            int32 biz_type = 56;
+            uint64 install_user_count = 57;
+            string android_sale_point = 58;
+            MiniGameMeta mini_game_meta = 59;
+            uint64 support_platforms = 60;
+            MiniPlayMeta mini_play_meta = 61;
+            string play_introduce = 62;
+            string small_icon = 63;
+            string game_introduction_url = 64;
+            Data.GameImageBundler game_icon = 65;
+            CloudGameMeta cloud_game_meta = 66;
+            AtmosphereContent atmosphere_content = 67;
+            FeaturedContent featured_content = 68;
+            string promote_instance_id = 70;
+            uint64 prop_stock_num = 71;
+            IntroduceCardTag tag = 72;
+            IntroduceCardDisplayInfo card_display_info = 73;
+            bool is_in_pre_download_period = 74;
         }
 
         message IntroduceCardDisplayInfo {
-            uint64  display_duration = 1;
-            bool  is_open_timer_introduce_card = 2;
-            uint64  display_timer_span = 3;
-            uint64  display_timer_loop_cnt = 4;
+            uint64 display_duration = 1;
+            bool is_open_timer_introduce_card = 2;
+            uint64 display_timer_span = 3;
+            uint64 display_timer_loop_cnt = 4;
         }
 
         message IntroduceCardTag {
-            string  icon_url = 1;
-            string  sub_text = 2;
+            string icon_url = 1;
+            string sub_text = 2;
         }
 
         message CloudGameMeta {
@@ -2074,451 +2074,451 @@ message webcast {
         }
 
         message MiniGameMeta {
-            string  schema = 1;
-            string  version = 2;
+            string schema = 1;
+            string version = 2;
         }
 
         message MiniPlayMeta {
-            string  schema = 1;
-            string  game_name = 2;
-            string  icon = 3;
-            string  game_id = 4;
-            string  app_id = 5;
-            repeated uint64  support_live_scene = 6;
-            string  version = 7;
-            int32  game_type = 8;
-            string  developer = 9;
-            string  extra = 10;
+            string schema = 1;
+            string game_name = 2;
+            string icon = 3;
+            string game_id = 4;
+            string app_id = 5;
+            repeated uint64 support_live_scene = 6;
+            string version = 7;
+            int32 game_type = 8;
+            string developer = 9;
+            string extra = 10;
         }
 
         message ReserveItem {
-            string  reserve_today_num = 1;
-            string  reserve_total_num = 2;
-            int32  reserve_status = 3;
+            string reserve_today_num = 1;
+            string reserve_total_num = 2;
+            int32 reserve_status = 3;
         }
 
         message GameCPUserDownloadMessage {
-            Common  common = 1;
-            string  user_nick_name = 2;
-            uint64  user_download_count = 3;
-            string  user_download_content = 4;
-            string  download_game_name = 5;
-            int32  type = 6;
+            Common common = 1;
+            string user_nick_name = 2;
+            uint64 user_download_count = 3;
+            string user_download_content = 4;
+            string download_game_name = 5;
+            int32 type = 6;
         }
 
         message GameCPAnchorReminderMessage {
-            Common  common = 1;
-            int32  type = 2;
-            string  game_id = 3;
-            string  title = 4;
-            string  game_name = 5;
-            string  game_icon_url = 6;
+            Common common = 1;
+            int32 type = 2;
+            string game_id = 3;
+            string title = 4;
+            string game_name = 5;
+            string game_icon_url = 6;
         }
 
         message GameCPUserRoomMetaMessage {
-            Common  common = 1;
-            uint64  oper = 2;
-            UserIntroduceCardStatus  user_introduce_card_status = 3;
-            repeated UserGiftStatus  user_gift_status = 4;
+            Common common = 1;
+            uint64 oper = 2;
+            UserIntroduceCardStatus user_introduce_card_status = 3;
+            repeated UserGiftStatus user_gift_status = 4;
         }
 
         message UserIntroduceCardStatus {
-            bool  is_show_card = 1;
-            uint64  introduce_duration = 2;
-            uint64  timer_span = 3;
-            uint64  timer_loop_cnt = 4;
+            bool is_show_card = 1;
+            uint64 introduce_duration = 2;
+            uint64 timer_span = 3;
+            uint64 timer_loop_cnt = 4;
         }
 
         message UserGiftStatus {
-            string  play_id = 1;
-            string  game_id = 2;
-            string  hint = 3;
-            string  title = 4;
-            int32  focus_index = 5;
-            int32  login_days = 6;
+            string play_id = 1;
+            string game_id = 2;
+            string hint = 3;
+            string title = 4;
+            int32 focus_index = 5;
+            int32 login_days = 6;
         }
 
         message Content {
-            int32  type = 1;
-            string  content = 2;
-            string  avatar = 3;
+            int32 type = 1;
+            string content = 2;
+            string avatar = 3;
         }
 
         message FeaturedContent {
-            int32  rotation_time = 1;
-            Content  contents = 2;
+            int32 rotation_time = 1;
+            Content contents = 2;
         }
 
         message CloudGamingPodMessage {
-            Common  common = 1;
-            int32  msg_type = 2;
-            string  text = 3;
-            uint64  remain_seconds = 4;
+            Common common = 1;
+            int32 msg_type = 2;
+            string text = 3;
+            uint64 remain_seconds = 4;
         }
 
         message GamePlayTeamStatusMessage {
-            Common  common = 1;
-            repeated Data.PlayTeamMember  member_list = 2;
-            int32  total_num = 3;
-            uint64  play_id = 4;
-            string  toast = 5;
+            Common common = 1;
+            repeated Data.PlayTeamMember member_list = 2;
+            int32 total_num = 3;
+            uint64 play_id = 4;
+            string toast = 5;
         }
 
         message GamePlayInviteMessage {
-            Common  common = 1;
-            string  schema = 2;
-            uint64  play_id = 3;
+            Common common = 1;
+            string schema = 2;
+            uint64 play_id = 3;
         }
 
         message GamePlayStatusMessage {
-            Common  common = 1;
-            int32  status = 2;
-            uint64  play_id = 3;
-            string  audit_deny_toast = 4;
-            string  toast = 5;
+            Common common = 1;
+            int32 status = 2;
+            uint64 play_id = 3;
+            string audit_deny_toast = 4;
+            string toast = 5;
         }
 
         message LynxParam {
-            int32  style = 1;
-            string  main_text = 2;
-            string  expire_day_text = 3;
-            string  sub_text = 4;
+            int32 style = 1;
+            string main_text = 2;
+            string expire_day_text = 3;
+            string sub_text = 4;
         }
 
         message GiftConsumeRemindMessage {
-            Common  common = 1;
-            string  lynx_schema = 2;
-            LynxParam  lynx_param = 3;
-            int32  remind_type = 4;
+            Common common = 1;
+            string lynx_schema = 2;
+            LynxParam lynx_param = 3;
+            int32 remind_type = 4;
         }
 
         message GiftCycleReleaseMessage {
-            Common  common = 1;
-            uint64  release_id = 2;
-            GiftIcon  gift_icon = 3;
-            repeated uint64  gift_ids = 4;
+            Common common = 1;
+            uint64 release_id = 2;
+            GiftIcon gift_icon = 3;
+            repeated uint64 gift_ids = 4;
 
             message GiftIcon {
-                uint64  gift_id = 1;
-                Data.Image  icon = 2;
+                uint64 gift_id = 1;
+                Data.Image icon = 2;
             }
         }
 
         message ExhibitionTopLeftMessage {
-            Common  common = 1;
-            Data.Text  display_text = 2;
-            string  top_title = 3;
-            Data.Image  gift_icon = 4;
-            string  exhibition_entrance_url = 5;
+            Common common = 1;
+            Data.Text display_text = 2;
+            string top_title = 3;
+            Data.Image gift_icon = 4;
+            string exhibition_entrance_url = 5;
         }
 
         message ExhibitionChatMessage {
-            Common  common = 1;
-            Data.Text  display_text = 2;
-            int32  unlighted_item = 3;
-            int32  lighted_item = 4;
-            int32  biz_type = 5;
-            int32  app_id = 6;
-            PublicAreaCommon  public_area_common = 7;
+            Common common = 1;
+            Data.Text display_text = 2;
+            int32 unlighted_item = 3;
+            int32 lighted_item = 4;
+            int32 biz_type = 5;
+            int32 app_id = 6;
+            PublicAreaCommon public_area_common = 7;
         }
 
         message GiftIconFlashMessage {
-            Common  common = 1;
-            repeated uint64  user_ids = 2;
-            uint64  recommend_time = 3;
-            uint64  not_flash_after = 4;
+            Common common = 1;
+            repeated uint64 user_ids = 2;
+            uint64 recommend_time = 3;
+            uint64 not_flash_after = 4;
         }
 
         message GiftTouchMessage {
-            Common  common = 1;
-            string  scene = 2;
-            GiftPanelTopBar  gift_panel_topbar = 3;
-            ComboTrayInfo  combo_tray_info = 4;
-            uint64  now_millis = 5;
-            int32  display_position = 6;
-            Data.User  to_user = 7;
+            Common common = 1;
+            string scene = 2;
+            GiftPanelTopBar gift_panel_topbar = 3;
+            ComboTrayInfo combo_tray_info = 4;
+            uint64 now_millis = 5;
+            int32 display_position = 6;
+            Data.User to_user = 7;
         }
 
         message GiftPanelTopBar {
-            string  extra = 1;
-            int32  topbar_action = 2;
+            string extra = 1;
+            int32 topbar_action = 2;
         }
 
         message ComboTrayInfo {
-            string  combo_id = 1;
-            Data.Image  tray_base_img = 2;
-            string  main_title = 3;
-            string  sub_title = 4;
-            int32  action = 5;
-            string  extra = 6;
+            string combo_id = 1;
+            Data.Image tray_base_img = 2;
+            string main_title = 3;
+            string sub_title = 4;
+            int32 action = 5;
+            string extra = 6;
         }
 
         message GiftUpdateMessage {
-            Common  common = 1;
-            int32  update_type = 2;
-            repeated uint64  update_gift_ids = 3;
-            repeated uint64  update_asset_ids = 4;
+            Common common = 1;
+            int32 update_type = 2;
+            repeated uint64 update_gift_ids = 3;
+            repeated uint64 update_asset_ids = 4;
         }
 
         message GiftVoteMessage {
-            Common  common = 1;
-            uint64  msg_type = 2;
-            uint64  vote_id = 3;
-            repeated Data.GiftVoteResult  results = 4;
-            uint64  finish_time = 5;
-            uint64  current_time = 6;
-            uint64  vote_type = 7;
-            string  extra = 8;
+            Common common = 1;
+            uint64 msg_type = 2;
+            uint64 vote_id = 3;
+            repeated Data.GiftVoteResult results = 4;
+            uint64 finish_time = 5;
+            uint64 current_time = 6;
+            uint64 vote_type = 7;
+            string extra = 8;
 
             message Result {
-                string  text = 1;
-                uint64  count = 2;
-                Data.Image  icon = 3;
-                uint64  gift_id = 4;
+                string text = 1;
+                uint64 count = 2;
+                Data.Image icon = 3;
+                uint64 gift_id = 4;
             }
         }
 
         message GiftMessage {
-            Common  common = 1;
-            uint64  gift_id = 2;
-            uint64  fan_ticket_count = 3;
-            uint64  group_count = 4;
-            uint64  repeat_count = 5;
-            uint64  combo_count = 6;
-            Data.User  user = 7;
-            Data.User  to_user = 8;
-            int32  repeat_end = 9;
-            GiftMessage.TextEffect  text_effect = 10;
-            uint64  group_id = 11;
-            uint64  income_taskgifts = 12;
-            uint64  room_fan_ticket_count = 13;
-            Data.GiftIMPriority  priority = 14;
-            Data.GiftStruct  gift = 15;
-            string  log_id = 16;
-            uint64  send_type = 17;
-            PublicAreaCommon  public_area_common = 18;
-            Data.Text  tray_display_text = 19;
-            uint64  banned_display_effects = 20;
-            Data.GiftTrayInfo  tray_info = 21;
-            Data.AssetEffectMixInfo  asset_effect_mix_info = 24;
-            bool  display_for_self = 25;
-            string  interact_gift_info = 26;
-            string  diy_item_info = 27;
-            repeated uint64  min_asset_set = 28;
-            uint64  total_count = 29;
-            int32  client_gift_source = 30;
-            Data.AnchorGiftData  anchor_gift = 31;
-            repeated uint64  to_user_ids = 32;
-            uint64  send_time = 33;
-            uint64  force_display_effects = 34;
-            string  trace_id = 35;
-            uint64  effect_display_ts = 36;
-            Data.SendTogether  send_together = 37;
-            Data.ExtraEffect  extra_effect = 38;
-            RoomHotInfo  room_hot_info = 39;
-            string  GiftPlayParam = 40;
-            int32  multi_send_effect_level = 41;
-            repeated Data.SeriesPlayGift  series_gift_data = 42;
+            Common common = 1;
+            uint64 gift_id = 2;
+            uint64 fan_ticket_count = 3;
+            uint64 group_count = 4;
+            uint64 repeat_count = 5;
+            uint64 combo_count = 6;
+            Data.User user = 7;
+            Data.User to_user = 8;
+            int32 repeat_end = 9;
+            GiftMessage.TextEffect text_effect = 10;
+            uint64 group_id = 11;
+            uint64 income_taskgifts = 12;
+            uint64 room_fan_ticket_count = 13;
+            Data.GiftIMPriority priority = 14;
+            Data.GiftStruct gift = 15;
+            string log_id = 16;
+            uint64 send_type = 17;
+            PublicAreaCommon public_area_common = 18;
+            Data.Text tray_display_text = 19;
+            uint64 banned_display_effects = 20;
+            Data.GiftTrayInfo tray_info = 21;
+            Data.AssetEffectMixInfo asset_effect_mix_info = 24;
+            bool display_for_self = 25;
+            string interact_gift_info = 26;
+            string diy_item_info = 27;
+            repeated uint64 min_asset_set = 28;
+            uint64 total_count = 29;
+            int32 client_gift_source = 30;
+            Data.AnchorGiftData anchor_gift = 31;
+            repeated uint64 to_user_ids = 32;
+            uint64 send_time = 33;
+            uint64 force_display_effects = 34;
+            string trace_id = 35;
+            uint64 effect_display_ts = 36;
+            Data.SendTogether send_together = 37;
+            Data.ExtraEffect extra_effect = 38;
+            RoomHotInfo room_hot_info = 39;
+            string GiftPlayParam = 40;
+            int32 multi_send_effect_level = 41;
+            repeated Data.SeriesPlayGift series_gift_data = 42;
 
             message TextEffect {
-                Detail  portrait = 1;
-                Detail  landscape = 2;
+                Detail portrait = 1;
+                Detail landscape = 2;
 
                 message Detail {
-                    Data.Text  text = 1;
-                    int32  text_font_size = 2;
-                    Data.Image  background = 3;
-                    int32  start = 4;
-                    int32  duration = 5;
-                    int32  x = 6;
-                    int32  y = 7;
-                    int32  width = 8;
-                    int32  height = 9;
-                    int32  shadow_dx = 10;
-                    int32  shadow_dy = 11;
-                    int32  shadow_radius = 12;
-                    string  shadow_color = 13;
-                    string  stroke_color = 14;
-                    int32  stroke_width = 15;
+                    Data.Text text = 1;
+                    int32 text_font_size = 2;
+                    Data.Image background = 3;
+                    int32 start = 4;
+                    int32 duration = 5;
+                    int32 x = 6;
+                    int32 y = 7;
+                    int32 width = 8;
+                    int32 height = 9;
+                    int32 shadow_dx = 10;
+                    int32 shadow_dy = 11;
+                    int32 shadow_radius = 12;
+                    string shadow_color = 13;
+                    string stroke_color = 14;
+                    int32 stroke_width = 15;
                 }
             }
         }
 
         message RoomHotInfo {
-            int32  local_hot_strategy = 1;
-            int32  public_area_level = 2;
-            int32  gift_level = 3;
+            int32 local_hot_strategy = 1;
+            int32 public_area_level = 2;
+            int32 gift_level = 3;
         }
 
         message BindingGiftMessage {
-            GiftMessage  msg = 1;
-            Common  common = 2;
+            GiftMessage msg = 1;
+            Common common = 2;
         }
 
         message GradeBuffAnchorShareMessage {
-            Common  common = 1;
-            string  scheme_url = 2;
-            Data.Text  content = 3;
-            uint64  score = 4;
+            Common common = 1;
+            string scheme_url = 2;
+            Data.Text content = 3;
+            uint64 score = 4;
         }
 
         message GroupLiveMemberChangeMessage {
-            Common  common = 1;
-            Data.GroupLiveMemberInfo  members = 2;
+            Common common = 1;
+            Data.GroupLiveMemberInfo members = 2;
         }
 
         message GroupShowUserUpdateMessage {
-            Common  common = 1;
-            Data.GroupShowInfo  info = 2;
+            Common common = 1;
+            Data.GroupShowInfo info = 2;
         }
 
         message GrowthTaskMessage {
-            Common  common = 1;
-            Data.GrowthTask  task = 2;
-            int32  action = 3;
-            CurrentContribution  current_contribution = 4;
-            repeated Data.GrowthTaskContributorRank  contributors = 5;
-            uint64  queue_task_len = 6;
+            Common common = 1;
+            Data.GrowthTask task = 2;
+            int32 action = 3;
+            CurrentContribution current_contribution = 4;
+            repeated Data.GrowthTaskContributorRank contributors = 5;
+            uint64 queue_task_len = 6;
 
             message CurrentContribution {
                 Data.User user = 1;
-                map<int64,int64> delta_info = 2;
+                map<int64, int64> delta_info = 2;
             }
         }
 
         message GuestBattleScoreMessage {
-            Common  common = 1;
-            Data.GuestBattleInfo  battle_info = 2;
-            bool  crown_upgrade = 3;
+            Common common = 1;
+            Data.GuestBattleInfo battle_info = 2;
+            bool crown_upgrade = 3;
         }
 
         message GuestBattleMessage {
-            Common  common = 1;
-            uint64  msg_type = 2;
-            Data.GuestBattleInfo  battle_info = 3;
-            string  finish_toast = 4;
-            GuestBattleUpdateContent  update_content = 100;
-            GuestBattleFinishContent  finish_content = 101;
+            Common common = 1;
+            uint64 msg_type = 2;
+            Data.GuestBattleInfo battle_info = 3;
+            string finish_toast = 4;
+            GuestBattleUpdateContent update_content = 100;
+            GuestBattleFinishContent finish_content = 101;
         }
 
-        message GuestBattleUpdateContent{
+        message GuestBattleUpdateContent {
             bool crown_upgrade = 1;
         }
 
         message GuestBattleFinishContent {
-            int32  reason = 1;
-            uint64  finish_user_id = 2;
+            int32 reason = 1;
+            uint64 finish_user_id = 2;
         }
 
         message GuideMessage {
-            Common  common = 1;
-            uint64  guide_type = 2;
-            uint64  gift_id = 3;
-            string  description = 4;
-            uint64  duration = 5;
+            Common common = 1;
+            uint64 guide_type = 2;
+            uint64 gift_id = 3;
+            string description = 4;
+            uint64 duration = 5;
         }
 
         message HighValueUserDataMessage {
-            Common  common = 1;
-            Data.HighValueUserData  data = 2;
+            Common common = 1;
+            Data.HighValueUserData data = 2;
         }
 
         message HighlightCommentPosition {
-            Common  common = 1;
-            uint64  event_time = 3;
-            double  x = 4;
-            double  y = 5;
+            Common common = 1;
+            uint64 event_time = 3;
+            double x = 4;
+            double y = 5;
         }
 
         message HighlightComment {
-            Common  common = 1;
-            uint64  id = 2;
-            uint64  event_time = 3;
-            uint64  comment_msg_id = 4;
-            int32  review_result = 5;
-            string  review_comment = 6;
-            string  content = 7;
-            Data.User  user = 8;
-            int32  action_type = 9;
-            uint64  msg_time = 10;
-            uint64  end_time = 11;
-            int32  countdown_style = 12;
-            int32  trigger = 13;
-            uint64  operator_id = 14;
-            string  operator_nickname = 15;
+            Common common = 1;
+            uint64 id = 2;
+            uint64 event_time = 3;
+            uint64 comment_msg_id = 4;
+            int32 review_result = 5;
+            string review_comment = 6;
+            string content = 7;
+            Data.User user = 8;
+            int32 action_type = 9;
+            uint64 msg_time = 10;
+            uint64 end_time = 11;
+            int32 countdown_style = 12;
+            int32 trigger = 13;
+            uint64 operator_id = 14;
+            string operator_nickname = 15;
         }
 
         message HotChatMessage {
-            Common  common = 1;
-            string  title = 2;
-            string  content = 3;
-            repeated uint64  num = 4;
-            uint64  duration = 5;
-            repeated uint64  show_duration = 6;
-            uint64  sequence_id = 7;
-            repeated string  hot_list = 8;
-            Data.Text  rtf_content = 9;
-            uint64  chat_content_type = 10;
-            map<string,string> extra = 200;
+            Common common = 1;
+            string title = 2;
+            string content = 3;
+            repeated uint64 num = 4;
+            uint64 duration = 5;
+            repeated uint64 show_duration = 6;
+            uint64 sequence_id = 7;
+            repeated string hot_list = 8;
+            Data.Text rtf_content = 9;
+            uint64 chat_content_type = 10;
+            map<string, string> extra = 200;
         }
 
         message HotRoomMessage {
-            Common  common = 1;
-            Data.HotRoomInfo  info = 2;
+            Common common = 1;
+            Data.HotRoomInfo info = 2;
         }
 
         message ImDeleteMessage {
-            Common  common = 1;
-            uint64  delete_msg_ids = 2;
+            Common common = 1;
+            uint64 delete_msg_ids = 2;
         }
 
         message InRoomBannerRedPoint {
-            Common  common = 1;
-            uint64  count = 2;
-            uint64  banner_id = 3;
-            uint64  show_type = 4;
+            Common common = 1;
+            uint64 count = 2;
+            uint64 banner_id = 3;
+            uint64 show_type = 4;
         }
 
         message InRoomBannerRefreshMessage {
-            Common  common = 1;
-            uint64  max_delay_seconds = 2;
-            int32  position = 3;
+            Common common = 1;
+            uint64 max_delay_seconds = 2;
+            int32 position = 3;
         }
 
         message InRoomBannerMessage {
-            Common  common = 1;
-            string  extra = 2;
-            int32  position = 3;
-            int32  action_type = 4;
-            string  container_url = 5;
-            string  lynx_container_url = 6;
-            int32  container_type = 7;
-            int32  op_type = 8;
+            Common common = 1;
+            string extra = 2;
+            int32 position = 3;
+            int32 action_type = 4;
+            string container_url = 5;
+            string lynx_container_url = 6;
+            int32 container_type = 7;
+            int32 op_type = 8;
         }
 
         message InRoomBannerEvent {
-            Common  common = 1;
-            int32  position = 2;
-            Data.BannerData  data = 3;
+            Common common = 1;
+            int32 position = 2;
+            Data.BannerData data = 3;
         }
 
         message InfoBoxMessage {
-            Common  common = 1;
-            uint64  scene = 2;
-            string  sub_scene = 3;
-            uint64  msg_type = 4;
-            uint64  delay = 5;
-            Data.Text  title = 6;
-            Data.Text  fold_title = 7;
-            Data.Text  content = 8;
-            uint64  drag_type = 9;
-            InfoBoxMessageBackGround  background = 10;
+            Common common = 1;
+            uint64 scene = 2;
+            string sub_scene = 3;
+            uint64 msg_type = 4;
+            uint64 delay = 5;
+            Data.Text title = 6;
+            Data.Text fold_title = 7;
+            Data.Text content = 8;
+            uint64 drag_type = 9;
+            InfoBoxMessageBackGround background = 10;
         }
 
         message InfoBoxMessageBackGround {
-            uint64  background_alpha = 1;
-            string  background_color = 2;
-            Data.Image  background_image = 3;
+            uint64 background_alpha = 1;
+            string background_color = 2;
+            Data.Image background_image = 3;
         }
 
         message OpenSchemaCommand {
@@ -2526,59 +2526,59 @@ message webcast {
         }
 
         message InstantCommandMessage {
-            Common  common = 1;
-            int32  command_type = 2;
-            OpenSchemaCommand  open_schema_command = 11;
+            Common common = 1;
+            int32 command_type = 2;
+            OpenSchemaCommand open_schema_command = 11;
         }
 
         message PopBoxContent {
-            int32  large_type = 1;
-            int32  icon_type = 2;
-            string  control_type = 3;
-            string  title = 4;
-            string  description = 5;
-            string  url = 6;
-            int32  count_down_sec = 7;
-            string  button_desc = 8;
+            int32 large_type = 1;
+            int32 icon_type = 2;
+            string control_type = 3;
+            string title = 4;
+            string description = 5;
+            string url = 6;
+            int32 count_down_sec = 7;
+            string button_desc = 8;
         }
 
         message ClientOperation {
-            string  app_id = 1;
-            int32  operation_type = 2;
-            PopBoxContent  pop_box_content = 3;
-            int32  show_time = 4;
+            string app_id = 1;
+            int32 operation_type = 2;
+            PopBoxContent pop_box_content = 3;
+            int32 show_time = 4;
         }
 
         message InteractControlMessage {
-            Common  common = 1;
-            string  room_id = 2;
-            string  time_stamp = 3;
-            repeated ClientOperation  anchor_operation = 4;
-            repeated ClientOperation  audience_operation = 5;
+            Common common = 1;
+            string room_id = 2;
+            string time_stamp = 3;
+            repeated ClientOperation anchor_operation = 4;
+            repeated ClientOperation audience_operation = 5;
         }
 
         message InteractOpenDevelopMessage {
-            Common  common = 1;
-            string  app_id = 2;
-            int32  develop = 3;
-            string  sign = 4;
-            uint64  game_id = 5;
-            uint64  app_kind = 6;
+            Common common = 1;
+            string app_id = 2;
+            int32 develop = 3;
+            string sign = 4;
+            uint64 game_id = 5;
+            uint64 app_kind = 6;
         }
 
         message InteractionInfoMessage {
-            Common  common = 1;
-            Data.LikeIconInfo  like_icon_info = 2;
-            Data.ChatEmojiGuideInfo  chat_emoji_guide_info = 3;
-            Data.ChatImageGuideInfo  chat_image_guide_info = 4;
-            repeated int32  update_info_type = 50;
+            Common common = 1;
+            Data.LikeIconInfo like_icon_info = 2;
+            Data.ChatEmojiGuideInfo chat_emoji_guide_info = 3;
+            Data.ChatImageGuideInfo chat_image_guide_info = 4;
+            repeated int32 update_info_type = 50;
         }
 
         message InteractionPlayOpenCloudGameMessage {
-            Common  common = 1;
-            bool  launch_cloud_game = 2;
-            string  schema = 3;
-            string  toast = 4;
+            Common common = 1;
+            bool launch_cloud_game = 2;
+            string schema = 3;
+            string toast = 4;
         }
 
         message InteractionPlayRealNameAuthMessage {
@@ -2586,61 +2586,61 @@ message webcast {
         }
 
         message IntercomInviteMessage {
-            Common  common = 1;
-            uint64  channel_id = 2;
+            Common common = 1;
+            uint64 channel_id = 2;
         }
 
         message IntercomReplyMessage {
-            Common  common = 1;
-            uint64  channel_id = 2;
-            uint64  reply_status = 3;
-            string  toast = 4;
+            Common common = 1;
+            uint64 channel_id = 2;
+            uint64 reply_status = 3;
+            string toast = 4;
         }
 
         message ItemShareMessage {
-            Common  common = 1;
-            Data.ShareItemStyle  item_style = 2;
-            Data.Text  share_text = 3;
-            PublicAreaCommon  public_area_common = 4;
-            map<string,string> tracking_params = 30;
+            Common common = 1;
+            Data.ShareItemStyle item_style = 2;
+            Data.Text share_text = 3;
+            PublicAreaCommon public_area_common = 4;
+            map<string, string> tracking_params = 30;
         }
 
         message JackfruitMessage {
-            Common  common = 1;
-            bytes  biz_msg = 2;
+            Common common = 1;
+            bytes biz_msg = 2;
         }
 
         message EcomBuyIntentionMessage {
-            Common  common = 1;
-            Count  counts = 2;
-            uint64  unix_time = 3;
+            Common common = 1;
+            Count counts = 2;
+            uint64 unix_time = 3;
 
             message Count {
-                uint64  id = 1;
-                string  title = 2;
-                uint64  count = 3;
+                uint64 id = 1;
+                string title = 2;
+                uint64 count = 3;
             }
         }
 
         message KtvAtmosphereVideoMessage {
-            Common  common = 1;
-            KtvAtmosphereVideoContent  ktv_atmosphere_video_content = 2;
+            Common common = 1;
+            KtvAtmosphereVideoContent ktv_atmosphere_video_content = 2;
         }
 
         message KtvAtmosphereVideoContent {
-            uint64  uid = 1;
-            uint64  song_id = 2;
-            Data.KtvAtmosphereVideoInfo  video_info = 3;
-            Data.KTVMVInfo  mv_info = 4;
+            uint64 uid = 1;
+            uint64 song_id = 2;
+            Data.KtvAtmosphereVideoInfo video_info = 3;
+            Data.KTVMVInfo mv_info = 4;
         }
 
         message KTVContestSupportMessage {
-            Common  common = 1;
-            uint64  support_count = 2;
-            uint64  supportee_id = 3;
-            uint64  supportor_id = 4;
-            uint64  song_id = 5;
-            uint64  song_unique_id = 6;
+            Common common = 1;
+            uint64 support_count = 2;
+            uint64 supportee_id = 3;
+            uint64 supportor_id = 4;
+            uint64 song_id = 5;
+            uint64 song_unique_id = 6;
         }
 
         message AddKTVDressContent {
@@ -2652,30 +2652,30 @@ message webcast {
         }
 
         message KtvDressMessage {
-            Common  common = 1;
-            int32  message_type = 2;
-            AddKTVDressContent  add_dress_content = 3;
-            ChangeKTVDressContent  change_dress_content = 4;
+            Common common = 1;
+            int32 message_type = 2;
+            AddKTVDressContent add_dress_content = 3;
+            ChangeKTVDressContent change_dress_content = 4;
         }
 
         message KtvGrabSongResultMessage {
-            Common  common = 1;
-            uint64  song_id = 2;
-            uint64  term_id = 3;
-            bool  success = 4;
-            string  prompt = 5;
+            Common common = 1;
+            uint64 song_id = 2;
+            uint64 term_id = 3;
+            bool success = 4;
+            string prompt = 5;
         }
 
         message KTVPlayModeStartMessage {
-            Common  common = 1;
-            string  prompt = 2;
-            int32  play_mode_type = 3;
-            repeated int32  linkmic_play_modes = 4;
+            Common common = 1;
+            string prompt = 2;
+            int32 play_mode_type = 3;
+            repeated int32 linkmic_play_modes = 4;
         }
 
         message KTVShortVideoCreatedMessage {
-            Common  common = 1;
-            ShortVideoStruct  short_video_info = 2;
+            Common common = 1;
+            ShortVideoStruct short_video_info = 2;
 
             message ShortVideoStruct {
                 string short_video_url = 1;
@@ -2683,83 +2683,83 @@ message webcast {
         }
 
         message KTVSingerHotRankPosMessage {
-            Common  common = 1;
-            uint64  hot = 2;
-            uint64  rank = 3;
-            uint64  singer = 4;
+            Common common = 1;
+            uint64 hot = 2;
+            uint64 rank = 3;
+            uint64 singer = 4;
         }
 
         message KtvChallengeConfigMessage {
-            Common  common = 1;
-            uint64  switch_status = 2;
-            uint64  target_score = 3;
-            uint64  target_duration_second = 4;
-            int32  ktv_challenge_type = 5;
+            Common common = 1;
+            uint64 switch_status = 2;
+            uint64 target_score = 3;
+            uint64 target_duration_second = 4;
+            int32 ktv_challenge_type = 5;
         }
 
         message KTVChallengeRankMessage {
-            Common  common = 1;
-            repeated ChallengeRankUser  user_list = 2;
-            uint64  singer_id = 3;
-            string  singer_nickname = 4;
-            Data.Image  singer_avatar_thumb = 5;
+            Common common = 1;
+            repeated ChallengeRankUser user_list = 2;
+            uint64 singer_id = 3;
+            string singer_nickname = 4;
+            Data.Image singer_avatar_thumb = 5;
 
             message ChallengeRankUser {
-                uint64  user_id = 1;
-                string  nickname = 2;
-                uint64  score = 3;
-                Data.Image  avatar_thumb = 4;
-                Data.Image  avatar_medium = 5;
-                Data.Image  avatar_large = 6;
+                uint64 user_id = 1;
+                string nickname = 2;
+                uint64 score = 3;
+                Data.Image avatar_thumb = 4;
+                Data.Image avatar_medium = 5;
+                Data.Image avatar_large = 6;
             }
         }
 
         message KTVChallengeStatusMessage {
-            Common  common = 1;
-            uint64  challenge_id = 2;
-            uint64  status = 3;
-            uint64  current_score = 4;
-            uint64  target_score = 5;
-            uint64  countdown_second = 6;
-            uint64  target_duration_second = 7;
-            uint64  increment_duration_second = 8;
-            int32  gift_type = 9;
-            int32  emoji_location = 10;
-            int32  ktv_challenge_type = 11;
+            Common common = 1;
+            uint64 challenge_id = 2;
+            uint64 status = 3;
+            uint64 current_score = 4;
+            uint64 target_score = 5;
+            uint64 countdown_second = 6;
+            uint64 target_duration_second = 7;
+            uint64 increment_duration_second = 8;
+            int32 gift_type = 9;
+            int32 emoji_location = 10;
+            int32 ktv_challenge_type = 11;
         }
 
         message KTVStartGrabSongMessage {
-            Common  common = 1;
-            bool  isStart = 2;
+            Common common = 1;
+            bool isStart = 2;
         }
 
         message KTVUserSingingHotMessage {
-            Common  common = 1;
-            uint64  hot = 2;
-            int32  hot_status = 3;
-            int32  hot_level = 4;
-            uint64  song_id = 5;
-            uint64  user_id = 6;
-            uint64  level2_threshold = 7;
-            uint64  level3_threshold = 8;
+            Common common = 1;
+            uint64 hot = 2;
+            int32 hot_status = 3;
+            int32 hot_level = 4;
+            uint64 song_id = 5;
+            uint64 user_id = 6;
+            uint64 level2_threshold = 7;
+            uint64 level3_threshold = 8;
         }
 
         message KtvMessage {
-            Common  common = 1;
-            uint64  message_type = 2;
-            SetSettingOrderSongContent  set_setting_order_song_content = 3;
-            AudienceOrderSongContent  audience_order_song_content = 4;
-            AudienceOrderSongChatContent  audience_order_song_chat_content = 5;
-            PausePlaySongContent  pause_play_song_content = 6;
-            OpenKtvComponentContent  open_ktv_component_content = 7;
-            CloseKtvComponentContent  close_ktv_component_content = 8;
-            AudienceAddSongSettingChangedContent  audience_add_song_setting_changed = 9;
-            SongWaitingListChangedContent  song_waiting_list_changed = 10;
-            WantToListenSongListChangedContent  want_to_listen_song_list_changed = 11;
-            PermitWantToListenSongContent  permit_want_to_listen_song = 12;
-            WantToListenSongRemovedContent  want_to_listen_song_removed = 13;
-            AudienceMultiChorusSettingChangedContent  audience_multi_chorus_setting_changed = 14;
-            MultiChorusWaitingListChangedContent  multi_chorus_waiting_list_changed = 15;
+            Common common = 1;
+            uint64 message_type = 2;
+            SetSettingOrderSongContent set_setting_order_song_content = 3;
+            AudienceOrderSongContent audience_order_song_content = 4;
+            AudienceOrderSongChatContent audience_order_song_chat_content = 5;
+            PausePlaySongContent pause_play_song_content = 6;
+            OpenKtvComponentContent open_ktv_component_content = 7;
+            CloseKtvComponentContent close_ktv_component_content = 8;
+            AudienceAddSongSettingChangedContent audience_add_song_setting_changed = 9;
+            SongWaitingListChangedContent song_waiting_list_changed = 10;
+            WantToListenSongListChangedContent want_to_listen_song_list_changed = 11;
+            PermitWantToListenSongContent permit_want_to_listen_song = 12;
+            WantToListenSongRemovedContent want_to_listen_song_removed = 13;
+            AudienceMultiChorusSettingChangedContent audience_multi_chorus_setting_changed = 14;
+            MultiChorusWaitingListChangedContent multi_chorus_waiting_list_changed = 15;
         }
 
         message SetSettingOrderSongContent {
@@ -2771,21 +2771,21 @@ message webcast {
         }
 
         message AudienceOrderSongChatContent {
-            Data.User  user = 1;
-            Data.Text  display_text = 2;
-            bool  display_user_role = 3;
+            Data.User user = 1;
+            Data.Text display_text = 2;
+            bool display_user_role = 3;
         }
 
         message PausePlaySongContent {
-            uint64  song_id = 1;
-            int32  action_type = 2;
-            uint64  from_user_id = 3;
-            uint64  singer_id = 4;
+            uint64 song_id = 1;
+            int32 action_type = 2;
+            uint64 from_user_id = 3;
+            uint64 singer_id = 4;
         }
 
         message OpenKtvComponentContent {
-            bool  open_audience_add_song_switch = 1;
-            bool  open_audience_multi_chorus_switch = 2;
+            bool open_audience_add_song_switch = 1;
+            bool open_audience_multi_chorus_switch = 2;
         }
 
         message CloseKtvComponentContent {
@@ -2797,8 +2797,8 @@ message webcast {
         }
 
         message AudienceMultiChorusSettingChangedContent {
-            bool  open = 1;
-            string  toast = 2;
+            bool open = 1;
+            string toast = 2;
         }
 
         message SongWaitingListChangedContent {
@@ -2814,9 +2814,9 @@ message webcast {
         }
 
         message PermitWantToListenSongContent {
-            uint64  song_id = 1;
-            bool  is_multi_add_song = 2;
-            string  song_name = 3;
+            uint64 song_id = 1;
+            bool is_multi_add_song = 2;
+            string song_name = 3;
         }
 
         message WantToListenSongRemovedContent {
@@ -2824,26 +2824,26 @@ message webcast {
         }
 
         message LevelUpMessage {
-            Common  common = 1;
-            Data.User  user = 2;
-            int32  pre_level = 3;
-            int32  current_level = 4;
+            Common common = 1;
+            Data.User user = 2;
+            int32 pre_level = 3;
+            int32 current_level = 4;
         }
 
         message LightGiftMessage {
-            Common  common = 1;
-            uint64  group_count = 2;
-            uint64  repeat_count = 3;
-            uint64  combo_count = 4;
-            uint64  to_user_id = 5;
-            Data.GiftIMPriority  priority = 6;
-            GiftInfo  gift_info = 7;
-            GiftLiteTrayInfo  tray_info = 8;
-            uint64  send_type = 9;
-            uint64  count = 10;
-            string  diy_item_info = 11;
-            uint64  banned_display_effects = 12;
-            Data.GiftStruct  gift_struct = 13;
+            Common common = 1;
+            uint64 group_count = 2;
+            uint64 repeat_count = 3;
+            uint64 combo_count = 4;
+            uint64 to_user_id = 5;
+            Data.GiftIMPriority priority = 6;
+            GiftInfo gift_info = 7;
+            GiftLiteTrayInfo tray_info = 8;
+            uint64 send_type = 9;
+            uint64 count = 10;
+            string diy_item_info = 11;
+            uint64 banned_display_effects = 12;
+            Data.GiftStruct gift_struct = 13;
         }
 
         message GiftLiteTrayInfo {
@@ -2851,40 +2851,40 @@ message webcast {
         }
 
         message GiftInfo {
-            uint64  gift_id = 1;
-            Data.Image  gift_icon = 2;
-            uint64  diamond_count = 3;
+            uint64 gift_id = 1;
+            Data.Image gift_icon = 2;
+            uint64 diamond_count = 3;
         }
 
         message RoomChannelLinkMessage {
-            Common  common = 1;
-            uint64  message_type = 2;
-            uint64  linker_id = 3;
-            uint64  scene = 4;
-            ChannelLinkerCreateContent  create_content = 5;
-            ChannelLinkerCloseContent  close_content = 6;
-            ChannelLinkerInviteContent  invite_content = 7;
-            ChannelLinkerReplyContent  reply_content = 8;
-            ChannelLinkerPermitContent  permit_content = 9;
-            ChannelLinkerEnterContent  enter_content = 10;
-            ChannelLinkerLeaveContent  leave_content = 11;
-            ChannelLinkerKickOutContent  kick_out_content = 12;
-            ChannelLinkerLinkedListChangeContent  linked_list_change_content = 13;
-            ChannelLinkerSilenceContent  silence_status_content = 14;
-            ChannelLinkerApplyContent  apply_content = 15;
+            Common common = 1;
+            uint64 message_type = 2;
+            uint64 linker_id = 3;
+            uint64 scene = 4;
+            ChannelLinkerCreateContent create_content = 5;
+            ChannelLinkerCloseContent close_content = 6;
+            ChannelLinkerInviteContent invite_content = 7;
+            ChannelLinkerReplyContent reply_content = 8;
+            ChannelLinkerPermitContent permit_content = 9;
+            ChannelLinkerEnterContent enter_content = 10;
+            ChannelLinkerLeaveContent leave_content = 11;
+            ChannelLinkerKickOutContent kick_out_content = 12;
+            ChannelLinkerLinkedListChangeContent linked_list_change_content = 13;
+            ChannelLinkerSilenceContent silence_status_content = 14;
+            ChannelLinkerApplyContent apply_content = 15;
         }
 
         message ChannelLinkerApplyContent {
-            uint64  applicant_user_id = 1;
-            string  applicant_sec_user_id = 2;
-            Data.User  applicant_user = 3;
+            uint64 applicant_user_id = 1;
+            string applicant_sec_user_id = 2;
+            Data.User applicant_user = 3;
         }
 
         message ChannelLinkerCreateContent {
-            uint64  owner_id = 1;
-            uint64  room_id = 2;
-            uint64  link_type = 3;
-            string  sec_owner_id = 4;
+            uint64 owner_id = 1;
+            uint64 room_id = 2;
+            uint64 link_type = 3;
+            string sec_owner_id = 4;
         }
 
         message ChannelLinkerCloseContent {
@@ -2892,151 +2892,151 @@ message webcast {
         }
 
         message ChannelLinkerInviteContent {
-            uint64  inviter_user_id = 1;
-            uint64  invitee_user_id = 2;
-            string  prompt = 3;
-            string  inviter_sec_user_id = 4;
-            string  invitee_sec_user_id = 5;
+            uint64 inviter_user_id = 1;
+            uint64 invitee_user_id = 2;
+            string prompt = 3;
+            string inviter_sec_user_id = 4;
+            string invitee_sec_user_id = 5;
         }
 
         message ChannelLinkerReplyContent {
-            uint64  inviter_user_id = 1;
-            uint64  invitee_user_id = 2;
-            int32  reply_result = 3;
-            string  prompt = 4;
-            string  inviter_sec_user_id = 5;
-            string  invitee_sec_user_id = 6;
+            uint64 inviter_user_id = 1;
+            uint64 invitee_user_id = 2;
+            int32 reply_result = 3;
+            string prompt = 4;
+            string inviter_sec_user_id = 5;
+            string invitee_sec_user_id = 6;
         }
 
         message ChannelLinkerPermitContent {
-            uint64  applicant_user_id = 1;
-            uint64  approver_user_id = 2;
-            int32  permit_result = 3;
-            string  prompt = 4;
-            string  applicant_sec_user_id = 5;
-            string  approver_sec_user_id = 6;
+            uint64 applicant_user_id = 1;
+            uint64 approver_user_id = 2;
+            int32 permit_result = 3;
+            string prompt = 4;
+            string applicant_sec_user_id = 5;
+            string approver_sec_user_id = 6;
         }
 
         message ChannelLinkerEnterContent {
-            uint64  user_id = 1;
-            string  sec_user_id = 2;
+            uint64 user_id = 1;
+            string sec_user_id = 2;
         }
 
         message ChannelLinkerLeaveContent {
-            uint64  user_id = 1;
-            string  sec_user_id = 2;
+            uint64 user_id = 1;
+            string sec_user_id = 2;
         }
 
         message ChannelLinkerKickOutContent {
-            uint64  from_user_id = 1;
-            string  prompt = 2;
-            string  sec_from_user_id = 3;
+            uint64 from_user_id = 1;
+            string prompt = 2;
+            string sec_from_user_id = 3;
         }
 
         message ChannelLinkerLinkedListChangeContent {
-            Data.ChannelListUser  channel_linkmic_users = 1;
-            uint64  version = 2;
-            string  rtc_room_id_str = 3;
+            Data.ChannelListUser channel_linkmic_users = 1;
+            uint64 version = 2;
+            string rtc_room_id_str = 3;
         }
 
         message ChannelLinkerSilenceContent {
-            int32  silence_status = 1;
-            uint64  from_user_id = 2;
-            uint64  to_user_id = 3;
-            string  ack_message = 4;
+            int32 silence_status = 1;
+            uint64 from_user_id = 2;
+            uint64 to_user_id = 3;
+            string ack_message = 4;
             uint64 version = 5;
-            string  sec_from_user_id = 6;
-            string  sec_to_user_id = 7;
-            int32  silence_source = 8;
+            string sec_from_user_id = 6;
+            string sec_to_user_id = 7;
+            int32 silence_source = 8;
         }
 
         message UserContribute {
-            uint64  user_id = 1;
-            uint64  rank = 2;
-            uint64  score = 3;
-            string  nickname = 4;
-            Data.Image  avatar_thumb = 5;
+            uint64 user_id = 1;
+            uint64 rank = 2;
+            uint64 score = 3;
+            string nickname = 4;
+            Data.Image avatar_thumb = 5;
         }
 
         message LinkerContributeMessage {
-            Common  common = 1;
-            uint64  user_id = 2;
-            uint64  total_score = 3;
-            repeated UserContribute  user_contribute_list = 4;
-            uint64  micro_time_stamp = 5;
-            uint64  scene = 6;
-            string  total_score_real_str = 7;
-            string  total_score_str = 8;
-            Data.LinkmicQuickInteract  quick_interact = 9;
+            Common common = 1;
+            uint64 user_id = 2;
+            uint64 total_score = 3;
+            repeated UserContribute user_contribute_list = 4;
+            uint64 micro_time_stamp = 5;
+            uint64 scene = 6;
+            string total_score_real_str = 7;
+            string total_score_str = 8;
+            Data.LinkmicQuickInteract quick_interact = 9;
         }
 
         message LinkMessage {
-            Common  common = 1;
-            uint64  message_type = 2;
-            uint64  linker_id = 3;
-            uint64  scene = 4;
-            LinkerInviteContent  invite_content = 5;
-            LinkerReplyContent  reply_content = 6;
-            LinkerCreateContent  create_content = 7;
-            LinkerCloseContent  close_content = 8;
-            LinkerEnterContent  enter_content = 9;
-            LinkerLeaveContent  leave_content = 10;
-            LinkerCancelContent  cancel_content = 11;
-            LinkerKickOutContent  kick_out_content = 12;
-            LinkerLinkedListChangeContent  linked_list_change_content = 13;
-            LinkerUpdateUserContent  update_user_content = 14;
-            LinkerWaitingListChangeContent  waiting_list_change_content = 15;
-            LinkerBanContent  ban_content = 16;
-            LinkerItemContent  item_content = 17;
-            LinkerViolationReminderContent  violation_reminder_content = 18;
-            LinkerUpdateLinkTypeApplyContent  update_link_type_apply_content = 19;
-            LinkerUpdateLinkTypeReplyContent  update_link_type_reply_content = 20;
-            LinkerAvatarAuditContent  avatar_audit_content = 21;
-            LinkerApplyExpiredContent  apply_expired_content = 22;
-            LinkerApplyStrongReminderContent  apply_strong_reminder_content = 23;
-            LinkerAnchorStreamSwitchContent  anchor_stream_switch_content = 24;
-            LinkerClickScreenContent  click_screen_content = 25;
-            LinkerLockPositionContent  lock_position_content = 26;
-            LinkerFollowStrongGuideContent  follow_strong_guide_content = 27;
-            LinkerShareVideoImContent  share_video_im_content = 28;
-            LinkerGuestInviteContent  guest_invite_content = 29;
-            LinkerGuestExitCastScreenContent  exit_cast_screen_content = 30;
-            LinkerSwitchSceneContent  switch_scene_content = 31;
-            LinkPhaseEnterNextNotifyContent  link_phase_enter_next_content = 32;
-            LinkerChangePlayModeContent  change_play_mode_content = 33;
-            LinkerLowBalanceForPaidLinkmicContent  low_balance_for_paid_linkmic_content = 34;
-            LinkerDegradeAlertContent  degrade_alert_content = 35;
-            LinkerEnlargeGuestInviteContent  enlarge_guest_invite_content = 36;
-            LinkerEnlargeGuestReplyContent  enlarge_guest_reply_content = 37;
-            LinkerEnlargeGuestApplyContent  enlarge_guest_apply_content = 38;
-            LinkPrepareApplyContent  prepare_apply_content = 39;
-            LinkerCrossRoomUpdateContent  cross_room_update_content = 40;
-            LinkerChangeMultiPKTeamInfoContent  change_multi_pk_team_info_content = 41;
-            CrossRoomLinkInviteContent  cross_room_link_invite_content = 42;
-            CrossRoomLinkReplyContent  cross_room_link_reply_content = 43;
-            CrossRoomLinkCancelInviteContent  cross_room_link_cancel_invite_content = 44;
-            LinkerResumeAudienceContent  linker_resume_audience_content = 45;
-            LinkerBattleConnectContent  linker_battle_connect_content = 46;
-            LinkerResumeApplyContent  linker_resume_apply_content = 47;
-            CrossRoomRTCInfoContent  cross_room_rtc_info_content = 48;
-            AnchorUpdateLinkmicConfigContent  anchor_update_linkmic_config_content = 49;
-            AnchorUpdateLayoutContent  anchor_update_layout_content = 50;
-            LinkerApplyRankChangeContent  apply_rank_change_content = 52;
-            LinkerChangeMediaInfoContent  change_media_content = 53;
-            LinkerUILayoutChangeContent  linker_ui_layout_change_content = 54;
-            LinkerUpdateWaitingUserOffsetContent  linker_update_waiting_user_offset_content = 55;
-            LinkerRemoveWaitingUserContent  linker_remove_waiting_user_content = 56;
-            LinkerPrepareInviteContent  linker_prepare_invite_content = 57;
-            LinkerPrepareReplyContent  linker_prepare_reply_content = 58;
-            LinkerConfirmUnsilenceContent  linker_confirm_unsilence_content = 59;
-            LinkerSwitchChannelInviteContent  switch_channel_invite_content = 60;
-            LinkerSwitchChannelReplyContent  switch_channel_reply_content = 61;
-            LinkerSwitchChannelCancelContent  switch_channel_cancel_content = 62;
-            LinkerSysKickOutContent  sys_kick_out_content = 101;
-            uint64  fallback_scene = 199;
-            string  extra = 200;
-            Data.LinkerBaseInfo  linker_base_info = 201;
-            PublicAreaCommon  public_area_common = 202;
+            Common common = 1;
+            uint64 message_type = 2;
+            uint64 linker_id = 3;
+            uint64 scene = 4;
+            LinkerInviteContent invite_content = 5;
+            LinkerReplyContent reply_content = 6;
+            LinkerCreateContent create_content = 7;
+            LinkerCloseContent close_content = 8;
+            LinkerEnterContent enter_content = 9;
+            LinkerLeaveContent leave_content = 10;
+            LinkerCancelContent cancel_content = 11;
+            LinkerKickOutContent kick_out_content = 12;
+            LinkerLinkedListChangeContent linked_list_change_content = 13;
+            LinkerUpdateUserContent update_user_content = 14;
+            LinkerWaitingListChangeContent waiting_list_change_content = 15;
+            LinkerBanContent ban_content = 16;
+            LinkerItemContent item_content = 17;
+            LinkerViolationReminderContent violation_reminder_content = 18;
+            LinkerUpdateLinkTypeApplyContent update_link_type_apply_content = 19;
+            LinkerUpdateLinkTypeReplyContent update_link_type_reply_content = 20;
+            LinkerAvatarAuditContent avatar_audit_content = 21;
+            LinkerApplyExpiredContent apply_expired_content = 22;
+            LinkerApplyStrongReminderContent apply_strong_reminder_content = 23;
+            LinkerAnchorStreamSwitchContent anchor_stream_switch_content = 24;
+            LinkerClickScreenContent click_screen_content = 25;
+            LinkerLockPositionContent lock_position_content = 26;
+            LinkerFollowStrongGuideContent follow_strong_guide_content = 27;
+            LinkerShareVideoImContent share_video_im_content = 28;
+            LinkerGuestInviteContent guest_invite_content = 29;
+            LinkerGuestExitCastScreenContent exit_cast_screen_content = 30;
+            LinkerSwitchSceneContent switch_scene_content = 31;
+            LinkPhaseEnterNextNotifyContent link_phase_enter_next_content = 32;
+            LinkerChangePlayModeContent change_play_mode_content = 33;
+            LinkerLowBalanceForPaidLinkmicContent low_balance_for_paid_linkmic_content = 34;
+            LinkerDegradeAlertContent degrade_alert_content = 35;
+            LinkerEnlargeGuestInviteContent enlarge_guest_invite_content = 36;
+            LinkerEnlargeGuestReplyContent enlarge_guest_reply_content = 37;
+            LinkerEnlargeGuestApplyContent enlarge_guest_apply_content = 38;
+            LinkPrepareApplyContent prepare_apply_content = 39;
+            LinkerCrossRoomUpdateContent cross_room_update_content = 40;
+            LinkerChangeMultiPKTeamInfoContent change_multi_pk_team_info_content = 41;
+            CrossRoomLinkInviteContent cross_room_link_invite_content = 42;
+            CrossRoomLinkReplyContent cross_room_link_reply_content = 43;
+            CrossRoomLinkCancelInviteContent cross_room_link_cancel_invite_content = 44;
+            LinkerResumeAudienceContent linker_resume_audience_content = 45;
+            LinkerBattleConnectContent linker_battle_connect_content = 46;
+            LinkerResumeApplyContent linker_resume_apply_content = 47;
+            CrossRoomRTCInfoContent cross_room_rtc_info_content = 48;
+            AnchorUpdateLinkmicConfigContent anchor_update_linkmic_config_content = 49;
+            AnchorUpdateLayoutContent anchor_update_layout_content = 50;
+            LinkerApplyRankChangeContent apply_rank_change_content = 52;
+            LinkerChangeMediaInfoContent change_media_content = 53;
+            LinkerUILayoutChangeContent linker_ui_layout_change_content = 54;
+            LinkerUpdateWaitingUserOffsetContent linker_update_waiting_user_offset_content = 55;
+            LinkerRemoveWaitingUserContent linker_remove_waiting_user_content = 56;
+            LinkerPrepareInviteContent linker_prepare_invite_content = 57;
+            LinkerPrepareReplyContent linker_prepare_reply_content = 58;
+            LinkerConfirmUnsilenceContent linker_confirm_unsilence_content = 59;
+            LinkerSwitchChannelInviteContent switch_channel_invite_content = 60;
+            LinkerSwitchChannelReplyContent switch_channel_reply_content = 61;
+            LinkerSwitchChannelCancelContent switch_channel_cancel_content = 62;
+            LinkerSysKickOutContent sys_kick_out_content = 101;
+            uint64 fallback_scene = 199;
+            string extra = 200;
+            Data.LinkerBaseInfo linker_base_info = 201;
+            PublicAreaCommon public_area_common = 202;
         }
 
         message LinkerSwitchChannelInviteContent {
@@ -3052,218 +3052,218 @@ message webcast {
         }
 
         message LinkmicInfo {
-            string  access_key = 1;
-            uint64  link_mic_id = 2;
-            bool  joinable = 3;
-            int32  confluence_type = 4;
-            string  rtc_ext_info = 5;
-            string  rtc_app_id = 6;
-            string  rtc_app_sign = 7;
-            string  linkmic_id_str = 8;
-            uint64  vendor = 9;
-            string  live_core_ext_info = 10;
-            Data.MultiRtcInfo  multi_rtc_info = 11;
-            Data.MultiLiveCoreInfo  multi_live_core_info = 12;
+            string access_key = 1;
+            uint64 link_mic_id = 2;
+            bool joinable = 3;
+            int32 confluence_type = 4;
+            string rtc_ext_info = 5;
+            string rtc_app_id = 6;
+            string rtc_app_sign = 7;
+            string linkmic_id_str = 8;
+            uint64 vendor = 9;
+            string live_core_ext_info = 10;
+            Data.MultiRtcInfo multi_rtc_info = 11;
+            Data.MultiLiveCoreInfo multi_live_core_info = 12;
         }
 
         message LinkerSetting {
-            uint64  max_member_limit = 1;
-            uint64  link_type = 2;
-            uint64  scene = 3;
-            uint64  owner_user_id = 4;
-            uint64  owner_room_id = 5;
-            uint64  vendor = 6;
+            uint64 max_member_limit = 1;
+            uint64 link_type = 2;
+            uint64 scene = 3;
+            uint64 owner_user_id = 4;
+            uint64 owner_room_id = 5;
+            uint64 vendor = 6;
         }
 
         message LinkerInviteContent {
-            uint64  from_user_id = 1;
-            uint64  from_room_id = 2;
-            string  to_rtc_ext_info = 3;
-            bool  rtc_join_channel = 4;
-            uint64  vendor = 5;
-            string  sec_from_user_id = 6;
-            string  to_linkmic_id_str = 7;
-            bool  rtc_push_stream = 8;
-            string  sign_extra = 9;
-            int32  invite_source = 10;
-            LinkmicInfo  from_user_linkmic_info = 11;
-            Data.MultiRtcInfo  multi_rtc_info = 12;
-            Data.MultiLiveCoreInfo  multi_live_core_info = 13;
-            int32  multi_pk_mode = 14;
-            bool  support_multi_pk_team_mode = 15;
-            Data.LinkmicInfo  to_user_linkmic_info = 16;
-            Data.MultiChannelInfo  multi_channel_info = 17;
-            string  invite_reject_temporary_text = 18;
-            string  audience_linker_description = 19;
-            bool  inviter_with_audience = 20;
-            repeated Data.ListUser  invitee_followed_users = 21;
-            repeated Data.ListUser  inviter_users = 22;
-            uint64  to_user_id = 23;
-            uint64  to_room_id = 24;
-            Data.ListUser  applied_user = 25;
-            Data.PreRTCInfo  pre_rtc_info = 26;
-            bool  support_multi_invite = 27;
-            uint64  cur_invite_num = 28;
-            uint64  wait_sec = 29;
-            repeated Data.BattleRivalTag  tags = 30;
-            Data.ListUser  invite_user = 31;
-            string  client_attached_info = 32;
-            Data.UserVersionInfo  inviter_version_info = 33;
-            uint64  to_join_channel_id = 34;
+            uint64 from_user_id = 1;
+            uint64 from_room_id = 2;
+            string to_rtc_ext_info = 3;
+            bool rtc_join_channel = 4;
+            uint64 vendor = 5;
+            string sec_from_user_id = 6;
+            string to_linkmic_id_str = 7;
+            bool rtc_push_stream = 8;
+            string sign_extra = 9;
+            int32 invite_source = 10;
+            LinkmicInfo from_user_linkmic_info = 11;
+            Data.MultiRtcInfo multi_rtc_info = 12;
+            Data.MultiLiveCoreInfo multi_live_core_info = 13;
+            int32 multi_pk_mode = 14;
+            bool support_multi_pk_team_mode = 15;
+            Data.LinkmicInfo to_user_linkmic_info = 16;
+            Data.MultiChannelInfo multi_channel_info = 17;
+            string invite_reject_temporary_text = 18;
+            string audience_linker_description = 19;
+            bool inviter_with_audience = 20;
+            repeated Data.ListUser invitee_followed_users = 21;
+            repeated Data.ListUser inviter_users = 22;
+            uint64 to_user_id = 23;
+            uint64 to_room_id = 24;
+            Data.ListUser applied_user = 25;
+            Data.PreRTCInfo pre_rtc_info = 26;
+            bool support_multi_invite = 27;
+            uint64 cur_invite_num = 28;
+            uint64 wait_sec = 29;
+            repeated Data.BattleRivalTag tags = 30;
+            Data.ListUser invite_user = 31;
+            string client_attached_info = 32;
+            Data.UserVersionInfo inviter_version_info = 33;
+            uint64 to_join_channel_id = 34;
         }
 
         message LinkerPrepareInviteContent {
-            uint64  from_user_id = 1;
-            uint64  from_room_id = 2;
-            uint64  to_user_id = 3;
-            Data.User  invitor_user = 4;
-            Data.Text  content = 5;
-            string  source = 6;
+            uint64 from_user_id = 1;
+            uint64 from_room_id = 2;
+            uint64 to_user_id = 3;
+            Data.User invitor_user = 4;
+            Data.Text content = 5;
+            string source = 6;
         }
 
         message LinkerPrepareReplyContent {
-            uint64  from_user_id = 1;
-            uint64  from_room_id = 2;
-            uint64  to_user_id = 3;
-            int32  reply_type = 4;
-            string  toast = 5;
+            uint64 from_user_id = 1;
+            uint64 from_room_id = 2;
+            uint64 to_user_id = 3;
+            int32 reply_type = 4;
+            string toast = 5;
         }
 
         message LinkerConfirmUnsilenceContent {
-            uint64  from_user_id = 1;
-            uint64  from_room_id = 2;
-            string  toast = 3;
+            uint64 from_user_id = 1;
+            uint64 from_room_id = 2;
+            string toast = 3;
         }
 
         message LinkPrepareApplyContent {
-            uint64  from_user_id = 1;
-            uint64  from_room_id = 2;
-            uint64  vendor = 3;
-            string  sec_from_user_id = 4;
-            uint64  count = 5;
+            uint64 from_user_id = 1;
+            uint64 from_room_id = 2;
+            uint64 vendor = 3;
+            string sec_from_user_id = 4;
+            uint64 count = 5;
         }
 
         message LinkerReplyContent {
-            uint64  from_user_id = 1;
-            uint64  from_room_id = 2;
-            LinkmicInfo  from_user_linkmic_info = 3;
-            uint64  to_user_id = 4;
-            LinkmicInfo  to_user_linkmic_info = 5;
-            uint64  link_type = 6;
-            uint64  reply_status = 7;
-            LinkerSetting  linker_setting = 8;
-            bool  biz_join_channel = 9;
-            int32  multi_pk_mode = 10;
-            Data.MultiChannelInfo  multi_channel_info = 11;
-            string  toast = 12;
-            map<int64,Data.RoomLinkerContent> linker_content_map = 13;
-            Data.AnchorLinkmicChannelInfo  backup_linkmic_info = 14;
-            string  kicked_users_unique_id = 15;
-            uint64  match_type = 16;
-            uint64  version = 17;
-            uint64  anchor_ui_layout = 18;
-            repeated Data.ListUser  linked_users = 19;
-            int32  switch_to_scene = 20;
-            string  battle_config_setting = 21;
-            string  client_attached_info = 22;
-            Data.UserVersionInfo  reply_version_info = 23;
-            Data.AnchorLayoutInfo  layout_info = 24;
+            uint64 from_user_id = 1;
+            uint64 from_room_id = 2;
+            LinkmicInfo from_user_linkmic_info = 3;
+            uint64 to_user_id = 4;
+            LinkmicInfo to_user_linkmic_info = 5;
+            uint64 link_type = 6;
+            uint64 reply_status = 7;
+            LinkerSetting linker_setting = 8;
+            bool biz_join_channel = 9;
+            int32 multi_pk_mode = 10;
+            Data.MultiChannelInfo multi_channel_info = 11;
+            string toast = 12;
+            map<int64, Data.RoomLinkerContent> linker_content_map = 13;
+            Data.AnchorLinkmicChannelInfo backup_linkmic_info = 14;
+            string kicked_users_unique_id = 15;
+            uint64 match_type = 16;
+            uint64 version = 17;
+            uint64 anchor_ui_layout = 18;
+            repeated Data.ListUser linked_users = 19;
+            int32 switch_to_scene = 20;
+            string battle_config_setting = 21;
+            string client_attached_info = 22;
+            Data.UserVersionInfo reply_version_info = 23;
+            Data.AnchorLayoutInfo layout_info = 24;
         }
 
         message LinkerCreateContent {
-            uint64  owner_id = 1;
-            uint64  owner_room_id = 2;
-            uint64  link_type = 3;
+            uint64 owner_id = 1;
+            uint64 owner_room_id = 2;
+            uint64 link_type = 3;
         }
 
         message MatchEffect {
-            bool  show_effect = 1;
-            Data.Image  effect_resource = 2;
+            bool show_effect = 1;
+            Data.Image effect_resource = 2;
         }
 
         message CityEffect {
-            Data.Image  effect_resource = 1;
-            string  city = 2;
-            repeated uint64  show_effect_user_id_list = 3;
+            Data.Image effect_resource = 1;
+            string city = 2;
+            repeated uint64 show_effect_user_id_list = 3;
         }
 
         message LinkerEnterContent {
-            repeated Data.ListUser  linked_users = 1;
-            uint64  user_id = 2;
-            int32  apply_type = 3;
-            repeated Data.ListUser  pre_link_users = 4;
-            MatchEffect  match_effect = 5;
-            CityEffect  city_effect = 6;
-            uint64  version = 7;
-            map<int64,Data.RoomLinkerContent> linker_content_map = 8;
-            Data.MsgBoardItemInfo  msg_board_item = 9;
-            Data.LinkIconConfig  link_icon_config = 10;
-            string  lynx_data = 11;
-            Data.LinkmicUIConfig  ui_config = 12;
-            bool  battle_display_entrance = 13;
+            repeated Data.ListUser linked_users = 1;
+            uint64 user_id = 2;
+            int32 apply_type = 3;
+            repeated Data.ListUser pre_link_users = 4;
+            MatchEffect match_effect = 5;
+            CityEffect city_effect = 6;
+            uint64 version = 7;
+            map<int64, Data.RoomLinkerContent> linker_content_map = 8;
+            Data.MsgBoardItemInfo msg_board_item = 9;
+            Data.LinkIconConfig link_icon_config = 10;
+            string lynx_data = 11;
+            Data.LinkmicUIConfig ui_config = 12;
+            bool battle_display_entrance = 13;
         }
 
         message LinkerViolationReminderContent {
-            string  title = 1;
-            string  content = 2;
+            string title = 1;
+            string content = 2;
         }
 
         message LinkerCloseContent {
-            int32  source = 1;
-            Data.BanUser  ban_anchor_info = 2;
-            int32  reason = 3;
+            int32 source = 1;
+            Data.BanUser ban_anchor_info = 2;
+            int32 reason = 3;
         }
 
         message LinkerLeaveContent {
-            uint64  user_id = 1;
-            repeated Data.ListUser  linked_users = 2;
-            Data.ListUser  user = 3;
-            repeated Data.ListUser  pre_link_users = 4;
-            uint64  version = 5;
-            map<int64,Data.RoomLinkerContent> linker_content_map = 6;
-            int32  leave_source = 7;
-            Data.PreRTCInfo  pre_rtc_info = 8;
-            Data.MultiChannelInfo  multi_channel_info = 9;
-            repeated Data.ListUser  list_users = 10;
-            uint64  pre_rtc_version = 11;
+            uint64 user_id = 1;
+            repeated Data.ListUser linked_users = 2;
+            Data.ListUser user = 3;
+            repeated Data.ListUser pre_link_users = 4;
+            uint64 version = 5;
+            map<int64, Data.RoomLinkerContent> linker_content_map = 6;
+            int32 leave_source = 7;
+            Data.PreRTCInfo pre_rtc_info = 8;
+            Data.MultiChannelInfo multi_channel_info = 9;
+            repeated Data.ListUser list_users = 10;
+            uint64 pre_rtc_version = 11;
         }
 
         message LinkerCancelContent {
-            uint64  from_user_id = 1;
-            uint64  to_user_id = 2;
-            uint64  cancel_type = 3;
-            int32  invite_source = 4;
-            string  toast = 5;
+            uint64 from_user_id = 1;
+            uint64 to_user_id = 2;
+            uint64 cancel_type = 3;
+            int32 invite_source = 4;
+            string toast = 5;
         }
 
         message LinkerKickOutContent {
-            uint64  from_user_id = 1;
-            int32  control_type = 2;
-            uint64  paid_count = 3;
-            uint64  link_duration = 4;
-            int32  kick_out_source = 5;
+            uint64 from_user_id = 1;
+            int32 control_type = 2;
+            uint64 paid_count = 3;
+            uint64 link_duration = 4;
+            int32 kick_out_source = 5;
         }
 
         message LinkerSysKickOutContent {
-            uint64  user_id = 1;
-            string  linkmic_id_str = 2;
-            string  toast_msg = 3;
+            uint64 user_id = 1;
+            string linkmic_id_str = 2;
+            string toast_msg = 3;
         }
 
         message LinkerWaitingListChangeContent {
-            Data.PreRTCInfo  pre_rtc_info = 1;
-            Data.MultiChannelInfo  multi_channel_info = 2;
-            repeated Data.ListUser  list_users = 3;
-            uint64  version = 4;
+            Data.PreRTCInfo pre_rtc_info = 1;
+            Data.MultiChannelInfo multi_channel_info = 2;
+            repeated Data.ListUser list_users = 3;
+            uint64 version = 4;
         }
 
         message LinkerLinkedListChangeContent {
-            repeated Data.ListUser  linked_users = 1;
-            repeated Data.ListUser  pre_link_users = 2;
-            uint64  version = 3;
-            int32  push_type = 4;
-            map<int64,Data.RoomLinkerContent> linker_content_map = 5;
-            int32  update_mode = 6;
+            repeated Data.ListUser linked_users = 1;
+            repeated Data.ListUser pre_link_users = 2;
+            uint64 version = 3;
+            int32 push_type = 4;
+            map<int64, Data.RoomLinkerContent> linker_content_map = 5;
+            int32 update_mode = 6;
         }
 
         message LinkerBanContent {
@@ -3271,56 +3271,56 @@ message webcast {
         }
 
         message LinkerUpdateUserContent {
-            uint64  from_user_id = 1;
-            uint64  to_user_id = 2;
-            map<string,string> update_info = 3;
-            repeated Data.ListUser  linked_users = 4;
-            string  extra = 5;
-            uint64  version = 6;
-            map<int64,Data.RoomLinkerContent> linker_content_map = 7;
-            string  ack_message = 8;
+            uint64 from_user_id = 1;
+            uint64 to_user_id = 2;
+            map<string, string> update_info = 3;
+            repeated Data.ListUser linked_users = 4;
+            string extra = 5;
+            uint64 version = 6;
+            map<int64, Data.RoomLinkerContent> linker_content_map = 7;
+            string ack_message = 8;
         }
 
         message ChannelNoticeContent {
-            uint64  channel_id = 1;
-            int32  action = 2;
-            string  extra_info = 3;
+            uint64 channel_id = 1;
+            int32 action = 2;
+            string extra_info = 3;
         }
 
         message LinkerItemContent {
-            uint64  item_id = 1;
-            uint64  author_id = 2;
-            string  author_name = 3;
-            Data.Image  avatar_thumb = 4;
-            Data.Image  avatar_medium = 5;
-            Data.Image  avatar_large = 6;
-            string  item_description = 7;
-            string  music_id = 8;
-            string  music_title = 9;
-            string  music_author = 10;
-            string  music_url = 11;
-            uint64  comment_count = 12;
+            uint64 item_id = 1;
+            uint64 author_id = 2;
+            string author_name = 3;
+            Data.Image avatar_thumb = 4;
+            Data.Image avatar_medium = 5;
+            Data.Image avatar_large = 6;
+            string item_description = 7;
+            string music_id = 8;
+            string music_title = 9;
+            string music_author = 10;
+            string music_url = 11;
+            uint64 comment_count = 12;
         }
 
         message LinkerUpdateLinkTypeApplyContent {
-            uint64  from_user_id = 1;
-            uint64  to_user_id = 2;
-            int32  link_type = 3;
-            int32  source = 4;
-            string  ack_message = 5;
+            uint64 from_user_id = 1;
+            uint64 to_user_id = 2;
+            int32 link_type = 3;
+            int32 source = 4;
+            string ack_message = 5;
         }
 
         message LinkerUpdateLinkTypeReplyContent {
-            uint64  from_user_id = 1;
-            uint64  to_user_id = 2;
-            int32  reply_type = 3;
-            string  reply_prompts = 4;
+            uint64 from_user_id = 1;
+            uint64 to_user_id = 2;
+            int32 reply_type = 3;
+            string reply_prompts = 4;
         }
 
         message LinkerAvatarAuditContent {
-            int32  audit_res = 1;
-            string  reason = 2;
-            uint64  review_id = 3;
+            int32 audit_res = 1;
+            string reason = 2;
+            uint64 review_id = 3;
         }
 
         message LinkerApplyExpiredContent {
@@ -3328,30 +3328,30 @@ message webcast {
         }
 
         message LinkerApplyStrongReminderContent {
-            int32  source = 1;
-            Data.User  user = 2;
+            int32 source = 1;
+            Data.User user = 2;
         }
 
         message LinkerAnchorStreamSwitchContent {
-            bool  use_backup_stream = 1;
-            uint64  anchor_user_id = 2;
-            repeated Data.ListUser  linked_users = 3;
-            uint64  version = 4;
+            bool use_backup_stream = 1;
+            uint64 anchor_user_id = 2;
+            repeated Data.ListUser linked_users = 3;
+            uint64 version = 4;
         }
 
         message LinkerClickScreenContent {
-            uint64  device_width = 1;
-            uint64  device_height = 2;
-            uint64  point_x = 3;
-            uint64  point_y = 4;
-            uint64  from_user_id = 5;
-            Data.Image  avatar_medium = 6;
+            uint64 device_width = 1;
+            uint64 device_height = 2;
+            uint64 point_x = 3;
+            uint64 point_y = 4;
+            uint64 from_user_id = 5;
+            Data.Image avatar_medium = 6;
         }
 
         message LinkerFollowStrongGuideContent {
-            Data.User  from_user = 1;
-            uint64  to_user_id = 2;
-            int32  from_user_type = 3;
+            Data.User from_user = 1;
+            uint64 to_user_id = 2;
+            int32 from_user_type = 3;
         }
 
         message LinkerLockPositionContent {
@@ -3375,13 +3375,13 @@ message webcast {
         }
 
         message LinkPhaseEnterNextNotifyContent {
-            uint64  room_id = 1;
-            Data.User  anchor_user = 2;
-            Data.User  link_user = 3;
-            Data.LinkPhase  next_phase = 4;
-            int32  current_phase_id = 5;
-            int32  current_linktime_seconds = 6;
-            Data.LinkPhaseConfig  phase_config = 7;
+            uint64 room_id = 1;
+            Data.User anchor_user = 2;
+            Data.User link_user = 3;
+            Data.LinkPhase next_phase = 4;
+            int32 current_phase_id = 5;
+            int32 current_linktime_seconds = 6;
+            Data.LinkPhaseConfig phase_config = 7;
         }
 
         message LinkerChangePlayModeContent {
@@ -3393,53 +3393,53 @@ message webcast {
         }
 
         message LinkerDegradeAlertContent {
-            Data.User  user = 1;
-            string  degrade_content = 2;
+            Data.User user = 1;
+            string degrade_content = 2;
         }
 
         message LinkerEnlargeGuestInviteContent {
-            uint64  from_user_id = 1;
-            uint64  to_user_id = 2;
-            int32  invite_type = 3;
-            Data.Image  ui_image = 4;
-            int32  target_enlarge_guest_type = 5;
+            uint64 from_user_id = 1;
+            uint64 to_user_id = 2;
+            int32 invite_type = 3;
+            Data.Image ui_image = 4;
+            int32 target_enlarge_guest_type = 5;
         }
 
         message LinkerEnlargeGuestReplyContent {
-            uint64  from_user_id = 1;
-            uint64  to_user_id = 2;
-            int32  reply_type = 3;
-            string  reply_prompts = 4;
+            uint64 from_user_id = 1;
+            uint64 to_user_id = 2;
+            int32 reply_type = 3;
+            string reply_prompts = 4;
         }
 
         message LinkerEnlargeGuestApplyContent {
-            uint64  from_user_id = 1;
-            string  apply_prompts = 2;
-            Data.Image  ui_image = 3;
-            int32  target_enlarge_guest_type = 4;
+            uint64 from_user_id = 1;
+            string apply_prompts = 2;
+            Data.Image ui_image = 3;
+            int32 target_enlarge_guest_type = 4;
         }
 
         message CrossRoomLinkInviteContent {
-            Data.User  inviter = 1;
-            Data.InviteRoomInfo  room_info = 2;
-            string  invite_tips = 3;
-            int32  inviter_room_join_status = 4;
-            Data.RoomBattleMode  room_battle_mode = 5;
-            string  introduction_content = 6;
+            Data.User inviter = 1;
+            Data.InviteRoomInfo room_info = 2;
+            string invite_tips = 3;
+            int32 inviter_room_join_status = 4;
+            Data.RoomBattleMode room_battle_mode = 5;
+            string introduction_content = 6;
         }
 
         message CrossRoomLinkReplyContent {
-            int32  reply_type = 1;
-            uint64  invitee_room_id = 2;
-            int32  cross_type = 3;
-            repeated Data.CrossRoomLinkReplyGuestInfo  guest_infos = 4;
-            uint64  invitee_anchor_id = 5;
-            uint64  follow_status = 6;
-            uint64  invite_source = 7;
-            uint64  reply_user_id = 8;
-            string  reply_toast = 9;
-            int32  reply_operate = 10;
-            Data.RoomBattleProcessInfo  process_info = 11;
+            int32 reply_type = 1;
+            uint64 invitee_room_id = 2;
+            int32 cross_type = 3;
+            repeated Data.CrossRoomLinkReplyGuestInfo guest_infos = 4;
+            uint64 invitee_anchor_id = 5;
+            uint64 follow_status = 6;
+            uint64 invite_source = 7;
+            uint64 reply_user_id = 8;
+            string reply_toast = 9;
+            int32 reply_operate = 10;
+            Data.RoomBattleProcessInfo process_info = 11;
         }
 
         message CrossRoomLinkCancelInviteContent {
@@ -3447,39 +3447,39 @@ message webcast {
         }
 
         message LinkerCrossRoomUpdateContent {
-            uint64  from_room_id = 1;
-            uint64  to_room_id = 2;
-            map<string,string> update_info =3;
-            repeated Data.ListUser  linked_users = 4;
-            uint64String  version = 5;
-            map<int64,Data.RoomLinkerContent> linker_content_map = 6;
+            uint64 from_room_id = 1;
+            uint64 to_room_id = 2;
+            map<string, string> update_info = 3;
+            repeated Data.ListUser linked_users = 4;
+            uint64String version = 5;
+            map<int64, Data.RoomLinkerContent> linker_content_map = 6;
         }
 
         message LinkerChangeMultiPKTeamInfoContent {
-            Data.MultiPKModeInfo  multi_pk_mode_info = 1;
-            string  toast = 2;
+            Data.MultiPKModeInfo multi_pk_mode_info = 1;
+            string toast = 2;
         }
 
         message LinkerResumeAudienceContent {
-            string  rtc_ext_info = 1;
-            string  live_core_ext_info = 2;
-            repeated Data.ListUser  linked_users = 3;
-            uint64String  version = 4;
+            string rtc_ext_info = 1;
+            string live_core_ext_info = 2;
+            repeated Data.ListUser linked_users = 3;
+            uint64String version = 4;
         }
 
         message LinkerBattleConnectContent {
-            string  live_core_ext_info = 1;
-            string  rtc_ext_info = 2;
-            map<int64,Data.RoomLinkerContent> linker_content_map = 3;
-            Data.MultiChannelInfo  multi_channel_info = 4;
-            uint64String  version = 5;
-            repeated Data.ListUser  anchor_user_list = 6;
+            string live_core_ext_info = 1;
+            string rtc_ext_info = 2;
+            map<int64, Data.RoomLinkerContent> linker_content_map = 3;
+            Data.MultiChannelInfo multi_channel_info = 4;
+            uint64String version = 5;
+            repeated Data.ListUser anchor_user_list = 6;
         }
 
         message LinkerResumeApplyContent {
-            ApplyParam  param = 1;
-            uint64  apply_user = 2;
-            uint64  room_id = 3;
+            ApplyParam param = 1;
+            uint64 apply_user = 2;
+            uint64 room_id = 3;
 
             message ApplyParam {
                 int32 apply_type = 1;
@@ -3491,16 +3491,16 @@ message webcast {
         }
 
         message AnchorUpdateLinkmicConfigContent {
-            bool  forbid_invite_by_general = 1;
-            bool  forbid_apply_from_other = 2;
+            bool forbid_invite_by_general = 1;
+            bool forbid_apply_from_other = 2;
         }
 
         message AnchorUpdateLayoutContent {
-            int32  layout_type = 1;
-            uint64  update_user_id = 2;
-            int32  anchor_ui_layout = 3;
-            int32  anchor_layout_range = 4;
-            uint64  operator_id = 5;
+            int32 layout_type = 1;
+            uint64 update_user_id = 2;
+            int32 anchor_ui_layout = 3;
+            int32 anchor_layout_range = 4;
+            uint64 operator_id = 5;
         }
 
         message LinkerApplyRankChangeContent {
@@ -3508,26 +3508,26 @@ message webcast {
         }
 
         message LinkerChangeMediaInfoContent {
-            repeated int32  scene_list = 1;
-            repeated int32  play_mode_list = 2;
-            Data.LinkmicMediaParam  linkmic_media_param = 3;
+            repeated int32 scene_list = 1;
+            repeated int32 play_mode_list = 2;
+            Data.LinkmicMediaParam linkmic_media_param = 3;
         }
 
         message LinkerUILayoutChangeContent {
-            uint64  ui_layout = 1;
-            string  rtc_ext_info = 2;
-            string  live_core_ext_info = 3;
-            Data.MultiRtcInfo  multi_rtc_info = 4;
-            Data.MultiLiveCoreInfo  multi_live_core_info = 5;
-            uint64String  version = 6;
-            repeated Data.ListUser  linked_list_users = 7;
-            map<int64,Data.RoomLinkerContent> linker_content_map = 8;
+            uint64 ui_layout = 1;
+            string rtc_ext_info = 2;
+            string live_core_ext_info = 3;
+            Data.MultiRtcInfo multi_rtc_info = 4;
+            Data.MultiLiveCoreInfo multi_live_core_info = 5;
+            uint64String version = 6;
+            repeated Data.ListUser linked_list_users = 7;
+            map<int64, Data.RoomLinkerContent> linker_content_map = 8;
         }
 
         message LinkerUpdateWaitingUserOffsetContent {
-            uint64  offset = 1;
-            int32  sort_strategy = 2;
-            uint64  total_count = 3;
+            uint64 offset = 1;
+            int32 sort_strategy = 2;
+            uint64 total_count = 3;
         }
 
         message LinkerRemoveWaitingUserContent {
@@ -3535,75 +3535,75 @@ message webcast {
         }
 
         message LinkMicArmies {
-            Common  common = 1;
-            map<int64,UserArmies> user_armies_map = 2;
-            repeated UserArmies  user_armies_list = 3;
-            Data.BattleContributorsRankListV2  rank_list_v2 = 4;
-            string  top_show_text = 5;
+            Common common = 1;
+            map<int64, UserArmies> user_armies_map = 2;
+            repeated UserArmies user_armies_list = 3;
+            Data.BattleContributorsRankListV2 rank_list_v2 = 4;
+            string top_show_text = 5;
 
             message UserArmies {
                 UserArmy user_armies = 1;
 
                 message UserArmy {
-                    uint64  user_id = 1;
-                    uint64  score = 2;
-                    string  nickname = 3;
-                    Data.Image  avatar_thumb = 4;
+                    uint64 user_id = 1;
+                    uint64 score = 2;
+                    string nickname = 3;
+                    Data.Image avatar_thumb = 4;
                 }
             }
         }
 
         message LinkMicBattleFinish {
-            Common  common = 1;
-            BattleSettings  battle_settings = 2;
-            repeated Data.BattleArmy  battle_armies = 3;
-            repeated Data.BattleScore  battle_scores = 4;
-            repeated Data.User  anchors = 5;
-            map<int64,Data.BattleStarActivityGradeChange> grade_changes = 6;
-            Data.OperationalPlay  operational_play = 7;
-            int32  end_reason = 8;
-            string  cut_short_prompt = 9;
-            string  cut_short_toast = 10;
-            bool  cut_short_win = 11;
-            map<int64,Data.BattleUserInfo> user_infos = 12;
-            int32  kill_finish_type = 13;
-            Data.BreakthroughInfo  breakthrough_info = 14;
-            Data.BattleSkinConfig  skin_config = 15;
-            int32  skin_type = 16;
-            Data.SurvivalInfo  survival_info = 17;
-            string  event_tracking_info = 18;
+            Common common = 1;
+            BattleSettings battle_settings = 2;
+            repeated Data.BattleArmy battle_armies = 3;
+            repeated Data.BattleScore battle_scores = 4;
+            repeated Data.User anchors = 5;
+            map<int64, Data.BattleStarActivityGradeChange> grade_changes = 6;
+            Data.OperationalPlay operational_play = 7;
+            int32 end_reason = 8;
+            string cut_short_prompt = 9;
+            string cut_short_toast = 10;
+            bool cut_short_win = 11;
+            map<int64, Data.BattleUserInfo> user_infos = 12;
+            int32 kill_finish_type = 13;
+            Data.BreakthroughInfo breakthrough_info = 14;
+            Data.BattleSkinConfig skin_config = 15;
+            int32 skin_type = 16;
+            Data.SurvivalInfo survival_info = 17;
+            string event_tracking_info = 18;
         }
 
         message PunishEffect {
-            uint64  effect_id = 1;
-            string  effect_name = 2;
-            Data.Image  effect_image = 3;
-            uint64  lowest_score = 4;
-            uint64  duration = 5;
-            uint64  need_medicine_count = 6;
-            bool  usable = 7;
-            int32  level = 8;
+            uint64 effect_id = 1;
+            string effect_name = 2;
+            Data.Image effect_image = 3;
+            uint64 lowest_score = 4;
+            uint64 duration = 5;
+            uint64 need_medicine_count = 6;
+            bool usable = 7;
+            int32 level = 8;
         }
 
         message LinkMicBattlePunish {
-            Common  common = 1;
-            uint64  message_type = 2;
-            repeated PunishEffect  punish_effect_list = 3;
-            string  prompts = 4;
-            Data.User  mvp = 5;
-            uint64  medicine_count = 6;
-            PunishEffect  target_effect = 7;
-            uint64  start_time = 8;
-            Data.User  target_user = 9;
-            uint64  speedy_gift_id = 11;
-            uint64  duration = 12;
-            uint64  channel_id = 13;
-            uint64  battle_id = 14;
+            Common common = 1;
+            uint64 message_type = 2;
+            repeated PunishEffect punish_effect_list = 3;
+            string prompts = 4;
+            Data.User mvp = 5;
+            uint64 medicine_count = 6;
+            PunishEffect target_effect = 7;
+            uint64 start_time = 8;
+            Data.User target_user = 9;
+            uint64 speedy_gift_id = 11;
+            uint64 duration = 12;
+            uint64 channel_id = 13;
+            uint64 battle_id = 14;
         }
 
         message LinkMicBattleTaskMessage {
-            Common  common = 1;
-            string  content = 2;
+            Common common = 1;
+            string content = 2;
         }
 
 
