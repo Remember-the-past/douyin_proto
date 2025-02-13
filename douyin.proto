@@ -2944,7 +2944,7 @@ message webcast {
 
         message ChannelLinkerLinkedListChangeContent {
             Data.ChannelListUser  channel_linkmic_users = 1;
-            uint64String  version = 2;
+            uint64  version = 2;
             string  rtc_room_id_str = 3;
         }
 
@@ -3136,6 +3136,483 @@ message webcast {
             uint64  to_user_id = 3;
             int32  reply_type = 4;
             string  toast = 5;
+        }
+
+        message LinkerConfirmUnsilenceContent {
+            uint64  from_user_id = 1;
+            uint64  from_room_id = 2;
+            string  toast = 3;
+        }
+
+        message LinkPrepareApplyContent {
+            uint64  from_user_id = 1;
+            uint64  from_room_id = 2;
+            uint64  vendor = 3;
+            string  sec_from_user_id = 4;
+            uint64  count = 5;
+        }
+
+        message LinkerReplyContent {
+            uint64  from_user_id = 1;
+            uint64  from_room_id = 2;
+            LinkmicInfo  from_user_linkmic_info = 3;
+            uint64  to_user_id = 4;
+            LinkmicInfo  to_user_linkmic_info = 5;
+            uint64  link_type = 6;
+            uint64  reply_status = 7;
+            LinkerSetting  linker_setting = 8;
+            bool  biz_join_channel = 9;
+            int32  multi_pk_mode = 10;
+            Data.MultiChannelInfo  multi_channel_info = 11;
+            string  toast = 12;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 13;
+            Data.AnchorLinkmicChannelInfo  backup_linkmic_info = 14;
+            string  kicked_users_unique_id = 15;
+            uint64  match_type = 16;
+            uint64  version = 17;
+            uint64  anchor_ui_layout = 18;
+            repeated Data.ListUser  linked_users = 19;
+            int32  switch_to_scene = 20;
+            string  battle_config_setting = 21;
+            string  client_attached_info = 22;
+            Data.UserVersionInfo  reply_version_info = 23;
+            Data.AnchorLayoutInfo  layout_info = 24;
+        }
+
+        message LinkerCreateContent {
+            uint64  owner_id = 1;
+            uint64  owner_room_id = 2;
+            uint64  link_type = 3;
+        }
+
+        message MatchEffect {
+            bool  show_effect = 1;
+            Data.Image  effect_resource = 2;
+        }
+
+        message CityEffect {
+            Data.Image  effect_resource = 1;
+            string  city = 2;
+            repeated uint64  show_effect_user_id_list = 3;
+        }
+
+        message LinkerEnterContent {
+            repeated Data.ListUser  linked_users = 1;
+            uint64  user_id = 2;
+            int32  apply_type = 3;
+            repeated Data.ListUser  pre_link_users = 4;
+            MatchEffect  match_effect = 5;
+            CityEffect  city_effect = 6;
+            uint64  version = 7;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 8;
+            Data.MsgBoardItemInfo  msg_board_item = 9;
+            Data.LinkIconConfig  link_icon_config = 10;
+            string  lynx_data = 11;
+            Data.LinkmicUIConfig  ui_config = 12;
+            bool  battle_display_entrance = 13;
+        }
+
+        message LinkerViolationReminderContent {
+            string  title = 1;
+            string  content = 2;
+        }
+
+        message LinkerCloseContent {
+            int32  source = 1;
+            Data.BanUser  ban_anchor_info = 2;
+            int32  reason = 3;
+        }
+
+        message LinkerLeaveContent {
+            uint64  user_id = 1;
+            repeated Data.ListUser  linked_users = 2;
+            Data.ListUser  user = 3;
+            repeated Data.ListUser  pre_link_users = 4;
+            uint64  version = 5;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 6;
+            int32  leave_source = 7;
+            Data.PreRTCInfo  pre_rtc_info = 8;
+            Data.MultiChannelInfo  multi_channel_info = 9;
+            repeated Data.ListUser  list_users = 10;
+            uint64  pre_rtc_version = 11;
+        }
+
+        message LinkerCancelContent {
+            uint64  from_user_id = 1;
+            uint64  to_user_id = 2;
+            uint64  cancel_type = 3;
+            int32  invite_source = 4;
+            string  toast = 5;
+        }
+
+        message LinkerKickOutContent {
+            uint64  from_user_id = 1;
+            int32  control_type = 2;
+            uint64  paid_count = 3;
+            uint64  link_duration = 4;
+            int32  kick_out_source = 5;
+        }
+
+        message LinkerSysKickOutContent {
+            uint64  user_id = 1;
+            string  linkmic_id_str = 2;
+            string  toast_msg = 3;
+        }
+
+        message LinkerWaitingListChangeContent {
+            Data.PreRTCInfo  pre_rtc_info = 1;
+            Data.MultiChannelInfo  multi_channel_info = 2;
+            repeated Data.ListUser  list_users = 3;
+            uint64  version = 4;
+        }
+
+        message LinkerLinkedListChangeContent {
+            repeated Data.ListUser  linked_users = 1;
+            repeated Data.ListUser  pre_link_users = 2;
+            uint64  version = 3;
+            int32  push_type = 4;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 5;
+            int32  update_mode = 6;
+        }
+
+        message LinkerBanContent {
+            Data.BanUser ban_users = 1;
+        }
+
+        message LinkerUpdateUserContent {
+            uint64  from_user_id = 1;
+            uint64  to_user_id = 2;
+            map<string,string> update_info = 3;
+            repeated Data.ListUser  linked_users = 4;
+            string  extra = 5;
+            uint64  version = 6;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 7;
+            string  ack_message = 8;
+        }
+
+        message ChannelNoticeContent {
+            uint64  channel_id = 1;
+            int32  action = 2;
+            string  extra_info = 3;
+        }
+
+        message LinkerItemContent {
+            uint64  item_id = 1;
+            uint64  author_id = 2;
+            string  author_name = 3;
+            Data.Image  avatar_thumb = 4;
+            Data.Image  avatar_medium = 5;
+            Data.Image  avatar_large = 6;
+            string  item_description = 7;
+            string  music_id = 8;
+            string  music_title = 9;
+            string  music_author = 10;
+            string  music_url = 11;
+            uint64  comment_count = 12;
+        }
+
+        message LinkerUpdateLinkTypeApplyContent {
+            uint64  from_user_id = 1;
+            uint64  to_user_id = 2;
+            int32  link_type = 3;
+            int32  source = 4;
+            string  ack_message = 5;
+        }
+
+        message LinkerUpdateLinkTypeReplyContent {
+            uint64  from_user_id = 1;
+            uint64  to_user_id = 2;
+            int32  reply_type = 3;
+            string  reply_prompts = 4;
+        }
+
+        message LinkerAvatarAuditContent {
+            int32  audit_res = 1;
+            string  reason = 2;
+            uint64  review_id = 3;
+        }
+
+        message LinkerApplyExpiredContent {
+            uint64 user_id = 1;
+        }
+
+        message LinkerApplyStrongReminderContent {
+            int32  source = 1;
+            Data.User  user = 2;
+        }
+
+        message LinkerAnchorStreamSwitchContent {
+            bool  use_backup_stream = 1;
+            uint64  anchor_user_id = 2;
+            repeated Data.ListUser  linked_users = 3;
+            uint64  version = 4;
+        }
+
+        message LinkerClickScreenContent {
+            uint64  device_width = 1;
+            uint64  device_height = 2;
+            uint64  point_x = 3;
+            uint64  point_y = 4;
+            uint64  from_user_id = 5;
+            Data.Image  avatar_medium = 6;
+        }
+
+        message LinkerFollowStrongGuideContent {
+            Data.User  from_user = 1;
+            uint64  to_user_id = 2;
+            int32  from_user_type = 3;
+        }
+
+        message LinkerLockPositionContent {
+            Data.LinkmicPositionItem locked_positions = 1;
+        }
+
+        message LinkerShareVideoImContent {
+            string im_content = 1;
+        }
+
+        message LinkerGuestInviteContent {
+            Data.Text invite_content = 1;
+        }
+
+        message LinkerGuestExitCastScreenContent {
+            uint64 user_id = 1;
+        }
+
+        message LinkerSwitchSceneContent {
+            Data.SwitchSceneData switch_scene_data = 1;
+        }
+
+        message LinkPhaseEnterNextNotifyContent {
+            uint64  room_id = 1;
+            Data.User  anchor_user = 2;
+            Data.User  link_user = 3;
+            Data.LinkPhase  next_phase = 4;
+            int32  current_phase_id = 5;
+            int32  current_linktime_seconds = 6;
+            Data.LinkPhaseConfig  phase_config = 7;
+        }
+
+        message LinkerChangePlayModeContent {
+            Data.ChangePlayModeData change_play_mode_data = 1;
+        }
+
+        message LinkerLowBalanceForPaidLinkmicContent {
+            string toast = 1;
+        }
+
+        message LinkerDegradeAlertContent {
+            Data.User  user = 1;
+            string  degrade_content = 2;
+        }
+
+        message LinkerEnlargeGuestInviteContent {
+            uint64  from_user_id = 1;
+            uint64  to_user_id = 2;
+            int32  invite_type = 3;
+            Data.Image  ui_image = 4;
+            int32  target_enlarge_guest_type = 5;
+        }
+
+        message LinkerEnlargeGuestReplyContent {
+            uint64  from_user_id = 1;
+            uint64  to_user_id = 2;
+            int32  reply_type = 3;
+            string  reply_prompts = 4;
+        }
+
+        message LinkerEnlargeGuestApplyContent {
+            uint64  from_user_id = 1;
+            string  apply_prompts = 2;
+            Data.Image  ui_image = 3;
+            int32  target_enlarge_guest_type = 4;
+        }
+
+        message CrossRoomLinkInviteContent {
+            Data.User  inviter = 1;
+            Data.InviteRoomInfo  room_info = 2;
+            string  invite_tips = 3;
+            int32  inviter_room_join_status = 4;
+            Data.RoomBattleMode  room_battle_mode = 5;
+            string  introduction_content = 6;
+        }
+
+        message CrossRoomLinkReplyContent {
+            int32  reply_type = 1;
+            uint64  invitee_room_id = 2;
+            int32  cross_type = 3;
+            repeated Data.CrossRoomLinkReplyGuestInfo  guest_infos = 4;
+            uint64  invitee_anchor_id = 5;
+            uint64  follow_status = 6;
+            uint64  invite_source = 7;
+            uint64  reply_user_id = 8;
+            string  reply_toast = 9;
+            int32  reply_operate = 10;
+            Data.RoomBattleProcessInfo  process_info = 11;
+        }
+
+        message CrossRoomLinkCancelInviteContent {
+            uint64 canceller_room_id = 1;
+        }
+
+        message LinkerCrossRoomUpdateContent {
+            uint64  from_room_id = 1;
+            uint64  to_room_id = 2;
+            map<string,string> update_info =3;
+            repeated Data.ListUser  linked_users = 4;
+            uint64String  version = 5;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 6;
+        }
+
+        message LinkerChangeMultiPKTeamInfoContent {
+            Data.MultiPKModeInfo  multi_pk_mode_info = 1;
+            string  toast = 2;
+        }
+
+        message LinkerResumeAudienceContent {
+            string  rtc_ext_info = 1;
+            string  live_core_ext_info = 2;
+            repeated Data.ListUser  linked_users = 3;
+            uint64String  version = 4;
+        }
+
+        message LinkerBattleConnectContent {
+            string  live_core_ext_info = 1;
+            string  rtc_ext_info = 2;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 3;
+            Data.MultiChannelInfo  multi_channel_info = 4;
+            uint64String  version = 5;
+            repeated Data.ListUser  anchor_user_list = 6;
+        }
+
+        message LinkerResumeApplyContent {
+            ApplyParam  param = 1;
+            uint64  apply_user = 2;
+            uint64  room_id = 3;
+
+            message ApplyParam {
+                int32 apply_type = 1;
+            }
+        }
+
+        message CrossRoomRTCInfoContent {
+            Data.MultiChannelInfo multi_channel_info = 1;
+        }
+
+        message AnchorUpdateLinkmicConfigContent {
+            bool  forbid_invite_by_general = 1;
+            bool  forbid_apply_from_other = 2;
+        }
+
+        message AnchorUpdateLayoutContent {
+            int32  layout_type = 1;
+            uint64  update_user_id = 2;
+            int32  anchor_ui_layout = 3;
+            int32  anchor_layout_range = 4;
+            uint64  operator_id = 5;
+        }
+
+        message LinkerApplyRankChangeContent {
+            uint64 room_id = 1;
+        }
+
+        message LinkerChangeMediaInfoContent {
+            repeated int32  scene_list = 1;
+            repeated int32  play_mode_list = 2;
+            Data.LinkmicMediaParam  linkmic_media_param = 3;
+        }
+
+        message LinkerUILayoutChangeContent {
+            uint64  ui_layout = 1;
+            string  rtc_ext_info = 2;
+            string  live_core_ext_info = 3;
+            Data.MultiRtcInfo  multi_rtc_info = 4;
+            Data.MultiLiveCoreInfo  multi_live_core_info = 5;
+            uint64String  version = 6;
+            repeated Data.ListUser  linked_list_users = 7;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 8;
+        }
+
+        message LinkerUpdateWaitingUserOffsetContent {
+            uint64  offset = 1;
+            int32  sort_strategy = 2;
+            uint64  total_count = 3;
+        }
+
+        message LinkerRemoveWaitingUserContent {
+            string waiting_user_toast = 1;
+        }
+
+        message LinkMicArmies {
+            Common  common = 1;
+            map<int64,UserArmies> user_armies_map = 2;
+            repeated UserArmies  user_armies_list = 3;
+            Data.BattleContributorsRankListV2  rank_list_v2 = 4;
+            string  top_show_text = 5;
+
+            message UserArmies {
+                UserArmy user_armies = 1;
+
+                message UserArmy {
+                    uint64  user_id = 1;
+                    uint64  score = 2;
+                    string  nickname = 3;
+                    Data.Image  avatar_thumb = 4;
+                }
+            }
+        }
+
+        message LinkMicBattleFinish {
+            Common  common = 1;
+            BattleSettings  battle_settings = 2;
+            repeated Data.BattleArmy  battle_armies = 3;
+            repeated Data.BattleScore  battle_scores = 4;
+            repeated Data.User  anchors = 5;
+            map<int64,Data.BattleStarActivityGradeChange> grade_changes = 6;
+            Data.OperationalPlay  operational_play = 7;
+            int32  end_reason = 8;
+            string  cut_short_prompt = 9;
+            string  cut_short_toast = 10;
+            bool  cut_short_win = 11;
+            map<int64,Data.BattleUserInfo> user_infos = 12;
+            int32  kill_finish_type = 13;
+            Data.BreakthroughInfo  breakthrough_info = 14;
+            Data.BattleSkinConfig  skin_config = 15;
+            int32  skin_type = 16;
+            Data.SurvivalInfo  survival_info = 17;
+            string  event_tracking_info = 18;
+        }
+
+        message PunishEffect {
+            uint64  effect_id = 1;
+            string  effect_name = 2;
+            Data.Image  effect_image = 3;
+            uint64  lowest_score = 4;
+            uint64  duration = 5;
+            uint64  need_medicine_count = 6;
+            bool  usable = 7;
+            int32  level = 8;
+        }
+
+        message LinkMicBattlePunish {
+            Common  common = 1;
+            uint64  message_type = 2;
+            repeated PunishEffect  punish_effect_list = 3;
+            string  prompts = 4;
+            Data.User  mvp = 5;
+            uint64  medicine_count = 6;
+            PunishEffect  target_effect = 7;
+            uint64  start_time = 8;
+            Data.User  target_user = 9;
+            uint64  speedy_gift_id = 11;
+            uint64  duration = 12;
+            uint64  channel_id = 13;
+            uint64  battle_id = 14;
+        }
+
+        message LinkMicBattleTaskMessage {
+            Common  common = 1;
+            string  content = 2;
         }
     }
 }
