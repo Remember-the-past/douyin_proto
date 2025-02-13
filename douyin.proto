@@ -29,15 +29,6 @@ message Message {
 }
 
 message webcast {
-    message Data {
-        message Text {
-            string key = 1;
-            string default_pattern = 2;
-            TextFormat default_format = 3;
-            repeated TextPiece pieces = 4;
-            map<string, SchemaInfo> schema_infos = 20;
-        }
-    }
 
     message Im {
         message RoomBorderMessage {
@@ -3613,6 +3604,30 @@ message webcast {
         message LinkMicBattleTaskMessage {
             Common  common = 1;
             string  content = 2;
+        }
+
+
+    }
+
+    message Data {
+
+        message Text {
+            string key = 1;
+            string default_pattern = 2;
+            TextFormat default_format = 3;
+            repeated TextPiece pieces = 4;
+            map<string, SchemaInfo> schema_infos = 20;
+        }
+
+        message TextFormat {
+            string color = 1;
+            bool bold = 2;
+            bool italic = 3;
+            int32 weight = 4;
+            int32 italic_angle = 5;
+            int32 font_size = 6;
+            bool use_heigh_light_color = 7;
+            bool use_remote_clor = 8;
         }
     }
 }
