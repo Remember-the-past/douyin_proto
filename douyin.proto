@@ -3606,6 +3606,971 @@ message webcast {
             string content = 2;
         }
 
+        message ChijiNoticeMessage {
+            Common  common = 1;
+            int32  message_type = 2;
+            string  banner_url = 3;
+        }
+
+        message LinkMicEnterNoticeMessage {
+            Common  common = 1;
+            BattleSettings  battle_settings = 2;
+        }
+
+        message LinkMicFriendOnlineMessage {
+            Common  common = 1;
+            Data.User  friend = 2;
+            bool  in_room = 3;
+        }
+
+        message LinkMicGuideMessage {
+            Common  common = 1;
+            AnchorInfo  anchor_info = 2;
+            uint64  cue_threshold = 3;
+            uint64  guideline_type = 4;
+            FastMatchGuideline  fast_match_guideline = 5;
+            CallToLinkmicContent  call_to_linkmic_content = 20;
+            KtvAddSongGuideContent  ktv_add_song_guide_content = 21;
+            CreateGroupChatGuideContent  create_group_chat_guide_content = 22;
+            JoinGroupChatGuideContent  join_group_chat_guide_content = 23;
+            GuestBattleBubbleGuideContent  guest_battle_bubble_guide_content = 24;
+            CreateTeamfightGuideContent  create_teamfight_guide_content = 25;
+            NormalPaidLinkmicExplainCardContent  normal_paid_linkmic_explain_card_content = 26;
+            NormalPaidLinkmicMigrateToPlayContent  normal_paid_linkmic_migrate_to_play_content = 27;
+            LinkmicFollowEffectContent  linkmic_follow_effect_content = 28;
+            PKLinkBubbleContent  pk_link_bubble_content = 29;
+            PlayModeGuideBubbleContent  play_mode_guide_bubble_content = 30;
+
+            message AnchorInfo {
+                repeated InfoItem infoList = 1;
+
+                message InfoItem {
+                    Data.Image  icon = 1;
+                    string  content = 2;
+                }
+            }
+
+            message FastMatchGuideline {
+                string  title = 1;
+                string  subtitle = 2;
+            }
+        }
+
+        message LinkmicFollowEffectContent {
+            uint64  room_id = 1;
+            uint64  from_user_id = 2;
+            FollowInfo  follow_infos = 3;
+
+            message FollowInfo {
+                uint64  target_user_id = 1;
+                uint64  follow_status = 2;
+            }
+        }
+
+        message GuestBattleBubbleGuideContent {
+            Data.Text text = 1;
+        }
+
+        message CallToLinkmicContent {
+            Data.Text text = 1;
+        }
+
+        message KtvAddSongGuideContent {
+            Data.Text text = 1;
+        }
+
+        message CreateGroupChatGuideContent {
+            uint64  anchor_id = 1;
+            string  header_text = 2;
+            string  body_text = 3;
+        }
+
+        message JoinGroupChatGuideContent {
+            uint64  group_id = 1;
+            string  conversation_id = 2;
+            string  header_text = 3;
+            string  body_text = 4;
+            repeated Data.Image  icons = 5;
+            int32  group_type = 6;
+            int32  guide_source = 7;
+        }
+
+        message CreateTeamfightGuideContent {
+            Data.Text toast_text = 4;
+        }
+
+        message NormalPaidLinkmicExplainCardContent {
+            Data.PaidLinkmicExplainCardInfo explain_card_info = 1;
+        }
+
+        message NormalPaidLinkmicMigrateToPlayContent {
+            string toast = 1;
+        }
+
+        message PKLinkBubbleContent {
+            string toast = 1;
+        }
+
+        message PlayModeGuideBubbleContent {
+            int32  play_mode = 1;
+            string  toast = 2;
+            int32  play_mode_enhance_type = 3;
+            Data.Text  text = 4;
+            string  schema = 5;
+            map<string,string> extra = 6;
+        }
+
+        message LinkMicHostModifyMsg {
+            Common  common = 1;
+            repeated uint64  host_uids = 2;
+        }
+
+        message LinkMicKtvBeatRankMessage {
+            Common  common = 1;
+            repeated Data.User  user_list = 2;
+            Data.User  singer = 3;
+            uint64  song_id = 4;
+        }
+
+        message LinkMicKtvEffectMessage {
+            Common  common = 1;
+            Data.User  from_user = 2;
+            Data.User  singer = 3;
+            uint64  song_id = 4;
+        }
+
+        message LinkMicMethod {
+            Common  common = 1;
+            uint64  message_type = 2;
+            string  access_key = 3;
+            uint64  anchor_linkmic_id = 4;
+            uint64  user_id = 5;
+            uint64  fan_ticket = 6;
+            uint64  total_linkmic_fan_ticket = 7;
+            uint64  channel_id = 8;
+            uint64  layout = 9;
+            uint64  vendor = 10;
+            uint64  dimension = 11;
+            string  theme = 12;
+            uint64  invite_uid = 13;
+            uint64  answer = 14;
+            uint64  start_time = 15;
+            uint64  duration = 16;
+            repeated UserScores  user_scores = 17;
+            uint64  match_type = 18;
+            bool  win = 19;
+            string  prompts = 20;
+            uint64  to_user_id = 21;
+            map<int64,ContributorList> contributors = 22;
+            uint64  linkmic_layout = 23;
+            uint64  from_user_id = 24;
+            string  tips = 25;
+            uint64  start_time_ms = 26;
+            int32  confluence_type = 27;
+            uint64  from_room_id = 28;
+            uint64  invite_type = 29;
+            uint64  sub_type = 30;
+            Data.RivalExtraInfo  inviter_rival_extra = 31;
+            string  rtc_ext_info = 32;
+            string  rtc_app_id = 33;
+            string  app_id = 34;
+            string  app_sign = 35;
+            string  rtc_app_sign = 36;
+            string  anchor_linkmic_id_str = 37;
+            uint64  rival_anchor_id = 38;
+            uint64  rival_linkmic_id = 39;
+            string  rival_linkmic_id_str = 40;
+            bool  show_popup = 41;
+            uint64  sec_invite_uid = 42;
+            uint64  scene = 43;
+            uint64  sec_apply_uid = 44;
+            repeated Data.User  linked_users = 45;
+            string  sec_from_user_id = 46;
+            int32  reply_type = 47;
+            string  reply_prompts = 48;
+            string  sec_to_user_id = 49;
+            InvitorInfo  invitor_info = 50;
+            bool  rtc_join_channel = 51;
+            int32  sub_scene = 52;
+            bool  support_update_link_type = 53;
+            int32  link_type = 54;
+            int32  source = 55;
+            Data.AnchorLinkmicInfo  backup_anchor_linkmic_info = 56;
+            repeated int32  play_modes = 57;
+            repeated Data.ListUser  linked_list_users = 58;
+            repeated Data.LinkmicPositionItem  locked_positions = 59;
+            int32  end_reason = 60;
+            Data.MultiRtcInfo  multi_rtc_info = 61;
+            Data.MultiLiveCoreInfo  multi_live_core_info = 62;
+            int32  layout_config_version = 63;
+            int32  control_type = 64;
+            Data.BanUser  ban_anchor_info = 65;
+            uint64String  version = 66;
+            Data.JoinTeamfightInfo  join_teamfight_info = 67;
+            uint64  paid_count = 68;
+            uint64  link_duration = 69;
+            string  live_core_ext_info = 70;
+            Data.GameInviteInfo  game_invite_info = 71;
+            int32  ui_layout = 72;
+            Data.Text  invite_message = 73;
+            Data.MultiChannelInfo  multi_channel_info = 74;
+            int32  kick_out_source = 75;
+            map<int64,Data.RoomLinkerContent> linker_content_map = 76;
+            string  function_type = 77;
+            Data.MsgBoardItemInfo  msg_board_item = 78;
+            string  from_user_linkmic_id_str = 79;
+            string  ack_message = 80;
+            string  init_source = 81;
+            string  score_update_log_id = 82;
+            int32  switch_play_mode = 83;
+            int32  update_message_from = 84;
+            Data.LinkmicMediaInfo  guest_linkmic_info = 85;
+            Data.MCUContent  mcu_content = 86;
+            Data.BreakthroughInfo  breakthrough_info = 87;
+            Data.LinkerBaseInfo  linker_base_info = 88;
+            Data.AudienceActionSource  action_source = 89;
+            Data.BattleBarConfig  battle_bar_config = 90;
+            Data.User  from_user = 91;
+
+            message UserScores {
+                uint64  score = 1;
+                uint64  user_id = 2;
+                uint64  weekly_rank = 3;
+                string  score_relative_text = 4;
+                bool  is_large_pk_score = 5;
+                bool  room_like_trigger = 6;
+                string  score_blur_text = 7;
+                uint64  battle_rank = 8;
+                bool  new_score_open = 9;
+                string  multi_pk_team_score_text = 10;
+                uint64  multi_pk_team_score = 11;
+                uint64  multi_pk_team_rank = 12;
+                bool  is_multi_pk_relative_text = 13;
+                string  cur_add_score_text = 14;
+                uint64  buff_score_ratio = 15;
+            }
+
+            message Contributor {
+                uint64  score = 1;
+                uint64  rank = 2;
+                uint64  user_id = 3;
+                Data.User  user = 4;
+            }
+
+            message ContributorList {
+                repeated Contributor contributor_list = 1;
+            }
+
+            message InvitorInfo {
+                string  invitor_nick_name = 1;
+                Data.Image  invitor_avatar = 2;
+            }
+        }
+
+        message LinkMicOChannelKickOutMsg {
+            Common  common = 1;
+            uint64  kick_out_uid = 2;
+            string  toast_msg = 3;
+        }
+
+        message LinkMicOChannelNotifyMsg {
+            Common  common = 1;
+            int32  type = 2;
+            string  toast_msg = 3;
+        }
+
+        message LinkmicOrderSingListMessage {
+            Common  common = 1;
+            LinkmicOrderSingListContent  order_sing_list_content = 2;
+        }
+
+        message LinkmicOrderSingListContent {
+            repeated OrderSingItemByPosition user_list = 1;
+        }
+
+        message OrderSingItemByPosition {
+            repeated string  order_sing_item_str_list = 1;
+            uint64  wait_for_start_item_num = 2;
+            Data.User  order_user = 3;
+        }
+
+        message LinkmicOrderSingMessage {
+            Common  common = 1;
+            uint64  message_type = 2;
+            LinkmicOrderSingCreateContent  order_sing_create_content = 3;
+            LinkmicOrderSingFinishContent  order_sing_finish_content = 4;
+            LinkmicOrderSingActionToastContent  order_sing_action_toast_content = 5;
+            LinkmicOrderSingActionContent  order_sing_action_content = 6;
+            LinkmicOrderSingMVActionContent  order_sing_mv_action_content = 7;
+        }
+
+        message LinkmicOrderSingCreateContent {
+            string  open_order_sing_toast = 1;
+            uint64  gift_id = 2;
+            bool  auto_enlarge = 3;
+            repeated uint64  gift_ids = 4;
+        }
+
+        message LinkmicOrderSingFinishContent {
+            string  close_order_sing_toast = 1;
+            bool  auto_enlarge = 2;
+        }
+
+        message LinkmicOrderSingActionToastContent {
+            string  start_sing_toast = 1;
+            string  finish_sing_toast = 2;
+            string  oder_sing_toast = 3;
+            string  order_sing_action_toast = 4;
+        }
+
+        message LinkmicOrderSingActionContent {
+            string  order_sing_item_id = 1;
+            int32  order_sing_item_action = 2;
+            Data.User  order_user = 3;
+            uint64  timestamp = 4;
+            Data.CurrentOrderSingItemV2  current_order_sing_item = 5;
+            Data.Image  order_sing_gift_icon = 6;
+        }
+
+        message LinkmicOrderSingMVActionContent {
+            int32  mv_op = 1;
+            Data.OrderSingMVInfo  mv_info = 2;
+            string  op_toast = 3;
+            string  item_id = 4;
+            uint64  singer_id = 5;
+            string  op_source = 6;
+        }
+
+        message LinkmicOrderSingScoreMessage {
+            Common  common = 1;
+            LinkmicOrderSingScoreContent  order_sing_score_content = 2;
+        }
+
+        message LinkmicOrderSingScoreContent {
+            OrderSingUserScore user_score = 1;
+        }
+
+        message OrderSingUserScore {
+            uint64  user_id = 1;
+            uint64  silver_microphone_num = 2;
+            uint64  golden_microphone_num = 3;
+            int32  current_task_microphone_type = 4;
+            uint64  current_score = 5;
+            uint64  need_score_to_next = 6;
+            int32  order_sing_stage = 7;
+            uint64  current_round_mic_count = 8;
+            Data.User  title_sponsor = 9;
+            bool  hit_toast = 10;
+        }
+
+        message LinkMicPositionMessage {
+            Common  common = 1;
+            int32  message_type = 2;
+            LinkMicPositionListChangeContent  list_change_content = 3;
+            LinkMicPositionVerifyContent  verify_content = 4;
+        }
+
+        message LinkMicPositionListChangeContent {
+            repeated LinkmicPositionItem positions = 1;
+        }
+
+        message LinkMicPositionVerifyItem {
+            uint64  position = 1;
+            string  position_name = 2;
+            int32  verify_status = 3;
+            int32  position_type = 4;
+        }
+
+        message LinkMicPositionVerifyContent {
+            uint64  current_verify_position = 1;
+            repeated LinkMicPositionVerifyItem  verify_position_items = 2;
+            repeated Data.LinkmicPositionItem  final_position_items = 3;
+        }
+
+        message LinkMicSendEmojiMessage {
+            Common  common = 1;
+            Data.User  from_user = 2;
+            Data.LinkmicAudienceEmoji  emoji = 3;
+            Data.Image  emoji_image_result = 4;
+            Data.User  to_user = 5;
+            string  source = 6;
+            PublicAreaCommon  public_area_common = 7;
+        }
+
+        message LinkSettingNotifyMessage {
+            Common  common = 1;
+            repeated Data.LinkmicSetting  settings = 2;
+            PaiedOrTimeLimitChangeContent  paied_or_time_limit_change_content = 10;
+        }
+
+        message PaiedOrTimeLimitChangeContent {
+            bool  need_leave = 1;
+            string  toast = 2;
+        }
+
+        message LinkMicSignalingMethod {
+            Common  common = 1;
+            string  content = 2;
+        }
+
+        message LinkMicAdventureScoreMessage {
+            Common  common = 1;
+            repeated Data.AdventurePairInfo  pair_list = 2;
+        }
+
+        message LinkMicAdventureMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            LinkMicAdventureStartContent  start_content = 100;
+            LinkMicAdventureFinishContent  finish_content = 101;
+            LinkMicAdventureInviteContent  invite_content = 102;
+            LinkMicAdventureReplyContent  reply_content = 103;
+            LinkMicAdventureCardContent  card_content = 105;
+            LinkMicAdventureCallInviteContent  call_invite_content = 106;
+            LinkMicAdventureCallReplyContent  call_reply_content = 107;
+            LinkMicAdventurePlayModeInfoChangeContent  play_mode_info_change = 108;
+            LinkMicAdventurePairInfoChangeContent  pair_info_change = 109;
+            LinkMicAdventurePairFinishContent  pair_finish_content = 110;
+            LinkMicAdventureCallCancelContent  call_cancel_content = 111;
+        }
+
+        message LinkMicAdventurePairFinishContent {
+            Data.AdventurePairInfo  pair_info = 1;
+            string  toast = 2;
+            int32  finish_reason = 3;
+        }
+
+        message LinkMicAdventurePairInfoChangeContent {
+            Data.AdventurePairInfo pair_info = 1;
+        }
+
+        message LinkMicAdventurePlayModeInfoChangeContent {
+            Data.AdventurePlayModeInfo play_mode_info = 1;
+        }
+
+        message LinkMicAdventureCallReplyContent {
+            uint64  to_user_id = 1;
+            int32  status = 2;
+            Data.AdventurePairInfo  pair_info = 3;
+            uint64  next_call_time = 4;
+            string  inviter_rtc_ext_info = 5;
+            string  inviter_live_core_info = 6;
+        }
+
+        message LinkMicAdventureCallInviteContent {
+            uint64  to_user_id = 1;
+            uint64  invite_timeout_duration_s = 2;
+            uint64  inviter_id = 3;
+        }
+
+        message LinkMicAdventureCardContent {
+            Data.AdventureUserInfo  from_user = 1;
+            Data.AdventureUserInfo  to_user = 2;
+            repeated Data.AdventureCardInfo  card_list = 3;
+        }
+
+        message LinkMicAdventureReplyContent {
+            uint64  to_user_id = 1;
+            int32  status = 2;
+            Data.AdventurePairInfo  pair_info = 3;
+            string  invite_source = 4;
+        }
+
+        message LinkMicAdventureInviteContent {
+            uint64 to_user_id = 1;
+        }
+
+        message LinkMicAdventureStartContent {
+            Data.AdventurePlayModeInfo play_mode_info = 2;
+        }
+
+        message LinkMicAdventureFinishContent {
+            uint64  duration = 1;
+            uint64  pair_count = 2;
+            uint64  audience_join = 3;
+            Data.AdventurePlayModeInfo  play_mode_info = 4;
+            uint64  operator_id = 5;
+        }
+
+        message LinkMicAdventureCallCancelContent {
+            uint64  invitee_user_id = 1;
+            uint64  pair_id = 2;
+            string  pair_id_str = 4;
+        }
+
+        message LinkMicAudienceKtvMessage {
+            Common  common = 1;
+            uint64  message_type = 2;
+            repeated ListInfo  list_info = 3;
+            uint64  want_sing_count = 4;
+            uint64  want_sing_song_threshold = 5;
+            uint64  sung_song_count = 6;
+            bool  is_downgrade = 7;
+            repeated SongUniqueInfo  all_song_unique_list = 8;
+
+            message SongUniqueInfo {
+                uint64  song_id = 1;
+                uint64  user_id = 2;
+                uint64  song_type = 3;
+                bool  is_public = 4;
+            }
+
+            message ListInfo {
+                Data.KtvSongStruct  music = 1;
+                bool  is_self_seeing = 2;
+            }
+        }
+
+        message LinkmicChatMatchMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            LinkmicChatMatchUserJoinContent  chat_match_user_join_content = 21;
+            LinkmicChatMatchUserLeaveContent  chat_match_user_leave_content = 22;
+            LinkmicChatMatchFinishGroupContent  chat_match_finish_group_content = 23;
+            LinkmicChatMatchResultContent  chat_match_result_content = 24;
+            LinkmicChatMatchStartCountDownContent  chat_match_start_count_down_content = 25;
+        }
+
+        message LinkmicChatMatchUserJoinContent {
+            Data.ChatMatchGroupInfo group_info = 1;
+        }
+
+        message LinkmicChatMatchUserLeaveContent {
+            Data.ChatMatchGroupInfo  group_info = 1;
+            string  user_id = 2;
+            string  device_id = 3;
+        }
+
+        message LinkmicChatMatchFinishGroupContent {
+            string join_room_id = 1;
+        }
+
+        message LinkmicChatMatchResultContent {
+            Data.ChatMatchGroupInfo group_info = 1;
+        }
+
+        message LinkmicChatMatchStartCountDownContent {
+            uint64 disband_time = 1;
+        }
+
+        message LinkmicEcologyMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            LiveMatrixEntranceChangeContent  live_matrix_entrance_change_content = 3;
+            LinkmicWebAntiCheatContent  web_anti_cheat_content = 4;
+        }
+
+        message LiveMatrixEntranceChangeContent {
+            uint64  room_id = 1;
+            uint64  matrix_id = 2;
+            string  name = 3;
+            bool  show = 4;
+        }
+
+        message LinkmicWebAntiCheatContent {
+            string  auth_ticket = 1;
+            string  entry_web_page_address = 2;
+            string  popup_text = 3;
+            uint64  web_page_display_duration = 4;
+            int32  face_verify_type = 5;
+            bool  authorization = 6;
+            string  request_source = 7;
+            string  did = 8;
+        }
+
+        message LinkmicEnlargeGuestMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            repeated int32  play_modes = 3;
+            LinkmicEnlargeGuestTurnOnContent  turn_on_content = 21;
+            LinkmicEnlargeGuestTurnOffContent  turn_off_content = 22;
+            LinkmicEnlargeGuestChangeUserContent  change_user_content = 23;
+        }
+
+        message LinkmicEnlargeGuestTurnOnContent {
+            uint64  enlarged_user_id = 1;
+            int32  source = 2;
+            Data.EnlargeGuestInfo  info = 3;
+        }
+
+        message LinkmicEnlargeGuestTurnOffContent {
+            int32 source = 1;
+        }
+
+        message LinkmicEnlargeGuestChangeUserContent {
+            uint64  enlarged_user_id = 1;
+            Data.EnlargeGuestInfo  info = 2;
+        }
+
+        message LinkmicPlaymodeMessage {
+            Common  common = 1;
+            Data.LinkmicSubtitleStatus  linkmic_subtitle_status = 2;
+        }
+
+        message LinkmicProfitEggMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            Data.LinkmicProfitRoomEggInfo  egg_info = 3;
+            LinkmicProfitEggContributeContent  contribute_content = 4;
+        }
+
+        message LinkmicProfitEggContributeContent {
+            uint64  score = 1;
+            string  egg_id = 2;
+            string  team_id = 3;
+        }
+
+        message LinkmicProfitMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            LinkmicProfitBidPaidLinkmicBidContent  bid_paid_linkmic_bid_content = 21;
+            LinkmicProfitBidPaidLinkmicDealContent  bid_paid_linkmic_deal_content = 22;
+            LinkmicProfitBidPaidLinkmicAbortContent  bid_paid_linkmic_abort_content = 23;
+            LinkmicProfitBidPaidLinkmicStartContent  bid_paid_linkmic_start_content = 24;
+            LinkmicProfitBidPaidLinkmicTerminateContent  bid_paid_linkmic_terminate_content = 25;
+            LinkmicProfitNormalPaidLinkmicOpenContent  normal_paid_linkmic_open_content = 26;
+            LinkmicProfitNormalPaidLinkmicCloseContent  normal_paid_linkmic_close_content = 27;
+            LinkmicProfitNormalPaidLinkmicConfigUpdateContent  normal_paid_linkmic_config_update_content = 28;
+            LinkmicProfitBidPaidLinkmicTurnOnContent  bid_paid_linkmic_turn_on_content = 29;
+            LinkmicProfitBidPaidLinkmicTurnOffContent  bid_paid_linkmic_turn_off_content = 30;
+            LinkmicRoomBattleInviteContent  room_battle_invite_content = 31;
+            LinkmicRoomBattleReplyContent  room_battle_reply_content = 32;
+            LinkmicProfitNormalPaidLinkmicAddPriceContent  normal_paid_linkmic_add_price_content = 33;
+            LinkmicProfitInteractiveScreenCastOpenContent  interactive_screen_cast_open_content = 34;
+            LinkmicProfitInteractiveScreenCastCloseContent  interactive_screen_cast_close_content = 35;
+            LinkmicRoomBattleMatchSuccessContent  room_battle_match_success_content = 36;
+            LinkmicGiftRecipientContent  gift_recipient_content = 37;
+            LinkmicProfitAudioSubtitleCheckInContent  audio_subtitle_check_in_content = 38;
+            LinkmicProfitAudioSubtitleStartContent  audio_subtitle_start_content = 39;
+            LinkmicProfitAudioSubtitleCloseContent  audio_subtitle_close_content = 40;
+            LinkmicGameBarrageStartContent  game_barrage_start_conetent = 41;
+            LinkmicGameBarrageStopContent  game_barrage_stop_conetent = 42;
+            LinkmicGameBarrageRtcRoomCreateContent  game_barrage_rtc_room_create_conetent = 43;
+        }
+
+        message LinkmicProfitBidPaidLinkmicBidContent {
+            Data.BidPaidLinkmicBidInfo  bid_info = 1;
+            repeated Data.BidPaidLinkmicBidRecord  bid_records = 2;
+            bool  has_more = 3;
+        }
+
+        message LinkmicProfitBidPaidLinkmicDealContent {
+            Data.BidPaidLinkmicDealInfo  deal_info = 1;
+            repeated Data.LinkmicPositionItem  positions = 2;
+        }
+
+        message LinkmicProfitBidPaidLinkmicStartContent {
+            string  start_toast = 1;
+            repeated Data.LinkmicPositionItem  positions = 2;
+            bool  waiting_user_need_leave = 3;
+            string  waiting_user_toast = 4;
+        }
+
+        message LinkmicProfitBidPaidLinkmicAbortContent {
+            uint64  win_user_id = 1;
+            string  anchor_toast = 2;
+            string  win_user_toast = 3;
+            string  other_bid_users_toast = 4;
+        }
+
+        message LinkmicProfitBidPaidLinkmicTerminateContent {
+            string  bid_user_toast = 1;
+            string  other_bid_users_toast = 2;
+        }
+
+        message LinkmicProfitNormalPaidLinkmicOpenContent {
+            Data.NormalPaidLinkmicInfo  normal_paid_linkmic_info = 1;
+            bool  waiting_user_need_leave = 2;
+            string  waiting_user_toast = 3;
+            int32  source = 4;
+        }
+
+        message LinkmicProfitNormalPaidLinkmicCloseContent {
+            bool  waiting_user_need_leave = 1;
+            string  waiting_user_toast = 2;
+        }
+
+        message LinkmicProfitNormalPaidLinkmicConfigUpdateContent {
+            bool  waiting_user_need_leave = 1;
+            string  waiting_user_toast = 2;
+            Data.NormalPaidLinkmicInfo  normal_paid_linkmic_info = 3;
+        }
+
+        message LinkmicProfitNormalPaidLinkmicAddPriceContent {
+            uint64  add_price_user_id = 1;
+            uint64  add_price_value = 2;
+            Data.Text  text = 3;
+        }
+
+        message LinkmicProfitBidPaidLinkmicTurnOnContent {
+            Data.BidPaidLinkmicContent  bid_paid_linkmic_info = 1;
+            string  prompts = 2;
+            bool  waiting_user_need_leave = 3;
+            string  waiting_user_toast = 4;
+        }
+
+        message LinkmicProfitBidPaidLinkmicTurnOffContent {
+            string prompts = 1;
+        }
+
+        message LinkmicRoomBattleInviteContent {
+            Data.User  inviter = 1;
+            Data.InviteRoomInfo  room_info = 2;
+            int32  start_type = 3;
+            string  invite_tips = 4;
+            Data.RoomBattleMode  room_battle_mode = 5;
+            string  introduction_content = 6;
+        }
+
+        message LinkmicRoomBattleReplyContent {
+            int32  reply_type = 1;
+            int32  start_type = 2;
+            uint64  invitee_room_id = 3;
+            uint64  invitee_anchor_id = 4;
+            uint64  follow_status = 5;
+            uint64  reply_user_id = 6;
+            string  reply_toast = 7;
+            int32  reply_operate = 8;
+        }
+
+        message LinkmicProfitInteractiveScreenCastOpenContent {
+            Data.InteractiveScreenCastInfo  screen_cast_info = 1;
+            string  rtc_ext_info = 2;
+            string  live_core_ext_info = 3;
+        }
+
+        message LinkmicProfitInteractiveScreenCastCloseContent {
+            Data.InteractiveScreenCastInfo  screen_cast_info = 1;
+            string  rtc_ext_info = 2;
+            string  live_core_ext_info = 3;
+        }
+
+        message LinkmicRoomBattleMatchSuccessContent {
+            int32  match_type = 1;
+            Data.RoomBattleProcessInfo  process_info = 2;
+            uint64  rival_anchor_id = 3;
+            uint64  rival_user_count = 4;
+            uint64  rival_chat_room_rank = 5;
+            uint64  rival_follow_status = 6;
+            uint64  invite_source = 7;
+            uint64  operator_user_id = 8;
+        }
+
+        message LinkmicGiftRecipientContent {
+            uint64  gift_recipient_user_id = 1;
+            int32  reason = 2;
+            map<string,string> extra = 3;
+        }
+
+        message LinkmicProfitAudioSubtitleCheckInContent {
+            uint64 version_id = 1;
+        }
+
+        message LinkmicProfitAudioSubtitleStartContent {
+            uint64  version_id = 1;
+            Data.LinkmicSubtitleStatus  linkmic_subtitle_status = 2;
+        }
+
+        message LinkmicProfitAudioSubtitleCloseContent {
+            uint64 version_id = 1;
+        }
+
+        message LinkmicGameBarrageStartContent {
+            Data.LinkmicGameInfo  game_info = 1;
+            string  audience_toast = 2;
+            uint64  kick_out_user_ids = 3;
+        }
+
+        message LinkmicGameBarrageStopContent {
+            Data.LinkmicGameInfo game_info = 1;
+        }
+
+        message LinkmicGameBarrageRtcRoomCreateContent {
+            Data.LinkmicGameInfo  game_info = 1;
+            string  cd_game_public_stream_id = 2;
+        }
+
+        message LinkmicReviewMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            LinkmicReviewNormalPaidDescContent  normal_paid_desc_content = 21;
+        }
+
+        message LinkmicReviewNormalPaidDescContent {
+            int32  status = 1;
+            string  toast = 2;
+        }
+
+        message SelfDisciplinePunchMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            uint64  to_user_id = 3;
+            uint64  start_time = 4;
+            uint64  punch_duration = 5;
+            string  toast_text = 6;
+            int32  punch_status = 7;
+        }
+
+        message LinkmicSelfDisciplineMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            LinkmicSelfDisciplineConfigContent  config_content = 21;
+            LinkmicSelfDisciplineLikeContent  like_content = 22;
+        }
+
+        message LinkmicSelfDisciplineConfigContent {
+            int32  switch_status = 1;
+            string  current_target = 2;
+            string  target_icon_uri = 3;
+            string  text = 4;
+            uint64  punch_duration = 5;
+            string  toast = 6;
+        }
+
+        message LinkmicSelfDisciplineLikeContent {
+            uint64  from_user_id = 1;
+            uint64  to_user_id = 2;
+            int32  source = 3;
+        }
+
+        message LinkmicStarWishMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            LinkmicStarWishOpenContent  open_content = 100;
+            LinkmicStarWishCloseContent  close_content = 101;
+            LinkmicStarWishUpdateContent  update_content = 102;
+        }
+
+        message LinkmicStarWishOpenContent {
+            Data.LinkmicStarWishInfo starwish_info = 1;
+        }
+
+        message LinkmicStarWishCloseContent {
+
+        }
+
+        message LinkmicStarWishUpdateContent {
+            Data.LinkmicStarWishInfo starwish_info = 1;
+        }
+
+        message LinkmicTeamfightScoreMessage {
+            Common  common = 1;
+            Data.LinkmicTeamfightInfo  teamfight_info = 2;
+            Data.LinkmicQuickInteract  quick_interact = 3;
+        }
+
+        message LinkmicTeamfightMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            Data.LinkmicTeamfightInfo  teamfight_info = 3;
+            LinkmicTeamfightFinishContent  finish_content = 100;
+            LinkmicTeamfightCreateContent  create_content = 101;
+            LinkmicTeamfightSettleContent  settle_content = 102;
+        }
+
+        message LinkmicTeamfightFinishContent {
+            string  finish_toast = 1;
+            string  guest_finish_toast = 2;
+            int32  reason = 3;
+            uint64  finish_room_id = 4;
+            uint64  finish_user_id = 5;
+        }
+
+        message LinkmicTeamfightCreateContent {
+            int32 reason = 3;
+        }
+
+        message LinkmicTeamfightSettleContent {
+            string disable_show_toast = 1;
+        }
+
+        message LinkmicThemedCompetitionMessage {
+            Common  common = 1;
+            int32  msg_type = 2;
+            LinkmicThemedCompetitionStartContent  start_content = 100;
+            LinkmicThemedCompetitionCloseContent  close_content = 101;
+            LinkmicThemedCompetitionScoreChangeContent  score_change_content = 102;
+            LinkmicThemedCompetitionOnceMoreContent  once_more_content = 103;
+            LinkmicThemedCompetitionShowTimeStartContent  show_time_start_content = 104;
+            LinkmicThemedCompetitionShowTimeFinishContent  show_time_finish_content = 105;
+            LinkmicThemedCompetitionBannerMessageForPC  banner_message_for_pc = 106;
+            LinkmicThemedCompetitionToastMessageForPC  toast_message_for_pc = 107;
+        }
+
+        message LinkmicThemedCompetitionStartContent {
+            Data.ThemedCompetitionInfo info = 1;
+        }
+
+        message LinkmicThemedCompetitionOnceMoreContent {
+            Data.ThemedCompetitionInfo  info = 1;
+            uint64  old_competition_id = 2;
+        }
+
+        message LinkmicThemedCompetitionCloseContent {
+            uint64 competition_id = 1;
+        }
+
+        message LinkmicThemedCompetitionScoreChangeContent {
+            Data.ThemedCompetitionInfo  info = 1;
+            uint64  score_change_user_id = 2;
+            Data.LinkmicQuickInteract  quick_interact = 3;
+            WinContent  new_advance_user = 4;
+
+            message WinContent {
+                uint64  rank = 1;
+                uint64  user_id = 2;
+                int32  win_type = 3;
+            }
+        }
+
+        message LinkmicThemedCompetitionShowTimeStartContent {
+            uint64  competition_id = 1;
+            Data.ThemedCompetitionInfo  info = 2;
+        }
+
+        message LinkmicThemedCompetitionShowTimeFinishContent {
+            uint64 competition_id = 1;
+        }
+
+        message LinkmicThemedCompetitionBannerMessageForPC {
+            BannerContent  content = 1;
+            int32  refresh_type = 2;
+
+            message Content {
+                uint64  rank = 1;
+                string  nickname = 2;
+                uint64  delta_score = 3;
+                int32  win_type = 4;
+            }
+
+            message BannerContent {
+                string  title = 1;
+                Data.User  current_performer = 2;
+                uint64  rank = 3;
+                uint64  total_performer_count = 4;
+                int32  status = 5;
+                repeated Content  rotate_content = 6;
+                uint64  version = 7;
+            }
+        }
+
+        message LinkmicThemedCompetitionToastMessageForPC {
+            string toast = 1;
+        }
+
+        message LiveBindMicroAppMessage {
+            Common  common = 1;
+            uint64  room_id = 2;
+            bool  can_bind = 3;
+        }
+
+        message TraceTimeMetricV2 {
+            uint64  op_timestamp = 1;
+            uint64  producer_duration = 2;
+            uint64  consumer_duration = 3;
+            uint64  msg_send_timestamp = 4;
+        }
+
 
     }
 
