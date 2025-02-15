@@ -8519,9 +8519,1874 @@ message webcast {
                 uint64 white_user_permission = 6;
             }
 
+            message FansGroupInfo {
+                string list_fans_group_url = 1;
+            }
+
+            message JAccreditInfo {
+                int32 JAccreditBasic = 1;
+                int32 JAccreditAdvance = 2;
+                int32 JAccreditContent = 3;
+                int32 JAccreditLive = 4;
+            }
+
+            message Subscribe {
+                bool is_member = 1;
+                uint64 level = 2;
+                uint64 identity_type = 3;
+                uint64 buy_type = 4;
+                uint64 open = 5;
+            }
+
+            message ProfileStyleParams {
+                uint64 profile_style = 1;
+                uint64 smart_switch = 2;
+            }
+
+            message UserDressInfo {
+                repeated string dress_wear_ids = 1;
+                repeated string dress_own_ids = 2;
+            }
+
+            message BizRelation {
+                bool shop_fans_club_reverse = 1;
+            }
+
+            message PublicAreaBadgeInfo {
+                map<int64, Image> badge_info_map = 1;
+                uint64 badge_list = 2;
+                WebcastDslBadgeList webcast_dsl_badge_list = 3;
+
+                message WebcastDslBadgeList {
+                    repeated uint64 badge_list = 1;
+                    DslRule target_dsl_rule = 2;
+                    DslRule filter_dsl_rule = 3;
+
+                    message DslRule {
+                        repeated uint64 app_id = 1;
+                        repeated uint64 version_code = 2;
+                        map<string, string> ab_params = 3;
+                    }
+                }
+            }
+
+            message ExtraInfo {
+                bool is_contract = 1;
+            }
+
+            message UserStats {
+                uint64 id = 1;
+                string id_str = 2;
+                uint64 following_count = 3;
+                uint64 follower_count = 4;
+                uint64 record_count = 5;
+                uint64 total_duration = 6;
+                uint64 daily_fan_ticket_count = 7;
+                uint64 daily_income = 8;
+                uint64 item_count = 9;
+                uint64 favorite_item_count = 10;
+                uint64 diamond_count = 11;
+                uint64 diamond_consumed_count = 12;
+                uint64 tuwen_item_count = 13;
+            }
+        }
+
+        message MemberEntranceInfo {
+            uint64 type = 1;
+            bool show_entrance = 2;
+            string schema = 3;
+            Image single_entrance_icon = 4;
+            Image double_entrance_icon = 5;
+            bool is_member = 6;
+            map<string, string> tracking_params = 50;
+        }
+
+        message IndustryCertification {
+            IndustryCertificationProfile profile = 1;
+            IndustryCertificationRoom room = 2;
+        }
+
+        message IndustryCertificationProfile {
+            Image icon = 1;
+            string content = 2;
+            string schema = 3;
+            string content_color = 4;
+            string bg_color = 5;
+            uint64 cert_type = 6;
+        }
+
+        message IndustryCertificationRoom {
+            RoomOwner room_owner = 1;
+
+            message RoomOwner {
+                Image title = 1;
+                string sub_title = 2;
+                string left_color = 3;
+                string right_color = 4;
+                int32 anchor_industry_type = 5;
+                Image brand_store_title = 6;
+                Image brand_store_background = 7;
+                Image anchor_reds_icon = 8;
+                Image anchor_reds_small_icon = 9;
+            }
+        }
+
+        message Image {
+            repeated string url_list = 1;
+            string uri = 2;
+            uint64 height = 3;
+            uint64 width = 4;
+            string avg_color = 5;
+            int32 image_type = 6;
+            string open_web_url = 7;
+            Content content = 8;
+            bool is_animated = 9;
+            repeated NinePatchSetting flex_setting_list = 10;
+            repeated NinePatchSetting text_setting_list = 11;
+
+            message Content {
+                string name = 1;
+                string font_color = 2;
+                uint64 level = 3;
+                string alternative_text = 4;
+            }
+
+            message NinePatchSetting {
+                repeated uint64 setting_list = 1;
+            }
+        }
+
+        message AnchorLinkmicUserSettings {
+            bool is_turn_on = 1;
+            bool accept_multi_linkmic = 2;
+            bool accept_not_follower_invite = 3;
+            bool allow_gift_to_other_anchors = 4;
+            bool accept_friend_invite = 5;
+            bool accept_hourly_rank_invite = 6;
+            bool accept_popularity_rank_invite = 7;
+            bool accept_recommend_search_invite = 8;
+            bool accept_big_small_layout = 9;
+        }
+
+        message BattleUserSettings {
+            bool is_turn_on = 1;
+            bool accept_not_follower_invite = 2;
+            bool allow_gift_to_other_anchors = 3;
+            bool accept_friend_invite = 4;
+            bool accept_hourly_rank_invite = 5;
+            bool accept_popularity_rank_invite = 6;
+            uint64 invite_reject_permanent_total = 7;
+            uint64 invite_reject_temporary_total = 8;
+            string invite_reject_temporary_text = 9;
+            bool pk_accept_volume_up = 10;
+            bool pk_auto_confirm = 11;
+            bool accept_union_recommend_invite = 12;
+        }
+
+        message RivalExtraInfo {
+            string text = 1;
+            int32 text_type = 2;
+            string label = 3;
+            int32 anchor_layer = 4;
+            LinkerInfo linker_info = 5;
+            AnchorLinkmicUserSettings linkmic_user_settings = 6;
+            BattleUserSettings battle_user_settings = 7;
+            uint64 video_show_score = 8;
+            GameInfo game_info = 9;
+            string sign_extra = 10;
+            string recommend_info = 11;
+            int32 from_server_invite_type = 12;
+
+            message LinkerInfo {
+                repeated UserInfo linked_users = 1;
+
+                message UserInfo {
+                    uint64 user_id = 1;
+                    string nick_name = 2;
+                    Image avatar_thumb = 3;
+                }
+            }
+
+            message GameInfo {
+                string game_text = 1;
+                string game_name = 2;
+            }
+        }
+
+        message MultiPKModeInfo {
+            int32 mode_tab = 1;
+            map<int64, int64> user_id_to_team_id = 2;
+            uint64 version = 3;
+            int32 switch_source = 4;
+            string version_str = 5;
+            string battle_config_setting = 6;
+        }
+
+        message GameInviteInfo {
+            int32 invite_source = 1;
+        }
+
+        message LinkmicInfo {
+            string rtc_ext_info = 1;
+            string live_core_info = 2;
+        }
+
+        message MultiChannelInfo {
+            bool use_multi_channel = 1;
+            map<int64, string> linkmic_infos = 2;
+        }
+
+        message LinkIconConfig {
+            string yellow_dots = 1;
+        }
+
+        message LinkmicUIConfig {
+            Image room_bg_full_image = 1;
+            Image room_bg_top_image = 2;
+            Image room_bg_bottom_image = 3;
+        }
+
+        message VIPBadge {
+            map<int64, Image> icons = 1;
+        }
+
+        message UserVIPInfo {
+            uint64 vip_level = 1;
+            string vip_level_name = 2;
+            int32 status = 3;
+            uint64 start_time = 4;
+            uint64 end_time = 5;
+            uint64 remaining_days = 6;
+            uint64 total_consume = 7;
+            uint64 target_consume = 8;
+            VIPBadge badge = 9;
+            map<int64, bool> privileges = 10;
+        }
+
+        message GradeBuffInfo {
+            uint64 buff_level = 1;
+            int32 status = 2;
+            uint64 end_time = 3;
+            map<int64, int64> stats_info = 4;
+            Image buff_badge = 5;
+        }
+
+        message GameExtra {
+            int32 kind = 1;
+            int32 status = 2;
+            uint64 game_id = 3;
+            int32 gift_limit = 4;
+            uint64 round_id = 5;
+            int32 game_kind = 6;
+            uint64 chat = 7;
+            uint64 loader = 8;
+            uint64 reload = 9;
+            map<string, string> data = 10;
+        }
+
+        message MatchRoomInfo {
+            MatchTabFrame match_tab_frame = 1;
+            MatchTitle match_title = 2;
+            ToutiaoMatchData match_data = 3;
+            map<int64, int64> match_host_channel = 4;
+            string match_hash_tag = 5;
+            repeated Image background_image_url_list = 6;
+            Image share_icon = 7;
+            MatchRoomImInfo im_info = 8;
+            MatchShareBackground match_share_background = 9;
+            string theme_id = 10;
+            MatchShareBackground match_live_share_background = 11;
+            uint64 match_id = 12;
+        }
+
+        message MainCameraMatchInfo {
+            ToutiaoMatchData match_data = 1;
+            uint64 match_id = 2;
+            repeated uint64 event_ids = 3;
+            uint64 content_id = 4;
+            LeagueInfo league_info = 5;
+            bool is_display_score_type = 6;
+            repeated uint64 hide_tab_ids = 7;
+            string match_id_str = 8;
+            string content_id_str = 9;
+        }
+
+        message LeagueInfo {
+            uint64 league_id = 1;
+            string cnn_name = 2;
+            string enn_name = 3;
+            string season = 4;
+        }
+
+        message MatchRoomImInfo {
+            Image icon = 1;
+            string title = 2;
+        }
+
+        message MatchTabFrame {
+            repeated MatchTab tabs = 1;
+            repeated MatchTab replay_tabs = 2;
+            string color = 3;
+            string background_color = 4;
+        }
+
+        message ClientComponent {
+            map<string, ClientComponentInfo> portrait_component_map = 1;
+            map<string, ClientComponentInfo> landscape_component_map = 2;
+            bool is_open = 3;
+            uint64 template_id = 4;
+        }
+
+        message ClientComponentInfo {
+            string container_id = 1;
+            ClientComponentFunctionInfo function_detail = 2;
+            bool is_open = 3;
+            DSLDetail dsl_detail = 4;
+            string dsl_layout = 5;
+        }
+
+        message ClientComponentFunctionInfo {
+            string function_id = 1;
+            map<string, string> data = 2;
+        }
+
+        message Room {
+            uint64 id = 1;
+            string id_str = 2;
+            uint64 status = 3;
+            uint64 owner_user_id = 4;
+            string title = 5;
+            uint64 user_count = 6;
+            uint64 create_time = 7;
+            uint64 linkmic_layout = 8;
+            uint64 finish_time = 9;
+            RoomExtra extra = 10;
+            string dynamic_cover_uri = 11;
+            map<int64, string> dynamic_cover_dict = 12;
+            uint64 last_ping_time = 13;
+            uint64 live_id = 14;
+            uint64 stream_provider = 15;
+            uint64 os_type = 16;
+            uint64 client_version = 17;
+            bool with_linkmic = 18;
+            bool enable_room_perspective = 19;
+            Image cover = 20;
+            Image dynamic_cover = 21;
+            Image dynamic_cover_low = 22;
+            string share_url = 23;
+            string anchor_share_text = 24;
+            string user_share_text = 25;
+            uint64 stream_id = 26;
+            string stream_id_str = 27;
+            StreamUrl stream_url = 28;
+            uint64 mosaic_status = 29;
+            string mosaic_tip = 30;
+            uint64 cell_style = 31;
+            LinkMic link_mic = 32;
+            uint64 luckymoney_num = 33;
+            repeated Decoration deco_list = 34;
+            repeated TopFan top_fans = 35;
+            RoomStats stats = 36;
+            string sun_daily_icon_content = 37;
+            string distance = 38;
+            string distance_city = 39;
+            string location = 40;
+            string real_distance = 41;
+            Image feed_room_label = 42;
+            string common_label_list = 43;
+            RoomUserAttr living_room_attrs = 44;
+            repeated uint64 admin_user_ids = 45;
+            User owner = 46;
+            string private_info = 47;
+            bool has_commerce_goods = 48;
+            bool live_type_normal = 49;
+            bool live_type_linkmic = 50;
+            bool live_type_audio = 51;
+            bool live_type_third_party = 52;
+            bool live_type_screenshot = 53;
+            bool live_type_sandbox = 54;
+            bool live_type_official = 55;
+            uint64 group_id = 59;
+            uint64 orientation = 60;
+            uint64 category = 61;
+            repeated uint64 tags = 62;
+            uint64 start_time = 63;
+            uint64 popularity = 64;
+            string popularity_str = 65;
+            uint64 fcdn_appid = 66;
+            bool sell_goods = 68;
+            uint64 web_count = 69;
+            string vertical_cover_uri = 70;
+            uint64 base_category = 71;
+            RoomAuthStatus room_auth = 72;
+            repeated RoomTab room_tabs = 73;
+            string introduction = 74;
+            BurstInfo burst = 75;
+            RoomHealthScoreInfo health_score = 76;
+            bool is_replay = 77;
+            string vid = 78;
+            uint64 group_source = 79;
+            uint64 lottery_finish_time = 80;
+            RoomActivityTag activity_tag = 81;
+            Image portrait_cover = 82;
+            Image background = 83;
+            uint64 layout = 84;
+            string wait_copy = 85;
+            Image guide_button = 86;
+            string preview_copy = 87;
+            bool is_show_inquiry_ball = 88;
+            MatchInfo match_info = 89;
+            bool use_filter = 90;
+            uint64 gift_msg_style = 91;
+            string distance_km = 92;
+            string finish_url = 93;
+            OfficialRoomInfo official_room_info = 94;
+            bool is_show_user_card_switch = 95;
+            string video_feed_tag = 96;
+            string forum_extra_data = 97;
+            uint64 fansclub_msg_style = 98;
+            uint64 follow_msg_style = 99;
+            uint64 share_msg_style = 100;
+            uint64 room_layout = 101;
+            string short_title = 102;
+            RoomShortTouchAreaConfig short_touch_area_config = 103;
+            uint64 book_time = 104;
+            uint64 book_end_time = 105;
+            uint64 room_audit_status = 106;
+            repeated uint64 live_distribution = 107;
+            TVStation tv = 108;
+            bool replay = 109;
+            string challenge_info = 110;
+            uint64 like_count = 111;
+            uint64 search_id = 112;
+            string anchor_scheduled_time_text = 113;
+            string hot_sentence_info = 114;
+            uint64 replay_location = 115;
+            uint64 stream_close_time = 116;
+            string content_tag = 117;
+            Image content_label = 118;
+            Image operation_label = 119;
+            int32 anchor_tab_type = 120;
+            GameExtra game_extra = 121;
+            OfficialChannelInfo official_channel = 122;
+            string stamps = 123;
+            CommentBox comment_box = 124;
+            int32 business_live = 125;
+            bool with_ktv = 126;
+            bool with_draw_something = 127;
+            uint64 webcast_comment_tcs = 128;
+            uint64 room_tag = 129;
+            map<string, int64 > linker_map = 130;
+            int32 finish_reason = 131;
+            RoomCart room_cart = 132;
+            string scroll_config = 133;
+            string relation_tag = 134;
+            uint64 owner_device_id = 135;
+            uint64 auto_cover = 136;
+            uint64 app_id = 137;
+            uint64 webcast_sdk_version = 138;
+            uint64 comment_name_mode = 139;
+            string room_create_ab_param = 140;
+            uint64 pre_enter_time = 141;
+            uint64 ranklist_audience_type = 142;
+            uint64 preview_flow_tag = 143;
+            Image preview_tag_url = 144;
+            QuizExtra quiz_extra = 145;
+            map<string, string> AnchorABMap = 146;
+            LinkerUsers linker_users = 147;
+            uint64 linkmic_display_type = 148;
+            AudioBGData AudioRoomBGImage = 149;
+            LinkerUsers city_top_linker_users = 150;
+            BorderInfo border_info = 151;
+            Image city_top_background = 152;
+            string city_top_distance = 153;
+            uint64 live_room_mode = 154;
+            Bonus bonus = 155;
+            bool highlight = 156;
+            bool is_official_channel_room = 157;
+            ActivityRoomSkinInfo activity_room_skin_info = 158;
+            repeated uint64 fans_group_admin_user_ids = 159;
+            RoomReplayInfo replay_info = 160;
+            uint64 official_channel_uid = 161;
+            string live_platform_source = 162;
+            uint64 acquaintance_status = 163;
+            CommentWallInfo comment_wall_info = 164;
+            CommentWallPosition comment_wall_position = 165;
+            bool live_type_vs_live = 166;
+            bool live_type_vs_premiere = 167;
+            EpisodeExtraInfo episode_extra = 168;
+            repeated int32 vs_roles = 169;
+            string item_explicit_info = 170;
+            ShortTouchAuth short_touch_auth = 171;
+            uint64 sofa_layout = 172;
+            AnnouncementInfo announcement_info = 173;
+            bool is_need_check_list = 174;
+            LiveStatusInfo live_status_info = 175;
+            RoomIMInfo im_info = 176;
+            LabelInfo assist_label = 177;
+            InteractOpenExtra interact_open_extra = 178;
+            VerticalTypeInfo vertical_type_info = 179;
+            repeated FilterWord filter_words = 180;
+            LabelInfo dynamic_label = 181;
+            LinkerDetail linker_detail = 182;
+            int32 visibility_range = 183;
+            CornerMarkReach corner_mark_reach = 184;
+            PreviewExposeData preview_expose = 185;
+            WelfareProjectInfo welfare_project_info = 186;
+            int32 game_room_type = 187;
+            PaidLiveData paid_live_data = 188;
+            EasterEggData easter_egg_data = 189;
+            bool title_recommend = 190;
+            uint64 danmaku_detail = 191;
+            AvatarLiveInfo avatar_live_info = 192;
+            CircleInfo circle_info = 193;
+            uint64 has_promotion_games = 194;
+            Image screenshot_sover = 195;
+            Appearance appearance = 196;
+            EcomData ecom_data = 197;
+            IndustryServiceInfo industry_service_info = 198;
+            RelevantRecommendation relevant_recommendation = 199;
+            RoomSpecificSceneTypeInfo scene_type_info = 200;
+            GameCPData game_cp = 201;
+            GamePlayData game_play = 202;
+            UnionLiveInfo union_live_info = 203;
+            BeautifyInfo beautify_info = 204;
+            ToolBarData toolbar_data = 205;
+            AnchorTabLabel anchor_tab_label = 206;
+            LifeGrouponInfo life_groupon_info = 207;
+            VipData vip_data = 208;
+            uint64 toutiao_cover_recommend_level = 209;
+            uint64 toutiao_title_recommend_level = 210;
+            repeated UpperRightWidgetData upper_right_widget_data_list = 211;
+            FeedbackCard live_feedback_card = 212;
+            repeated LabelInfo assist_label_list = 213;
+            DesireInfo desire_info = 214;
+            HotRoomInfo hot_room_info = 215;
+            bool with_aggregate_column = 216;
+            CastScreenData cast_screen_data = 217;
+            OfficialChannelExtraInfo official_channel_extra = 218;
+            string auth_city = 219;
+            ActivityLiveRecommendConfig activity_live_recommend_config = 220;
+            RoomChannelData room_channel = 221;
+            PackMetaInfo pack_meta = 222;
+            ActivityData activity_data = 223;
+            LikeDisplayConfig like_display_config = 224;
+            RoomViewStats room_view_stats = 225;
+            MatchRoomData match = 226;
+            CommentaryRoomInfo commentary_room_info = 227;
+            uint64 redpacket_audience_auth = 228;
+            MatchChatConfig match_chat_config = 229;
+            uint64 vs_main_replay_id = 230;
+            string screen_capture_sharing_title = 231;
+            ShareResource share_resource = 232;
+            repeated string sharing_music_id_list = 233;
+            PublicScreenBottomInfo public_screen_bottom_info = 234;
+            StreamUrl push_stream_hkt = 235;
+            RoomBasisData basis = 300;
+            RoomInteractData interact = 301;
+            RoomRevenueData revenue = 302;
+            RoomReqUserData req_user = 303;
+            RoomAnchorData anchor_data = 304;
+            RoomOthersData others = 305;
+            PicoInfo pico_info = 306;
+            RoomGameData game_data = 307;
+            RoomFeedData feed_data = 308;
+            OpenContentData open_content_data = 309;
+            ClientComponent client_component_data = 310;
+            RoomPlatformComponentsData platform_components_data = 311;
+            IOSClientComponent ios_client_component_data = 312;
+        }
+
+        message GroupLiveData {
+            uint64 is_group_live = 1;
+        }
+
+        message FeaturedPublicScreenConf {
+            uint64 status = 1;
+        }
+
+        message PublicScreenSpeedConf {
+            uint64 update_interval = 1;
+            int32 scroll_size = 2;
+            int32 fold_size = 3;
+            int32 scroll_speed = 4;
+        }
+
+        message RoomPlatformComponentsData {
+            RoomTitle room_title = 1;
+            RoomViewStats room_count = 2;
+            RoomAvator room_avator = 3;
+            RoomPublicScreenInfo public_screen_info = 4;
+            RoomFullVideoBTN full_video_btn = 5;
+            RoomBanner banner = 6;
+            RoomCore core = 7;
+        }
+
+        message PaidLiveSubscribe {
+            uint64 paid_live_type = 1;
+            uint64 subscribe_event_time = 2;
+        }
+
+        message RoomTitle {
+            string title = 1;
+            string introduction = 2;
+            uint64 left_tag = 3;
+            string left_period = 4;
+            string left_toast = 5;
+            TitleIcon left_icon = 6;
+        }
+
+        message RoomAvator {
+            Image avatar = 1;
+            Image authentication_info = 2;
+            string nick_name = 3;
+            bool has_fans_club = 4;
+            uint64 follow_status = 5;
+            bool invalid_follow_status = 6;
+            uint64 follow_report_scene = 7;
+            AvatorBorder border = 8;
+            repeated uint64 first_label = 9;
+            repeated uint64 second_label = 10;
+            uint64 fans_club_type = 11;
+            uint64 animation_type = 12;
+            uint64 uid = 13;
+            string sec_uid = 14;
+            uint64 fan_ticket = 15;
+            uint64 like_count = 16;
+            string total_user_str = 17;
+            int32 secret = 18;
+            AnchorTabLabel first_tab_label = 19;
+            AnchorTabLabel second_tab_label = 20;
+        }
+
+        message RoomFeedData {
+            LabelInfo relation_label = 1;
+            FollowTopAppearance follow_top_appearance = 2;
+            StreamCutPosition cut_position = 3;
+            DrawerConfig drawer_config = 4;
+
+            message StreamCutPosition {
+                double x1 = 1;
+                double y1 = 2;
+                double x2 = 3;
+                double y2 = 4;
+                int32 source_width = 5;
+                int32 source_height = 6;
+            }
+
+            message FollowTopAppearance {
+                int32 style = 1;
+                StreamCutPosition cut_position = 2;
+                Image image = 3;
+            }
+
+            message DrawerConfig {
+                AvatarArea avatar_area = 1;
+                EntranceIcon entrance_icon = 2;
+                EntranceTitle entrace_title = 3;
+                ArrowView arrow_view = 4;
+                EntranceLayout entrance_layout = 5;
+
+                message AvatarArea {
+                    int32 can_show_follow = 1;
+                }
+
+                message EntranceIcon {
+                    Image image = 1;
+                    int32 anim_show_method = 2;
+                    int32 anim_stop_method = 3;
+                    string height = 4;
+                }
+
+                message EntranceTitle {
+                    string text = 1;
+                }
+
+                message ArrowView {
+                    int32 visibility = 1;
+                }
+
+                message EntranceLayout {
+                    int32 layout_params = 1;
+                }
+            }
+        }
+
+        message PicoInfo {
+            uint64 pico_live_type = 1;
+            string pico_virtual_live_bg_image_uri = 2;
+            string pico_create_scene = 3;
+            string custom_info = 4;
+            string pico_virtual_live_bg_image_digest = 5;
+            VirtualLiveBgImages virtual_live_bg_images = 6;
+            float pitch = 7;
+            uint64 client_live_type = 8;
+            int32 pico_vr_transfer = 9;
+            uint64 pico_live_mode = 11;
+            map<string, string> stream_mapping = 13;
+
+            message VirtualLiveBgImages {
+                Image original_image = 1;
+                string original_digest = 2;
+                bool is_upright = 3;
+                repeated Image converted_images = 4;
+                repeated ConvertedImage converted_list = 5;
+
+                message ConvertedImage {
+                    uint64 quality = 1;
+                    Image image = 2;
+                    string digest = 3;
+                }
+            }
+        }
+
+        message OpenContentData {
+            OpenActivityData open_activity_data = 1;
+        }
+
+        message OpenActivityData {
+            Image cover_label = 1;
+        }
+
+        message PublicScreenBottomInfo {
+            BottomCard bottom_cards = 1;
+
+            message BottomCard {
+                string name = 1;
+                uint64 priority = 2;
+                uint64 duration = 3;
+                string biz_params = 4;
+            }
+        }
+
+        message ShareResource {
+            Image toast_background = 1;
+            map<string, string> qrcode = 2;
+            string ug_share_info = 3;
+        }
+
+        message MatchChatConfig {
+            string main_group_icon_url = 1;
+            string main_group_background_url = 2;
+            string guest_group_icon_url = 3;
+            string guest_group_background_url = 4;
+            repeated string aggregate_icon_url = 5;
+        }
+
+        message CommentaryRoomInfo {
+            uint64 user_id = 1;
+            Image avatar = 2;
+            string nickname = 3;
+            string title = 4;
+            uint64 room_id = 5;
+        }
+
+        message RoomBasisData {
+            uint64 next_ping = 1;
+            bool is_customize_audio_room = 2;
+        }
+
+        message RoomInteractData {
+            uint64 landscape_comment_style = 1;
+            EpisodeExtraInfo vs_component_extra = 2;
+            FeaturedPublicScreenConf featured_public_screen_data = 3;
+            PublicScreenSpeedConf public_screen_speed_conf = 4;
+            RoomIntroLabel public_room_intro_label = 5;
+        }
+
+        message RoomRevenueData {
 
         }
 
+        message RoomReqUserData {
+            float user_share_room_score = 1;
+            int32 enter_user_device_type = 2;
+        }
+
+        message RoomAnchorData {
+            string finish_schema = 1;
+            GameAnchorInfo game_anchor_info = 2;
+            string frame_scale = 3;
+        }
+
+        message GameAnchorInfo {
+            string category_id = 1;
+            bool is_key_anchor = 2;
+        }
+
+        message RoomOthersData {
+            DecotationDetail deco_detail = 1;
+            MorePanelData more_panel_info = 2;
+            AppointmentData appointment_info = 3;
+            WebSkinData web_skin = 4;
+            WebProgramme programme = 5;
+            LiveMatrixInfo live_matrix_info = 6;
+            WebLivePortOptimization web_live_port_optimization = 7;
+            GiftPanelTopperTray gift_panel_topper_tray = 8;
+            EnterGiftAnimation enter_gift_animation = 9;
+            PaidLiveSubscribe paid_live_subscribe = 10;
+            GroupLiveData group_live_data = 11;
+            uint64 lvideo_item_id = 12;
+        }
+
+        message WebLivePortOptimization {
+            map<string, WebLivePortConfig> strategy_config = 1;
+            string strategy_extra = 2;
+        }
+
+        message WebLivePortConfig {
+            int32 strategy_type = 1;
+            bool use_config_duration = 2;
+            string pause_monitor_duration = 3;
+        }
+
+        message WebSkinData {
+            bool enable_skin = 1;
+        }
+
+        message WebProgramme {
+            bool enable_programme = 1;
+        }
+
+        message LiveMatrixInfo {
+            uint64 id = 1;
+            string name = 2;
+        }
+
+        message RoomGameData {
+            RoomGameDataChannelConfig room_game_data_channel_config = 1;
+            GameTagInfo game_tag_info = 2;
+        }
+
+        message AppointmentData {
+            uint64 appointment_id = 1;
+            bool is_subscribe = 2;
+        }
+
+        message MorePanelData {
+            int32 load_strategy = 1;
+        }
+
+        message ActivityData {
+            bool xg_play = 1;
+            MatchRoomData match = 2;
+        }
+
+        message CastScreenData {
+            string show_text = 1;
+            repeated uint64 allow_list = 2;
+            int32 sdk_version = 3;
+            CastOttPermission permission = 4;
+            int32 force_cast_only = 5;
+        }
+
+        message CastOttPermission {
+            bool enable = 1;
+            string failure_toast = 2;
+        }
+
+        message DesireInfo {
+            uint64 desire_id = 1;
+            string desire_id_str = 2;
+        }
+
+        message FeedbackCard {
+            string title = 1;
+            uint64 feedback_id = 2;
+            repeated Question question = 3;
+            Condition condition = 4;
+            uint64 room_id = 5;
+            Room room_data = 6;
+            string negative_text = 7;
+            Image bgm = 8;
+            int32 feedback_type = 9;
+            int32 inflow_feedback_type = 10;
+
+            message Option {
+                string key = 1;
+                string text = 2;
+                uint64 sub_question_id = 3;
+                bool negative = 4;
+                string toast_text = 5;
+                int32 tendency = 6;
+            }
+
+            message RoomCardStruct {
+                Room data = 1;
+                string title = 2;
+                string sub_title = 3;
+            }
+
+            message Question {
+                string question_key = 1;
+                string question_text = 2;
+                uint64 type = 3;
+                repeated Option options = 4;
+                uint64 question_id = 5;
+                repeated RoomCardStruct room_cards = 6;
+            }
+
+            message Condition {
+                uint64 from_time = 1;
+                uint64 to_time = 2;
+                uint64 action_ids = 3;
+                uint64 action_type = 4;
+                uint64 preview_time = 5;
+            }
+        }
+
+        message UpperRightWidgetData {
+            string name = 1;
+            int32 widget_type = 2;
+            string extra = 3;
+            int32 priority = 4;
+        }
+
+        message VipData {
+            int32 vip_room = 1;
+        }
+
+        message AnchorTabLabel {
+            string content = 1;
+            Image label = 2;
+            Image icon = 3;
+            int32 style = 4;
+            int32 type = 5;
+            string key = 6;
+            string accessible_content = 7;
+            map<string, string> track_params = 8;
+        }
+
+        message BeautifyInfo {
+            bool use_filter = 1;
+            bool commerce_use_filter = 2;
+        }
+
+        message UnionLiveInfo {
+            repeated GuestAnchor guest_anchors = 1;
+            string avatar_description = 2;
+            bool fixed_sort = 3;
+            string tag = 4;
+            int32 type = 5;
+
+            message GuestAnchor {
+                User user = 1;
+                string tag = 2;
+                int32 status = 3;
+            }
+        }
+
+        message RoomSpecificSceneTypeInfo {
+            bool is_union_live_room = 1;
+            bool is_life = 2;
+            int32 is_protected_room = 3;
+            int32 is_lasted_goods_room = 4;
+            int32 is_desire_room = 5;
+            bool commentary_type = 6;
+            int32 is_sub_orientation_vertical_room = 7;
+        }
+
+        message RelevantRecommendation {
+            int32 relevant_type = 1;
+            int32 bottom_bar_category = 2;
+            Image icon = 3;
+            string bar_text_prefix = 4;
+            string bar_text_postfix = 5;
+            HighLightInfo high_light_info = 6;
+            EcomInfo ecom_info = 7;
+            VsInfo vs_info = 8;
+            WhiteCategoryInfo white_category_info = 9;
+
+            message HighLightInfo {
+                string main_url = 1;
+                string bak_url = 2;
+            }
+
+            message EcomInfo {
+                uint64 product_id = 1;
+                string product_name = 2;
+            }
+
+            message Episode {
+                uint64 episode_id = 1;
+                string episode_name = 2;
+                Image episode_cover = 3;
+                string current_period = 4;
+                uint64 season_id = 5;
+                string item_id = 6;
+            }
+
+            message VsInfo {
+                repeated Episode episodes = 1;
+            }
+
+            message WhiteCategoryInfo {
+                uint64 first_level_tag_id = 1;
+            }
+        }
+
+        message IndustryServiceInfo {
+            bool entrance_open = 1;
+            Image icon_image = 2;
+            ConsultInfo consult_info = 3;
+
+            message ConsultInfo {
+                string biz_info = 1;
+                int32 consult_role = 2;
+            }
+        }
+
+        message EcomData {
+            EcomLiveCard live_card = 1;
+            EcomPop pop = 2;
+            EcomGoodsCard goods_card = 3;
+            repeated RedsShowInfo reds_show_infos = 4;
+            RoomCartV2 room_cart_v2 = 5;
+        }
+
+        message AvatarLiveInfo {
+            string type = 1;
+            string text = 2;
+            int32 text_size = 3;
+            Image image = 4;
+        }
+
+        message WelfareProjectInfo {
+            uint64 project_id = 1;
+            uint64 show_frequency = 2;
+            string container_card_url = 3;
+            string welfare_detail_page_url = 4;
+            string project_id_str = 5;
+        }
+
+        message CornerMarkReach {
+            bool need_reach = 1;
+            uint64 duration = 2;
+            uint64 elem_type = 3;
+        }
+
+        message VerticalTypeInfo {
+            string name = 1;
+            uint64 tab_type = 2;
+            uint64 tag_id = 3;
+            bool is_sub_tag = 4;
+            Image icon = 5;
+            uint64 valid_time = 6;
+            uint64 priority = 7;
+            string extra = 8;
+            string event_extra = 9;
+        }
+
+        message FilterWord {
+            string id = 1;
+            bool is_selected = 2;
+            string name = 3;
+        }
+
+        message LabelInfo {
+            uint64 label_type = 1;
+            uint64 display_type = 2;
+            SpliceLabel splice_label = 3;
+            Image whole_label = 4;
+            string extra = 5;
+            ProfilePicSpliceLabel profile_pic_splice_label = 6;
+            map<string, string> et_extra = 7;
+        }
+
+        message VSLinkInfo {
+            string title = 1;
+            string tab_title = 2;
+            repeated VSLinkNode rooms = 3;
+            int32 pattern = 4;
+        }
+
+        message VSLinkNode {
+            uint64 room_id = 1;
+            string room_id_str = 2;
+            string title = 3;
+            uint64 live_room_mode = 4;
+            User owner = 5;
+        }
+
+        message SpliceLabel {
+            string text = 1;
+            string text_color = 2;
+            Image background_image = 3;
+            Image icon_image = 4;
+            string background_color = 5;
+        }
+
+        message ProfilePicSpliceLabel {
+            LabelProfileItem profile_list = 1;
+        }
+
+        message LabelProfileItem {
+            uint64 user_id = 1;
+            string nick_name = 2;
+            Image profile_pic = 3;
+        }
+
+        message LiveStatusInfo {
+            int32 live_status = 1;
+            User live_user = 2;
+            map<int32, Image> live_notify_light = 3;
+            string preview_text = 4;
+        }
+
+        message ShortTouchAuth {
+            int32 commerce_lottery = 1;
+        }
+
+        message EpisodeMod {
+            int32 episode_stage = 1;
+            int32 episode_type = 2;
+            int32 episode_sub_type = 3;
+            int32 episode_record_type = 4;
+        }
+
+        message ToolbarItemConfig {
+            int32 toolbar_type = 1;
+            Image icon = 2;
+            string jump_schema = 3;
+            int32 display_type = 4;
+            Image dynamic_icon = 5;
+            Image icon_vertical = 6;
+            Image dynamic_bottom_icon = 7;
+            Image bottom_icon = 8;
+            repeated Toast toast_list = 9;
+            string extra = 10;
+        }
+
+        message Toast {
+            uint64 start_time = 1;
+            uint64 end_time = 2;
+            string content = 3;
+            string schema = 4;
+            string toast_id = 5;
+        }
+
+        message WatchInfo {
+            string desc = 1;
+            string count = 2;
+            string count_with_backup = 3;
+            int32 real_count = 4;
+            uint64 real_count_int64 = 5;
+            int32 live_count_display_type = 6;
+            uint64 display_type_start_time = 7;
+            string format_count = 8;
+        }
+
+        message EpisodeExtraInfo {
+            EpisodeMod episode_mod = 1;
+            string current_period = 2;
+            string title = 3;
+            string episode_list_h5 = 4;
+            WatchInfo watch_info = 5;
+            uint64 episode_id = 6;
+            string episode_id_str = 7;
+            string item_id = 8;
+            string selection_url = 9;
+            string relation_place_text = 10;
+            repeated string operation_place_text_list = 11;
+            ToolbarItemConfig toolbar_list = 12;
+            bool collected = 13;
+            uint64 season_id = 14;
+            string finish_url = 15;
+            string release_time = 16;
+            uint64 watch_period = 17;
+            uint64 latest_period = 18;
+            string show_name = 19;
+            int32 current_period_raw = 20;
+            int32 video_code = 21;
+            string season_id_str = 22;
+            string watch_pv_raw = 23;
+            uint64 next_special_episode_id = 24;
+            Image cover = 25;
+            Image cover_vertical = 26;
+            int32 style = 27;
+            EpisodePremierePlay play_control = 28;
+            EpisodePreviewImage preview_image = 29;
+            VSGiftPannel gift_pannel = 30;
+            VSPannelIcon pannel_icon = 31;
+            repeated ToolbarItemConfig pannel_toolbar = 32;
+            EpisodePreviewBottom preview_bottom = 33;
+            string draw_sub_title = 34;
+            Image season_cover_vertical = 35;
+            repeated VSCameraInfo camera_infos = 36;
+            uint64 default_camera_id = 37;
+            uint64 default_camera_id_str = 38;
+            string default_camera_id_str_v2 = 39;
+            VSCameraInfo priority_camera = 40;
+            string multi_season_tag = 41;
+            Image preview_background = 42;
+            Image background = 43;
+            EpisodeMod mod = 44;
+            Image item_comment_icon = 45;
+            VSWatermark vs_watermark = 46;
+            VSItemComment item_comment = 47;
+            string season_type_name = 48;
+            VSBar vs_bar = 49;
+            WatchInfo season_watch_info = 50;
+            VSLinkInfo link_room_info = 51;
+            CommentConfig comment_config = 52;
+            string camera_infos_table_title = 53;
+            int32 episode_status = 54;
+            MatchRoomInfo match_room_info = 55;
+            MultiCameraBasicInfo multi_camera_basic_info = 56;
+            SharePosterInfo share_poster_info = 57;
+            VSPremiereToast premiere_toast = 58;
+            string preview_bottom_text = 59;
+            repeated BusinessConfigure business_configure = 60;
+            string public_screen_color = 61;
+            string chat_tray_color = 62;
+            MultiTab multi_tab = 63;
+            Image main_camera_cover = 64;
+            string main_camera_title = 65;
+            map<int32, PrivilegeInfo> privilege_info = 66;
+            bool is_interact_config_exist = 67;
+            MainCameraMatchInfo main_camera_match_info = 68;
+            uint64 group_id = 69;
+            VSConfigDrawer vs_config_drawer = 70;
+            TitleIcon title_icon = 71;
+            string group_id_str = 72;
+        }
+
+        message TitleIcon {
+            Image icon = 1;
+            int32 size_type = 2;
+        }
+
+        message VSConfigDrawer {
+            MatchDrawer drawer = 1;
+            Image drawer_label = 2;
+            Image drawer_background = 3;
+        }
+
+        message VSPremiereToast {
+            string left_top_toast = 1;
+            string player_toast = 2;
+            string player_top_toast = 3;
+            Image icon = 4;
+        }
+
+        message CommentConfig {
+            repeated CommentColor comment_colors = 1;
+            repeated CommentRole comment_roles = 2;
+            string role_suffix = 3;
+            string role_title = 4;
+            string unlock_role_tip = 5;
+            repeated CommentMedal comment_medals = 6;
+            string medal_title = 7;
+        }
+
+        message CommentMedal {
+            string name = 1;
+            Image image = 2;
+            map<string, string> jump_schema = 3;
+            Image keyboard_image = 4;
+        }
+
+        message CommentColor {
+            string name = 1;
+            string color = 2;
+        }
+
+        message CommentRole {
+            uint64 role_id = 1;
+            string name = 2;
+            Image avatar = 3;
+        }
+
+        message Bonus {
+            uint64 bonus_type = 1;
+            BonusAuthor author = 2;
+            string title = 3;
+            string sub_title = 4;
+            string text = 5;
+            string style = 6;
+            BonusCommerce commerce_info = 7;
+            string open_url = 8;
+            string token = 9;
+            uint64 source = 10;
+            Image label = 11;
+            uint64 scene_id = 12;
+            bool maybe_carp = 13;
+            uint64 countdown_second = 14;
+        }
+
+        message BonusCommerce {
+            uint64 id = 1;
+        }
+
+        message BonusAuthor {
+            uint64 id = 1;
+            string name = 2;
+            Image avatar_larger = 3;
+            Image avatar_thumb = 4;
+            Image avatar_medium = 5;
+        }
+
+        message BorderInfo {
+            uint64 border_type = 1;
+            StaticBorderInfo static_border = 2;
+            DynamicBorderInfo dynamic_border = 3;
+            uint64 duration = 4;
+        }
+
+        message StaticBorderInfo {
+            Image top = 1;
+            Image bottom = 2;
+            Image left = 3;
+            Image right = 4;
+        }
+
+        message DynamicBorderInfo {
+            uint64 id = 1;
+        }
+
+        message LinkerUsers {
+            uint64 count = 1;
+            repeated User users_info = 2;
+        }
+
+        message OfficialChannelInfo {
+            User channel_user = 1;
+            string channel_name = 2;
+            string channel_intro = 3;
+            uint64 end_timestamp = 4;
+            uint64 forbidden_before_end = 5;
+            int32 current_show_id = 6;
+            uint64 max_enter_time = 7;
+            uint64 max_next_time = 8;
+            map<int64, int64 >] delay_enter_time = 9;
+            bool host_permission = 10;
+            uint64 backup_room_id = 11;
+            User living_user = 12;
+            bool host_can_accept_gift = 13;
+            repeated uint64 host_uids = 14;
+            string backup_room_id_str = 15;
+            bool enable_host = 16;
+        }
+
+        message OfficialChannelExtraInfo {
+            uint64 show_start_ts = 1;
+            string showlist_schema = 2;
+            uint64 showlist_id = 3;
+            string showlist_name = 4;
+        }
+
+        message RoomShortTouchAreaConfig {
+            map<int32, Element> elements = 1;
+            map<int32, ForbiddenType> forbidden_types_map = 3;
+            map<int32, TempStateCondition> temp_state_condition_map = 4;
+            map<int32, TempStateStrategy> temp_state_strategy = 5;
+            repeated string strategy_feat_whitelist = 6;
+            TempStateGlobalCondition temp_state_global_condition = 7;
+
+            message Element {
+                int32 type = 1;
+                int32 priority = 2;
+            }
+
+            message ForbiddenType {
+                int32 type = 1;
+                string reason = 2;
+            }
+
+            message TempStateType {
+                int32 strategy_type = 1;
+                int32 priority = 2;
+            }
+
+            message TempStateCondition {
+                TempStateType type = 1;
+                int32 minimum_gap = 2;
+            }
+
+            message TempStateStrategy {
+                int32 short_touch_type = 1;
+                map<int32, TempStateStrategyInfo> strategy_map = 2;
+
+                message TempStateStrategyInfo {
+                    RoomShortTouchAreaConfig.TempStateType type = 1;
+                    int32 duration = 2;
+                    string strategy_method = 3;
+                }
+            }
+
+            message TempStateGlobalCondition {
+                int32 duration_gap = 1;
+                int32 allow_count = 2;
+                int32 ignore_strategy_types = 3;
+            }
+        }
+
+        message MatchInfo {
+            MatchSkinInfo skin = 1;
+        }
+
+        message MatchSkinInfo {
+            FollowBtnSkin unfollow_skin = 1;
+            FollowBtnSkin followed_skin = 2;
+            string tab_selected_color = 3;
+            string tab_unselected_color = 4;
+            string comment_place_holder_color = 5;
+            string anchor_name_color = 6;
+            string anchor_info_color = 7;
+            Image user_banner_image = 8;
+            Image tool_bar_image = 9;
+            string comment_place_holder_bg_color = 10;
+            Image share_icon = 11;
+
+            message FollowBtnSkin {
+                string left_color = 1;
+                string right_color = 2;
+                string font_color = 3;
+            }
+        }
+
+        message RoomActivityTag {
+            int32 activity_type = 1;
+            string name = 2;
+            string url = 3;
+            string extra = 4;
+            Image icon = 5;
+        }
+
+        message RoomAuthStatus {
+            bool Chat = 1;
+            bool Danmaku = 2;
+            bool Gift = 3;
+            bool LuckMoney = 4;
+            bool Digg = 5;
+            bool RoomContributor = 7;
+            bool Props = 8;
+            bool UserCard = 9;
+            bool POI = 10;
+            uint64 MoreAnchor = 11;
+            uint64 Banner = 12;
+            uint64 Share = 13;
+            uint64 UserCorner = 14;
+            uint64 Landscape = 15;
+            uint64 LandscapeChat = 16;
+            uint64 PublicScreen = 17;
+            uint64 GiftAnchorMt = 18;
+            uint64 RecordScreen = 19;
+            uint64 DonationSticker = 20;
+            uint64 HourRank = 21;
+            uint64 CommerceCard = 22;
+            uint64 AudioChat = 23;
+            uint64 DanmakuDefault = 24;
+            uint64 KtvOrderSong = 25;
+            uint64 SelectionAlbum = 26;
+            uint64 Like = 27;
+            uint64 MultiplierPlayback = 28;
+            uint64 DownloadVideo = 29;
+            uint64 Collect = 30;
+            uint64 TimedShutdown = 31;
+            uint64 Seek = 32;
+            uint64 Denounce = 33;
+            uint64 Dislike = 34;
+            uint64 OnlyTa = 35;
+            uint64 CastScreen = 36;
+            uint64 CommentWall = 37;
+            uint64 BulletStyle = 38;
+            uint64 ShowGamePlugin = 39;
+            uint64 VSGift = 40;
+            uint64 VSTopic = 41;
+            uint64 VSRank = 42;
+            uint64 AdminCommentWall = 43;
+            uint64 CommerceComponent = 44;
+            uint64 DouPlus = 45;
+            uint64 GamePointsPlaying = 46;
+            uint64 Poster = 47;
+            uint64 Highlights = 48;
+            uint64 TypingCommentState = 49;
+            uint64 StrokeUpDownGuide = 50;
+            uint64 UpRightStatsFloatingLayer = 51;
+            uint64 CastScreenExplicit = 52;
+            uint64 Selection = 53;
+            uint64 IndustryService = 54;
+            uint64 VerticalRank = 55;
+            uint64 EnterEffects = 56;
+            uint64 FansClub = 57;
+            uint64 EmojiOutside = 58;
+            uint64 CanSellTicket = 59;
+            uint64 DouPlusPopularityGem = 60;
+            uint64 MissionCenter = 61;
+            uint64 ExpandScreen = 62;
+            uint64 FansGroup = 63;
+            uint64 Topic = 64;
+            uint64 AnchorMission = 65;
+            uint64 Teleprompter = 66;
+            uint64 ChatDynamicSlideSpeed = 67;
+            uint64 SmallWindowDisplay = 68;
+            uint64 MessageDispatch = 69;
+            uint64 RoomChannel = 70;
+            uint64 ChatDispatch = 71;
+            uint64 LinkmicGuestLike = 72;
+            uint64 MediaLinkmic = 73;
+            uint64 VideoShare = 74;
+            uint64 ChatGuideEmoji = 75;
+            uint64 ChatGuideImage = 76;
+            uint64 PCPlay = 77;
+            uint64 PadPlay = 78;
+            uint64 LongTouch = 79;
+            uint64 FirstFeedHistChat = 80;
+            uint64 MoreHistChat = 81;
+            uint64 WordAssociation = 82;
+            uint64 LandscapeScreenCapture = 83;
+            uint64 LandscapeScreenRecording = 84;
+            uint64 ScreenProjectionBarrage = 85;
+            uint64 SmallWindowPlayer = 86;
+            uint64 ChatOperate = 87;
+            uint64 EcomFansClub = 88;
+            uint64 AudioChatTotext = 89;
+            uint64 CommonCard = 90;
+            uint64 ShortTouch = 91;
+            uint64 HostTeamChannel = 92;
+            uint64 LandscapeChatDynamicSlideSpeed = 93;
+            uint64 HostTeam = 94;
+            uint64 AnchorHotMessageAggregated = 95;
+            uint64 AnchorColdMessageTiled = 96;
+            uint64 ScreenBottomInfo = 97;
+            uint64 PreviewHotCommentSwitch = 98;
+            uint64 RoomWidget = 99;
+            RoomAuthOffReasons OffReason = 100;
+            RoomAuthSpecialStyle SpecialStyle = 101;
+            uint64 PanelECService = 102;
+            uint64 FixedChat = 103;
+            uint64 LandscapeGift = 104;
+            uint64 HotChatTray = 105;
+            uint64 ItemShare = 106;
+            uint64 ShortTouchTempState = 107;
+            uint64 StickyMessage = 108;
+            uint64 ProjectionBtn = 109;
+            uint64 ChatDynamicSlideSpeedAnchor = 110;
+            uint64 PosterCache = 111;
+            uint64 MediaHistoryMessage = 112;
+            uint64 ToolbarBubble = 113;
+            uint64 ImHeatValue = 114;
+            uint64 InteractiveComponent = 115;
+            uint64 ChatReply = 116;
+            uint64 ChatMention = 117;
+            uint64 FrequentlyChat = 118;
+            uint64 StreamAdaptation = 119;
+            uint64 VideoAmplificationType = 120;
+            uint64 FeaturedPublicScreen = 121;
+            uint64 LandscapeScreenShare = 122;
+            uint64 VerticalScreenShare = 123;
+            uint64 AnchorAudioChat = 124;
+            uint64 PreviewChatExpose = 125;
+            uint64 FusionEmoji = 126;
+            uint64 VsCommentBar = 200;
+            uint64 VsWelcomeDanmaku = 201;
+            uint64 VsFansClub = 202;
+            uint64 VsExtensionEnableFollow = 203;
+            uint64 VsDouPlus = 204;
+            uint64 QuizGamePointsPlaying = 205;
+            uint64 UgcVSReplayDelete = 206;
+            uint64 UgcVsReplayVisibility = 207;
+            uint64 InteractionGift = 208;
+            uint64 SubscribeCardPackage = 209;
+            uint64 ShowQualification = 210;
+
+            message RoomAuthOffReasons {
+                string gift = 1;
+            }
+
+            message RoomAuthSpecialStyle {
+                Style Chat = 1;
+                Style Gift = 2;
+                Style RoomContributor = 3;
+                Style Like = 4;
+                Style RoomChannel = 5;
+                Style Share = 6;
+                Style CastScreenAuth = 7;
+                Style Landscape = 8;
+
+                message Style {
+                    int32 UnableStyle = 1;
+                    string Content = 2;
+                    int32 OffType = 3;
+                    int32 AnchorSwitch = 4;
+                    string SwitchStatusTipMsg = 5;
+                    string SwitchStatusAnchorTipMsg = 6;
+                    int32 AnchorSwitchForPaidLive = 7;
+                    string ContentForPaidLive = 8;
+                }
+            }
+        }
+
+        message MoreEntrance {
+            string Title = 1;
+            uint64 Type = 2;
+        }
+
+        message RoomTab {
+            int32 tab_type = 1;
+            string tab_name = 2;
+            string tab_url = 3;
+        }
+
+        message RoomExtra {
+            bool is_sandbox = 1;
+            RegionRestriction enter_region_restriction = 2;
+            RegionMatch enter_region_match = 3;
+            SafeReason filter_with_no_context = 4;
+            uint64 xigua_uid = 5;
+            uint64 limit_strategy = 6;
+            string limit_appid = 7;
+            int32 geo_block = 8;
+            int32 vr_type = 9;
+            bool is_virtual_anchor = 10;
+            string create_scene = 11;
+            bool realtime_replay_enabled = 12;
+            uint64 realtime_playback_shift = 13;
+            uint64 realtime_playback_start_shift = 14;
+            repeated StreamUrl.LiveCoreSDKData.PullData.Options.Quality realtime_playback_qualities = 15;
+        }
+
+        message SafeReason {
+            int32 safe_type = 1;
+        }
+
+        message RegionRestriction {
+            uint64 type = 1;
+            repeated string white_list = 2;
+            repeated string black_list = 3;
+        }
+
+        message RegionMatch {
+            uint64 type = 1;
+            repeated string allow_list = 2;
+            repeated string deny_list = 3;
+        }
+
+        message StreamUrl {
+            uint64 provider = 1;
+            uint64 id = 2;
+            string id_str = 3;
+            map<string, string> resolution_name = 4;
+            string default_resolution = 5;
+            StreamUrlExtra extra = 6;
+            string rtmp_push_url = 7;
+            string rtmp_pull_url = 8;
+            map<string, string> flv_pull_url = 9
+            repeated string candidate_resolution = 10;
+            string hls_pull_url = 11;
+            string hls_pull_url_params = 12;
+            string rtmp_pull_url_params = 13;
+            map<string, string> flv_pull_url_params = 14;
+            string rtmp_push_url_params = 15;
+            string push_urls = 16;
+            LiveCoreSDKData live_core_sdk_data = 17;
+            map<string, string> hls_pull_url_map = 18;
+            repeated string complete_push_urls = 19;
+            int32 stream_control_type = 20;
+            int32 stream_orientation = 21;
+            int32 push_stream_type = 22;
+            map<string, LiveCoreSDKData.PullData> pull_datas = 23;
+            PlaySetting play = 24;
+            map<string, LiveCoreSDKData.PushData> push_datas = 25;
+            int32 vr_type = 26;
+
+            message StreamUrlExtra {
+                uint64 height = 1;
+                uint64 width = 2;
+                uint64 fps = 3;
+                uint64 max_bitrate = 4;
+                uint64 min_bitrate = 5;
+                uint64 default_bitrate = 6;
+                uint64 bitrate_adapt_strategy = 7;
+                uint64 anchor_interact_profile = 8;
+                uint64 audience_interact_profile = 9;
+                bool hardware_encode = 10;
+                uint64 video_profile = 12;
+                SuperResolution super_resolution = 14;
+                bool h265_enable = 15;
+                uint64 gop_sec = 16;
+                bool bframe_enable = 17;
+                bool roi = 18;
+                bool sw_roi = 19;
+                bool bytevc1_enable = 20;
+                AnchorClientInfo anchor_client_info = 21;
+                AdaptionInfo adaption_info = 22;
+
+                message SuperResolution {
+                    bool enable = 1;
+                    uint64 strength = 2;
+                    bool antialiasing = 3;
+                }
+
+                message AnchorClientInfo {
+                    string custom_info = 1;
+                }
+
+                message AdaptionInfo {
+                    int32 vertical_resize_mode = 1;
+                }
+            }
+
+            message LiveCoreSDKData {
+                PullData pull_data = 1;
+                PushData push_data = 2;
+                string size = 3;
+
+                message PullData {
+                    string stream_data = 1;
+                    Options options = 2;
+                    uint64 version = 3;
+                    map<string, string> hls_data_unencrypted = 4;
+                    int32 kind = 5;
+                    Extension extension = 6;
+                    repeated PlayInfo Hls = 7;
+                    repeated PlayInfo Flv = 8;
+                    string codec = 9;
+                    Display display = 10;
+                    string compensatory_data = 11;
+
+                    message Options {
+                        Quality default_quality = 1;
+                        repeated Quality qualities = 2;
+                        bool vpass_default = 3;
+
+                        message Quality {
+                            string name = 1;
+                            string sdk_key = 2;
+                            string v_codec = 3;
+                            string resolution = 4;
+                            int32 level = 5;
+                            int32 v_bit_rate = 6;
+                            string additional_content = 7;
+                            int32 fps = 8;
+                            int32 disable = 9;
+                        }
+                    }
+
+                    message Clip {
+                        float x = 1;
+                        float y = 2;
+                        float w = 3;
+                        float h = 4;
+                    }
+
+                    message CameraHorizontalPosition {
+                        int32 anchor = 1;
+                    }
+
+                    message Extension {
+                        Clip game_clip = 1;
+                        Clip camera_clip = 2;
+                        int32 camera_hidden = 3;
+                        string ts = 4;
+                        uint64 refresh = 5;
+                        int32 display_mode = 6;
+                        int32 game_hidden = 7;
+                        string game_room_id = 8;
+                        int32 layout = 9;
+                        Clip camera_clip_custom = 10;
+                        int32 camera_vertical_type = 11;
+                        CameraHorizontalPosition camera_horizontal_position = 12;
+                        int32 camera_horizontal_hidden = 13;
+                    }
+
+                    message PlayInfo {
+                        string url = 1;
+                        string quality_name = 2;
+                        string params = 3;
+                    }
+
+                    message Display {
+                        uint64 scale_width = 1;
+                        uint64 scale_height = 2;
+                    }
+                }
+
+                message PushData {
+                    map<string, ResolutionParams> resolution_params = 1;
+                    int32 push_stream_level = 2;
+                    bool pre_schedule = 3;
+                    string rtmp_push_url = 4;
+                    string push_params = 5;
+                    int32 kind = 6;
+                    uint64 stream_id = 7;
+                    string stream_id_str = 8;
+
+                    message ResolutionParams {
+                        uint64 width = 1;
+                        uint64 height = 2;
+                        uint64 default_bitrate = 3;
+                        uint64 min_bitrate = 4;
+                        uint64 max_bitrate = 5;
+                        uint64 fps = 6;
+                    }
+                }
+            }
+
+            message PlaySetting {
+                string horizontal = 1;
+                string vertical = 2;
+            }
+        }
+
+        message VSCameraInfo {
+            uint64 camera_id = 1;
+            string camera_id_str = 2;
+            string title = 3;
+            Image cover = 4;
+            Image cover_vertical = 5;
+            StreamUrl stream_info = 6;
+            uint64 start_time = 7;
+            uint64 end_time = 8;
+            int32 style = 9;
+            RoomAuthStatus camera_room_auth = 10;
+            int32 vr_type = 11;
+            CameraPaidInfo camera_paid_info = 12;
+            CameraMatchInfo camera_match_info = 13;
+            uint64 group_id = 14;
+            int32 camera_type = 15;
+            Image label = 16;
+            uint64 pcu = 17;
+            bool is_subscribed = 18;
+            string group_id_str = 19;
+        }
+
+        message CameraPaidInfo {
+            int32 max_duration = 1;
+            uint64 duration = 2;
+            PriceInfo price_info = 3;
+            PaidLiveBaseInfo paid_live_base_info = 4;
+            PaidLiveBizExtra paid_live_biz_extra = 5;
+            AsyncAuthData async_auth_data = 6;
+
+            message PriceInfo {
+                string amount = 1;
+                string currency = 2;
+            }
+
+            message PaidLiveBizExtra {
+                string ticket_panel_six_jump_url = 1;
+                bool is_replay = 2;
+                string paid_conversion_jump_url = 3;
+            }
+        }
+
+        message CameraMatchInfo {
+            uint64 match_id = 1;
+            uint64 content_id = 2;
+            repeated uint64 event_ids = 3;
+            repeated uint64 hide_tab_ids = 4;
+            string match_id_str = 5;
+        }
+
+        message PaidLiveBaseInfo {
+            int32 paid_live_type = 1;
+            uint64 ticket_session_id = 2;
+            uint64 ticket_price = 3;
+            int32 view_right = 4;
+            int32 delivery = 5;
+        }
 
     }
 }
