@@ -10389,165 +10389,165 @@ message webcast {
         }
 
         message LinkMic {
-            uint64  channel_id = 1;
-            LinkMicChannelInfo  channel_info = 2;
-            repeated LinkMicBattleScore  battle_scores = 3;
-            LinkMicBattleSetting  battle_settings = 4;
-            uint64  rival_anchor_id = 5;
-            uint64  linkmic_anchor_count = 6;
+            uint64 channel_id = 1;
+            LinkMicChannelInfo channel_info = 2;
+            repeated LinkMicBattleScore battle_scores = 3;
+            LinkMicBattleSetting battle_settings = 4;
+            uint64 rival_anchor_id = 5;
+            uint64 linkmic_anchor_count = 6;
 
             message LinkMicChannelInfo {
-                uint64  layout = 1;
-                uint64  vendor = 2;
-                uint64  dimension = 3;
+                uint64 layout = 1;
+                uint64 vendor = 2;
+                uint64 dimension = 3;
             }
 
             message LinkMicBattleScore {
-                uint64  user_id = 1;
-                uint64  score = 2;
+                uint64 user_id = 1;
+                uint64 score = 2;
             }
 
             message LinkMicBattleSetting {
-                uint64  channel_id = 1;
-                uint64  duration = 2;
-                uint64  start_time = 3;
-                uint64  start_time_ms = 4;
-                string  theme = 5;
-                uint64  finished = 6;
-                uint64  battle_id = 7;
-                uint64  match_type = 8;
-                uint64  play_mode = 9;
-                uint64  team_mode = 10;
-                uint64  activity_mode = 11;
+                uint64 channel_id = 1;
+                uint64 duration = 2;
+                uint64 start_time = 3;
+                uint64 start_time_ms = 4;
+                string theme = 5;
+                uint64 finished = 6;
+                uint64 battle_id = 7;
+                uint64 match_type = 8;
+                uint64 play_mode = 9;
+                uint64 team_mode = 10;
+                uint64 activity_mode = 11;
             }
         }
 
         message Reservation {
-            uint64  appointment_id = 1;
-            uint64  anchor_id = 2;
-            uint64  room_id = 3;
-            uint64  start_time = 4;
-            uint64  end_time = 5;
-            repeated uint64  btn_rect = 6;
-            string  btn_color = 7;
-            bool  is_reserved = 8;
+            uint64 appointment_id = 1;
+            uint64 anchor_id = 2;
+            uint64 room_id = 3;
+            uint64 start_time = 4;
+            uint64 end_time = 5;
+            repeated uint64 btn_rect = 6;
+            string btn_color = 7;
+            bool is_reserved = 8;
         }
 
         message DecotationDetail {
-            Decoration  text_decoration = 1;
-            Decoration  image_decoration = 2;
+            Decoration text_decoration = 1;
+            Decoration image_decoration = 2;
         }
 
         message Decoration {
-            uint64  id = 1;
-            Image  image = 2;
-            uint64  type = 3;
-            repeated uint64  input_rect = 4;
-            uint64  text_size = 5;
-            string  text_color = 6;
-            string  content = 7;
-            uint64  max_length = 8;
-            uint64  status = 9;
-            uint64  h = 10;
-            uint64  x = 11;
-            uint64  w = 12;
-            uint64  y = 13;
-            uint64  kind = 14;
-            uint64  sub_type = 15;
-            Reservation  reservation = 16;
-            Image  nine_patch_image = 17;
-            repeated uint64  text_special_effects = 18;
-            uint64  text_image_adjustable_start_position = 19;
-            uint64  text_image_adjustable_end_position = 20;
-            DecorationFontConfig  text_font_config = 21;
-            string  audit_text_color = 22;
+            uint64 id = 1;
+            Image image = 2;
+            uint64 type = 3;
+            repeated uint64 input_rect = 4;
+            uint64 text_size = 5;
+            string text_color = 6;
+            string content = 7;
+            uint64 max_length = 8;
+            uint64 status = 9;
+            uint64 h = 10;
+            uint64 x = 11;
+            uint64 w = 12;
+            uint64 y = 13;
+            uint64 kind = 14;
+            uint64 sub_type = 15;
+            Reservation reservation = 16;
+            Image nine_patch_image = 17;
+            repeated uint64 text_special_effects = 18;
+            uint64 text_image_adjustable_start_position = 19;
+            uint64 text_image_adjustable_end_position = 20;
+            DecorationFontConfig text_font_config = 21;
+            string audit_text_color = 22;
         }
 
         message DecorationFontConfig {
-            uint64  FontID = 1;
-            string  DownloadUrl = 2;
-            uint64  Status = 3;
-            string  font_name = 4;
+            uint64 FontID = 1;
+            string DownloadUrl = 2;
+            uint64 Status = 3;
+            string font_name = 4;
         }
 
         message RoomStats {
-            uint64  id = 1;
-            string  id_str = 2;
-            uint64  fan_ticket = 3;
-            uint64  money = 4;
-            uint64  total_user = 5;
-            uint64  gift_uv_count = 6;
-            uint64  follow_count = 7;
-            UserCountComposition  user_count_composition = 8;
-            uint64  watermelon = 9;
-            uint64  digg_count = 10;
-            uint64  enter_count = 11;
-            string  dou_plus_promotion = 12;
-            string  total_user_desp = 13;
-            uint64  like_count = 14;
-            string  total_user_str = 15;
-            string  user_count_str = 16;
-            uint64  comment_count = 17;
-            uint64  welfare_donation_amount = 18;
-            string  up_right_stats_str = 19;
-            string  up_right_stats_str_complete = 20;
+            uint64 id = 1;
+            string id_str = 2;
+            uint64 fan_ticket = 3;
+            uint64 money = 4;
+            uint64 total_user = 5;
+            uint64 gift_uv_count = 6;
+            uint64 follow_count = 7;
+            UserCountComposition user_count_composition = 8;
+            uint64 watermelon = 9;
+            uint64 digg_count = 10;
+            uint64 enter_count = 11;
+            string dou_plus_promotion = 12;
+            string total_user_desp = 13;
+            uint64 like_count = 14;
+            string total_user_str = 15;
+            string user_count_str = 16;
+            uint64 comment_count = 17;
+            uint64 welfare_donation_amount = 18;
+            string up_right_stats_str = 19;
+            string up_right_stats_str_complete = 20;
 
             message UserCountComposition {
-                double  city = 1;
-                double  video_detail = 2;
-                double  my_follow = 3;
-                double  other = 4;
+                double city = 1;
+                double video_detail = 2;
+                double my_follow = 3;
+                double other = 4;
             }
         }
 
         message RoomViewStats {
-            bool  is_hidden = 1;
-            string  display_short = 2;
-            string  display_middle = 3;
-            string  display_long = 4;
-            uint64  display_value = 5;
-            uint64  display_version = 6;
-            bool  incremental = 7;
-            int32  display_type = 8;
-            string  display_short_anchor = 9;
-            string  display_middle_anchor = 10;
-            string  display_long_anchor = 11;
+            bool is_hidden = 1;
+            string display_short = 2;
+            string display_middle = 3;
+            string display_long = 4;
+            uint64 display_value = 5;
+            uint64 display_version = 6;
+            bool incremental = 7;
+            int32 display_type = 8;
+            string display_short_anchor = 9;
+            string display_middle_anchor = 10;
+            string display_long_anchor = 11;
         }
 
         message TopFan {
-            uint64  fan_ticket = 1;
-            User  user = 2;
+            uint64 fan_ticket = 1;
+            User user = 2;
         }
 
         message RoomUserAttr {
-            uint64  room_id = 1;
-            string  room_id_str = 2;
-            uint64  silence_flag = 3;
-            uint64  admin_flag = 4;
-            uint64  rank = 5;
+            uint64 room_id = 1;
+            string room_id_str = 2;
+            uint64 silence_flag = 3;
+            uint64 admin_flag = 4;
+            uint64 rank = 5;
         }
 
         message BurstInfo {
-            uint64  burst_time_remain_seconds = 1;
-            uint64  multiple = 2;
-            uint64  property_definition_id = 3;
-            Image  property_icon = 4;
+            uint64 burst_time_remain_seconds = 1;
+            uint64 multiple = 2;
+            uint64 property_definition_id = 3;
+            Image property_icon = 4;
         }
 
         message RoomHealthScoreInfo {
-            double  score = 1;
-            string  bubble_message = 2;
-            string  jump_url = 3;
+            double score = 1;
+            string bubble_message = 2;
+            string jump_url = 3;
         }
 
         message TVStation {
-            bool  is_idle = 1;
-            string  state_desc = 2;
+            bool is_idle = 1;
+            string state_desc = 2;
         }
 
         message CommentBox {
-            Image  icon = 1;
-            string  placeholder = 2;
+            Image icon = 1;
+            string placeholder = 2;
         }
 
         message RoomCartV2 {
@@ -10555,14 +10555,14 @@ message webcast {
         }
 
         message RoomCart {
-            bool  contain_cart = 1;
-            uint64  total = 2;
-            uint64  flash_total = 3;
-            string  cart_icon = 4;
-            int32  show_cart = 5;
-            CartVertical  vertical = 6;
-            CartHorizontal  horizontal = 7;
-            GlobalCustomIcons  global_custom_icons = 8;
+            bool contain_cart = 1;
+            uint64 total = 2;
+            uint64 flash_total = 3;
+            string cart_icon = 4;
+            int32 show_cart = 5;
+            CartVertical vertical = 6;
+            CartHorizontal horizontal = 7;
+            GlobalCustomIcons global_custom_icons = 8;
         }
 
         message CartVertical {
@@ -10574,75 +10574,75 @@ message webcast {
         }
 
         message GlobalCustomIcons {
-            string  static_icon_url = 1;
-            string  animated_icon_url = 2;
-            string  animated_common_icon_url = 3;
+            string static_icon_url = 1;
+            string animated_icon_url = 2;
+            string animated_common_icon_url = 3;
         }
 
         message ShortTouchBigCard {
-            string  big_card_url = 1;
-            int32  container_type = 2;
-            int32  width = 3;
-            int32  height = 4;
-            int32  duration = 5;
+            string big_card_url = 1;
+            int32 container_type = 2;
+            int32 width = 3;
+            int32 height = 4;
+            int32 duration = 5;
         }
 
         message TextViewModel {
-            string  text = 1;
-            string  text_color = 2;
-            int32  text_size = 3;
-            string  bg_color = 4;
+            string text = 1;
+            string text_color = 2;
+            int32 text_size = 3;
+            string bg_color = 4;
         }
 
         message ShortTouchBubble {
-            string  bubble_id = 1;
-            TextViewModel  ui_model = 2;
-            int32  strategy = 3;
-            int32  duration = 4;
+            string bubble_id = 1;
+            TextViewModel ui_model = 2;
+            int32 strategy = 3;
+            int32 duration = 4;
         }
 
         message ShortTouchArea {
-            int32  type = 1;
-            uint32  priority = 2;
-            uint64  min_webcast_sdk_version = 3;
-            int32  short_touch_type = 4;
-            ShortTouchInfo  short_touch_info = 5;
-            ShortTouchBigCard  short_touch_big_card = 6;
-            string  container_payload = 7;
-            int32  load_type = 8;
-            ShortTouchBubble  bubble_params = 9;
-            string  name = 10;
+            int32 type = 1;
+            uint32 priority = 2;
+            uint64 min_webcast_sdk_version = 3;
+            int32 short_touch_type = 4;
+            ShortTouchInfo short_touch_info = 5;
+            ShortTouchBigCard short_touch_big_card = 6;
+            string container_payload = 7;
+            int32 load_type = 8;
+            ShortTouchBubble bubble_params = 9;
+            string name = 10;
         }
 
         message ShortTouchImageLayers {
-            repeated Layer  layers = 1;
-            int32  base_width = 2;
-            int32  base_height = 3;
+            repeated Layer layers = 1;
+            int32 base_width = 2;
+            int32 base_height = 3;
 
             message Layer {
-                string  url = 1;
-                int32  x = 2;
-                int32  y = 3;
-                int32  width = 4;
-                int32  height = 5;
-                int32  radius = 6;
+                string url = 1;
+                int32 x = 2;
+                int32 y = 3;
+                int32 width = 4;
+                int32 height = 5;
+                int32 radius = 6;
             }
         }
 
         message ShortTouchInfo {
-            string  short_touch_url = 1;
-            string  short_touch_fallback_url = 2;
-            int32  container_type = 3;
-            uint32  width = 4;
-            uint32  height = 5;
-            string  img_url = 6;
-            string  jump_schema = 7;
-            int32  show_animation = 8;
-            int32  animation_type = 9;
-            repeated string  sub_item_list = 10;
-            ShortTouchImageLayers  img_layers = 11;
-            uint32  animation_quota = 12;
-            string  accessible_name = 13;
+            string short_touch_url = 1;
+            string short_touch_fallback_url = 2;
+            int32 container_type = 3;
+            uint32 width = 4;
+            uint32 height = 5;
+            string img_url = 6;
+            string jump_schema = 7;
+            int32 show_animation = 8;
+            int32 animation_type = 9;
+            repeated string sub_item_list = 10;
+            ShortTouchImageLayers img_layers = 11;
+            uint32 animation_quota = 12;
+            string accessible_name = 13;
         }
 
         message QuizExtra {
@@ -10650,429 +10650,429 @@ message webcast {
         }
 
         message AudioSpeakingImageList {
-            SpeakingImage  male_speaking_image = 1;
-            SpeakingImage  female_speaking_image = 2;
-            SpeakingImage  unknown_speaking_image = 3;
+            SpeakingImage male_speaking_image = 1;
+            SpeakingImage female_speaking_image = 2;
+            SpeakingImage unknown_speaking_image = 3;
 
             message SpeakingImage {
-                Image  speaking_low_image = 1;
-                Image  speaking_default_image = 2;
-                Image  speaking_high_image = 3;
+                Image speaking_low_image = 1;
+                Image speaking_default_image = 2;
+                Image speaking_high_image = 3;
             }
         }
 
         message ShowArea {
-            uint64  x = 1;
-            uint64  y = 2;
-            uint64  h = 3;
-            uint64  w = 4;
+            uint64 x = 1;
+            uint64 y = 2;
+            uint64 h = 3;
+            uint64 w = 4;
         }
 
         message AnimatedBgInfo {
-            ShowArea  showArea = 1;
-            string  fileFormat = 2;
-            Image  animatedBg = 3;
+            ShowArea showArea = 1;
+            string fileFormat = 2;
+            Image animatedBg = 3;
         }
 
         message AudioBGData {
-            uint64  id = 1;
-            string  image_uri = 2;
-            int32  img_type = 3;
-            Image  image = 4;
-            Image  imageThumbnail = 5;
-            Image  imageAnimatedBG = 6;
-            Image  imageNormalAvatar = 7;
-            Image  imageStartupAvatar = 8;
-            Image  imageChatJoinIcon = 9;
-            Image  imageStaticBG = 10;
-            AudioSpeakingImageList  speakingImageList = 11;
-            string  status_color_value = 12;
-            string  public_screen_color_value = 13;
-            int32  time_limit = 14;
-            int32  bg_type = 15;
-            string  empty_start_color = 16;
-            string  empty_end_color = 17;
-            Image  imageColdBG = 18;
-            string  micBGColorValue = 19;
-            repeated Image  iconMicNormals = 20;
-            Image  iconMicLock = 21;
-            string  colorMicText = 22;
-            string  colorMicLine = 23;
-            string  colorMicBG = 24;
-            string  themeLabel = 25;
-            int32  bgStatus = 26;
-            AnimatedBgInfo  animateInfo = 27;
-            string  idStr = 28;
-            int32  play_mode = 29;
-            string  theme_tag = 30;
-            uint64  start_time = 31;
-            uint64  end_time = 32;
-            int32  format_type = 33;
-            AudioSpeakingImageList  speaking_image_v2 = 34;
+            uint64 id = 1;
+            string image_uri = 2;
+            int32 img_type = 3;
+            Image image = 4;
+            Image imageThumbnail = 5;
+            Image imageAnimatedBG = 6;
+            Image imageNormalAvatar = 7;
+            Image imageStartupAvatar = 8;
+            Image imageChatJoinIcon = 9;
+            Image imageStaticBG = 10;
+            AudioSpeakingImageList speakingImageList = 11;
+            string status_color_value = 12;
+            string public_screen_color_value = 13;
+            int32 time_limit = 14;
+            int32 bg_type = 15;
+            string empty_start_color = 16;
+            string empty_end_color = 17;
+            Image imageColdBG = 18;
+            string micBGColorValue = 19;
+            repeated Image iconMicNormals = 20;
+            Image iconMicLock = 21;
+            string colorMicText = 22;
+            string colorMicLine = 23;
+            string colorMicBG = 24;
+            string themeLabel = 25;
+            int32 bgStatus = 26;
+            AnimatedBgInfo animateInfo = 27;
+            string idStr = 28;
+            int32 play_mode = 29;
+            string theme_tag = 30;
+            uint64 start_time = 31;
+            uint64 end_time = 32;
+            int32 format_type = 33;
+            AudioSpeakingImageList speaking_image_v2 = 34;
         }
 
         message ActivityRoomSkinInfo {
-            map<int32 ,Image> vertical_screen = 1;
-            map<int32 ,Image> horizontal_screen = 2;
+            map<int32, Image> vertical_screen = 1;
+            map<int32, Image> horizontal_screen = 2;
         }
 
         message RoomReplayInfo {
-            uint64  replay_duration = 1;
-            string  replay_url = 2;
-            string  content_uniq_id = 3;
+            uint64 replay_duration = 1;
+            string replay_url = 2;
+            string content_uniq_id = 3;
         }
 
         message CommentWallInfo {
-            string  content = 1;
-            uint64  id = 2;
-            uint64  comment_msg_id = 3;
-            uint64  commenter_id = 4;
-            string  commenter_nickname = 5;
-            uint64  event_time = 6;
-            uint64  msg_time = 7;
-            uint64  end_time = 8;
-            int32  countdown_style = 9;
-            uint64  operator_id = 10;
-            string  operator_nickname = 11;
+            string content = 1;
+            uint64 id = 2;
+            uint64 comment_msg_id = 3;
+            uint64 commenter_id = 4;
+            string commenter_nickname = 5;
+            uint64 event_time = 6;
+            uint64 msg_time = 7;
+            uint64 end_time = 8;
+            int32 countdown_style = 9;
+            uint64 operator_id = 10;
+            string operator_nickname = 11;
         }
 
         message CommentWallPosition {
-            double  x = 1;
-            double  y = 2;
-            uint64  event_time = 3;
+            double x = 1;
+            double y = 2;
+            uint64 event_time = 3;
         }
 
         message AnnouncementInfo {
-            string  scheduled_time_text = 1;
-            string  content = 2;
-            bool  subscribed = 3;
-            uint64  appointment_id = 4;
-            int32  scheduled_time = 5;
-            int32  scheduled_date = 6;
-            repeated int32  scheduled_weekdays = 7;
+            string scheduled_time_text = 1;
+            string content = 2;
+            bool subscribed = 3;
+            uint64 appointment_id = 4;
+            int32 scheduled_time = 5;
+            int32 scheduled_date = 6;
+            repeated int32 scheduled_weekdays = 7;
         }
 
         message RoomIMInfo {
-            repeated string  welcome_messages = 1;
-            string  room_tag = 2;
-            string  hide_gift_message = 3;
+            repeated string welcome_messages = 1;
+            string room_tag = 2;
+            string hide_gift_message = 3;
         }
 
         message InteractOpenExtra {
-            map<string,string> debug_info = 1;
+            map<string, string> debug_info = 1;
         }
 
         message PropsBGData {
-            string  image_uri = 1;
-            int32  img_type = 2;
-            Image  image = 3;
-            Image  imageThumbnail = 4;
+            string image_uri = 1;
+            int32 img_type = 2;
+            Image image = 3;
+            Image imageThumbnail = 4;
         }
 
         message LinkerDetail {
-            repeated uint64  linker_play_modes = 1;
-            int32  big_party_layout_config_version = 2;
-            bool  accept_audience_pre_apply = 3;
-            uint64  linker_ui_layout = 4;
-            int32  enable_audience_linkmic = 5;
-            string  function_type = 6;
-            map<string,string> linker_map_str = 7;
-            string  ktv_lyric_mode = 8;
-            string  init_source = 9;
-            bool  forbid_apply_from_other = 10;
-            int32  ktv_exhibit_mode = 11;
-            uint64  enlarge_guest_turn_on_source = 12;
-            map<string,string> playmode_detail = 13;
+            repeated uint64 linker_play_modes = 1;
+            int32 big_party_layout_config_version = 2;
+            bool accept_audience_pre_apply = 3;
+            uint64 linker_ui_layout = 4;
+            int32 enable_audience_linkmic = 5;
+            string function_type = 6;
+            map<string, string> linker_map_str = 7;
+            string ktv_lyric_mode = 8;
+            string init_source = 9;
+            bool forbid_apply_from_other = 10;
+            int32 ktv_exhibit_mode = 11;
+            uint64 enlarge_guest_turn_on_source = 12;
+            map<string, string> playmode_detail = 13;
         }
 
         message PreviewExposeData {
-            int32  style = 1;
-            PreviewGuide  preview_guide = 2;
-            repeated Meta  metas = 3;
-            repeated ChatMessage  chat_msgs = 4;
-            repeated Meta  force_insertion = 5;
-            int32  scroll_after_ms = 6;
-            bool  need_realtime = 7;
-            int32  message_scroll_after_ms = 8;
-            int32  message_scroll_interval_ms = 9;
-            string  preview_intro = 10;
-            PreviewExtendArea  preview_extend_area = 11;
-            int32  show_uv_pv = 12;
-            int32  show_name_abbreviation = 13;
-            PreviewSwitch  switch = 14;
-            int32  is_preview_use_websocket = 15;
-            bool  is_aweme_video_feed = 16;
-            bool  show_preview_cards = 17;
-            PreviewPromotion  preview_promotion = 18;
-            PreviewIMExtend  preview_im_extend = 19;
-            EtData  et_data = 20;
-            int32  alive_checker = 21;
-            EnterPublicAreaAnimation  enter_public_area_animation = 22;
-            PreviewPromotionSyncData  preview_promotion_sync_data = 23;
-            GrowthTask  growth_task = 24;
-            PreviewExitGuide  preview_exit_guide = 25;
+            int32 style = 1;
+            PreviewGuide preview_guide = 2;
+            repeated Meta metas = 3;
+            repeated ChatMessage chat_msgs = 4;
+            repeated Meta force_insertion = 5;
+            int32 scroll_after_ms = 6;
+            bool need_realtime = 7;
+            int32 message_scroll_after_ms = 8;
+            int32 message_scroll_interval_ms = 9;
+            string preview_intro = 10;
+            PreviewExtendArea preview_extend_area = 11;
+            int32 show_uv_pv = 12;
+            int32 show_name_abbreviation = 13;
+            PreviewSwitch switch = 14;
+            int32 is_preview_use_websocket = 15;
+            bool is_aweme_video_feed = 16;
+            bool show_preview_cards = 17;
+            PreviewPromotion preview_promotion = 18;
+            PreviewIMExtend preview_im_extend = 19;
+            EtData et_data = 20;
+            int32 alive_checker = 21;
+            EnterPublicAreaAnimation enter_public_area_animation = 22;
+            PreviewPromotionSyncData preview_promotion_sync_data = 23;
+            GrowthTask growth_task = 24;
+            PreviewExitGuide preview_exit_guide = 25;
 
             message PreviewGuide {
-                Image  icon = 1;
-                string  tip = 2;
-                uint64  type = 3;
-                repeated string  roll_tips = 4;
-                uint64  coupon_mate_id = 5;
-                uint64  user_tag_get_coin = 6;
-                uint64  live_mession_style = 7;
-                string  et_type = 8;
-                string  extra = 9;
-                map<string,string> et_extra = 10;
-                string  enter_tip = 11;
-                repeated string  enter_roll_tips = 12;
+                Image icon = 1;
+                string tip = 2;
+                uint64 type = 3;
+                repeated string roll_tips = 4;
+                uint64 coupon_mate_id = 5;
+                uint64 user_tag_get_coin = 6;
+                uint64 live_mession_style = 7;
+                string et_type = 8;
+                string extra = 9;
+                map<string, string> et_extra = 10;
+                string enter_tip = 11;
+                repeated string enter_roll_tips = 12;
             }
 
             message Meta {
-                int32  type = 1;
-                Host  host = 2;
-                string  content = 3;
+                int32 type = 1;
+                Host host = 2;
+                string content = 3;
 
                 message Host {
-                    Image  icon = 1;
-                    string  tip = 2;
-                    string  color = 3;
+                    Image icon = 1;
+                    string tip = 2;
+                    string color = 3;
                 }
             }
 
             message ChatMessage {
-                string  nick_name = 1;
-                string  nick_name_color = 2;
-                string  content = 3;
+                string nick_name = 1;
+                string nick_name_color = 2;
+                string content = 3;
             }
 
             message PreviewExtendArea {
-                Image  extend_icon = 1;
-                string  extend_pre_text = 2;
-                string  extend_text = 3;
-                int32  extend_type = 4;
-                string  extra = 5;
-                int32  use_marquee = 6;
-                int32  icon_type = 7;
-                repeated Part  right_part = 8;
-                string  button_part = 9;
-                repeated Part  mid_part = 10;
-                bool  need_delimiter = 11;
-                repeated Part  bottom_part = 12;
-                int32  ui_type = 13;
-                int32  version = 14;
-                ActionConfig  action_cfg = 17;
-                bool  use_pass_through_extra_json = 18;
-                string  pass_through_extra_json = 19;
-                map<string,string> extra_enter_room = 20;
-                string  extra_business = 21;
-                bool  no_need_poll = 22;
-                map<string,string> et_extra = 23;
-                int32  clickable_area = 24;
+                Image extend_icon = 1;
+                string extend_pre_text = 2;
+                string extend_text = 3;
+                int32 extend_type = 4;
+                string extra = 5;
+                int32 use_marquee = 6;
+                int32 icon_type = 7;
+                repeated Part right_part = 8;
+                string button_part = 9;
+                repeated Part mid_part = 10;
+                bool need_delimiter = 11;
+                repeated Part bottom_part = 12;
+                int32 ui_type = 13;
+                int32 version = 14;
+                ActionConfig action_cfg = 17;
+                bool use_pass_through_extra_json = 18;
+                string pass_through_extra_json = 19;
+                map<string, string> extra_enter_room = 20;
+                string extra_business = 21;
+                bool no_need_poll = 22;
+                map<string, string> et_extra = 23;
+                int32 clickable_area = 24;
 
                 message Part {
-                    int32  fontSize = 1;
-                    int32  interval = 2;
-                    string  text = 3;
-                    bool  cuttable = 4;
-                    bool  deleted = 5;
-                    string  font_color = 6;
-                    bool  bold = 7;
-                    int32  part_type = 8;
-                    Image  image = 9;
-                    string  background_color = 10;
-                    Image  left_image = 11;
+                    int32 fontSize = 1;
+                    int32 interval = 2;
+                    string text = 3;
+                    bool cuttable = 4;
+                    bool deleted = 5;
+                    string font_color = 6;
+                    bool bold = 7;
+                    int32 part_type = 8;
+                    Image image = 9;
+                    string background_color = 10;
+                    Image left_image = 11;
                 }
 
                 message ActionConfig {
                     int32 areaAction = 1;
-                    map<string,string> actionPrams = 2;
+                    map<string, string> actionPrams = 2;
                 }
             }
 
             message PreviewSwitch {
-                int32  title = 1;
-                int32  preview_guide = 2;
-                int32  dynamic_label = 3;
-                int32  assist_label = 4;
-                int32  extend_area = 5;
+                int32 title = 1;
+                int32 preview_guide = 2;
+                int32 dynamic_label = 3;
+                int32 assist_label = 4;
+                int32 extend_area = 5;
             }
 
             message PreviewPromotion {
-                repeated Image  avatar_icons = 1;
-                string  text = 2;
-                repeated string  fast_comments = 3;
-                repeated EmojiDetail  fast_comments_emoji = 4;
+                repeated Image avatar_icons = 1;
+                string text = 2;
+                repeated string fast_comments = 3;
+                repeated EmojiDetail fast_comments_emoji = 4;
             }
 
             message PreviewIMExtend {
-                uint64  im_extend_type = 1;
-                Image  icon = 2;
-                string  main_title = 3;
-                string  sub_title = 4;
-                string  extra = 5;
+                uint64 im_extend_type = 1;
+                Image icon = 2;
+                string main_title = 3;
+                string sub_title = 4;
+                string extra = 5;
             }
 
             message EtData {
-                string  type_enter_room = 1;
-                string  type_mob_params = 2;
-                string  type_params = 3;
-                string  type_first_room_params = 4;
-                string  type_first_room_mob_params = 5;
-                string  type_first_show_room_params = 6;
-                string  type_first_show_mob_params = 7;
+                string type_enter_room = 1;
+                string type_mob_params = 2;
+                string type_params = 3;
+                string type_first_room_params = 4;
+                string type_first_room_mob_params = 5;
+                string type_first_show_room_params = 6;
+                string type_first_show_mob_params = 7;
             }
 
             message GrowthTask {
-                string  task_key = 1;
-                string  main_text = 2;
-                string  sub_text = 3;
-                map<string,string> extra = 4;
+                string task_key = 1;
+                string main_text = 2;
+                string sub_text = 3;
+                map<string, string> extra = 4;
             }
 
             message PreviewPromotionSyncData {
-                Image  icon = 1;
-                string  text = 2;
-                LuckyBag  lucky_bag = 3;
-                uint64  type = 4;
-                LuckyMoney  lucky_money = 5;
+                Image icon = 1;
+                string text = 2;
+                LuckyBag lucky_bag = 3;
+                uint64 type = 4;
+                LuckyMoney lucky_money = 5;
 
                 message LuckyBag {
-                    uint64  lottery_id = 1;
-                    uint64  start_at = 2;
-                    uint64  draw_at = 3;
+                    uint64 lottery_id = 1;
+                    uint64 start_at = 2;
+                    uint64 draw_at = 3;
                 }
 
                 message LuckyMoney {
-                    uint64  box_id = 1;
-                    uint64  start_at = 2;
-                    uint64  delay_seconds = 3;
-                    uint64  display_end_at = 4;
-                    uint64  status = 5;
-                    string  text = 6;
+                    uint64 box_id = 1;
+                    uint64 start_at = 2;
+                    uint64 delay_seconds = 3;
+                    uint64 display_end_at = 4;
+                    uint64 status = 5;
+                    string text = 6;
                 }
             }
 
             message PreviewExitGuide {
-                Image  icon = 1;
-                string  main_text = 2;
-                string  sub_text = 3;
-                string  schema_url = 4;
-                int32  type = 5;
+                Image icon = 1;
+                string main_text = 2;
+                string sub_text = 3;
+                string schema_url = 4;
+                int32 type = 5;
             }
         }
 
         message PaidLiveData {
-            int32  paid_type = 1;
-            int32  view_right = 2;
-            uint64  duration = 3;
-            TicketData  ticket_session = 4;
-            OrderData  order_data = 5;
-            int32  delivery = 6;
-            bool  need_delivery_notice = 7;
-            int32  anchor_right = 8;
-            int32  pay_ab_type = 9;
-            map<string,PrivilegeInfo> privilege_info = 10;
-            map<string,PrivilegeInfo> privilege_info_map = 11;
-            AsyncAuthData  async_auth_data = 12;
-            ProductsData  products_data = 13;
+            int32 paid_type = 1;
+            int32 view_right = 2;
+            uint64 duration = 3;
+            TicketData ticket_session = 4;
+            OrderData order_data = 5;
+            int32 delivery = 6;
+            bool need_delivery_notice = 7;
+            int32 anchor_right = 8;
+            int32 pay_ab_type = 9;
+            map<string, PrivilegeInfo> privilege_info = 10;
+            map<string, PrivilegeInfo> privilege_info_map = 11;
+            AsyncAuthData async_auth_data = 12;
+            ProductsData products_data = 13;
         }
 
         message AsyncAuthData {
-            uint64  keep_alive_time = 1;
-            uint64  async_authentication_operate = 2;
-            uint64  async_authentication_ab_type = 3;
-            uint64  keep_alive_time_stamp = 4;
-            uint64  buffer = 5;
+            uint64 keep_alive_time = 1;
+            uint64 async_authentication_operate = 2;
+            uint64 async_authentication_ab_type = 3;
+            uint64 keep_alive_time_stamp = 4;
+            uint64 buffer = 5;
         }
 
         message PaidLivePriceInfo {
-            int32  start_time = 1;
-            int32  end_time = 2;
-            uint64  price = 3;
-            int32  claim_ddl = 4;
-            uint64  sku_id = 5;
+            int32 start_time = 1;
+            int32 end_time = 2;
+            uint64 price = 3;
+            int32 claim_ddl = 4;
+            uint64 sku_id = 5;
         }
 
         message TicketData {
-            uint64  ticket_session_id = 1;
-            string  title = 2;
-            string  sub_title = 3;
-            string  price = 4;
-            uint64  raw_release_time = 5;
-            string  tags = 6;
-            string  ticket_explanation_card_jump_url = 7;
-            string  ticket_panel_jump_url = 8;
-            string  ticket_session_id_str = 9;
-            int32  sell_status = 10;
-            string  cover_uri = 11;
-            string  cover_uri_vertical = 12;
-            string  Introduction = 13;
-            uint64  raw_show_start_time = 14;
-            uint64  raw_show_end_time = 15;
-            uint64  raw_sale_start_time = 16;
-            uint64  raw_sale_end_time = 17;
-            uint64  raw_refund_deadline = 18;
-            uint64  raw_early_bird_start_time = 19;
-            uint64  raw_early_bird_end_time = 20;
-            uint64  raw_full_price_start_time = 21;
-            uint64  raw_full_price_end_time = 22;
-            uint64  raw_activity_start_time = 23;
-            uint64  raw_activity_end_time = 24;
-            string  early_bird_price = 25;
-            string  activity_price = 26;
-            int32  status = 27;
-            string  show_start_time = 28;
-            string  show_end_time = 29;
-            string  sale_start_time = 30;
-            string  sale_end_time = 31;
-            string  early_bird_start_time = 32;
-            string  early_bird_end_time = 33;
-            string  full_price_start_time = 34;
-            string  full_price_end_time = 35;
-            string  activity_start_time = 36;
-            string  activity_end_time = 37;
-            string  refund_deadline = 38;
-            string  activity_title = 39;
-            string  activity_jump_url = 40;
-            string  release_time = 41;
-            int32  ticket_explanation_card_status = 42;
-            int32  last_duration = 43;
-            string  paid_conversion_jump_url = 44;
-            string  ticket_panel_six_jump_url = 45;
-            string  ticket_panel_nine_jump_url = 46;
-            Image  cover = 47;
-            int32  ios_pay_type = 48;
-            int32  android_pay_type = 49;
-            int32  ios_pay_price = 50;
-            int32  android_pay_price = 51;
-            int32  right_duration = 52;
-            PaidLivePriceInfo  friend_priceInfo = 53;
-            PaidLivePriceInfo  helping_priceInfo = 54;
-            map<int64,PaidLivePriceInfoV2> price_info = 55;
-            uint64  ticket_anchor_id = 56;
-            string  extra = 57;
-            repeated TicketSkuDetail  sku_details = 58;
-            PaidLivePriceInfoV2  final_price_info = 59;
-            uint64  parent_ticket_session_id = 60;
-            string  parent_ticket_session_id_str = 61;
-            int32  ticket_category = 62;
+            uint64 ticket_session_id = 1;
+            string title = 2;
+            string sub_title = 3;
+            string price = 4;
+            uint64 raw_release_time = 5;
+            string tags = 6;
+            string ticket_explanation_card_jump_url = 7;
+            string ticket_panel_jump_url = 8;
+            string ticket_session_id_str = 9;
+            int32 sell_status = 10;
+            string cover_uri = 11;
+            string cover_uri_vertical = 12;
+            string Introduction = 13;
+            uint64 raw_show_start_time = 14;
+            uint64 raw_show_end_time = 15;
+            uint64 raw_sale_start_time = 16;
+            uint64 raw_sale_end_time = 17;
+            uint64 raw_refund_deadline = 18;
+            uint64 raw_early_bird_start_time = 19;
+            uint64 raw_early_bird_end_time = 20;
+            uint64 raw_full_price_start_time = 21;
+            uint64 raw_full_price_end_time = 22;
+            uint64 raw_activity_start_time = 23;
+            uint64 raw_activity_end_time = 24;
+            string early_bird_price = 25;
+            string activity_price = 26;
+            int32 status = 27;
+            string show_start_time = 28;
+            string show_end_time = 29;
+            string sale_start_time = 30;
+            string sale_end_time = 31;
+            string early_bird_start_time = 32;
+            string early_bird_end_time = 33;
+            string full_price_start_time = 34;
+            string full_price_end_time = 35;
+            string activity_start_time = 36;
+            string activity_end_time = 37;
+            string refund_deadline = 38;
+            string activity_title = 39;
+            string activity_jump_url = 40;
+            string release_time = 41;
+            int32 ticket_explanation_card_status = 42;
+            int32 last_duration = 43;
+            string paid_conversion_jump_url = 44;
+            string ticket_panel_six_jump_url = 45;
+            string ticket_panel_nine_jump_url = 46;
+            Image cover = 47;
+            int32 ios_pay_type = 48;
+            int32 android_pay_type = 49;
+            int32 ios_pay_price = 50;
+            int32 android_pay_price = 51;
+            int32 right_duration = 52;
+            PaidLivePriceInfo friend_priceInfo = 53;
+            PaidLivePriceInfo helping_priceInfo = 54;
+            map<int64, PaidLivePriceInfoV2> price_info = 55;
+            uint64 ticket_anchor_id = 56;
+            string extra = 57;
+            repeated TicketSkuDetail sku_details = 58;
+            PaidLivePriceInfoV2 final_price_info = 59;
+            uint64 parent_ticket_session_id = 60;
+            string parent_ticket_session_id_str = 61;
+            int32 ticket_category = 62;
 
             message PaidLivePriceInfoV2 {
-                string  amount = 1;
-                string  currency = 2;
-                uint64  pos = 3;
-                repeated int32  pay_type = 4;
+                string amount = 1;
+                string currency = 2;
+                uint64 pos = 3;
+                repeated int32 pay_type = 4;
             }
 
             message TicketSkuDetail {
-                int32  ticket_type = 1;
-                string  ticket_name = 2;
-                uint64  start_sell_time = 3;
-                uint64  closing_sell_time = 4;
-                int32  sell_status = 5;
-                TicketData.PaidLivePriceInfoV2  price_info = 6;
-                TicketData.PaidLivePriceInfoV2  dou_price_info = 7;
-                uint64  sku_id = 8;
+                int32 ticket_type = 1;
+                string ticket_name = 2;
+                uint64 start_sell_time = 3;
+                uint64 closing_sell_time = 4;
+                int32 sell_status = 5;
+                TicketData.PaidLivePriceInfoV2 price_info = 6;
+                TicketData.PaidLivePriceInfoV2 dou_price_info = 7;
+                uint64 sku_id = 8;
             }
         }
 
@@ -11081,27 +11081,27 @@ message webcast {
         }
 
         message Appearance {
-            Bubble  head_bubble = 1;
-            uint64  up_right_stats_display_type = 2;
-            MoreEntrance  entrance = 3;
-            repeated ToolbarItemConfig  toolbar_list = 4;
-            uint64  preview_style = 5;
-            Image  cover_gauss = 6;
-            repeated ContentTag  content_tags = 7;
-            PreviewLabel  preview_label = 8;
-            Image  cover_dynamic_mask = 9;
-            Image  horizontal_background = 10;
-            repeated WideCover  wide_cover_list = 11;
-            Image  blur_placeholder_img = 12;
+            Bubble head_bubble = 1;
+            uint64 up_right_stats_display_type = 2;
+            MoreEntrance entrance = 3;
+            repeated ToolbarItemConfig toolbar_list = 4;
+            uint64 preview_style = 5;
+            Image cover_gauss = 6;
+            repeated ContentTag content_tags = 7;
+            PreviewLabel preview_label = 8;
+            Image cover_dynamic_mask = 9;
+            Image horizontal_background = 10;
+            repeated WideCover wide_cover_list = 11;
+            Image blur_placeholder_img = 12;
 
             message Bubble {
-                int32  type = 1;
-                repeated string  roll_tips = 2;
-                Image  icon = 3;
-                int32  roll_after_ms = 4;
-                uint64  coupon_mate_id = 5;
-                string  et_type = 6;
-                string  extra = 7;
+                int32 type = 1;
+                repeated string roll_tips = 2;
+                Image icon = 3;
+                int32 roll_after_ms = 4;
+                uint64 coupon_mate_id = 5;
+                string et_type = 6;
+                string extra = 7;
             }
 
             message ContentTag {
@@ -11109,64 +11109,64 @@ message webcast {
             }
 
             message WideCover {
-                Image  cover = 1;
-                uint64  cover_type = 2;
+                Image cover = 1;
+                uint64 cover_type = 2;
             }
         }
 
         message GameCPData {
-            int32  is_live_a_promoted_a = 1;
-            string  game_id = 2;
-            string  game_name = 3;
+            int32 is_live_a_promoted_a = 1;
+            string game_id = 2;
+            string game_name = 3;
         }
 
         message GamePlayData {
-            int32  play_type = 1;
-            uint64  play_id = 2;
-            uint64  game_id = 3;
+            int32 play_type = 1;
+            uint64 play_id = 2;
+            uint64 game_id = 3;
         }
 
         message RoomGameDataChannelConfig {
-            string  fusion_tag_id = 1;
-            string  game_id = 2;
-            uint64  live_stay_limit = 3;
+            string fusion_tag_id = 1;
+            string game_id = 2;
+            uint64 live_stay_limit = 3;
         }
 
         message ToolBarComponentData {
-            int32  group_id = 1;
-            int32  component_type = 2;
-            int32  op_type = 3;
-            string  text = 4;
-            string  schema_url = 5;
-            Image  icon = 6;
-            uint64  show_type = 7;
-            uint64  data_status = 8;
-            string  extra = 99;
+            int32 group_id = 1;
+            int32 component_type = 2;
+            int32 op_type = 3;
+            string text = 4;
+            string schema_url = 5;
+            Image icon = 6;
+            uint64 show_type = 7;
+            uint64 data_status = 8;
+            string extra = 99;
         }
 
         message ToolBarData {
-            repeated ToolBarComponentData  entrance_list = 1;
-            repeated ToolBarComponentData  more_panel = 2;
-            int32  max_entrance_cnt = 3;
-            repeated ToolBarComponentData  landscape_up_right = 4;
-            map<int32,ComponentSkin> skin_resource = 5;
-            int32  max_entrance_cnt_landscape = 6;
-            ToolbarPermutation  permutation = 7;
+            repeated ToolBarComponentData entrance_list = 1;
+            repeated ToolBarComponentData more_panel = 2;
+            int32 max_entrance_cnt = 3;
+            repeated ToolBarComponentData landscape_up_right = 4;
+            map<int32, ComponentSkin> skin_resource = 5;
+            int32 max_entrance_cnt_landscape = 6;
+            ToolbarPermutation permutation = 7;
         }
 
         message LifeGrouponInfo {
-            uint64  permission_status = 1;
-            uint64  agg_card_id = 2;
-            string  icon_url = 3;
-            string  dynamic_url = 4;
+            uint64 permission_status = 1;
+            uint64 agg_card_id = 2;
+            string icon_url = 3;
+            string dynamic_url = 4;
         }
 
         message PreviewLabel {
-            int32  type = 1;
-            repeated string  label_tips = 2;
-            int32  label_type = 3;
-            Image  label_image = 4;
-            bool  hit_test = 5;
+            int32 type = 1;
+            repeated string label_tips = 2;
+            int32 label_type = 3;
+            Image label_image = 4;
+            bool hit_test = 5;
         }
 
         message HotRoomInfo {
@@ -11174,73 +11174,73 @@ message webcast {
         }
 
         message ActivityLiveRecommendConfig {
-            string  name = 1;
-            string  level = 2;
-            uint64  start_time = 3;
-            uint64  end_time = 4;
-            int32  live_type = 5;
-            repeated uint64  actor_uids = 6;
-            EpisodeInfo  episode_info = 7;
+            string name = 1;
+            string level = 2;
+            uint64 start_time = 3;
+            uint64 end_time = 4;
+            int32 live_type = 5;
+            repeated uint64 actor_uids = 6;
+            EpisodeInfo episode_info = 7;
 
             message EpisodeInfo {
-                int32  content_type = 1;
-                string  content = 2;
+                int32 content_type = 1;
+                string content = 2;
             }
         }
 
         message RoomChannelData {
-            int32  status = 1;
-            repeated RoomChannelInfo  channel_list = 2;
-            int32  support_room_channel_mode = 3;
-            int32  limit_of_num = 4;
-            bool  can_create = 5;
-            Image  background = 6;
-            bool  tab_landing = 7;
-            bool  can_link_mic = 8;
-            bool  hide_landscape = 101;
+            int32 status = 1;
+            repeated RoomChannelInfo channel_list = 2;
+            int32 support_room_channel_mode = 3;
+            int32 limit_of_num = 4;
+            bool can_create = 5;
+            Image background = 6;
+            bool tab_landing = 7;
+            bool can_link_mic = 8;
+            bool hide_landscape = 101;
         }
 
         message PackMetaInfo {
-            string  scene = 1;
-            string  env = 2;
-            string  dc = 3;
-            string  trace_id = 4;
-            string  cluster = 5;
-            map<string,string> extras = 6;
+            string scene = 1;
+            string env = 2;
+            string dc = 3;
+            string trace_id = 4;
+            string cluster = 5;
+            map<string, string> extras = 6;
         }
 
         message LikeDisplayConfig {
-            int32  show_text = 1;
-            string  display_text = 2;
+            int32 show_text = 1;
+            string display_text = 2;
         }
 
         message MatchRoomData {
-            MatchDrawer  drawer = 1;
-            ToutiaoMatchData  match = 2;
-            Image  drawer_label = 3;
-            string  pcu_str = 4;
-            Image  drawer_official_label = 5;
-            Image  match_background = 6;
-            MatchUserInfo  match_user_info = 7;
+            MatchDrawer drawer = 1;
+            ToutiaoMatchData match = 2;
+            Image drawer_label = 3;
+            string pcu_str = 4;
+            Image drawer_official_label = 5;
+            Image match_background = 6;
+            MatchUserInfo match_user_info = 7;
         }
 
         message MatchUserInfo {
-            TeamInfo  user_team_info = 1;
-            map<int64,int64> user_quiz_info = 2;
-            bool  is_activity_account = 3;
-            bool  need_retry = 4;
+            TeamInfo user_team_info = 1;
+            map<int64, int64> user_quiz_info = 2;
+            bool is_activity_account = 3;
+            bool need_retry = 4;
         }
 
         message TeamInfo {
-            uint64  team_id = 1;
-            string  team_name = 2;
-            string  schema_url = 3;
-            Image  team_icon = 4;
-            Image  team_badge = 5;
-            Image  team_background = 6;
-            string  system_msg = 7;
-            string  team_id_str = 8;
-            Image  team_avatar_box = 9;
+            uint64 team_id = 1;
+            string team_name = 2;
+            string schema_url = 3;
+            Image team_icon = 4;
+            Image team_badge = 5;
+            Image team_background = 6;
+            string system_msg = 7;
+            string team_id_str = 8;
+            Image team_avatar_box = 9;
         }
 
         message EnterPublicAreaAnimation {
@@ -11248,83 +11248,83 @@ message webcast {
         }
 
         message GiftPanelTopperTray {
-            string  panel_schema = 1;
-            repeated PeriodText  period_texts = 2;
-            int32  display_duration = 3;
-            string  jump_schema = 4;
-            string  animation_type = 5;
-            int32  animation_gap = 6;
-            int32  animation_freq = 7;
-            int32  text_round_period = 8;
-            string  extra = 9;
+            string panel_schema = 1;
+            repeated PeriodText period_texts = 2;
+            int32 display_duration = 3;
+            string jump_schema = 4;
+            string animation_type = 5;
+            int32 animation_gap = 6;
+            int32 animation_freq = 7;
+            int32 text_round_period = 8;
+            string extra = 9;
 
             message PeriodText {
-                string  text = 1;
-                int32  daily_show_times = 2;
-                int32  priority = 3;
-                int32  panel_enum = 4;
-                int32  key = 5;
-                string  extra = 6;
+                string text = 1;
+                int32 daily_show_times = 2;
+                int32 priority = 3;
+                int32 panel_enum = 4;
+                int32 key = 5;
+                string extra = 6;
             }
         }
 
         message GameTagInfo {
-            int32  is_game = 1;
-            uint64  game_tag_id = 2;
-            string  game_tag_name = 3;
+            int32 is_game = 1;
+            uint64 game_tag_id = 2;
+            string game_tag_name = 3;
         }
 
         message EnterGiftAnimation {
-            int32  gift_effect_id = 1;
-            int32  display_gap = 2;
-            int32  display_freq = 3;
+            int32 gift_effect_id = 1;
+            int32 display_gap = 2;
+            int32 display_freq = 3;
         }
 
         message EmojiDetail {
-            uint64  id = 1;
-            Image  content = 2;
+            uint64 id = 1;
+            Image content = 2;
         }
 
         message CircleInfo {
-            uint64  id = 1;
-            string  name = 2;
-            Image  cover_img = 3;
-            string  description = 4;
+            uint64 id = 1;
+            string name = 2;
+            Image cover_img = 3;
+            string description = 4;
         }
 
         message EasterEggData {
-            bool  has_easter_egg = 1;
-            uint64  stage = 2;
-            uint64  total_stage = 3;
-            uint64  effects_num = 4;
-            uint64  start_count = 5;
-            uint64  end_count = 6;
-            uint64  count = 7;
-            string  panel_url = 8;
-            Image  entrance_icon = 9;
+            bool has_easter_egg = 1;
+            uint64 stage = 2;
+            uint64 total_stage = 3;
+            uint64 effects_num = 4;
+            uint64 start_count = 5;
+            uint64 end_count = 6;
+            uint64 count = 7;
+            string panel_url = 8;
+            Image entrance_icon = 9;
         }
 
         message EcomLiveCard {
-            EcomProduct  product = 1;
-            EcomIcon  icon = 2;
-            EcomCampaign  campaign = 3;
+            EcomProduct product = 1;
+            EcomIcon icon = 2;
+            EcomCampaign campaign = 3;
         }
 
         message EcomProduct {
-            uint64  promotion_id = 1;
-            uint64  product_id = 2;
-            string  title = 3;
-            string  cover_image = 4;
-            EcomPrice  price = 5;
-            uint64  regular_price = 6;
-            uint64  deposit_price = 7;
+            uint64 promotion_id = 1;
+            uint64 product_id = 2;
+            string title = 3;
+            string cover_image = 4;
+            EcomPrice price = 5;
+            uint64 regular_price = 6;
+            uint64 deposit_price = 7;
         }
 
         message EcomPrice {
-            string  prefix = 1;
-            string  suffix = 2;
-            uint64  by_cent = 3;
-            string  format_price = 4;
+            string prefix = 1;
+            string suffix = 2;
+            uint64 by_cent = 3;
+            string format_price = 4;
         }
 
         message EcomIcon {
@@ -11332,18 +11332,1072 @@ message webcast {
         }
 
         message EcomCampaign {
-            uint64  remaining_seconds = 1;
-            EcomAuction  auction = 2;
-            uint64  type = 3;
+            uint64 remaining_seconds = 1;
+            EcomAuction auction = 2;
+            uint64 type = 3;
         }
 
         message EcomAuction {
-            uint64  price = 1;
-            string  price_label = 2;
-            string  button_label = 3;
-            EcomBidder  user = 4;
-            uint64  status = 5;
+            uint64 price = 1;
+            string price_label = 2;
+            string button_label = 3;
+            EcomBidder user = 4;
+            uint64 status = 5;
         }
+
+        message EcomBidder {
+            string name = 1;
+            EcomAvatar avatar = 2;
+        }
+
+        message EcomAvatar {
+            string url = 1;
+            uint64 width = 2;
+            uint64 height = 3;
+        }
+
+        message EcomPop {
+            uint64 product_id = 1;
+            uint64 promotion_id = 2;
+            string title = 3;
+            string cover = 4;
+            EcomPrice min_price = 5;
+            string selling_point = 6;
+            string jumanji_json = 7;
+        }
+
+        message Coupon {
+            string icon = 1;
+            string start_time = 2;
+            string expire_time = 3;
+            string coupon_name = 4;
+            string url = 5;
+            string coupon_string = 6;
+            uint64 countdown = 7;
+            uint64 show_type = 8;
+            string coupon_meta_id = 9;
+            string coupon_type = 10;
+        }
+
+        message Redpack {
+            uint64 redpack_type = 1;
+            uint64 redpack_activity_id = 2;
+            string redpack_activity_display_text = 3;
+            uint64 start_apply_time = 4;
+            uint64 end_apply_time = 5;
+            uint64 preheat_time = 6;
+            uint64 server_time = 7;
+            uint64 has_applied = 8;
+            string icon_url = 9;
+        }
+
+        message EcomGoodsCard {
+            uint64 product_id = 1;
+            string title = 2;
+            string cover = 3;
+            EcomPrice min_price = 4;
+            Coupon coupon = 5;
+            uint64 promotion_id = 6;
+            uint64 jump_destination = 7;
+            uint64 card_type = 8;
+            Redpack redpack = 9;
+        }
+
+        message RedsShowInfo {
+            int32 data_type = 1;
+            string full_text = 2;
+        }
+
+        message SwitchExtraBase {
+            string schema_for_check = 1;
+        }
+
+        message SwitchExtraForOpen {
+            string schema_for_open = 1;
+        }
+
+        message GameInvite {
+            uint64 id = 1;
+            uint64 kind = 2;
+            uint64 create_time = 3;
+            uint64 now_time = 4;
+            uint64 expire_time = 5;
+            uint64 status = 6;
+            uint64 room_id = 7;
+            string id_str = 8;
+        }
+
+        message InvitationSwitch {
+            uint64 id = 1;
+            int32 game_kind = 2;
+            uint64 game_id = 3;
+            uint64 play_kind = 4;
+            uint64 status = 5;
+            string message = 6;
+            SwitchExtraBase extra_base = 7;
+            SwitchExtraForOpen extra_for_open = 8;
+            string id_str = 9;
+        }
+
+        message OfficialRoomInfo {
+            bool is_show_more_anchor = 1;
+            bool is_use_server_subtitle = 2;
+            string server_subtitle = 3;
+        }
+
+        message VsEpisodeHighLight {
+            uint64 location = 1;
+            string description = 2;
+            Image image = 3;
+            string pid = 4;
+        }
+
+        message EpisodePremierePlay {
+            repeated VsEpisodeHighLight highlights = 1;
+            int32 play_type = 2;
+            uint64 start_time = 3;
+            string play_text = 4;
+            uint64 text_duration = 5;
+        }
+
+        message VSWatermark {
+            uint64 position = 1;
+            uint64 landscape_dis = 2;
+            uint64 vertical_dis = 3;
+            repeated VSWatermarkIcon watermark_icon = 4;
+        }
+
+        message VSWatermarkIcon {
+            Image icon = 1;
+            uint64 icon_width = 2;
+            uint64 icon_type = 3;
+            uint64 landscape_dis = 4;
+            uint64 vertical_dis = 5;
+        }
+
+        message VSBar {
+            VSItemBar item_comment = 1;
+            VSItemBar item_bar = 2;
+        }
+
+        message VSItemComment {
+            Image item_comment_icon_dark = 1;
+            Image item_comment_icon_light = 2;
+        }
+
+        message VSItemBar {
+            Image icon_dark = 1;
+            Image icon_light = 2;
+            string title = 3;
+            string seperator = 4;
+            string detail = 5;
+            uint64 watch_info_pv = 6;
+            string watch_info_heat = 7;
+            uint64 collection_id = 8;
+            int32 tab_id = 9;
+            string content_type = 10;
+        }
+
+        message EpisodePreviewImage {
+            Image preview_uri_up = 1;
+            Image preview_uri_down = 2;
+            int32 preview_type = 3;
+            string preview_word_up = 4;
+            string preview_word_down = 5;
+        }
+
+        message VSGiftPannel {
+            repeated string background_colors = 1;
+            Image background = 2;
+            Image selected = 3;
+            Image top_title = 4;
+            Image background_bottom = 5;
+            Image background_top = 6;
+        }
+
+        message EpisodePreviewBottom {
+            string watch_period_str = 1;
+            string latest_period_str = 2;
+        }
+
+        message VSPannelIcon {
+            Image sp_landscape_icon = 1;
+            Image sp_vertical_icon = 2;
+            Image landscape_vertical_switch_icon = 3;
+            Image lock_screen_icon = 4;
+            Image landscape_more_icon = 9;
+            Image vertical_more_icon = 10;
+            Image landscape_comment_icon = 11;
+            Image vertical_comment_icon = 12;
+            Image vertical_landscape_switch_icon = 13;
+            Image vertical_lock_screen_icon = 14;
+        }
+
+        message MultiCameraBasicInfo {
+            Image icon = 1;
+            string icon_background_color = 2;
+            string panel_background_color = 3;
+            Image icon_pad = 4;
+            bool ban_xgs = 5;
+            bool support_vs_core = 6;
+            string name = 7;
+            int32 default_display_duration = 8;
+        }
+
+        message CollectionItem {
+            string collection_id = 1;
+            int32 collection_type = 2;
+            string title = 3;
+            Image cover_img = 4;
+            string original_vid = 5;
+            string video_duration = 6;
+            string collection_timing = 7;
+            string tmpl_vid = 8;
+            repeated int32 reflow_tag_list = 10;
+            string room_id = 11;
+            int32 collection_source = 12;
+            string original_vid_url = 13;
+            int32 collection_tag = 14;
+            string episode_id = 15;
+            string share_info = 16;
+            uint64 create_time = 17;
+            int32 status = 18;
+            string ug_share_info = 19;
+            string degrade_vid_url = 20;
+            uint64 event_time = 21;
+        }
+
+        message SharePosterInfo {
+            PosterData data = 1;
+
+            message PosterData {
+                repeated Image poster = 1;
+                repeated Image decorator = 2;
+            }
+        }
+
+        message BusinessConfigure {
+            uint64 BusinessID = 1;
+            uint64 BusType = 2;
+            int32 DelaySecond = 3;
+            uint64 PreciseTime = 4;
+            int32 DisplaySecond = 5;
+            ResourceConfigure ResConfig = 6;
+            uint64 DelType = 7;
+        }
+
+        message ResourceConfigure {
+            uint64 ResourceID = 1;
+            BarrageConfigure BarrageConf = 2;
+            ScreenBarConfigure ScreenBarConf = 3;
+        }
+
+        message BarrageConfigure {
+            Image Logo = 1;
+            string Text = 2;
+            string AtomsBGColor = 3;
+            string AtomsFrame = 4;
+            string AtomsText = 5;
+            Image Image = 6;
+        }
+
+        message ScreenBarConfigure {
+            Image Image = 1;
+            int32 IsDynamicImg = 2;
+            string schema = 3;
+            string jump_prompt = 4;
+        }
+
+        message MultiTab {
+            string tab_title_color = 1;
+            repeated TabItem tabs = 2;
+            int32 switch_on = 3;
+            int32 disable_background = 4;
+
+            message Bubble {
+                int32 switch = 1;
+                uint64 bubble_id = 2;
+                uint64 duration = 3;
+                uint64 delay = 4;
+                string bubble_text = 5;
+            }
+
+            message TabItem {
+                uint64 tab_type = 1;
+                string tab_name = 2;
+                string jump_link = 3;
+                uint64 tab_id = 4;
+                int32 tab_show_type = 5;
+                uint64 hide_camera_ids = 6;
+                Bubble bubble = 7;
+                int32 disable_preload = 8;
+                string color = 9;
+            }
+        }
+
+        message ToolbarBizSkin {
+            Image icon = 1;
+        }
+
+        message ComponentSkin {
+            map<string, ToolbarBizSkin> vertical = 1;
+            map<string, ToolbarBizSkin> landscape = 2;
+            map<string, ToolbarBizSkin> general = 3;
+        }
+
+        message ToolbarPermutation {
+            Rule vertical = 1;
+            Rule landscape = 2;
+            Rule general = 3;
+
+            message Rule {
+                repeated int32 GroupPriority = 1;
+                repeated int32 ComponentSequence = 2;
+            }
+        }
+
+        message RoomChannelInfo {
+            uint64 channel_id = 1;
+            string token = 2;
+            bool is_owner = 3;
+            uint64 member_count = 4;
+            repeated User top_user = 5;
+            string channel_name = 6;
+            int32 room_channel_mode = 7;
+            User need_approval_user = 8;
+            User owner = 9;
+            uint64 max_member_count = 10;
+            RtcExtInfo rtc_ext_info = 200;
+        }
+
+        message RtcExtInfo {
+            string link_mic_id_str = 1;
+            string rtc_ext_info = 2;
+            string live_core_exr_info = 3;
+            string rtc_strategy = 4;
+            string public_stream_id = 5;
+        }
+
+        message PlayByPlayItemInfo {
+            uint64 timestamp = 1;
+            uint64 player_id = 2;
+            uint64 ref_player_id = 3;
+            int32 incident_type = 4;
+            double elapsed = 5;
+            double elapsed_plus = 6;
+            string player_name = 7;
+            string ref_player_name = 8;
+            string player_id_str = 9;
+            string ref_player_id_str = 10;
+            uint64 start_time_pts = 11;
+            uint64 end_time_pts = 12;
+            uint64 start_time_sei = 13;
+            uint64 end_time_sei = 14;
+        }
+
+        message PlayerInfo {
+            uint64 id = 1;
+            string name = 2;
+            int32 shirt = 3;
+            string position = 4;
+            int32 lineup_type = 5;
+            Image portrait = 6;
+            PlayByPlayItemInfo last_event = 7;
+            double x_axis = 8;
+            double y_axis = 9;
+            int32 position_num = 10;
+            double playing_time = 11;
+            PlayerStats player_stats = 12;
+            string player_id_str = 13;
+            PlayByPlayItemInfo last_up_event = 14;
+            repeated PlayByPlayItemInfo event_list = 15;
+            int32 age = 16;
+            double worth = 17;
+            string club_name = 18;
+            bool superstar_flag = 19;
+            Image superstar_img = 20;
+            string superstar_name = 21;
+            string superstar_desc = 22;
+        }
+
+        message GoalStageDetail {
+            string first_half_goal = 1;
+            string second_half_goal = 2;
+            string overtime = 3;
+            string shots = 4;
+            string total = 5;
+        }
+
+        message Against {
+            string left_name = 1;
+            Image left_logo = 2;
+            string left_goal = 3;
+            repeated PlayerInfo left_players = 4;
+            GoalStageDetail left_goal_stage_detail = 5;
+            string right_name = 6;
+            Image right_logo = 7;
+            string right_goal = 8;
+            repeated PlayerInfo right_players = 9;
+            GoalStageDetail right_goal_stage_detail = 10;
+            uint64 timestamp = 11;
+            uint64 version = 12;
+            uint64 left_team_id = 13;
+            uint64 right_team_id = 14;
+            uint64 diff_sei2abs_second = 15;
+            int32 final_goal_stage = 16;
+            int32 current_goal_stage = 17;
+            int32 left_score_addition = 18;
+            int32 right_score_addition = 19;
+            uint64 left_goal_int = 20;
+            uint64 right_goal_int = 21;
+            BasketBallGoalStageDetail left_score_detail = 22;
+            BasketBallGoalStageDetail right_score_detail = 23;
+            BasketballStage basketball_stage = 24;
+            ESportsStage esport_stage = 25;
+        }
+
+        message ToutiaoMatchData {
+            uint64 match_id = 1;
+            string match_title = 2;
+            Against against = 3;
+            string started_time = 4;
+            string city = 5;
+            string venue_name = 6;
+            string referee = 7;
+            TeamStats team_stats = 8;
+            repeated PlayerStats player_stats = 9;
+            string match_group = 10;
+            string match_round = 11;
+            string match_phase_name = 12;
+            bool can_subscribe = 13;
+            int32 display_status = 14;
+            string bjt_format = 15;
+            string local_time_format = 16;
+            int32 live_status = 17;
+            int32 match_status = 18;
+            string match_id_str = 19;
+            uint64 started_time_unix = 20;
+            int32 left_score_addition = 21;
+            int32 right_score_addition = 22;
+            string duration = 23;
+            repeated uint64 event_ids = 24;
+            uint64 winner_id = 25;
+            string winner_id_str = 26;
+            Image winner_icon = 27;
+            string event_name = 28;
+            string bo_num = 29;
+        }
+
+        message TeamStats {
+            uint64 team_id = 1;
+            double possession = 2;
+            double shot_on = 3;
+            double shot_off = 4;
+            double free_kick = 5;
+            double corner = 6;
+            double counter = 7;
+            double saves = 8;
+            double offside = 9;
+            double foul_commit = 10;
+            double yellow_cards = 11;
+            double redCards = 12;
+            double pass = 13;
+            double key_pass = 14;
+            double passes_completed = 15;
+            double steal = 16;
+            double intercept = 17;
+            double shots = 18;
+            double possession_five_min = 19;
+        }
+
+        message PlayerStats {
+            uint64 player_id = 1;
+            uint64 team_id = 2;
+            double minutes_played = 3;
+            double goals = 4;
+            double assists = 5;
+            double shots = 6;
+            double shots_on = 7;
+            double y_cards = 8;
+            double r_cards = 9;
+            double offsides = 10;
+            double fouls_committed = 11;
+            double own_goals = 12;
+            double saves = 13;
+            double caught_ball = 14;
+            double clean_sheets = 15;
+            double pass = 16;
+            double key_pass = 17;
+            double passes_completed = 18;
+            double steal = 19;
+            double intercept = 20;
+            double clearances = 21;
+        }
+
+        message MatchShareBackground {
+            Image vertical_img = 1;
+            Image horizontal_img = 2;
+        }
+
+        message MatchTitle {
+            string room_title = 1;
+            TitleIcon title_icon = 2;
+
+            message TitleIcon {
+                string url = 1;
+                int32 size_type = 2;
+            }
+        }
+
+        message MatchTab {
+            string title = 1;
+            string schema = 2;
+            uint64 id = 3;
+        }
+
+        message MatchDrawer {
+            string entry_name = 1;
+            Image entry_icon = 2;
+            string drawer_title = 3;
+            Image drawer_background = 4;
+            string return_btn_text = 5;
+            int32 display_mode = 6;
+        }
+
+        message BasketBallGoalStageDetail {
+            int32 first_period = 1;
+            int32 second_period = 2;
+            int32 third_period = 3;
+            int32 forth_period = 4;
+            int32 overtime = 5;
+            int32 total = 6;
+        }
+
+        message BasketballStage {
+            int32 current_stage = 1;
+            int32 final_stage = 2;
+        }
+
+        message ESportsStage {
+            int32 current_stage = 1;
+            int32 final_stage = 2;
+        }
+
+        message PaidLiveItemInfo {
+            uint64 item_id = 1;
+            int32 item_type = 2;
+        }
+
+        message PrivilegeInfo {
+            uint64 entity_id = 1;
+            repeated PaidLiveItemInfo item_list = 2;
+            int32 paid_live_type = 3;
+            PrivilegeBaseInfo paid_live_info = 4;
+            string extra = 5;
+            PrivilegeUrl privilege_url = 6;
+            PaidLiveUIBaseConfig ui_config = 7;
+            PaidLiveConfig entity_config = 8;
+        }
+
+        message PrivilegeBaseInfo {
+            int32 paid_live_type = 1;
+            int32 view_right = 2;
+            int32 delivery = 3;
+        }
+
+        message PrivilegeUrl {
+            string privilege_panel_schema = 1;
+            string privilege_card_schema = 2;
+        }
+
+        message PaidLiveConfig {
+            uint64 spu_id = 1;
+            string spu_id_str = 2;
+            uint64 sku_id = 3;
+            string sku_id_str = 4;
+            string title = 5;
+            string sub_title = 6;
+            repeated string tags = 7;
+            Image cover = 8;
+            int32 sell_status = 9;
+            int32 status = 10;
+            repeated PriceInfo ios_pay_price_info = 11;
+            repeated PriceInfo android_pay_price_info = 12;
+            UserRight user_right = 13;
+
+            message PriceInfo {
+                int32 pay_type = 1;
+                uint64 price = 2;
+                int32 right_duration = 3;
+            }
+
+            message UserRight {
+                int32 view_right = 1;
+                uint64 duration = 3;
+                int32 delivery = 6;
+                bool need_delivery_notice = 7;
+            }
+        }
+
+        message PaidLiveUIBaseConfig {
+            int32 paid_live_type = 1;
+            Image paid_live_icon = 2;
+            string paid_live_icon_title = 3;
+            uint64 duration = 4;
+            string no_right_end_title = 5;
+            string no_right_end_sub_title = 6;
+            string has_right_end_title = 7;
+            string has_right_end_sub_title = 8;
+            string paid_conversion_jump_url = 9;
+            string panel_six_jump_url = 10;
+            string feed_page_purchase_btn_word = 11;
+            string purchase_btn_word = 12;
+            string im_share_top_title = 13;
+            string im_share_bottom_title = 14;
+            string search_card_top_title = 15;
+            string panel_feed_jump_url = 16;
+            string panel_im_card_jump_url = 17;
+            string panel_in_room_jump_url = 18;
+            string panel_search_card_jump_url = 19;
+        }
+
+        message RoomPublicScreenInfo {
+            RoomPublicScreenAttachments attachments = 1;
+            string background_color = 2;
+            string long_press_color = 3;
+        }
+
+        message RoomPublicScreenAttachments {
+            uint64 hot_message_tray = 1;
+            uint64 height_setting = 2;
+        }
+
+        message RoomFullVideoBTN {
+            uint64 show = 1;
+            Image icon = 2;
+            Image disable_icon = 3;
+            uint64 show_type = 4;
+        }
+
+        message RoomBanner {
+            uint64 AuthMsg = 1;
+        }
+
+        message AvatorBorder {
+            Image icon = 1;
+            uint64 level = 2;
+            Image thumb_icon = 3;
+            string dress_id = 4;
+        }
+
+        message RoomCore {
+            uint64 room_id = 1;
+            uint64 anchor_id = 2;
+        }
+
+        message IOSFragment {
+            string name = 1;
+            bool is_open = 2;
+        }
+
+        message IOSContainerLayoutRule {
+            repeated string items = 1;
+            bool rule_replace = 2;
+            string target = 3;
+            string rule_type = 4;
+        }
+
+        message IOSContainerLayout {
+            string name = 1;
+            IOSContainerLayoutRule layout_rule = 2;
+        }
+
+        message IOSClientComponent {
+            repeated IOSFragment fragments = 1;
+            repeated IOSContainerLayout landscape_layout = 2;
+            repeated IOSContainerLayout portrait_layout = 3;
+            bool is_open = 4;
+            uint64 template_id = 5;
+        }
+
+        message ProductsData {
+            ToolBar tool_bar = 1;
+            ExplainCard explain_card = 2;
+            ToolBar product_list_tool_bar = 3;
+            int32 bring_product_switch_status = 4;
+            int32 paid_live_bringing_product_flag = 5;
+
+            message ToolBar {
+                string panel_jump_url = 1;
+                string six_jump_url = 2;
+                string nine_jump_url = 3;
+            }
+
+            message ExplainCard {
+                int32 status = 1;
+                string card_jump_url = 2;
+                int32 last_duration = 3;
+                Product product = 4;
+            }
+        }
+
+        message Product {
+            ProductBasicInfo basic_info = 1;
+            ProductPriceStruct price_info = 2;
+            LiveInfo live_info = 3;
+            ItemInfo item_info = 4;
+            ContentInfo content_info = 5;
+            PaymentArea payment_arrea = 6;
+            ProductPriceRichText price_rich_info = 7;
+            ShareTicket share_ticket = 29;
+            PrivilegeTicket privilege = 30;
+            Combined combined = 31;
+            Comments comments = 32;
+            Rating rating = 33;
+            User user = 35;
+            repeated Author authors = 36;
+            repeated SKU sku_list = 17;
+            FilterReason filter_node = 999;
+        }
+
+        message FilterReason {
+            bool failed = 1;
+            bool can_show = 2;
+            string reason = 3;
+            int32 werr_code = 4;
+            string filter_name = 5;
+        }
+
+        message ProductBasicInfo {
+            uint64 id = 1;
+            string id_str = 2;
+            uint64 owner_user_id = 3;
+            int32 status = 4;
+            int32 biz = 5;
+            int32 category = 6;
+            string category_content = 7;
+            string title = 8;
+            int32 source = 9;
+            string cover_uri = 10;
+            Image cover = 11;
+            int32 review_status = 12;
+            int32 performance_status = 13;
+            int32 disable_reason = 14;
+            uint64 sale_start_time = 15;
+            uint64 sale_end_time = 16;
+            uint64 refund_deadline = 17;
+            string introduction_text = 18;
+            repeated Introduction introduction = 19;
+            repeated HeaderMedia header_media = 20;
+            ProductTag tags = 21;
+            string content_title = 22;
+            string content_category = 23;
+            string content_extent_info = 24;
+            int32 sale_status = 26;
+            uint64 service_period = 27;
+            bool geo_ban = 28;
+            int32 combined_view_right = 29;
+            string jump_schema = 30;
+            string detail_schema = 31;
+            int32 new_product = 32;
+            string content_extent_info_color = 33;
+            uint64 create_time = 34;
+            uint64 show_start_time = 35;
+        }
+
+        message ParentProductSimpleData {
+            string product_id = 1;
+            string title = 2;
+            string sub_title = 3;
+            Image cover = 4;
+            int32 status = 5;
+            uint64 view_right = 6;
+            int32 bind_sub_product_count = 7;
+            PurchaseSimpleData data = 8;
+            string sub_title_tag = 9;
+            int32 current_show_num = 10;
+        }
+
+        message PurchaseSimpleData {
+            int32 type = 1;
+            string name = 2;
+            repeated ProductTag tags = 3;
+            uint64 start_sell_time = 4;
+            uint64 closing_sell_time = 5;
+            int32 sell_status = 6;
+            int32 purchase_status = 7;
+            ProductPriceStruct price_info = 8;
+        }
+
+        message BindSubProductData {
+            string product_id = 1;
+            string parent_product_id = 2;
+            string title = 3;
+            int32 live_status = 4;
+            int32 ticket_status = 5;
+            string detail = 6;
+            string vid = 7;
+            string room_id = 8;
+            int32 delivery_status = 9;
+            uint64 live_time = 10;
+            uint64 end_time = 11;
+            uint64 live_start_time = 12;
+            uint64 live_end_time = 13;
+            uint64 view_right = 14;
+            bool is_replay = 15;
+            uint64 replay_id = 16;
+            string replay_id_str = 17;
+            int32 disable_reason = 18;
+        }
+
+        message Combined {
+            repeated BindSubProductData bind_sub_ticket_list = 1;
+            ParentProductSimpleData parent_ticket_panel_data = 2;
+        }
+
+        message ShareTicket {
+            bool has_share = 1;
+            User from_user = 2;
+            string package_record_id = 3;
+            bool has_grab_share = 4;
+        }
+
+        message PrivilegeTicket {
+            repeated string sku_id = 1;
+            repeated PrivilegeConfigure privilege_conf = 2;
+            bool privilege_has_paid = 3;
+
+            message PrivilegeConfigure {
+                Image icon = 1;
+                string name = 2;
+                int32 entity_type = 3;
+                uint64 privilege_tab_key = 4;
+                int32 privilege_type = 5;
+            }
+        }
+
+        message Rating {
+
+        }
+
+        message Comments {
+            string title = 1;
+            int32 count = 2;
+            bool hasMore = 3;
+            string jump_schema = 4;
+            repeated TextInfo texts = 5;
+
+            message TextInfo {
+                uint64 comment_id = 1;
+                UserInfo user_info = 2;
+                string text = 3;
+                int32 digg_count = 4;
+                uint64 create_time_stamp = 5;
+                string comment_id_str = 6;
+
+                message UserInfo {
+                    uint64 user_id = 1;
+                    string name = 2;
+                    Image avatar = 3;
+                }
+            }
+        }
+
+        message Author {
+            int32 type = 1;
+            User user_info = 2;
+            AuthorBasicInfo author_basic_info = 3;
+            string jump_schema = 4;
+
+            message AuthorBasicInfo {
+                string name = 1;
+                string intorduce = 2;
+                Image cover = 3;
+            }
+        }
+
+        message PaymentArea {
+            PayButton pay_button = 1;
+            AdditionalButton additional_button = 2;
+
+            message PayButton {
+                string content = 1;
+                Image icon = 2;
+                string jump_schema = 3;
+                int32 avilable = 4;
+                string copy_writing = 5;
+                int32 click_type = 6;
+            }
+
+            message AdditionalButton {
+                string content = 1;
+                Image icon = 2;
+                string jump_schema = 3;
+                int32 avilable = 4;
+                string copy_writing = 5;
+            }
+        }
+
+        message LiveInfo {
+            uint64 room_id = 1;
+            string title = 2;
+            int32 episode_stage = 3;
+            uint64 room_start_time = 4;
+            int32 live_status = 5;
+            string vid = 6;
+            string replay_id_str = 7;
+            bool is_replay = 8;
+            int32 delivery = 9;
+            uint64 view_right = 10;
+            string anchor_sign_tag_content = 11;
+            string room_id_str = 12;
+            int32 paid_live_bring_product_flag = 13;
+            string living_sku_id = 14;
+        }
+
+        message ItemInfo {
+            uint64 item_id = 1;
+            string title = 2;
+            string tag_type = 3;
+            int32 lastest = 4;
+            int32 total = 5;
+            string play_counts = 6;
+            uint64 view_right = 7;
+            string item_id_str = 8;
+            int32 duration = 9;
+        }
+
+        message ContentInfo {
+            uint64 content_id = 1;
+            string title = 2;
+            string tag_type = 3;
+            int32 lastest = 4;
+            int32 total = 5;
+            string category = 6;
+            uint64 view_right = 7;
+            string content_id_str = 8;
+            int32 duration = 9;
+        }
+
+        message Introduction {
+            int32 type = 1;
+            string content = 2;
+        }
+
+        message ProductPriceStruct {
+            string amount = 1;
+            string currency = 2;
+            uint64 pos = 3;
+            repeated int32 pay_type = 4;
+            string full_price = 5;
+            uint64 countdown_timestamp = 6;
+            string start = 7;
+        }
+
+        message ProductRichText {
+            int32 rich_type = 1;
+            Text text = 2;
+            Image image = 3;
+            CountDown count_down = 4;
+
+            message Text {
+                string text = 1;
+                int32 font_size = 2;
+                string color = 3;
+                string background_color = 4;
+                int32 font_weight = 5;
+                string font_style = 6;
+                string text_decoration = 7;
+                string font_family = 8;
+                int32 line_height = 9;
+            }
+
+            message Image {
+                Image img = 1;
+                int32 width = 2;
+                int32 height = 3;
+            }
+
+            message CountDown {
+                int32 countdown = 1;
+                int32 font_size = 2;
+                string color = 3;
+                string place_holder = 4;
+            }
+        }
+
+        message ProductPriceRichText {
+            repeated ProductRichText rich_texts = 1;
+            map<string, string> extra = 2;
+        }
+
+        message SKU {
+            string id = 1;
+            int32 category = 2;
+            uint64 price = 3;
+            uint64 sale_start_time = 4;
+            uint64 sale_end_time = 5;
+            int32 refundable = 6;
+            string cover_uri = 7;
+            Image cover = 8;
+            string introduction = 9;
+            string title = 10;
+            int32 sale_status = 11;
+            string product_id = 12;
+            repeated RelatedSkuSimpleInfo related_sku_simple_infos = 13;
+            int32 order_item_type = 14;
+            string order_biz_ext_info = 15;
+            int32 limit_count = 16;
+            int32 purchase_status = 17;
+            bool can_purchase = 18;
+            uint64 episode = 19;
+            string introduction_text = 20;
+            int32 price_type = 21;
+            CaremaInfo camera_info = 22;
+            repeated EntityIDsMap entity_ids_map = 23;
+            int32 free_status = 24;
+            LimitedFreeNotice limited_free_notice = 25;
+            int32 live_status = 26;
+
+            message RelatedSkuSimpleInfo {
+                string sku_id = 1;
+                string product_id = 2;
+            }
+
+            message CaremaInfo {
+                uint64 camera_id = 1;
+                string camera_id_str = 2;
+            }
+
+            message EntityIDsMap {
+                int32 entityType = 1;
+                repeated uint64 releated_entity_ids = 23;
+            }
+
+            message LimitedFreeNotice {
+                string icon_uri = 1;
+                Image icon = 2;
+                string content = 3;
+            }
+        }
+
+        message HeaderMedia {
+            int32 type = 1;
+            Image image_info = 2;
+            ViewButton view_button = 3;
+
+            message ViewButton {
+                string content = 1;
+                Image icon = 2;
+                string jump_schema = 3;
+            }
+        }
+
+        message ProductTag {
+            Image icon = 1;
+            string content = 2;
+        }
+
     }
 }
 
