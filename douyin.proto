@@ -9858,7 +9858,7 @@ message webcast {
       int32 current_show_id = 6;
       uint64 max_enter_time = 7;
       uint64 max_next_time = 8;
-      map<int64,int64> delay_enter_time = 9;
+      map<int64, int64> delay_enter_time = 9;
       bool host_permission = 10;
       uint64 backup_room_id = 11;
       User living_user = 12;
@@ -12946,387 +12946,387 @@ message webcast {
 
     message ListUserPKContent {
 
-        message DSLDetail {
-            uint64  dsl_id = 1;
-            uint64  dsl_type = 2;
-            string  dsl_gecko_download_uri = 3;
-            string  dsl_slice_info = 4;
-            uint64  version = 5;
-            string  dsl_data = 6;
+      message DSLDetail {
+        uint64  dsl_id = 1;
+        uint64  dsl_type = 2;
+        string  dsl_gecko_download_uri = 3;
+        string  dsl_slice_info = 4;
+        uint64  version = 5;
+        string  dsl_data = 6;
+      }
+
+      message RoomIntroLabel {
+        int32  label_tag = 1;
+        string  label_name = 2;
+        string  label_text = 3;
+        string  label_icon = 4;
+        string  type_name = 5;
+      }
+
+      message ChatReplyRespInfo {
+        uint64  reply_msg_id = 1;
+        uint64  reply_id = 2;
+        Text  reply_text = 3;
+        uint64  reply_uid = 4;
+        string  reply_webcast_uid = 5;
+      }
+
+      message ActivityEmoji {
+        uint64  id = 1;
+        string  id_str = 2;
+        string  name = 3;
+        Image  emoji = 4;
+      }
+
+      message ActivityEmojiGroup {
+        uint64  id = 1;
+        string  id_str = 2;
+        string  name = 3;
+        Image  tag_icon = 4;
+        string  desc = 5;
+        repeated ActivityEmoji  emoji_list = 6;
+        uint64  insert_emoji_num = 7;
+      }
+
+      message GiftIMPriority {
+        repeated uint64  queue_sizes = 1;
+        uint64  self_queue_priority = 2;
+        uint64  priority = 3;
+      }
+
+      message ItemCardInfo {
+        int32  item_card_type = 1;
+        int32  card_play_type = 2;
+        string  card_value = 3;
+        uint64  rest_duration = 4;
+        uint64  failure_time = 5;
+        string  progress_text = 6;
+        int32  item_card_status = 7;
+        uint64  mystery_rank_n = 8;
+        uint64  total_duration = 9;
+        string  card_name = 10;
+      }
+
+      message SurvivalConfig {
+        repeated Stage  stages = 1;
+        string  out_animation_url = 2;
+
+        message Stage {
+          uint64  duration = 1;
+          BattleTitleConfig  title_config = 2;
+        }
+      }
+
+      message SurvivalInfo {
+        uint64 stage = 1;
+        map<int64, AnchorInfo> anchor_info_map = 2;
+
+        message AnchorInfo {
+          int32  status = 1;
+          uint64  out_stage = 2;
+        }
+      }
+
+      message BreakthroughConfig {
+        repeated Stage  stages = 1;
+        Image  mvp_image = 2;
+        uint64  high_score_threshold = 3;
+
+        message Stage {
+          uint64  target_score = 1;
+          string  end_animation_url = 2;
+          string  end_atmosphere_url = 3;
+          uint64  duration = 4;
+          BattleTitleConfig  title_config = 5;
+          Image  room_bg_full_image = 6;
+          Image  room_bg_top_image = 7;
+          Image  room_bg_bottom_image = 8;
+        }
+      }
+
+      message BreakthroughInfo {
+        uint64  stage = 1;
+        uint64  total_score = 2;
+        uint64  mvp_anchor_id = 3;
+        int32  state = 4;
+        map<int64, StageInfo> stage_info_map = 5;
+
+        message StageInfo {
+          uint64 finish_time_delta = 1;
+        }
+      }
+
+      message BattleSettings {
+        uint64  battle_id = 1;
+        uint64  start_time_ms = 2;
+        uint64  duration = 3;
+        string  theme = 4;
+        uint64  channel_id = 5;
+        uint64  match_type = 6;
+        uint64  finished = 7;
+        string  banner_url = 8;
+        int32  mode = 9;
+        string  config = 10;
+        string  notify_scheme_url = 11;
+        string  hotsoon_notify_scheme_url = 12;
+        BattleTitleConfig  title_config = 13;
+        BattleTitleConfig  punish_config = 14;
+        uint64  punish_duration = 15;
+        uint64  punish_start_time_ms = 16;
+        int32  optimize_version = 17;
+        bool  punish_optimize_on = 18;
+        uint64  blood_display_duration = 19;
+        uint64  status_display_duration = 20;
+        string  toast = 21;
+        bool  need_close_linkmic = 22;
+        bool  display_last_result = 23;
+        string  normal_activity_name = 24;
+        int32  invite_type = 25;
+        BattleConfigSetting  battle_config_setting = 27;
+        BattleBarConfig  bar_config = 28;
+        BattleBarConfig  hotsoon_bar_config = 33;
+        uint64  initiator_id = 34;
+        int32  battle_type = 35;
+        repeated int32  play_tags = 36;
+        uint64  steal_tower_duration = 37;
+        string  lynx_data = 38;
+      }
+
+      message BattleTitleConfig {
+        Image  icon = 1;
+        string  content = 2;
+        string  scheme = 3;
+        string  hotsoon_scheme = 4;
+        Image  new_icon = 7;
+        Image  pre_icon = 8;
+        Image  icon_back_img = 9;
+        Image  background = 10;
+        uint64  background_show_delay_ms = 11;
+        string  open_scheme = 12;
+      }
+
+      message AnimeInfo {
+        int32  bar_type = 1;
+        int32  aura_type = 2;
+        string  normal_bar_url = 3;
+        string  buff_bar_url = 4;
+        string  steal_tower_bar_url = 5;
+        string  cur_bar_url = 6;
+        string  cur_aura_url = 7;
+      }
+
+      message BattleBarConfig {
+        string  left_color = 1;
+        string  right_color = 2;
+        string  left_score_view_color = 3;
+        string  right_score_view_color = 4;
+        AnimeInfo  anime_info = 5;
+      }
+
+      message BattleShellConfig {
+        uint64  shell_type = 1;
+        string  name = 2;
+      }
+
+      message BattleArmy {
+        uint64  anchor_id = 1;
+        repeated RankUser  rank_list = 2;
+        string  anchor_id_str = 3;
+
+        message RankUser {
+          uint64  user_id = 1;
+          string  nickname = 2;
+          Image  avatar_thumb = 3;
+          uint64  score = 4;
+          string  user_id_str = 5;
+        }
+      }
+
+      message BattleScore {
+        int32  score = 1;
+        uint64  user_id = 2;
+        int32  rank_bonus_score = 3;
+        int32  weekly_rank = 4;
+        int32  winning_streak = 5;
+        int32  winning_streak_bonus_score = 6;
+        int32  battle_count_bonus_score = 7;
+        string  user_id_str = 8;
+        int32  current_bonus = 9;
+        BattleStarActivityGrade  grade = 10;
+        bool  score_relative = 11;
+        string  score_relative_text = 12;
+        bool  is_large_pk_score = 13;
+        bool  room_like_trigger = 14;
+        string  score_blur_text = 15;
+        uint64  battle_rank = 16;
+        bool  new_score_open = 17;
+        string  multi_pk_team_score_text = 18;
+        uint64  multi_pk_team_score = 19;
+        uint64  multi_pk_team_rank = 20;
+        bool  is_multi_pk_relative_text = 21;
+      }
+
+      message BattleConsecutiveRecordInfo {
+        int32  battle_result_type = 1;
+        uint64  consecutive_count = 2;
+      }
+
+      message BattleUserInfo {
+        BaseUserInfo  user = 1;
+        repeated BattleRivalTag  tags = 2;
+        BattleConsecutiveRecordInfo  consecutive_record = 3;
+        BattleStarActivityGrade  grade = 4;
+        BattleStarActivityGradeChange  grade_change = 5;
+        string  team_coach_score = 6;
+        int32  pk_role = 7;
+        int32  pk_result = 8;
+        ActivityUser  activity_user = 9;
+        uint64  multi_pk_team_id = 10;
+        string  battle_start_desc_text = 11;
+        UserImgFlipInfo  user_img_flip_info = 12;
+
+        message BaseUserInfo {
+          uint64  user_id = 1;
+          string  nick_name = 2;
+          Image  avatar_thumb = 3;
+          int32  gender = 4;
         }
 
-        message RoomIntroLabel {
-            int32  label_tag = 1;
-            string  label_name = 2;
-            string  label_text = 3;
-            string  label_icon = 4;
-            string  type_name = 5;
+        message UserImgFlipInfo {
+          Image  flip_image = 1;
+          Image  pk_stage_medal = 2;
+          string  pk_stage_desc = 3;
+          string  scheme = 4;
+        }
+      }
+
+      message BattleSkinConfig {
+        string  start_animation_url = 1;
+        string  win_animation_url = 2;
+        string  lose_animation_url = 3;
+        string  draw_animation_url = 4;
+        bool  is_show_enter_user_info = 5;
+        Image  room_bg_full_image = 6;
+        Image  room_bg_top_image = 7;
+        Image  room_bg_bottom_image = 8;
+        uint64  enter_user_info_position = 9;
+        uint64  enter_show_time_ms = 10;
+      }
+
+      message BattleRivalTag {
+        Image  bg_image = 1;
+        Image  icon_image = 2;
+        string  content = 3;
+        string  font_color = 4;
+        int32  tag_type = 5;
+      }
+
+      message TeamTask {
+        Config  config = 1;
+        map<string, Info> info = 2;
+        string  battle_id = 3;
+        string  trigger_user_id = 4;
+        int32  battle_type = 5;
+
+        message ExtraConfig {
+          SpecialGiftCountConfig special_gift_count_config = 5;
         }
 
-        message ChatReplyRespInfo {
-            uint64  reply_msg_id = 1;
-            uint64  reply_id = 2;
-            Text  reply_text = 3;
-            uint64  reply_uid = 4;
-            string  reply_webcast_uid = 5;
+        message PeriodConfig {
+          uint64  begin_second_relative_battle_finish = 1;
+          uint64  end_second_relative_battle_finish = 2;
         }
 
-        message ActivityEmoji {
-            uint64  id = 1;
-            string  id_str = 2;
-            string  name = 3;
-            Image  emoji = 4;
+        message SpecialGiftCountConfig {
+          uint64  gift_id = 1;
+          string  gift_name = 2;
+          Image  icon = 3;
+          uint64  max_gift_count_per_user = 4;
+          uint64  current_gift_count = 5;
         }
 
-        message ActivityEmojiGroup {
-            uint64  id = 1;
-            string  id_str = 2;
-            string  name = 3;
-            Image  tag_icon = 4;
-            string  desc = 5;
-            repeated ActivityEmoji  emoji_list = 6;
-            uint64  insert_emoji_num = 7;
+        message Config {
+          map<int64, PeriodConfig> period_config = 1;
+          uint64  reward_buff_multiple = 2;
+          int32  task_type = 3;
+          ExtraConfig  extra_config = 4;
+          int32  target_type = 5;
+          int32  reward_type = 6;
+          int32  team_work_team_task_type = 7;
+          repeated uint64  stage_reward_buff_multiple = 8;
         }
 
-        message GiftIMPriority {
-            repeated uint64  queue_sizes = 1;
-            uint64  self_queue_priority = 2;
-            uint64  priority = 3;
+        message Info {
+          uint64  target_user_count = 1;
+          uint64  finish_user_count = 2;
+          int32  result = 3;
+          Reward  reward = 4;
+          uint64  ratio = 5;
+          int32  role = 6;
+          ItemCardInfo  item_card_info = 7;
+          string  value_text = 8;
+          string  progress_blur_text = 9;
         }
 
-        message ItemCardInfo {
-            int32  item_card_type = 1;
-            int32  card_play_type = 2;
-            string  card_value = 3;
-            uint64  rest_duration = 4;
-            uint64  failure_time = 5;
-            string  progress_text = 6;
-            int32  item_card_status = 7;
-            uint64  mystery_rank_n = 8;
-            uint64  total_duration = 9;
-            string  card_name = 10;
+        message Reward {
+          uint64  begin_second_relative_battle_finish = 1;
+          uint64  end_second_relative_battle_finish = 2;
+          uint64  reward_score = 3;
+          uint64  current_reward_buff_multiple = 4;
         }
+      }
 
-        message SurvivalConfig {
-            repeated Stage  stages = 1;
-            string  out_animation_url = 2;
+      message BattleRankUser {
+        User  user = 1;
+        uint64  score = 2;
+        uint64  rank = 3;
+        uint64  grade_buff_score = 4;
+        string  sub_des = 5;
+      }
 
-            message Stage {
-                uint64  duration = 1;
-                BattleTitleConfig  title_config = 2;
-            }
-        }
+      message BattleAnchorContributors {
+        repeated BattleRankUser  ranks = 1;
+        uint64  total_count = 2;
+        repeated BattleBuffCardInfo  buff_card_infos = 3;
+      }
 
-        message SurvivalInfo {
-            uint64 stage = 1;
-            map<int64,AnchorInfo> anchor_info_map = 2;
+      message BattleContributorsRankListV2 {
+        map<string, BattleAnchorContributors> anchor_contributors = 1;
+        TeamTask  team_task = 2;
+        BattleSettings  battle_settings = 3;
+        uint64  loser_id = 4;
+        string  loser_id_str = 5;
+      }
 
-            message AnchorInfo {
-                int32  status = 1;
-                uint64  out_stage = 2;
-            }
-        }
+      message OperationalPlay {
+        int32  operational_play_type = 1;
+        MultipleMatches3  multiple_matches_3 = 2;
+      }
 
-        message BreakthroughConfig {
-            repeated Stage  stages = 1;
-            Image  mvp_image = 2;
-            uint64  high_score_threshold = 3;
+      message MultipleMatches3 {
+        map<int64, MultipleMatchesUserInfo> user_infos = 1;
+        uint64  current_match = 2;
+        bool  end = 3;
+        uint64  winner_uid = 4;
+        uint64  current_winner_uid = 5;
+      }
 
-            message Stage {
-                uint64  target_score = 1;
-                string  end_animation_url = 2;
-                string  end_atmosphere_url = 3;
-                uint64  duration = 4;
-                BattleTitleConfig  title_config = 5;
-                Image  room_bg_full_image = 6;
-                Image  room_bg_top_image = 7;
-                Image  room_bg_bottom_image = 8;
-            }
-        }
+      message MultipleMatchesUserInfo {
+        uint64 win_count = 1;
+      }
 
-        message BreakthroughInfo {
-            uint64  stage = 1;
-            uint64  total_score = 2;
-            uint64  mvp_anchor_id = 3;
-            int32  state = 4;
-            map<int64,StageInfo> stage_info_map = 5;
-
-            message StageInfo {
-                uint64 finish_time_delta = 1;
-            }
-        }
-
-        message BattleSettings {
-            uint64  battle_id = 1;
-            uint64  start_time_ms = 2;
-            uint64  duration = 3;
-            string  theme = 4;
-            uint64  channel_id = 5;
-            uint64  match_type = 6;
-            uint64  finished = 7;
-            string  banner_url = 8;
-            int32  mode = 9;
-            string  config = 10;
-            string  notify_scheme_url = 11;
-            string  hotsoon_notify_scheme_url = 12;
-            BattleTitleConfig  title_config = 13;
-            BattleTitleConfig  punish_config = 14;
-            uint64  punish_duration = 15;
-            uint64  punish_start_time_ms = 16;
-            int32  optimize_version = 17;
-            bool  punish_optimize_on = 18;
-            uint64  blood_display_duration = 19;
-            uint64  status_display_duration = 20;
-            string  toast = 21;
-            bool  need_close_linkmic = 22;
-            bool  display_last_result = 23;
-            string  normal_activity_name = 24;
-            int32  invite_type = 25;
-            BattleConfigSetting  battle_config_setting = 27;
-            BattleBarConfig  bar_config = 28;
-            BattleBarConfig  hotsoon_bar_config = 33;
-            uint64  initiator_id = 34;
-            int32  battle_type = 35;
-            repeated int32  play_tags = 36;
-            uint64  steal_tower_duration = 37;
-            string  lynx_data = 38;
-        }
-
-        message BattleTitleConfig {
-            Image  icon = 1;
-            string  content = 2;
-            string  scheme = 3;
-            string  hotsoon_scheme = 4;
-            Image  new_icon = 7;
-            Image  pre_icon = 8;
-            Image  icon_back_img = 9;
-            Image  background = 10;
-            uint64  background_show_delay_ms = 11;
-            string  open_scheme = 12;
-        }
-
-        message AnimeInfo {
-            int32  bar_type = 1;
-            int32  aura_type = 2;
-            string  normal_bar_url = 3;
-            string  buff_bar_url = 4;
-            string  steal_tower_bar_url = 5;
-            string  cur_bar_url = 6;
-            string  cur_aura_url = 7;
-        }
-
-        message BattleBarConfig {
-            string  left_color = 1;
-            string  right_color = 2;
-            string  left_score_view_color = 3;
-            string  right_score_view_color = 4;
-            AnimeInfo  anime_info = 5;
-        }
-
-        message BattleShellConfig {
-            uint64  shell_type = 1;
-            string  name = 2;
-        }
-
-        message BattleArmy {
-            uint64  anchor_id = 1;
-            repeated RankUser  rank_list = 2;
-            string  anchor_id_str = 3;
-
-            message RankUser {
-                uint64  user_id = 1;
-                string  nickname = 2;
-                Image  avatar_thumb = 3;
-                uint64  score = 4;
-                string  user_id_str = 5;
-            }
-        }
-
-        message BattleScore {
-            int32  score = 1;
-            uint64  user_id = 2;
-            int32  rank_bonus_score = 3;
-            int32  weekly_rank = 4;
-            int32  winning_streak = 5;
-            int32  winning_streak_bonus_score = 6;
-            int32  battle_count_bonus_score = 7;
-            string  user_id_str = 8;
-            int32  current_bonus = 9;
-            BattleStarActivityGrade  grade = 10;
-            bool  score_relative = 11;
-            string  score_relative_text = 12;
-            bool  is_large_pk_score = 13;
-            bool  room_like_trigger = 14;
-            string  score_blur_text = 15;
-            uint64  battle_rank = 16;
-            bool  new_score_open = 17;
-            string  multi_pk_team_score_text = 18;
-            uint64  multi_pk_team_score = 19;
-            uint64  multi_pk_team_rank = 20;
-            bool  is_multi_pk_relative_text = 21;
-        }
-
-        message BattleConsecutiveRecordInfo {
-            int32  battle_result_type = 1;
-            uint64  consecutive_count = 2;
-        }
-
-        message BattleUserInfo {
-            BaseUserInfo  user = 1;
-            repeated BattleRivalTag  tags = 2;
-            BattleConsecutiveRecordInfo  consecutive_record = 3;
-            BattleStarActivityGrade  grade = 4;
-            BattleStarActivityGradeChange  grade_change = 5;
-            string  team_coach_score = 6;
-            int32  pk_role = 7;
-            int32  pk_result = 8;
-            ActivityUser  activity_user = 9;
-            uint64  multi_pk_team_id = 10;
-            string  battle_start_desc_text = 11;
-            UserImgFlipInfo  user_img_flip_info = 12;
-
-            message BaseUserInfo {
-                uint64  user_id = 1;
-                string  nick_name = 2;
-                Image  avatar_thumb = 3;
-                int32  gender = 4;
-            }
-
-            message UserImgFlipInfo {
-                Image  flip_image = 1;
-                Image  pk_stage_medal = 2;
-                string  pk_stage_desc = 3;
-                string  scheme = 4;
-            }
-        }
-
-        message BattleSkinConfig {
-            string  start_animation_url = 1;
-            string  win_animation_url = 2;
-            string  lose_animation_url = 3;
-            string  draw_animation_url = 4;
-            bool  is_show_enter_user_info = 5;
-            Image  room_bg_full_image = 6;
-            Image  room_bg_top_image = 7;
-            Image  room_bg_bottom_image = 8;
-            uint64  enter_user_info_position = 9;
-            uint64  enter_show_time_ms = 10;
-        }
-
-        message BattleRivalTag {
-            Image  bg_image = 1;
-            Image  icon_image = 2;
-            string  content = 3;
-            string  font_color = 4;
-            int32  tag_type = 5;
-        }
-
-        message TeamTask {
-            Config  config = 1;
-            map<string,Info> info = 2;
-            string  battle_id = 3;
-            string  trigger_user_id = 4;
-            int32  battle_type = 5;
-
-            message ExtraConfig {
-                SpecialGiftCountConfig special_gift_count_config = 5;
-            }
-
-            message PeriodConfig {
-                uint64  begin_second_relative_battle_finish = 1;
-                uint64  end_second_relative_battle_finish = 2;
-            }
-
-            message SpecialGiftCountConfig {
-                uint64  gift_id = 1;
-                string  gift_name = 2;
-                Image  icon = 3;
-                uint64  max_gift_count_per_user = 4;
-                uint64  current_gift_count = 5;
-            }
-
-            message Config {
-                map<int64,PeriodConfig> period_config = 1;
-                uint64  reward_buff_multiple = 2;
-                int32  task_type = 3;
-                ExtraConfig  extra_config = 4;
-                int32  target_type = 5;
-                int32  reward_type = 6;
-                int32  team_work_team_task_type = 7;
-                repeated uint64  stage_reward_buff_multiple = 8;
-            }
-
-            message Info {
-                uint64  target_user_count = 1;
-                uint64  finish_user_count = 2;
-                int32  result = 3;
-                Reward  reward = 4;
-                uint64  ratio = 5;
-                int32  role = 6;
-                ItemCardInfo  item_card_info = 7;
-                string  value_text = 8;
-                string  progress_blur_text = 9;
-            }
-
-            message Reward {
-                uint64  begin_second_relative_battle_finish = 1;
-                uint64  end_second_relative_battle_finish = 2;
-                uint64  reward_score = 3;
-                uint64  current_reward_buff_multiple = 4;
-            }
-        }
-
-        message BattleRankUser {
-            User  user = 1;
-            uint64  score = 2;
-            uint64  rank = 3;
-            uint64  grade_buff_score = 4;
-            string  sub_des = 5;
-        }
-
-        message BattleAnchorContributors {
-            repeated BattleRankUser  ranks = 1;
-            uint64  total_count = 2;
-            repeated BattleBuffCardInfo  buff_card_infos = 3;
-        }
-
-        message BattleContributorsRankListV2 {
-            map<string,BattleAnchorContributors> anchor_contributors = 1;
-            TeamTask  team_task = 2;
-            BattleSettings  battle_settings = 3;
-            uint64  loser_id = 4;
-            string  loser_id_str = 5;
-        }
-
-        message OperationalPlay {
-            int32  operational_play_type = 1;
-            MultipleMatches3  multiple_matches_3 = 2;
-        }
-
-        message MultipleMatches3 {
-            map<int64,MultipleMatchesUserInfo> user_infos = 1;
-            uint64  current_match = 2;
-            bool  end = 3;
-            uint64  winner_uid = 4;
-            uint64  current_winner_uid = 5;
-        }
-
-        message MultipleMatchesUserInfo {
-            uint64 win_count = 1;
-        }
-
-        message ActivityUser {
-            string  activity_name = 1;
-            Text  display_tab_text = 2;
-            uint64  user_id = 3;
-            string  user_id_str = 4;
-            repeated BattleRivalTag  labels = 5;
-            string  sub_tab_text = 6;
-            bool  is_valid = 7;
-            string  message = 8;
-            Image  button_image = 9;
-            repeated Image  back_ground_images = 10;
-        }
+      message ActivityUser {
+        string  activity_name = 1;
+        Text  display_tab_text = 2;
+        uint64  user_id = 3;
+        string  user_id_str = 4;
+        repeated BattleRivalTag  labels = 5;
+        string  sub_tab_text = 6;
+        bool  is_valid = 7;
+        string  message = 8;
+        Image  button_image = 9;
+        repeated Image  back_ground_images = 10;
+      }
 
     }
 
