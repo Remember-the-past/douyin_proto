@@ -8191,6 +8191,291 @@ message Webcast {
       double right = 4;
     }
 
+    message AIAutoReplyMessage {
+      Common  common = 1;
+      uint64  reply_msg_id = 2;
+      string  reply_content = 3;
+      PublicAreaCommon  public_area_common = 4;
+      string  schema = 5;
+      map<string, string> tag = 200;
+    }
+
+    message AIBootMessage {
+      Common  common = 1;
+      string  schema = 2;
+      map<string, string> tag = 200;
+    }
+
+    message AudioDumpSupportMessage {
+      Common  common = 1;
+      string  biz_content = 2;
+    }
+
+    message AnchorLinkmicAudioPunishMessage {
+      Common common = 1;
+      AnchorLinkmicAudioPunishInfo info = 2;
+    }
+
+    message AnchorRoomDataChangeMessage {
+      Common  common = 1;
+      Data.Text  top_text = 2;
+      Data.Text  bottom_text = 3;
+      uint64  message_type = 4;
+      string  extra = 5;
+    }
+
+    message PcRealtimeSuggest {
+      string  id = 1;
+      string  text = 2;
+      string  schema_url = 3;
+      string  button_text = 4;
+      string  action_key = 5;
+      string  send_time = 6;
+      int32  duration = 7;
+      Data.Image  icon = 8;
+      map<string, string> params = 9;
+      string  extra = 10;
+    }
+
+    message PcBarStyle {
+      string  left_icon = 1;
+      string  right_icon = 2;
+      string  background_color = 3;
+      string  text_color = 4;
+      bool  has_frame = 5;
+      string  frame_begin = 6;
+      string  frame_end = 7;
+      string  background = 8;
+    }
+
+    message PcBarMessage {
+      int32  pc_show_type = 1;
+      string  text = 2;
+      string  button_text = 3;
+      string  action_key = 4;
+      string  schema_url = 5;
+      int32  duration = 6;
+      PcBarStyle  bar_style = 7;
+      map<string, string> params = 8;
+      string  tab_key = 9;
+      string  extra = 10;
+    }
+
+    message PcBizMessage {
+      string tab_key = 1;
+      string content = 2;
+      map<string, string> params = 3;
+    }
+
+    message PCRoomPanelNotifyMessage {
+      Common common = 1;
+      PcBizMessage biz_message = 2;
+    }
+
+    message LinkmicPlayModeUpdateScoreMessage {
+      Common  common = 1;
+      uint64  live_id = 2;
+      uint64  app_id = 3;
+      uint64  room_id = 4;
+      uint64  anchor_id = 5;
+      uint64  from_user_id = 6;
+      uint64  to_user_id = 7;
+      int32  score_source = 8;
+      uint64  hot_score = 9;
+      string  idempotent_id = 10;
+      uint64  msg_t_ms = 11;
+      string  extra = 12;
+      GiftContent  gift_content = 13;
+      string  user_linkmic_unique_id = 14;
+      Data.User  from_user = 15;
+      Data.User  to_user = 16;
+      string  anchor_open_id = 5000;
+      string  from_user_open_id = 5001;
+      string  to_user_open_id = 5002;
+    }
+
+    message GiftContent {
+      uint64 gift_id = 1;
+      uint64 gift_count = 2;
+      uint64 diamond_count = 3;
+    }
+
+    message AvatarRoomLeaveNotify {
+      int32  leave_reason = 1;
+      uint64  format_id = 2;
+      string  room_id = 3;
+      uint64  last_ping_time = 4;
+    }
+
+    message PackageMeta {
+      int32 total = 1;
+      int32 sequence = 2;
+    }
+
+    message AvatarCommon {
+      uint64 format_id = 1;
+      uint64 room_id = 2;
+      uint64 biz_request_id = 3;
+    }
+
+    message AvatarAudioMeta {
+      string  format = 1;
+      int32  rate = 2;
+      int32  bits = 3;
+      int32  channel = 4;
+    }
+
+    message AvatarAudioData {
+      PackageMeta  meta = 1;
+      AvatarAudioMeta  audio = 2;
+      bytes  data = 3;
+    }
+
+    message AvatarTextData {
+      PackageMeta  meta = 1;
+      bytes  data = 2;
+    }
+
+    message AvatarWord {
+      string  word = 1;
+      float  start = 2;
+      float  end = 3;
+    }
+
+    message AvatarPhone {
+      string  phone = 1;
+      float  start = 2;
+      float  end = 3;
+    }
+
+    message AvatarAudioContent {
+      bytes  data = 1;
+      uint64  duration = 2;
+      repeated AvatarWord  words = 3;
+      repeated AvatarPhone  phonemes = 4;
+      AvatarAudioMeta  audio = 5;
+    }
+
+    message AvatarChatMessage {
+      PackageMeta  meta = 1;
+      string  role = 2;
+      string  type = 3;
+      string  content_type = 4;
+      string  content = 5;
+      uint64  time = 6;
+      AvatarAudioContent  audio = 7;
+      int32  word_interval = 8;
+    }
+
+    message AvatarInstructionRequest {
+      AvatarCommon  biz_common = 1;
+      int32  instruction = 2;
+      string  query = 3;
+      string  answer = 4;
+      string  extra = 5;
+    }
+
+    message AvatarInstructionResponse {
+      AvatarCommon  biz_common = 1;
+      string  msg_id = 2;
+      int32  instruction = 3;
+      int32  code = 10;
+      string  status = 11;
+    }
+
+    message AvatarAudioToTextRequest {
+      AvatarCommon  biz_common = 1;
+      AvatarAudioData  audio = 2;
+    }
+
+    message AvatarAudioToTextResponse {
+      AvatarCommon  biz_common = 1;
+      int32  code = 2;
+      string  status = 3;
+      AvatarChatMessage  data = 4;
+      string  review_id = 5;
+      string  his_offset_id = 6;
+      string  msg_id = 7;
+    }
+
+    message AvatarChatRequest {
+      AvatarCommon  biz_common = 1;
+      AvatarTextData  text = 2;
+    }
+
+    message AvatarChatResponse {
+      AvatarCommon  biz_common = 1;
+      string  msg_id = 2;
+      int32  code = 10;
+      string  status = 11;
+    }
+
+    message AvatarChatResumeRequest {
+      AvatarCommon  biz_common = 1;
+      int32  type = 2;
+      string  rsp_id = 3;
+      int32  latest_sequence = 4;
+      string  extra = 5;
+    }
+
+    message AvatarChatResumeResponse {
+      AvatarCommon  biz_common = 1;
+      string  query = 2;
+      bool  full_data = 3;
+      int32  data_type = 4;
+      bool  new_segment = 5;
+      AvatarChatMessage  data = 6;
+      string  review_id = 7;
+      string  his_offset_id = 8;
+      string  msg_id = 9;
+      int32  code = 10;
+      string  status = 11;
+    }
+
+    message AvatarRoomStateRequest {
+      AvatarCommon biz_common = 1;
+    }
+
+    message AvatarRoomStateResponse {
+      AvatarCommon  biz_common = 1;
+      int32  talk_state = 2;
+      int32  user_interactive_mode = 3;
+      int32  avatar_interactive_mode = 4;
+      int32  code = 10;
+      string  status = 11;
+    }
+
+    message AvatarTextToAudioRequest {
+      AvatarCommon  biz_common = 1;
+      string  text = 2;
+    }
+
+    message AvatarTextToAudioResponse {
+      AvatarCommon  biz_common = 1;
+      int32  code = 2;
+      string  status = 3;
+      AvatarChatMessage  data = 4;
+    }
+
+    message AvatarChatData {
+      AvatarCommon  biz_common = 1;
+      int32  code = 2;
+      string  status = 3;
+      int32  data_type = 4;
+      bool  new_segment = 5;
+      AvatarChatMessage  data = 6;
+      string  review_id = 7;
+      string  his_offset_id = 8;
+      string  msg_id = 9;
+    }
+
+    message AvatarMessage {
+      Common  common = 1;
+      int32  cmd = 2;
+      bytes  payload = 3;
+      map<string, string> context = 4;
+    }
+
   }
 
   message Data {
