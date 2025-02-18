@@ -102,6 +102,10 @@ message Webcast {
       map<string, string> tracking_params = 11;
       uint64 is_featured = 12;
       bool need_filter_display = 13;
+      PersonalizedDisplayInfo personalized_display_info = 14;
+      uint64 force_insertion_priority = 15;
+      Data.ChatMentionInfo mention_info = 16;
+      HoverInfo hover_info = 17;
     }
 
     message HoverInfo {
@@ -300,7 +304,7 @@ message Webcast {
       VideoCardSize video_size = 6;
       string background_url = 7;
       string unique_id = 8;
-      string StatsParam = 9;
+      string stats_param = 9;
       string video_source = 10;
       bool is_match = 11;
       LinkInfo link_info = 12;
@@ -495,6 +499,8 @@ message Webcast {
       Data.Text bottom_text = 3;
       uint64 message_type = 4;
       string extra = 5;
+      PcBarMessage bar_message = 6;
+      PcBarMessage biz_message = 7;
     }
 
     message AnswerReviewMessage {
@@ -506,6 +512,7 @@ message Webcast {
       uint64 video_pin_id = 6;
       uint64 original_msg_id = 7;
       uint64 pin_id = 8;
+      string answer_open_id = 5000;
     }
 
     message AssetEffectUtilMessage {
@@ -632,6 +639,7 @@ message Webcast {
       message RivalInfo {
         uint64 user_id = 1;
         Data.Room room = 2;
+        string open_user_id = 5000;
       }
 
       message PreviewUser {
@@ -654,6 +662,8 @@ message Webcast {
         string battle_attached_info = 19;
         string channel_id_str = 20;
         uint64 match_type = 21;
+        string rival_open_id = 5000;
+        string rival_open_id_str = 5001;
       }
     }
 
@@ -685,6 +695,7 @@ message Webcast {
       Data.FeedbackCard feedback_card = 4;
       uint64 battle_id = 5;
       uint64 channel_id = 6;
+      string rival_open_id = 5000;
     }
 
     message BattleFrontRankMessage {
@@ -751,6 +762,7 @@ message Webcast {
         uint64 win = 7;
         uint64 open_score = 8;
         uint64 count = 9;
+        string attacker_open_id = 5000;
       }
     }
 
@@ -824,6 +836,7 @@ message Webcast {
       uint64 flex_activity_id = 11;
       uint64 duration = 12;
       string battle_attached_info = 13;
+      string sponsor_open_id = 5000;
 
       message Matcher {
         uint64 user_id = 1;
@@ -846,6 +859,7 @@ message Webcast {
       uint64 reject_uid = 4;
       string multiple_again_prompts = 5;
       int32 invite_type = 6;
+      string reject_open_uid = 5000;
     }
 
     message BattleRewardMessage {
@@ -958,6 +972,8 @@ message Webcast {
       repeated int32 play_tags = 37;
       uint64 steal_tower_duration = 38;
       string lynx_data = 39;
+      uint64 battle_status = 40;
+      string initiator_open_id = 5000;
     }
 
     message BattleTask {
