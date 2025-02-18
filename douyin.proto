@@ -18722,11 +18722,11 @@ message Webcast {
 
     message MatchEffect {
       bool show_effect = 1;
-      Data.Image effect_resource = 2;
+      Image effect_resource = 2;
     }
 
     message CityEffect {
-      Data.Image effect_resource = 1;
+      Image effect_resource = 1;
       string city = 2;
       repeated uint64 show_effect_user_id_list = 3;
       repeated string show_effect_open_id_list = 5000;
