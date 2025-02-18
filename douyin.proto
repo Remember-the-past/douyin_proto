@@ -104,6 +104,19 @@ message Webcast {
       bool need_filter_display = 13;
     }
 
+    message HoverInfo {
+      bool is_hover = 1;
+      uint64 priority = 2;
+      uint64 duration = 3;
+      uint64 duration_involve_display_time = 4;
+      uint64 duration_threshold = 5;
+    }
+
+    message PersonalizedDisplayInfo {
+      bool is_personalized = 1;
+      uint64 fold_type = 2;
+    }
+
     message SuffixText {
       uint64 biz_type = 1;
       Data.Text text = 2;
@@ -134,6 +147,54 @@ message Webcast {
       Data.Image arrow_image = 6;
       int32 message_type = 7;
       int32 arrow_position = 8;
+    }
+
+    message TopEffectMessage {
+      Common  common = 1;
+      uint64  asset_id = 2;
+      uint64  priority = 3;
+      int32  action = 4;
+      string  scene = 5;
+      uint64  end_time = 6;
+      uint64  fade_in_duration = 7;
+      uint64  fade_out_duration = 8;
+      repeated EffectImageInfo  images = 10;
+      repeated EffectTextInfo  texts = 20;
+    }
+
+    message EffectImageInfo {
+      string  placeholder_key = 1;
+      Data.Image  mix_image = 2;
+    }
+
+    message EffectTextInfo {
+      string  placeholder_key = 1;
+      string  content = 2;
+      uint64  font_size = 3;
+      string  font_color = 4;
+    }
+
+    message AtmosphereEffectMessage {
+      Common  common = 1;
+      uint64  asset_id = 2;
+      uint64  partner_asset_id = 3;
+      uint64  priority = 4;
+      int32  action = 5;
+      string  scene = 6;
+      uint64  end_time = 7;
+      string  actvity_information = 8;
+      uint64  partner_hotsoon_asset_id = 9;
+    }
+
+    message BorderEffectMessage {
+      Common  common = 1;
+      int32  effect_type = 2;
+      uint64  asset_id = 3;
+      Data.Image  image = 4;
+      uint64  priority = 5;
+      int32  action = 6;
+      string  scene = 7;
+      uint64  end_time = 8;
     }
 
     message EffectiveActivityEmojiGroup {
@@ -964,7 +1025,7 @@ message Webcast {
       string prompts = 3;
     }
 
-    message LinkmicBigEventMessage {//TODO 没看懂怎么解 content
+    message LinkmicBigEventMessage {
       Common common = 1;
       int32 msg_type = 2;
       InitLinkmicContent init_linkmic_content = 3;
