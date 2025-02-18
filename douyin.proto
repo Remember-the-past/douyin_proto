@@ -9673,7 +9673,7 @@ message Webcast {
 
     message RealTimeChatLikeMessage {
       Common common = 1;
-      map<int64,Data.ChatLikeCount> need_refresh = 2;
+      map<int64, Data.ChatLikeCount> need_refresh = 2;
     }
 
     message UpdateGameScoreMessage {
@@ -14365,7 +14365,7 @@ message Webcast {
         int32  team_work_team_task_type = 7;
         repeated uint64  stage_reward_buff_multiple = 8;
         GiftPanelConfig gift_panel_config = 9;
-        map<string,string> tracking_params = 10;
+        map<string, string> tracking_params = 10;
       }
 
       message Info {
@@ -17883,8 +17883,8 @@ message Webcast {
       Image  avatar_medium = 5;
       Image  avatar_large = 6;
       User.FollowInfo  follow_info = 7;
-      map<string,string> schemas = 8;
-      map<string,string> extra = 100;
+      map<string, string> schemas = 8;
+      map<string, string> extra = 100;
     }
 
     message LinkMicBizExtra {
@@ -17934,7 +17934,7 @@ message Webcast {
       Image  pk_icon = 8;
       Image  anchor_icon = 9;
       string  word_type = 10;
-      map<int64,LeadInfo> button_lead = 11;
+      map<int64, LeadInfo> button_lead = 11;
 
       message LeadInfo {
         Data.Image  lead_image = 1;
@@ -17997,12 +17997,12 @@ message Webcast {
     message OpenStreamUrlEncrypt {
       string  rtmp_pull_url = 1;
       string  hls_pull_url = 2;
-      map<string,string> flv_pull_url = 3;
+      map<string, string> flv_pull_url = 3;
       string  stream_data = 4;
       repeated StreamUrl.LiveCoreSDKData.PullData.PlayInfo  Hls = 5;
       repeated StreamUrl.LiveCoreSDKData.PullData.PlayInfo  Flv = 6;
-      map<string,string> hls_pull_url_map = 7;
-      map<string,StreamUrl.LiveCoreSDKData.PullData> pull_datas = 8;
+      map<string, string> hls_pull_url_map = 7;
+      map<string, StreamUrl.LiveCoreSDKData.PullData> pull_datas = 8;
     }
 
     message SubscribeMemberMark {
@@ -18029,9 +18029,9 @@ message Webcast {
     message MetricTrackerData {
       string  event_name = 1;
       bool  is_common_metric = 2;
-      map<string,string> current_room_tracker = 3;
-      map<string,string> use_once_tracker = 4;
-      map<string,string> all_room_tracker = 5;
+      map<string, string> current_room_tracker = 3;
+      map<string, string> use_once_tracker = 4;
+      map<string, string> all_room_tracker = 5;
     }
 
     message SubscribeMember {
@@ -18258,12 +18258,12 @@ message Webcast {
     message RealTimeChorusUIInfo {
       uint64  chorus_id = 1;
       uint64  segment = 2;
-      map<int64,UserChorusInfo> user_infos = 3;
+      map<int64, UserChorusInfo> user_infos = 3;
       bool  is_anchor_joined_chorus = 4;
       uint64  chorus_mode = 5;
       repeated uint64  chorus_leader = 6;
       string  prompt = 7;
-      map<string,UserChorusInfo> open_user_infos = 5000;
+      map<string, UserChorusInfo> open_user_infos = 5000;
     }
 
     message LinkGameInfo {
@@ -18387,7 +18387,7 @@ message Webcast {
       ContentOpenTreasureDetail  detail = 1;
       ContentOpenFreqCtrlParams  freqCtr = 2;
       int32  priority = 3;
-      map<string,string> biz_extra = 4;
+      map<string, string> biz_extra = 4;
     }
 
     message ContentOpenTreasureDetail {
@@ -18618,7 +18618,7 @@ message Webcast {
       string  schema = 5;
       int32  appear_mode = 6;
       int32  disappear_mode = 7;
-      map<string,string> extra = 99;
+      map<string, string> extra = 99;
     }
 
     message ItemBubbleInfo {
