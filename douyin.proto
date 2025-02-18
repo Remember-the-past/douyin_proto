@@ -9038,6 +9038,584 @@ message Webcast {
       Data.MultiLiveCoreInfo  multi_live_core_info = 6;
     }
 
+    message LinkerRTCActionContent {
+      int32  type = 1;
+      LinkerRTCActionJoinRTCContent  join_rtc_content = 2;
+    }
+
+    message LinkerInitChatRoomContent {
+      uint64  room_id = 1;
+      int32  scene = 2;
+      int32  init_source = 3;
+      int32  ui_layout = 4;
+    }
+
+    message LinkmicBattleFinishExtra {
+      map<string, bool> is_follow_lead = 1;
+      map<string, bool> is_show_like = 2;
+    }
+
+    message CrossLinkGuideBubbleContent {
+      Data.Text  text = 1;
+      string  schema = 2;
+    }
+
+    message CrossLinkGuideAudioBubbleAnimationContent {
+      uint64 show_time_ms = 1;
+    }
+
+    message LinkmicAnnounceMessage {
+      Common  common = 1;
+      int32  message_type = 2;
+      Data.AnnounceInfo  showing_announce = 3;
+    }
+
+    message BattleEndPunishMessage {
+      Common  common = 1;
+      BattleSettings  battle_settings = 2;
+      int32  end_battle_punish_reason = 3;
+    }
+
+    message LinkMicBizInviteMessage {
+      Common  common = 1;
+      int32  biz_type = 2;
+      int32  invite_type = 3;
+      uint64  invite_uid = 6;
+      string  invite_name = 7;
+      repeated Data.BattleRivalTag  tags = 8;
+      Data.ListUser  invite_user = 9;
+      string  invite_title = 10;
+      string  invite_sub_title = 11;
+      uint64  wait_sec = 12;
+      Data.BizOpenGameInfo  biz_game_info = 13;
+      Data.LinkMicBizExtra  battle_config_setting = 14;
+      Data.LinkMicBizExtra  link_mic_biz_extra = 15;
+      string  invite_open_uid = 5e3;
+    }
+
+    message LinkMicBizMatchInviteMessage {
+      Common  common = 1;
+      Data.LinkMicBizExtra  battle_config_setting = 5;
+    }
+
+    message LinkMicBizMatchReplyMessage {
+      Common  common = 1;
+      int32  rep_code = 4;
+      Data.LinkMicBizExtra  battle_config_setting = 5;
+    }
+
+    message LinkMicBizReplyMessage {
+      Common  common = 1;
+      int32  biz_type = 2;
+      int32  invite_type = 3;
+      int32  rep_code = 4;
+      Data.LinkMicBizExtra  battle_config_setting = 5;
+      string  reject_prompts = 6;
+      string  kicked_users_unique_id = 7;
+    }
+
+    message XplayHamletAvatarInitContent {
+      repeated uint64  all_avatar_ids = 1;
+      uint64  avatar_id = 2;
+    }
+
+    message XplayInitContent {
+      string  channel = 1;
+      string  game_id = 2;
+      string  init_param = 5;
+      int32  init_type = 6;
+      XplayHamletAvatarInitContent  hamlet_avatar_init = 10;
+    }
+
+    message LinkmicGuestLinkMessage {
+      Common  common = 1;
+      int32  msg_type = 2;
+      LinkmicGuestLinkInvitationGuideContent  invitation_guide_content = 50;
+      LinkmicGuestLinkInviteContent  invite_content = 51;
+      LinkmicGuestLinkReplyContent  reply_content = 52;
+      LinkmicGuestLinkMatchmakingContent  matchmaking_content = 53;
+      LinkmicGuestChannelInfoUpdateContent  channel_update_content = 54;
+      LinkmicGuestLinkReplyMatchmakingContent  reply_matchmaking_content = 55;
+      LinkmicGuestLinkJoinLinkedChannelContent  join_linked_channel_content = 56;
+      LinkmicGuestChannelFinishContent  finish_channel_content = 57;
+    }
+
+    message LinkmicGuestLinkInvitationGuideContent {
+      Data.LinkmicGuestLinkUser  target_link_user = 1;
+      uint64  call_duration = 2;
+      uint64  link_threshold = 3;
+    }
+
+    message LinkmicGuestLinkInviteContent {
+      repeated LinkmicGuestLinkInviter  inviter_list = 1;
+      uint64  call_duration = 2;
+      uint64  link_threshold = 3;
+    }
+
+    message LinkmicGuestLinkInviter {
+      Data.LinkmicGuestLinkUser  inviter_info = 1;
+      string  source = 2;
+    }
+
+    message LinkmicGuestLinkReplyContent {
+      int32  reply_type = 1;
+      string  toast = 2;
+    }
+
+    message LinkmicGuestLinkMatchmakingContent {
+      repeated Data.User  matchmaking_users = 1;
+      int32  user_role = 2;
+      uint64  call_duration = 3;
+      uint64  link_threshold = 4;
+    }
+
+    message LinkmicGuestChannelInfoUpdateContent {
+      Data.GuestLinkChannelInfo  channel_info = 1;
+      uint64  current_time_ms = 3;
+    }
+
+    message LinkmicGuestLinkReplyMatchmakingContent {
+      int32  reply_type = 1;
+      uint64  call_duration = 2;
+      uint64  link_threshold = 3;
+    }
+
+    message LinkmicGuestChannelFinishContent {
+      string  reason = 1;
+      string  linked_user_toast = 2;
+      string  channel_user_toast = 3;
+    }
+
+    message LinkmicGuestLinkJoinLinkedChannelContent {
+      uint64  channel_id = 1;
+      string  rtc_ext_info = 2;
+      string  live_core_info = 3;
+      uint64  score = 4;
+      uint64  call_duration = 5;
+      uint64  link_threshold = 6;
+      Data.AudioBGData  channel_background = 7;
+    }
+
+    message LinkmicGuestLinkBannerInfo {
+      int32  banner_type = 1;
+      repeated Data.User  channel_users = 2;
+      uint64  server_time_ms = 3;
+    }
+
+    message LinkmicStarWishWrdsMessage {
+      Data.LinkmicStarWishInfo  starwish_info = 1;
+      Data.StarwishStageToast  stage_toast = 2;
+      int32  msg_type = 3;
+    }
+
+    message LinkmicStarWishGiftItemChangedContent {
+      string  item_id = 1;
+      int32  type = 2;
+    }
+
+    message LiveMountMicroAppLimitDataMessage {
+      Common  common = 1;
+      Data.LiveMountMicroAppLimitData  data = 2;
+    }
+
+    message LiveplaysSDKGiftMessage {
+      Common  common = 1;
+      map<string, string> header = 2;
+      Payload  payload = 3;
+
+      message Payload {
+        string  msg_id = 1;
+        string  sec_openid = 2;
+        string  sec_gift_id = 3;
+        uint64  gift_num = 4;
+        uint64  gift_value = 5;
+        string  avatar_url = 6;
+        string  nickname = 7;
+        uint64  timestamp = 8;
+        bool  test = 9;
+        string  audience_sec_open_id = 10;
+      }
+    }
+
+    message LiveplaysSDKCommentMessage {
+      Common  common = 1;
+      map<string, string> header = 2;
+      Payload  payload = 3;
+
+      message Payload {
+        string  msg_id = 1;
+        string  sec_openid = 2;
+        string  content = 3;
+        string  avatar_url = 4;
+        string  nickname = 5;
+        uint64  timestamp = 6;
+      }
+    }
+
+    message LiveplaysSDKLikeMessage {
+      Common  common = 1;
+      map<string, string> header = 2;
+      Payload  payload = 3;
+
+      message Payload {
+        string  msg_id = 1;
+        string  sec_openid = 2;
+        uint64  like_num = 3;
+        string  avatar_url = 4;
+        string  nickname = 5;
+        uint64  timestamp = 6;
+      }
+    }
+
+    message LiveplaysSDKFansclubMessage {
+      Common  common = 1;
+      map<string, string> header = 2;
+      Payload  payload = 3;
+
+      message Payload {
+        string  msg_id = 1;
+        string  sec_openid = 2;
+        string  avatar_url = 3;
+        string  nickname = 4;
+        uint64  timestamp = 5;
+        uint64  fansclub_reason_type = 6;
+        uint64  fansclub_level = 7;
+      }
+    }
+
+    message LuckyBoxPermitMessage {
+      Common  common = 1;
+      repeated uint64  box_id = 2;
+      repeated string  box_id_str = 3;
+      string  user_id = 4;
+      uint64  box_tab_type = 5;
+      string  user_open_id = 5e3;
+    }
+
+    message RoomMsgExtra {
+      RoomMsgGiftExtra gift_extra = 1;
+    }
+
+    message RoomMsgGiftExtra {
+      uint64  gift_id = 1;
+      string  gift_name = 2;
+      uint64  gift_count = 3;
+      Data.Image  image = 4;
+      Data.Image  webp_image = 5;
+      uint64  group_id = 6;
+      int32  client_gift_source = 7;
+      string  describe = 8;
+      uint64  diamond_count = 9;
+    }
+
+    message ScreenChatMessageContentExt {
+      string  schema = 1;
+      Data.Image  jump_icon = 2;
+      int32  hover_second = 3;
+    }
+
+    message MangoMatchResultMessage {
+      Common  common = 1;
+      bytes  biz_msg = 2;
+    }
+
+    message NoReplyIntentMessage {
+      Common  common = 1;
+      repeated NoReplyIntentChat  chat_list = 2;
+    }
+
+    message NoReplyIntentChat {
+      Data.User  user = 1;
+      string  content = 2;
+      uint64  time = 3;
+    }
+
+    message PKPlayAnchorPanelMessage {
+      Common  common = 1;
+      PkPlayPlayerData  self_player_game_data = 2;
+      PkPlayPlayerData  rival_player_game_data = 3;
+      GameRole  self_player_game_role = 4;
+      GameRole  rival_player_game_role = 5;
+      bool  enable_pk_data = 6;
+      bool  is_paused = 7;
+      string  detail_panel_schema = 8;
+      bool  is_open_error = 9;
+      string  error_msg = 10;
+    }
+
+    message GameRole {
+      Role  role = 1;
+      DoulinkBindConf  doulink_bind_conf = 2;
+      string  rank_level = 3;
+      string  rank_grade = 4;
+      string  display_role_region = 5;
+
+      message Role {
+        string  game_user_id = 1;
+        string  role_id = 2;
+        string  role_name = 3;
+        string  role_level = 4;
+        string  role_region = 5;
+        string  icon_url = 6;
+        uint64  update_time = 7;
+        string  account_type = 8;
+      }
+
+      message DoulinkBindConf {
+        int32  doulink_type = 1;
+        repeated int32  login_types = 2;
+        bool  is_auth = 3;
+        string  client_key = 4;
+        string  scopes = 5;
+        string  comment_id = 6;
+        bool  only_jump_wx = 7;
+        string  tx_game_code = 8;
+      }
+    }
+
+    message GameRoleCheckInfo {
+      bool  is_bind_role = 1;
+      bool  is_meet_team_requirement = 2;
+      string  reason = 3;
+    }
+
+    message PKPlayDetailPanelMessage {
+      Common  common = 1;
+      PkPlayPlayerData  self_player_game_data = 2;
+      PkPlayPlayerData  rival_player_game_data = 3;
+      bool  enable_pk_data = 4;
+      bool  is_paused = 5;
+      string  PkStatusDesc = 6;
+      PkPlayDetailAnchorTab  anchor_tab = 7;
+      PkPlayDetailTeamTab  team_tab = 8;
+    }
+
+    message PkPlayPlayerData {
+      string  nick_name = 1;
+      string  game_battle_id = 2;
+      int32  camp = 3;
+      PkPlayDataKv  pk_play_data = 4;
+      string  icon_url = 5;
+    }
+
+    message PkPlayDataKv {
+      string  key = 1;
+      uint64  value = 2;
+    }
+
+    message PkPlayDetailAnchorTab {
+      repeated PkPlayDimensionData  self_dimension_data_list = 1;
+      repeated PkPlayDimensionData  rival_dimension_data_list = 2;
+      PkPlayDetailHeroData  self_player_game_data = 3;
+      PkPlayDetailHeroData  rival_player_game_data = 4;
+    }
+
+    message PkPlayDimensionData {
+      string  key = 1;
+      double  value = 2;
+    }
+
+    message PkPlayDetailTeamTab {
+      int32  self_camp_score = 1;
+      int32  rival_camp_score = 2;
+      repeated PkPlayDetailHeroData  self_team_game_data_list = 3;
+      repeated PkPlayDetailHeroData  rival_team_game_data_list = 4;
+    }
+
+    message PkPlayDetailHeroData {
+      string  nick_name = 1;
+      string  hero_icon_url = 2;
+      int32  camp = 3;
+      repeated string  equip_icon_url_list = 4;
+      repeated PkPlayDataItem  pk_play_data_list = 5;
+      int32  kill_cnt = 6;
+      int32  death_cnt = 7;
+      int32  assist_cnt = 8;
+    }
+
+    message PkPlayDataItem {
+      string  key = 1;
+      string  value = 2;
+      double  rate = 3;
+    }
+
+    message PKPlayUpdateConfigMessage {
+      Common  common = 1;
+      int32  update_type = 2;
+      AnchorPKPlayConfig  pk_play_config = 3;
+      string  update_msg = 4;
+    }
+
+    message AnchorPKPlayConfig {
+      bool  enable_pk_data = 1;
+      string  pk_name = 2;
+      string  pk_data = 3;
+    }
+
+    message PreviewBlockMessage {
+      Common  common = 1;
+      uint64  roomID = 2;
+      uint64  toUserID = 3;
+      string  to_user_open_id = 5e3;
+    }
+
+    message PreviewCjRpMessage {
+      CjRp  cjrp = 1;
+      Common  common = 2;
+
+      message CjRp {
+        string  rp_order_no = 1;
+        uint64  send_time = 2;
+        uint64  expire_time = 3;
+        uint64  display_delay_seconds = 4;
+        uint64  status = 5;
+        string  currency = 6;
+        string  icon = 7;
+        string  text = 8;
+        uint64  total_amount = 9;
+        uint64  left_amount = 10;
+        uint64  total_num = 11;
+        uint64  left_num = 12;
+      }
+    }
+
+    message ProfitOpenGameRoleChangeMessage {
+      Common conmon = 1;
+      map<string, AnchorOpenGameRoleInfo> anchor_id_to_open_game_role_info = 2;
+    }
+
+    message ProfitGameRoundStatusMessage {
+      Common  common = 1;
+      string  app_id = 2;
+      string  room_id = 3;
+      string  round_id = 4;
+      int32  round_status = 5;
+      uint64  start_time = 6;
+      uint64  end_time = 7;
+    }
+
+    message ProfitGameUserJoinRoundMessage {
+      Common  common = 1;
+      string  app_id = 2;
+      string  room_id = 3;
+      string  round_id = 4;
+      string  user_id = 5;
+      string  group_id = 6;
+      string  open_id = 5000;
+    }
+
+    message ProfitGameCompleteUserRoundDataReportMessage {
+      Common  common = 1;
+      string  app_id = 2;
+      string  room_id = 3;
+      string  round_id = 4;
+      int32  report_status = 5;
+      uint64  complete_time = 6;
+    }
+
+    message BarMessage {
+      string  text = 1;
+      int32  duration = 2;
+      map<string, string> params = 3;
+    }
+
+    message RealtimeStatusPanelMessage {
+      Common  common = 1;
+      string  tab_key = 2;
+      string  content = 3;
+      map<string, string> params = 4;
+    }
+
+    message BarStyle {
+      Data.Image  left_icon = 7;
+      Data.Image  right_icon = 1;
+      string  background_color = 2;
+      string  text_color = 3;
+      bool  has_frame = 4;
+      string  frame_begin = 5;
+      string  frame_end = 6;
+    }
+
+    message CommonBubbleMessage {
+      Common  common = 1;
+      Data.ItemBubbleInfo  bubble_info = 2;
+    }
+
+    message RoomTextBg {
+      uint64  id = 1;
+      string  title = 2;
+      string  description = 3;
+      Data.RoomTextBgStyle  title_style = 4;
+      Data.RoomTextBgStyle  description_style = 5;
+      uint64  version = 6;
+      string  show_id = 7;
+    }
+
+    message RoomTextBgMessage {
+      Common  common = 1;
+      RoomTextBg  text_bg = 2;
+      uint64  placeholder = 3;
+      string  source = 4;
+    }
+
+    message TeamPlayNewApplyMessage {
+      Common  common = 1;
+      uint64  user_id = 2;
+      string  nickname = 3;
+      bool  need_notify_to_apply = 4;
+      string  user_open_id = 5000;
+    }
+
+    message TeamPlayApplySortStrategyChangeMessage {
+      Common common = 1;
+    }
+
+    message TeamPlayApplyPermitMessage {
+      Common  common = 1;
+      string  schema = 2;
+    }
+
+    message TeamPlayInteractiveBarMessage {
+      Common common = 1;
+    }
+
+    message TogetherLiveChangeMemberMessage {
+      Common  common = 1;
+      uint64  is_together_live = 2;
+      repeated Data.User  user_list = 3;
+      string  title = 4;
+      string  schema_url = 5;
+      uint64  scene = 6;
+    }
+
+    message TogetherLiveRemindMessage {
+      Common  common = 1;
+      int32  ban_remind_type = 2;
+      Data.User  user = 3;
+      string  title = 4;
+      string  content = 5;
+    }
+
+    message VisibilityRangeChangeMessage {
+      Common  common = 1;
+      uint64  visibility_range = 2;
+    }
+
+    message ChatLikeMessage {
+      Common common = 1;
+      map<int64, Data.ChatLikeCount> total_msg_data = 2;
+    }
+
+    message DslMockMessage {
+      Common  common = 1;
+      Data.DSLDetail  dsl_detail = 2;
+    }
+
+    message FinishOpenGameMessage {
+      Common  common = 1;
+      string  app_id = 2;
+    }
+
   }
 
   message Data {
