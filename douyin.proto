@@ -4609,12 +4609,15 @@ message Webcast {
       uint64 rival_follow_status = 6;
       uint64 invite_source = 7;
       uint64 operator_user_id = 8;
+      string rival_open_id = 5000;
+      string operator_open_id = 5001;
     }
 
     message LinkmicGiftRecipientContent {
       uint64 gift_recipient_user_id = 1;
       int32 reason = 2;
       map<string, string> extra = 3;
+      string gift_recipient_open_id = 5000;
     }
 
     message LinkmicProfitAudioSubtitleCheckInContent {
@@ -4633,7 +4636,9 @@ message Webcast {
     message LinkmicGameBarrageStartContent {
       Data.LinkmicGameInfo game_info = 1;
       string audience_toast = 2;
-      uint64 kick_out_user_ids = 3;
+      repeated uint64 kick_out_user_ids = 3;
+      uint64 target_ui_layout = 4;
+      repeated string kick_out_user_open_ids = 5000;
     }
 
     message LinkmicGameBarrageStopContent {
@@ -4694,6 +4699,7 @@ message Webcast {
       LinkmicStarWishOpenContent open_content = 100;
       LinkmicStarWishCloseContent close_content = 101;
       LinkmicStarWishUpdateContent update_content = 102;
+      LinkmicStarWishGiftItemChangedContent gift_item_changed_content = 103;
     }
 
     message LinkmicStarWishOpenContent {
@@ -4770,6 +4776,7 @@ message Webcast {
       uint64 score_change_user_id = 2;
       Data.LinkmicQuickInteract quick_interact = 3;
       WinContent new_advance_user = 4;
+      string score_change_open_id = 5000;
 
       message WinContent {
         uint64 rank = 1;
@@ -4927,6 +4934,7 @@ message Webcast {
       repeated uint64 target_uid = 6;
       repeated string sec_target_uid = 7;
       repeated CategoryInfo update_category_info = 8;
+      repeated string target_open_ids = 5000;
     }
 
     message ProductInfo {
@@ -4934,6 +4942,7 @@ message Webcast {
       int32 index = 2;
       repeated uint64 target_flash_uids = 3;
       uint64 explain_type = 4;
+      repeated string target_flash_open_ids = 5000;
     }
 
     message CategoryInfo {
@@ -5255,6 +5264,7 @@ message Webcast {
       RoomTagOfflineInfo room_tag_offline_info = 34;
       FilterSwitchChangeData filter_switch_change_data = 35;
       InteractionData interaction_data = 36;
+      repeated string target_open_id = 5000;
     }
 
     message LiveStreamControlMessage {
@@ -5295,6 +5305,15 @@ message Webcast {
       string extra = 3;
     }
 
+    message LotteryCondition {
+      int32 type = 1;
+      string content = 2;
+      uint64 need_diamond_count = 3;
+      uint64 min_fans_level = 4;
+      string remarks = 5;
+      string biz_info = 6;
+    }
+
     message LotteryEventNewMessage {
       Common common = 1;
       uint64 lottery_id = 2;
@@ -5316,6 +5335,7 @@ message Webcast {
       string award_name = 18;
       string award_description = 19;
       uint64 max_random_delay_duration_by_ms = 20;
+      repeated LotteryCondition conditions_detail = 21;
     }
 
     message LotteryCandidateEventMessage {
