@@ -3704,7 +3704,7 @@ message Webcast {
       int32 anchor_ui_layout = 3;
       int32 anchor_layout_range = 4;
       uint64 operator_id = 5;
-      map<string, Data.AnchorLayoutDetail> operator_id = 6;
+      map<string, Data.AnchorLayoutDetail> layout_details = 6;
       bool big_anchor_is_orientation = 7;
       string update_open_user_id = 5000;
       string operator_open_id = 5001;
@@ -4405,6 +4405,7 @@ message Webcast {
       int32 msg_type = 2;
       LiveMatrixEntranceChangeContent live_matrix_entrance_change_content = 3;
       LinkmicWebAntiCheatContent web_anti_cheat_content = 4;
+      XplayInitContent xplay_init_content = 5;
     }
 
     message LiveMatrixEntranceChangeContent {
@@ -4438,6 +4439,7 @@ message Webcast {
       uint64 enlarged_user_id = 1;
       int32 source = 2;
       Data.EnlargeGuestInfo info = 3;
+      string enlarged_openid = 5000;
     }
 
     message LinkmicEnlargeGuestTurnOffContent {
@@ -4447,11 +4449,13 @@ message Webcast {
     message LinkmicEnlargeGuestChangeUserContent {
       uint64 enlarged_user_id = 1;
       Data.EnlargeGuestInfo info = 2;
+      string enlarged_openid = 5000;
     }
 
     message LinkmicPlaymodeMessage {
       Common common = 1;
       Data.LinkmicSubtitleStatus linkmic_subtitle_status = 2;
+      LinkmicStarWishWrdsMessage linkmic_starwish_info = 3;
     }
 
     message LinkmicProfitEggMessage {
@@ -4518,6 +4522,7 @@ message Webcast {
       string anchor_toast = 2;
       string win_user_toast = 3;
       string other_bid_users_toast = 4;
+      string win_open_id = 5000;
     }
 
     message LinkmicProfitBidPaidLinkmicTerminateContent {
@@ -4547,6 +4552,7 @@ message Webcast {
       uint64 add_price_user_id = 1;
       uint64 add_price_value = 2;
       Data.Text text = 3;
+      string add_price_open_id = 5000;
     }
 
     message LinkmicProfitBidPaidLinkmicTurnOnContent {
@@ -4578,6 +4584,8 @@ message Webcast {
       uint64 reply_user_id = 6;
       string reply_toast = 7;
       int32 reply_operate = 8;
+      string invitee_open_id = 5000;
+      string reply_open_id = 5001;
     }
 
     message LinkmicProfitInteractiveScreenCastOpenContent {
