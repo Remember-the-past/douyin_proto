@@ -14928,6 +14928,10 @@ message Webcast {
       repeated uint64  play_modes = 2;
       int32  ui_layout = 3;
       uint64  MaxMemberCount = 4;
+      uint64  anchor_manual_open_ui_layout = 5;
+      uint64  cross_link_timer_start = 6;
+      string  function_type = 7;
+      uint64  before_scene_start = 8;
     }
 
     message ListUser {
@@ -14947,6 +14951,8 @@ message Webcast {
       HostInfo  host = 14;
       MicPosTagInfo  mic_pos_tag_info = 15;
       bool  pk_available = 16;
+      string  linkmic_unique_id = 17;
+      uint64  k_song_uid = 18;
       string  extra = 200;
 
       message Content {
@@ -15393,6 +15399,9 @@ message Webcast {
       uint64  self_discripline_target_duration = 23;
       string  device_id_str = 24;
       int32  themed_competition_role = 25;
+      Linkmic2DAvatar  linkmic_2d_avatar = 26;
+      uint64  chorus_guest_status = 27;
+      repeated string  rank_contributor_open_ids = 5000;
     }
 
     message AudienceActionSource {
@@ -15405,6 +15414,10 @@ message Webcast {
       int32  range = 2;
       uint64  big_anchor_id = 3;
       string  big_anchor_id_str = 4;
+      map<string, AnchorLayoutDetail> layout_details = 5;
+      bool big_anchor_is_orientation = 6;
+      string big_anchor_open_id = 5000;
+      string big_anchor_open_id_str = 5001;
     }
 
     message SwitchSceneData {
@@ -15423,6 +15436,9 @@ message Webcast {
       int32  inviter_from_scene = 13;
       AnchorLayoutInfo  layout_info = 14;
       uint64  version = 15;
+      PreRTCInfo pre_rtc_info = 16;
+      string battle_attached_info = 17;
+      AnchorLinkmicAudioPunishInfo audio_punish_info = 18;
     }
 
     message MultiAnchorExtra {
@@ -15474,6 +15490,7 @@ message Webcast {
       CrossRoomLinkmicRtcInfo  cross_room_linkmic_rtc_info = 5;
       VideoDUOBattleRtcInfo  video_duo_battle_rtc_info = 6;
       VideoPositionRtcInfo  video_position_rtc_info = 7;
+      GameBarrageRtcInfo game_barrage_rtc_info = 8;
     }
 
     message VideoPositionRtcInfo {
@@ -15590,6 +15607,7 @@ message Webcast {
       UpdateMediaInfoNotify  update_media_info_notify = 4;
       PersonalKaraokeMediaInfo  personal_karaoke_info = 5;
       LinkmicStreamInfo  linkmic_stream_info = 6;
+      LinkmicMediaInfoForEnterRoom media_info_for_enter_room = 7;
     }
 
     message MCUContent {
@@ -15616,7 +15634,10 @@ message Webcast {
     }
 
     message ClientUIInfo {
+      UITranslation ui_translation = 1;
       AudioChatCycleUIInfo audio_chat_cycle = 10;
+      RealTimeChorusUIInfo real_time_chorus = 11;
+      VideoChatDynamic1V7Info video_chat_dynamic_1v7 = 12;
     }
 
     message AudioChatCycleUIInfo {
@@ -15741,6 +15762,10 @@ message Webcast {
       uint64  thanks_carousel_duration = 2;
       string  thanks_content = 3;
       uint64  receive_gift_user_id = 4;
+      int32 interact_type = 5;
+      Text text = 6;
+      string schema = 7;
+      string receive_gift_user_open_id = 5000;
     }
 
     message InviteRoomInfo {
@@ -15760,6 +15785,8 @@ message Webcast {
       bool  is_selected = 3;
       bool  is_not_support_app = 4;
       string  user_id_str = 5;
+      string open_id = 5000;
+      string open_id_str = 5001;
     }
 
     message EnlargeGuestInfo {
@@ -15767,6 +15794,7 @@ message Webcast {
       repeated uint64  enlarged_user_ids = 2;
       uint64  source_ui_layout_max_members = 3;
       uint64  max_members_except_enlarge = 4;
+      string enlarged_open_ids = 5000;
     }
 
     message UserHighScoreSongTag {
@@ -15818,6 +15846,9 @@ message Webcast {
       string  midi_hash = 40;
       WantListenInfo  want_listen_info = 41;
       ChallengeInfo  challenge_info = 42;
+      RealTimeChorusInfo real_time_chorus_info = 43;
+      string extra_json = 44;
+      repeated RecommendRealTimeChorusInfo recommend_real_time_chorus_infos = 45;
 
       message RecommendRealTimeChorusInfo {
         uint64  room_id = 1;
@@ -15857,6 +15888,8 @@ message Webcast {
         uint64  hit_midi_record_ab = 11;
         double  user_midi_score = 12;
         bool  is_high_score_song = 13;
+        uint64 k_song_uid = 14;
+        string open_id = 5000;
       }
 
       message OrderInfo {
@@ -15895,6 +15928,7 @@ message Webcast {
       string  author_name = 5;
       uint64  use_times = 6;
       Image  image = 7;
+      string author_open_id = 5000;
     }
 
     message KtvAtmosphereVideoFrameColorData {
@@ -15941,6 +15975,7 @@ message Webcast {
 
     message LinkmicTeamfightContributors {
       uint64 user_ids = 1;
+      repeated string open_ids = 2;
     }
 
     message LinkmicTeamfightPlayer {
@@ -15979,6 +16014,7 @@ message Webcast {
       TeamContributorTopList  team_contributor_top_list = 12;
       repeated uint64  position_list = 13;
       uint64  max_member = 14;
+      string owner_open_id = 5000;
     }
 
     message LinkmicTeamfightInfo {
@@ -16003,6 +16039,8 @@ message Webcast {
       string  dress_id = 19;
       int32  TeamBattleTeamType = 20;
       TeamfightRoomBattleContent  room_battle_content = 100;
+      string initiator_user_open_id = 5000;
+      string initiator_anchor_open_id = 5001;
     }
 
     message JoinTeamfightInfo {
@@ -16029,6 +16067,7 @@ message Webcast {
       uint64  id = 1;
       int32  join_status = 2;
       uint64  start_operator_user_id = 3;
+      string start_operator_open_id = 5000;
     }
 
     message TeamfightRoomBattleContent {
@@ -16084,6 +16123,8 @@ message Webcast {
       uint64  default_chose_action = 11;
       uint64  start_time = 12;
       BuffLockInfo  buff_lock_info = 13;
+      Image bg_img_v2 = 14;
+      map<int32, int64> tab_chose_action = 15;
     }
 
     message GiftTip {
@@ -16172,6 +16213,10 @@ message Webcast {
       Image  webp_image = 74;
       int32  gift_source = 75;
       repeated uint64  required_assets = 76;
+      Image selected_label = 77;
+      uint64 sort_score = 78;
+      uint64 topic_id = 79;
+      string sort_extra = 80;
 
       message GiftStructFansClubInfo {
         int32  min_level = 1;
@@ -16270,7 +16315,8 @@ message Webcast {
     }
 
     message AssetEffectMixInfo {
-      EffectMixImageInfo effect_mix_image_infos = 1;
+      repeated EffectMixImageInfo effect_mix_image_infos = 1;
+      repeated EffectMixTextInfo effect_mix_text_infos = 2;
     }
 
     message GiftTrayInfo {
@@ -16501,6 +16547,7 @@ message Webcast {
       bool  is_keep_last = 3;
       string  unique_id = 4;
       FeedbackProps  feedback_props = 100;
+      BannerFeedbackViewCustomProps custom_props = 101;
     }
 
     message FeedbackProps {
@@ -16517,6 +16564,9 @@ message Webcast {
       TaskProps  task_props = 100;
       ImageProps  image_props = 101;
       BasicProps  basic_props = 102;
+      CardProps card_props = 103;
+      PublicProps public_props = 104;
+      BannerViewCustomProps custom_props = 105;
     }
 
     message ImageProps {
@@ -16576,6 +16626,7 @@ message Webcast {
       uint64  lead_singer_id = 2;
       uint64  start_time = 3;
       uint64  finish_time = 4;
+      string lead_singer_open_id = 5000;
     }
 
     message ChorusSongInfo {
@@ -16716,6 +16767,7 @@ message Webcast {
       uint64  height = 3;
       uint64  width = 4;
       uint64  rotation = 5;
+      ThemeColor theme_color = 6;
     }
 
     message GameImageBundler {
@@ -16843,6 +16895,7 @@ message Webcast {
       string  extra = 19;
       string  config = 20;
       uint64  create_time = 21;
+      string item_open_id = 5000;
     }
 
     message GrowthTaskContributorRank {
@@ -16875,6 +16928,7 @@ message Webcast {
 
     message GuestBattleContributors {
       repeated uint64 user_ids = 1;
+      repeated string open_ids = 5000;
     }
 
     message BattleResult {
@@ -16894,6 +16948,8 @@ message Webcast {
       uint64  real_score = 14;
       User  title_sponsor = 15;
       bool  hit_toast = 16;
+      string guest_open_id = 5000;
+      string guest_open_id_str = 5001;
     }
 
     message GuestBattleInfo {
@@ -16914,6 +16970,7 @@ message Webcast {
       int32  battle_stage = 15;
       uint64  ui_type = 16;
       uint64  start_operator_user_id = 17;
+      string start_operator_user_open_id = 5000;
     }
 
     message StampInfo {
@@ -16942,10 +16999,14 @@ message Webcast {
       string  schema_url = 9;
       int32  source = 10;
       int32  punish_status = 11;
+      bool audience_join_enable = 12;
+      bool score_enable = 13;
       string  im_extra = 97;
       string  log_extra = 98;
       string  entrance_extra = 99;
       map<string, string> start_page_query = 100;
+      int32 visible_type = 101;
+      string entrance_schema_url = 102;
     }
 
     message CustomizedCardInfo {
@@ -16999,6 +17060,15 @@ message Webcast {
       int32  top_reason = 22;
       int32  show_duration = 23;
       bool  is_leads_component = 24;
+      bool  is_play_let = 25;
+      string  selling_point = 26;
+      string  text_poster_url = 27;
+      string  text_poster_title = 28;
+      string  screen_shot_url = 29;
+      string  pre_set_card_url = 30;
+      int32  customized_cover_type = 31;
+      int32  select_cover_type = 32;
+      repeated AuditInfo  audit_info_list = 95;
       string  log_extra = 96;
     }
 
@@ -17104,6 +17174,7 @@ message Webcast {
       string  card_data_title = 1;
       string  card_data_value = 2;
       string  type = 3;
+      int32 live_card_show_index = 4;
     }
 
     message HighValueUserData {
@@ -17130,6 +17201,8 @@ message Webcast {
       uint64  appointment_start_timestamp = 16;
       uint64  appointment_end_timestamp = 17;
       uint64  appointment_id = 18;
+      repeated string tracking_type = 19;
+      string open_id = 5000;
     }
 
     message BannerCollapse {
@@ -17164,6 +17237,7 @@ message Webcast {
       BannerContainer  activity_vs_interactive = 8;
       BannerContainer  activity_interactive = 9;
       BannerContainer  activity_vs_bottom_right = 10;
+      BannerContainer retain_consult = 11;
     }
 
     message LikeIconInfo {
@@ -17288,10 +17362,12 @@ message Webcast {
       KTVComponentContent  ktv_component_content = 13;
       AudioSubtitleContent  audio_subtitle_content = 14;
       LinkmicInitInfoContent  linkmic_init_info_content = 15;
+      GuestLinkContent guest_link_content = 16;
     }
 
     message LinkmicInitInfoContent {
       InitInfoSetting video_chat_init_info = 1;
+      InitInfoSetting audio_chat_init_info = 2;
     }
 
     message InitInfoSetting {
@@ -17444,6 +17520,7 @@ message Webcast {
       int32  subtitle_style = 1;
       double  x = 2;
       double  y = 3;
+      int32 subtitle_type = 4;
     }
 
     message MsgBoardItemInfo {
@@ -17464,6 +17541,8 @@ message Webcast {
       uint64  gift_id = 5;
       uint64  gift_diamond_count = 6;
       Image  order_sing_gift_icon = 7;
+      int32 gift_type = 8;
+      bool need_hide_mv_icon = 9;
     }
 
     message CurrentOrderSingItemV2 {
@@ -17516,6 +17595,7 @@ message Webcast {
       int32  call_status = 9;
       uint64  caller_user_id = 10;
       string  pair_id_str = 11;
+      string caller_user_open_id = 5000;
     }
 
     message AdventureStageInfo {
@@ -17552,6 +17632,8 @@ message Webcast {
       int32  call_status = 12;
       Image  new_im_icon_with_level = 13;
       int32  gender = 14;
+      string open_id = 5000;
+      repeated string open_invite_users = 5001;
     }
 
     message AdventureSettingContent {
@@ -17636,11 +17718,15 @@ message Webcast {
       string  dress_id = 5;
       User  title_sponsor = 6;
       bool  hit_toast = 7;
+      bool changed_target_score = 8;
     }
 
     message LinkmicStarWishInfo {
       uint64  play_id = 1;
       repeated LinkmicStarWishPlayerInfo  player_info = 2;
+      bool is_gift_open = 3;
+      repeated StarGift star_gifts = 4;
+      StarWishPerformanceInfo performance_info = 5;
     }
 
     message ThemedCompetitionSetting {
@@ -17664,6 +17750,8 @@ message Webcast {
       int32  status = 3;
       uint64  competition_id = 4;
       uint64  current_performer_user_id = 5;
+      map<string, Score> user_open_id_to_score 5000;
+      string current_performer_open_id = 5001;
 
       message Score {
         uint64  score = 1;
@@ -17725,6 +17813,17 @@ message Webcast {
       string  client_biz_data = 50;
       string  server_biz_data = 51;
       string  ui_config = 52;
+      uint64  enabled_dilatation = 53;
+      string  dilatation_config_detail = 54;
+      bool  dilatation_now = 55;
+      uint64  prize_count_before_dilatation = 56;
+      uint64  lucky_count_before_dilatation = 57;
+      map<int64, string> extra_award_server_biz_data = 58;
+      map<int64, string> extra_award_ui_config = 59;
+      map<int64, string> extra_award_client_biz_data = 60;
+      map<int64, int64> extra_award_lucky_count = 61;
+      string  anchor_open_id = 5000;
+      string  owner_user_open_id = 5001;
     }
 
     message LaunchTaskInfo {
@@ -17777,6 +17876,8 @@ message Webcast {
       repeated VoucherPrizeInfo  voucher_prize_list = 14;
       bool  use_new_award = 15;
       Award  award = 16;
+      string extra_award_win_page_biz_data = 18;
+      string user_open_id = 5000;
 
       message Award {
         string  summary_description = 15;
@@ -17931,6 +18032,7 @@ message Webcast {
       string  nick_name = 4;
       MysteryUserImage  avatar_thumb = 5;
       bool  mystery = 6;
+      string user_openid = 5000;
     }
 
     message ProfitInteractionSetting {
@@ -18021,6 +18123,7 @@ message Webcast {
       string  jump_url = 3;
       Image  bg_img = 4;
       int32  button_type = 5;
+      ButtonGiftData gift_data = 6;
     }
 
     message NormalRewardPopup {
@@ -18064,6 +18167,7 @@ message Webcast {
       ParallelRewardPopup  parallel = 2;
       UpgradeRewardPopup  upgrade = 3;
       NormalRewardPopup  normal = 4;
+      CustomizedRewardPopup custom = 5;
     }
 
     message BottomPanelData {
@@ -18085,6 +18189,10 @@ message Webcast {
       string  room_id = 6;
       uint64  box_type = 7;
       uint64  user_id = 8;
+      bool is_limited_time = 9;
+      uint64 count_down = 10;
+      bool completed = 11;
+      string user_open_id = 5000;
     }
 
     message TreasureCompeteData {
@@ -18104,6 +18212,10 @@ message Webcast {
       string  sub_title = 14;
       uint64  gift_diamond_count = 15;
       uint64  gift_value_display_ab = 16;
+      uint64  skin_switch = 17;
+      uint64  msg_biz_type = 18;
+      uint64  max_level = 19;
+      bool  freq_limit = 20;
     }
 
     message TaskCurrentInfo {
@@ -18218,6 +18330,9 @@ message Webcast {
       int32  song_type = 4;
       map<int64, MultiChorusUserBase> user_base_map = 5;
       string  chorus_id = 6;
+      repeated string user_open_ids = 5000;
+      string leader_user_open_id = 5001;
+      map<string, MultiChorusUserBase> open_user_base_map = 5002;
     }
 
     message MultiChorusUserBase {
