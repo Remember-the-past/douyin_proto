@@ -10477,8 +10477,8 @@ message Webcast {
 
       message PublicAreaBadgeInfo {
         map<int64, Image> badge_info_map = 1;
-        uint64 badge_list = 2;
-        WebcastDslBadgeList webcast_dsl_badge_list = 3;
+        repeated uint64 badge_list = 2;
+        repeated WebcastDslBadgeList webcast_dsl_badge_list = 3;
 
         message WebcastDslBadgeList {
           repeated uint64 badge_list = 1;
