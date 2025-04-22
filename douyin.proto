@@ -2949,6 +2949,7 @@ message Webcast {
         Data.Image avatar_thumb = 4;
         Data.Image avatar_medium = 5;
         Data.Image avatar_large = 6;
+        string open_id = 5000;
       }
     }
 
@@ -2980,6 +2981,7 @@ message Webcast {
       uint64 user_id = 6;
       uint64 level2_threshold = 7;
       uint64 level3_threshold = 8;
+      string open_id = 5000;
     }
 
     message KtvMessage {
