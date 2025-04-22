@@ -456,6 +456,7 @@ message Webcast {
       bool is_commerce = 7;
       string aweme_id = 8;
       int32 sub_type = 9;
+      string user_open_id = 5000;
     }
 
     message AdminRecordMessage {
@@ -479,6 +480,7 @@ message Webcast {
       int32 live_id = 3;
       int32 event_type = 4;
       string content = 5;
+      string anchor_open_id = 5000;
     }
 
     message AnchorCommonPopupMessage {
@@ -751,6 +753,7 @@ message Webcast {
       string client_attached_info = 17;
       string lynx_data = 18;
       string event_tracking_info = 19;
+      string invite_open_uid = 5000;
     }
 
     message BattleModeMessage {
@@ -853,6 +856,7 @@ message Webcast {
         int32 status = 3;
         repeated Data.BattleRivalTag tags = 4;
         string desc_text = 5;
+        string open_id = 5000;
       }
     }
 
@@ -1240,6 +1244,7 @@ message Webcast {
       uint64 use_privilege_region = 24;
       uint64 can_open_contour = 25;
       uint64 support_show_type = 26;
+      map<string, string> extra = 27;
     }
 
     message EggItem {
@@ -1282,6 +1287,7 @@ message Webcast {
       int32 individual_chat_priority = 21;
       Data.Text rtf_content = 40;
       Data.Text rtf_content_v2 = 41;
+      map<string, string> model_info = 200;
     }
 
     message EmojiChatMessage {
@@ -1790,6 +1796,7 @@ message Webcast {
     message UserInfo {
       uint64 user_id = 1;
       int32 level = 2;
+      string open_id = 5000;
     }
 
     message CornerReachMessage {
@@ -1900,6 +1907,8 @@ message Webcast {
         string nick_name = 2;
         string avatar = 3;
         string user_id_str = 4;
+        string user_open_id = 5000;
+        string user_open_id_str = 5001;
       }
     }
 
@@ -14069,10 +14078,10 @@ message Webcast {
       uint64 owner_uid = 1;
       uint64 guest_uid = 2;
       uint64 status = 3;
-      map<int64,Image> user_avatar_thumb_map = 4;
+      map<int64, Image> user_avatar_thumb_map = 4;
       string owner_user_openid = 5000;
       string guest_user_openid = 5001;
-      map<string,Image> open_user_avatar_thumb_map = 5002;
+      map<string, Image> open_user_avatar_thumb_map = 5002;
     }
 
     message PlayByPlayItemInfo {
@@ -19078,7 +19087,7 @@ message Webcast {
       int32 strategy_type = 7;
       int32 update_type = 8;
       repeated uint64 effected_gift_ids = 9;
-      map<string,string> event_track = 10;
+      map<string, string> event_track = 10;
     }
 
     message GroupLiveActivityRewardData {
