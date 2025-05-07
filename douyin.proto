@@ -10664,9 +10664,9 @@ message Webcast {
       }
 
       message OwnRoom {
-        uint64 room_ids = 1;
-        string room_ids_str = 2;
-        int32 room_ids_display = 3;
+        repeated uint64 room_ids = 1;
+        repeated string room_ids_str = 2;
+        repeated int32 room_ids_display = 3;
       }
 
       message AnchorInfo {
