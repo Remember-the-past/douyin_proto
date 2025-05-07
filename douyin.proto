@@ -8716,6 +8716,25 @@ message Webcast {
       Data.AnchorLinkmicAudioPunishInfo info = 2;
     }
 
+    message AnchorLinkmicBizMessage {
+      Common common = 1;
+      int32 status = 2;
+      int32 biz_type = 3;
+      string title = 4;
+      string title_schema_url = 5;
+      uint64 status_start_time_ms = 6;
+      string game_app_id = 7;
+    }
+
+    message AnchorLinkmicSilenceMessage {
+      Common common = 1;
+      int32 silence_action = 2;
+      string from_user_id = 3;
+      string to_user_id = 4;
+      string from_user_open_id = 5000;
+      string to_user_open_id = 5001;
+    }
+
     message AnchorRoomDataChangeMessage {
       Common common = 1;
       Data.Text top_text = 2;
@@ -17257,7 +17276,7 @@ message Webcast {
       uint64 room_id = 1;
       int32 top_data_type = 2;
       repeated ShelfTopTradeData top_data = 3;
-      map<string, ShelfCardTradeData> card_data = 4;
+      map<uint64, ShelfCardTradeData> card_data = 4;
     }
 
     message ShelfTopTradeData {
