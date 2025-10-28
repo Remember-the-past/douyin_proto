@@ -42,6 +42,35 @@ message Webcast {
       string live_cursor = 11;
       bool history_no_more = 12;
       string proxy_server = 13;
+      string push_server_v2 = 14;
+    }
+
+    message Request {
+      int64 live_id = 1;
+      int64 aid = 2;
+      string room_id = 3;
+      string identity = 4;
+      string last_rtt = 5;
+      string internal_ext = 6;
+      string cursor = 7;
+      string device_id = 8;
+      string unique_id = 9;
+      string device_platform = 10;
+      string app_language = 11;
+      string version_code = 12;
+      string update_version_code = 13;
+      string resp_content_type = 14;
+      string get_history = 15;
+      string ac = 16;
+      string keep_method = 17;
+      string stress = 18;
+      int64 recv_cnt = 19;
+      int64 parse_cnt = 20;
+      string fetch_rule = 21;
+      string ab_group = 22;
+      string live_cursor = 23;
+      string sub_room_id = 24;
+      int64 need_persist_msg_count = 25;
     }
 
     message Message {
@@ -54,6 +83,15 @@ message Webcast {
       uint64 wrds_version = 7;
       string wrds_sub_key = 8;
       map<string, string> message_extra = 9;
+      string tenant_id = 10;
+    }
+
+    message PreviewHistoryResponse {
+      ResponseData data = 1;
+
+      message ResponseData {
+        repeated Message messages = 1;
+      }
     }
 
     message RoomBorderMessage {
