@@ -8,10 +8,18 @@
 
 ## 生成 Go protobuf
 
-如果你想在 Go 项目里直接使用这个仓库的 proto，可以执行下面的脚本一键生成：
+如果你想在 Go 项目里直接使用这个仓库的 proto，可以执行下面的脚本一键生成。
+
+### Linux / macOS / Git Bash / WSL
 
 ```bash
 bash scripts/gen-go.sh
+```
+
+### Windows PowerShell
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\gen-go.ps1
 ```
 
 生成结果默认输出到：
