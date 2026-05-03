@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package douyin;
+option go_package = "github.com/Remember-the-past/douyin_proto/gen/go;douyin";
 
 message Webcast {
 
